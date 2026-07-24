@@ -43,30 +43,67 @@ data class ViewNode(
 
     /// Bridge constructor: the Swift materializer builds nodes through this,
     /// crossing JNI with flat arrays (one call per node, arrays as single
-    /// arguments). Prop and modifier-arg values arrive as JSON literals
-    /// ("\"text\"", "42", "true"), keeping the typed JsonObject model without
-    /// per-field JNI calls. Negative count/provider mean "absent".
+    /// arguments). Scalar values cross typed — a kind tag selects between the
+    /// string slot and the bits slot (doubles bit-cast into the long, so both
+    /// 64-bit callback ids and doubles cross exactly) — so no value takes the
+    /// JSON parser except array-valued props. Modifier args flatten into one
+    /// run of slots, `modifierArgCounts` giving each modifier's share.
+    /// Negative count/provider mean "absent".
     constructor(
         type: String,
         id: String,
         propKeys: Array<String>,
-        propValues: Array<String>,
+        propKinds: IntArray,
+        propStrings: Array<String>,
+        propBits: LongArray,
         modifierKinds: Array<String>,
-        modifierArgs: Array<String>,
+        modifierArgCounts: IntArray,
+        argKeys: Array<String>,
+        argKinds: IntArray,
+        argStrings: Array<String>,
+        argBits: LongArray,
         children: Array<ViewNode>,
         count: Int,
         itemProviderId: Long,
     ) : this(
         type = type,
         id = id,
-        props = JsonObject(propKeys.indices.associate { propKeys[it] to Json.parseToJsonElement(propValues[it]) }),
-        modifiers = modifierKinds.indices.map {
-            ModifierNode(modifierKinds[it], Json.parseToJsonElement(modifierArgs[it]).jsonObject)
+        props = JsonObject(propKeys.indices.associate {
+            propKeys[it] to jsonValue(propKinds[it], propStrings[it], propBits[it])
+        }),
+        modifiers = buildList {
+            var base = 0
+            for (m in modifierKinds.indices) {
+                val argCount = modifierArgCounts[m]
+                add(ModifierNode(modifierKinds[m], JsonObject((0 until argCount).associate {
+                    val i = base + it
+                    argKeys[i] to jsonValue(argKinds[i], argStrings[i], argBits[i])
+                })))
+                base += argCount
+            }
         },
         children = children.toList(),
         count = if (count >= 0) count else null,
         itemProviderId = if (itemProviderId >= 0) itemProviderId else null,
     )
+
+    companion object {
+        // value kinds used by the bridge constructor
+        private const val KIND_STRING = 0
+        private const val KIND_DOUBLE = 1
+        private const val KIND_BOOL = 2
+        private const val KIND_INT = 3
+        private const val KIND_JSON = 4
+
+        private fun jsonValue(kind: Int, string: String, bits: Long): kotlinx.serialization.json.JsonElement =
+            when (kind) {
+                KIND_STRING -> JsonPrimitive(string)
+                KIND_DOUBLE -> JsonPrimitive(Double.fromBits(bits))
+                KIND_BOOL -> JsonPrimitive(bits != 0L)
+                KIND_INT -> JsonPrimitive(bits)
+                else -> Json.parseToJsonElement(string) // arrays only
+            }
+    }
 
     // Typed prop accessors used by the interpreter.
 
