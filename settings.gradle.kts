@@ -24,6 +24,7 @@ rootProject.name = "AndroidSwiftUI"
 // Reusable libraries live at the repo root.
 include(":composeui")     // Compose Multiplatform interpreter
 include(":androidbridge") // reusable Android JNI host glue
+include(":swiftbridge")   // jextract-JNI generated bindings + SwiftKitCore runtime
 
 // The demo apps consume the libraries; their sources stay under Demo/.
 include(":demo-app")
