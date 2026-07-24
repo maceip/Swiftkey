@@ -17,7 +17,7 @@ class SwiftUIHostView(context: Context) : FrameLayout(context) {
     val store = TreeStore()
 
     init {
-        SwiftBridge.sink = SwiftCallbackSink()
+        SwiftBridge.sink = JextractCallbackSink()
         val composeView = ComposeView(context)
         composeView.setContent {
             MaterialTheme {
