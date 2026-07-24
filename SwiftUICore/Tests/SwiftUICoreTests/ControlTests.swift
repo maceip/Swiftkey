@@ -411,7 +411,7 @@ private func focusCallback(_ node: RenderNode) -> Int64? {
     return Int64(id)
 }
 
-@Suite("AppStorage")
+@Suite("AppStorage", .serialized)
 struct AppStorageTests {
 
     @Test("A stored value survives a fresh wrapper, as it would a relaunch")
