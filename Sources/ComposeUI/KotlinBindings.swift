@@ -14,9 +14,11 @@ import SwiftJava
 open class ViewNodeObject: JavaObject {
 
     /// The bridge constructor: one JNI call per node, arrays crossing as
-    /// single arguments. Scalars cross typed — a kind tag per value selects
-    /// the string slot or the bits slot (doubles bit-cast into the long) —
-    /// so only array-valued props take the JSON path. Negative count/provider
+    /// single arguments. Every value crosses typed — a kind tag per value
+    /// selects the string slot or the bits slot (doubles bit-cast into the
+    /// long). Homogeneous arrays ride the same slot with the bits packing
+    /// (offset << 32 | count) into the node's shared string or long pool; only
+    /// nested/heterogeneous arrays take the JSON path. Negative count/provider
     /// mean "absent".
     @JavaMethod
     @_nonoverride public convenience init(
@@ -32,6 +34,8 @@ open class ViewNodeObject: JavaObject {
         _ argKinds: [Int32],
         _ argStrings: [String],
         _ argBits: [Int64],
+        _ stringPool: [String],
+        _ longPool: [Int64],
         _ children: [ViewNodeObject?],
         _ count: Int32,
         _ itemProviderId: Int64,
