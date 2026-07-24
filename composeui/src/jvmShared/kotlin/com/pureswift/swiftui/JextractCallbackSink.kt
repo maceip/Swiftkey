@@ -8,7 +8,7 @@ import com.pureswift.bridge.BridgeExport
 // (`SwiftCallbackSink`), because it returns a JavaKit-wrapped `ViewNode` that
 // jextract cannot express.
 class JextractCallbackSink(
-    private val items: CallbackSink = SwiftCallbackSink(),
+    private val items: SwiftCallbackSink = SwiftCallbackSink(),
 ) : CallbackSink {
 
     override fun invokeVoid(id: Long) = BridgeExport.bridgeInvokeVoid(id)
