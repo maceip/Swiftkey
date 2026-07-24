@@ -2097,6 +2097,8 @@ private fun RenderLazyStack(node: ViewNode, vertical: Boolean) {
     }
     val count = node.count ?: 0
     val keys = node.stringArray("keys")
+    // bumps when Swift re-evaluated this container: cached elements re-fetch
+    val version = node.long("contentVersion")
     val spacing = (node.double("spacing") ?: 0.0).dp
     if (vertical) {
         LazyColumn(
@@ -2109,7 +2111,7 @@ private fun RenderLazyStack(node: ViewNode, vertical: Boolean) {
             verticalArrangement = Arrangement.spacedBy(spacing),
         ) {
             items(count = count, key = { keys.getOrNull(it) ?: it }) { index ->
-                val element = remember(provider, index) { SwiftBridge.sink.itemNode(provider, index) }
+                val element = remember(provider, version, index) { SwiftBridge.sink.itemNode(provider, index) }
                 element?.let { RenderChild(it) }
             }
         }
@@ -2124,7 +2126,7 @@ private fun RenderLazyStack(node: ViewNode, vertical: Boolean) {
             horizontalArrangement = Arrangement.spacedBy(spacing),
         ) {
             items(count = count, key = { keys.getOrNull(it) ?: it }) { index ->
-                val element = remember(provider, index) { SwiftBridge.sink.itemNode(provider, index) }
+                val element = remember(provider, version, index) { SwiftBridge.sink.itemNode(provider, index) }
                 element?.let { RenderChild(it) }
             }
         }
@@ -2137,13 +2139,15 @@ private fun RenderList(node: ViewNode) {
     val provider = node.long("itemProvider") ?: return
     val count = node.count ?: 0
     val keys = node.stringArray("keys")
+    // bumps when Swift re-evaluated this container: cached rows re-fetch
+    val version = node.long("contentVersion")
     val onRefresh = node.long("onRefresh")
     val list: @Composable () -> Unit = {
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(count = count, key = { keys.getOrNull(it) ?: it }) { index ->
                 // one JNI call per newly-visible row; re-fetched when the tree
                 // (hence the provider id) changes
-                val row = remember(provider, index) { SwiftBridge.sink.itemNode(provider, index) }
+                val row = remember(provider, version, index) { SwiftBridge.sink.itemNode(provider, index) }
                 row?.let { Render(it) }
             }
         }

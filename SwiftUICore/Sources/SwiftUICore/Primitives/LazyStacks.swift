@@ -60,6 +60,7 @@ internal func _lazyStackNode<Content: View>(
     let callbacks = context.callbacks
     let environment = context.environment
     let basePath = context.path + "/content"
+    let containerPath = context.path
     let count = provider._elementCount
 
     let providerID = callbacks.register(.item { index in
@@ -70,9 +71,13 @@ internal func _lazyStackNode<Content: View>(
             path: basePath
         )
         return provider._resolveElement(at: index, in: elementContext)
-    })
+    }, path: containerPath)
     props["itemProvider"] = .int(Int(providerID))
     props["keys"] = .array((0..<count).map { .string(provider._elementKey(at: $0)) })
+    // elements resolve on demand, outside the tree: state under this path
+    // needs a full pass, and the pass version invalidates cached elements
+    context.anchors?.markLazyBoundary(containerPath)
+    props["contentVersion"] = .int(context.passVersion)
     return RenderNode(type: type, id: context.path, props: props, count: count)
 }
 

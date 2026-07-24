@@ -32,7 +32,7 @@ extension _SheetView: PrimitiveView {
             return node
         }
         let binding = isPresented
-        let dismissID = context.callbacks.register(.void { binding.wrappedValue = false })
+        let dismissID = context.registerCallback(.void { binding.wrappedValue = false })
 
         var sheetContext = context.descending("sheet")
         sheetContext.environment.values.dismiss = DismissAction { binding.wrappedValue = false }
@@ -120,7 +120,7 @@ extension _AlertView: PrimitiveView {
         var buttonNodes: [PropValue] = []
         for button in buttons {
             let action = button.action
-            let id = context.callbacks.register(.void {
+            let id = context.registerCallback(.void {
                 action()
                 binding.wrappedValue = false
             })
@@ -130,7 +130,7 @@ extension _AlertView: PrimitiveView {
                 .int(Int(id)),
             ]))
         }
-        let dismissID = context.callbacks.register(.void { binding.wrappedValue = false })
+        let dismissID = context.registerCallback(.void { binding.wrappedValue = false })
 
         var props: [String: PropValue] = [
             "title": .string(title),
@@ -195,7 +195,7 @@ extension _ConfirmationDialogView: PrimitiveView {
         var buttonNodes: [PropValue] = []
         for button in buttons {
             let action = button.action
-            let id = context.callbacks.register(.void {
+            let id = context.registerCallback(.void {
                 action()
                 binding.wrappedValue = false
             })
@@ -205,7 +205,7 @@ extension _ConfirmationDialogView: PrimitiveView {
                 .int(Int(id)),
             ]))
         }
-        let dismissID = context.callbacks.register(.void { binding.wrappedValue = false })
+        let dismissID = context.registerCallback(.void { binding.wrappedValue = false })
 
         // The title only shows when explicitly made visible (matching iOS, where
         // a confirmation dialog hides its title by default).

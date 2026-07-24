@@ -25,7 +25,7 @@ public extension Button where Label == Text {
 
 extension Button: PrimitiveView {
     public func _render(in context: ResolveContext) -> RenderNode {
-        let callbackID = context.callbacks.register(.void(action))
+        let callbackID = context.registerCallback(.void(action))
         return RenderNode(
             type: "Button",
             id: context.path,

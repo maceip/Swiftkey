@@ -31,7 +31,7 @@ public extension DatePicker where Label == Text {
 extension DatePicker: PrimitiveView {
     public func _render(in context: ResolveContext) -> RenderNode {
         let binding = selection
-        let callbackID = context.callbacks.register(.double { millis in
+        let callbackID = context.registerCallback(.double { millis in
             binding.wrappedValue = Date(timeIntervalSince1970: millis / 1000)
         })
         return RenderNode(

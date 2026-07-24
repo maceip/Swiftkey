@@ -54,7 +54,7 @@ extension DisclosureGroup: PrimitiveView {
         if let isExpanded {
             props["isExpanded"] = .bool(isExpanded.wrappedValue)
             let binding = isExpanded
-            let id = context.callbacks.register(.bool { binding.wrappedValue = $0 })
+            let id = context.registerCallback(.bool { binding.wrappedValue = $0 })
             props["onToggle"] = .int(Int(id))
         }
         return RenderNode(

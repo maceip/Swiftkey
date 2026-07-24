@@ -77,6 +77,21 @@ data class ViewNode(
     fun bool(key: String): Boolean? = (props[key] as? JsonPrimitive)?.booleanOrNull
 
     fun long(key: String): Long? = (props[key] as? JsonPrimitive)?.longOrNull
+
+    /// Returns a copy of this tree with the node whose id is `targetId`
+    /// replaced by `replacement`, or `null` when the id isn't in this branch.
+    /// Only the spine down to the target is copied; every untouched sibling
+    /// subtree is shared, so recomposition stays proportional to the change.
+    fun replacingSubtree(targetId: String, replacement: ViewNode): ViewNode? {
+        if (id == targetId) return replacement
+        // ids are identity paths: a descendant's id extends this node's id
+        if (!targetId.startsWith("$id/")) return null
+        for ((index, child) in children.withIndex()) {
+            val patched = child.replacingSubtree(targetId, replacement) ?: continue
+            return copy(children = children.toMutableList().also { it[index] = patched })
+        }
+        return null
+    }
 }
 
 internal fun JsonObject.double(key: String): Double? = (this[key] as? JsonPrimitive)?.doubleOrNull

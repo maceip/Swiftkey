@@ -932,3 +932,166 @@ struct DisclosureGroupTests {
         #expect(node.children[0].type == "Label")
     }
 }
+
+@Suite("Callback identity")
+struct CallbackIdentityTests {
+
+    @Test("A view's callback id is stable across re-evaluation")
+    func stableAcrossEvaluations() {
+        struct Screen: View {
+            @State var taps = 0
+            var body: some View {
+                Button("Tap \(taps)") { taps += 1 }
+            }
+        }
+        let host = ViewHost(Screen())
+        let first = host.evaluate()
+        guard case .int(let id1)? = first.props["onTap"] else { Issue.record("no onTap"); return }
+        // a state change + re-eval must NOT churn the id (patching relies on this)
+        host.callbacks.invokeVoid(Int64(id1))
+        let second = host.evaluate()
+        guard case .int(let id2)? = second.props["onTap"] else { Issue.record("no onTap"); return }
+        #expect(id1 == id2)
+        // and it still dispatches after many passes (no generation eviction)
+        for _ in 0 ..< 10 { _ = host.evaluate() }
+        host.callbacks.invokeVoid(Int64(id1))
+        let after = host.evaluate()
+        #expect(firstTextString(after) == "Tap 2")   // one tap before, one just now
+    }
+
+    @Test("Distinct callbacks at one view get distinct stable ids")
+    func distinctOrdinals() {
+        struct Screen: View {
+            @State var n = 0
+            var body: some View {
+                Stepper("n \(n)", value: $n, in: 0...10)
+            }
+        }
+        let node = ViewHost(Screen()).evaluate()
+        guard case .int(let inc)? = node.props["onIncrement"],
+              case .int(let dec)? = node.props["onDecrement"] else {
+            Issue.record("missing stepper callbacks"); return
+        }
+        #expect(inc != dec)
+    }
+}
+
+@Suite("Subtree updates")
+struct SubtreeUpdateTests {
+
+    struct Counter: View {
+        let label: String
+        @State var taps = 0
+        var body: some View {
+            Button("\(label) \(taps)") { taps += 1 }
+        }
+    }
+
+    struct Screen: View {
+        var body: some View {
+            VStack {
+                Counter(label: "A")
+                Counter(label: "B")
+            }
+        }
+    }
+
+    private func tapID(_ node: RenderNode) -> Int64? {
+        if case .int(let id)? = node.props["onTap"] { return Int64(id) }
+        return nil
+    }
+
+    @Test("A single-view state change becomes a patch of just that subtree")
+    func patchesOneSubtree() {
+        let host = ViewHost(Screen())
+        guard case .full(let tree) = host.evaluateUpdate() else {
+            Issue.record("first pass must be full"); return
+        }
+        let counterA = tree.children[0]
+        guard let tap = tapID(counterA) else { Issue.record("no onTap"); return }
+        host.callbacks.invokeVoid(tap)
+        guard case .patch(let target, let node) = host.evaluateUpdate() else {
+            Issue.record("expected a patch"); return
+        }
+        #expect(target == counterA.id)
+        #expect(node.id == counterA.id)
+        #expect(firstTextString(node) == "A 1")
+        // sibling B untouched; a second tap patches again with the same target
+        host.callbacks.invokeVoid(tap)
+        guard case .patch(let target2, let node2) = host.evaluateUpdate() else {
+            Issue.record("expected a second patch"); return
+        }
+        #expect(target2 == target)
+        #expect(firstTextString(node2) == "A 2")
+    }
+
+    @Test("Writes to two different views fall back to a full pass")
+    func multiplePathsGoFull() {
+        let host = ViewHost(Screen())
+        guard case .full(let tree) = host.evaluateUpdate() else {
+            Issue.record("first pass must be full"); return
+        }
+        guard let tapA = tapID(tree.children[0]),
+              let tapB = tapID(tree.children[1]) else {
+            Issue.record("missing taps"); return
+        }
+        host.callbacks.invokeVoid(tapA)
+        host.callbacks.invokeVoid(tapB)
+        guard case .full(let next) = host.evaluateUpdate() else {
+            Issue.record("expected full"); return
+        }
+        #expect(firstTextString(next.children[0]) == "A 1")
+        #expect(firstTextString(next.children[1]) == "B 1")
+    }
+
+    @Test("A patched subtree keeps parent-applied modifiers")
+    func patchKeepsOuterModifiers() {
+        struct Padded: View {
+            var body: some View {
+                VStack {
+                    Counter(label: "P").padding(8)
+                }
+            }
+        }
+        let host = ViewHost(Padded())
+        guard case .full(let tree) = host.evaluateUpdate() else {
+            Issue.record("first pass must be full"); return
+        }
+        let counter = tree.children[0]
+        #expect(counter.modifiers.contains { $0.kind == "padding" })
+        guard let tap = tapID(counter) else { Issue.record("no onTap"); return }
+        host.callbacks.invokeVoid(tap)
+        guard case .patch(_, let node) = host.evaluateUpdate() else {
+            Issue.record("expected a patch"); return
+        }
+        #expect(node.modifiers.contains { $0.kind == "padding" })
+        #expect(firstTextString(node) == "P 1")
+    }
+
+    @Test("A changed navigationTitle forces a full pass")
+    func titleChangeGoesFull() {
+        struct Titled: View {
+            @State var taps = 0
+            var body: some View {
+                Button("Tap \(taps)") { taps += 1 }
+                    .navigationTitle("Taps \(taps)")
+            }
+        }
+        let host = ViewHost(NavigationStack { Titled() })
+        guard case .full(let tree) = host.evaluateUpdate() else {
+            Issue.record("first pass must be full"); return
+        }
+        func onTap(in node: RenderNode) -> Int64? {
+            if let id = tapID(node) { return id }
+            for child in node.children { if let id = onTap(in: child) { return id } }
+            return nil
+        }
+        guard let tap = onTap(in: tree) else { Issue.record("no onTap"); return }
+        host.callbacks.invokeVoid(tap)
+        // the title the nav bar renders changed — a patch below the nav node
+        // couldn't update it
+        guard case .full = host.evaluateUpdate() else {
+            Issue.record("expected full pass for a title change"); return
+        }
+    }
+}

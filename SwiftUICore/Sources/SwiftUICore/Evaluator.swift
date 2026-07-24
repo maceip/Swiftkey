@@ -23,6 +23,15 @@ public struct ResolveContext {
     public var preferences: PreferenceCollector?
     public var path: String
     public var depth: Int
+    /// Re-entry points recorded during the pass; `nil` disables recording
+    /// (tests driving the evaluator directly don't need anchors).
+    public var anchors: AnchorStore?
+    /// Monotonic evaluation counter, stamped on lazy containers so their rows
+    /// re-fetch when (and only when) the container was re-evaluated.
+    public var passVersion: Int = 0
+    /// The wrapper chain being unwrapped at the current path; cleared when the
+    /// path descends. See `ChainAnchor`.
+    var chainAnchor: ChainAnchor?
 
     public init(
         storage: StateStorage,
@@ -44,11 +53,30 @@ public struct ResolveContext {
         self.depth = depth
     }
 
+    /// Registers a callback for the view at this context's identity path.
+    /// Ids are stable per (path, registration order), so a re-evaluated view's
+    /// handlers keep the same ids — see `CallbackRegistry`.
+    public func registerCallback(_ callback: CallbackRegistry.Callback) -> Int64 {
+        callbacks.register(callback, path: path)
+    }
+
+    /// Starts a wrapper chain at this path if one isn't already open: the
+    /// captured view + context are the re-entry point for subtree patching.
+    mutating func beginChainIfNeeded(_ view: any View) {
+        guard anchors != nil, chainAnchor == nil else { return }
+        // the captured context drops the store reference (the store holds
+        // the capture — a cycle otherwise); the host restores it on re-entry
+        var captured = self
+        captured.anchors = nil
+        chainAnchor = ChainAnchor(view: view, context: captured)
+    }
+
     /// Context for a child at a structurally stable position.
     public func descending(_ component: String) -> ResolveContext {
         var context = self
         context.path += "/" + component
         context.depth += 1
+        context.chainAnchor = nil
         return context
     }
 }
@@ -122,6 +150,17 @@ public final class TitleSink {
     public var searchCallbackID: Int64?
     public var searchPrompt: String?
     public init() {}
+
+    /// Whether a subtree pass re-published the same values the last full pass
+    /// left in `other` — the condition under which the pass can stay a patch
+    /// (the enclosing screen's rendering of these values is already correct).
+    func matches(_ other: TitleSink) -> Bool {
+        title == other.title
+            && detents == other.detents
+            && searchText == other.searchText
+            && searchCallbackID == other.searchCallbackID
+            && searchPrompt == other.searchPrompt
+    }
 }
 
 /// Carries a pending `refreshable` action to the enclosing List.
@@ -148,6 +187,11 @@ public enum Evaluator {
             assertionFailure("View \(type(of: view)) exceeded maximum resolve depth")
             return RenderNode(type: "EmptyView", id: context.path)
         }
+        // First entry of a wrapper chain: remember the outermost view + context
+        // so a dirty descendant can re-resolve from here — reproducing parent-
+        // applied modifiers and effects, which sit on this same chain.
+        var context = context
+        context.beginChainIfNeeded(view)
         switch view {
         case let modifier as _ModifierProvider:
             // identity-transparent: resolve content at the SAME path, then prepend
@@ -163,18 +207,31 @@ public enum Evaluator {
             // selection) and read @Environment, so wire both before rendering
             context.storage.install(in: view, path: context.path)
             EnvironmentInjector.inject(context.environment, into: view)
-            return primitive._render(in: context)
+            let node = primitive._render(in: context)
+            if let anchors = context.anchors, let chain = context.chainAnchor {
+                anchors.record(path: context.path, chain: chain, nodeID: node.id)
+            }
+            return node
         case let anyView as AnyView:
-            return resolve(anyView.storage, context.descending("any"))
+            // identity-transparent wrappers stay on the chain: the anchor must
+            // cover modifiers applied outside them
+            var child = context.descending("any")
+            child.chainAnchor = context.chainAnchor
+            return resolve(anyView.storage, child)
         case let writer as _AnyEnvironmentWriter:
             var child = context.descending("env")
+            child.chainAnchor = context.chainAnchor
             child.environment.set(writer._object)
             return resolve(writer._content, child)
         default:
             let child = context.descending("\(type(of: view))")
             child.storage.install(in: view, path: child.path)
             EnvironmentInjector.inject(child.environment, into: view)
-            return resolve(body(of: view), child)
+            let node = resolve(body(of: view), child)
+            if let anchors = context.anchors, let chain = context.chainAnchor {
+                anchors.record(path: child.path, chain: chain, nodeID: node.id)
+            }
+            return node
         }
     }
 
@@ -191,24 +248,35 @@ public enum Evaluator {
             assertionFailure("View \(type(of: view)) exceeded maximum flatten depth")
             return
         }
+        var context = context
+        context.beginChainIfNeeded(view)
         switch view {
         case is EmptyView:
             return
         case let group as _GroupView:
             group._flatten(into: &nodes, context: context)
         case let modifier as _ModifierProvider:
-            var before = nodes.count
+            let before = nodes.count
             flatten(modifier._modifiedContent, into: &nodes, context: context)
             // apply the modifier to each node the content produced
             let modifierNode = modifier.resolvedModifierNode(in: context)
-            while before < nodes.count {
-                nodes[before].modifiers.insert(modifierNode, at: 0)
-                before += 1
+            for index in before ..< nodes.count {
+                nodes[index].modifiers.insert(modifierNode, at: 0)
+            }
+            // a modifier spread over a group's nodes can't be reproduced by
+            // re-resolving any one of them — drop their re-entry anchors
+            if nodes.count - before > 1 {
+                context.anchors?.invalidate(nodeIDs: nodes[before...].map(\.id))
             }
         case let anyView as AnyView:
-            flatten(anyView.storage, into: &nodes, context: context.descending("any"))
+            // identity-transparent wrappers stay on the chain: the anchor must
+            // cover modifiers applied outside them
+            var child = context.descending("any")
+            child.chainAnchor = context.chainAnchor
+            flatten(anyView.storage, into: &nodes, context: child)
         case let writer as _AnyEnvironmentWriter:
             var child = context.descending("env")
+            child.chainAnchor = context.chainAnchor
             child.environment.set(writer._object)
             flatten(writer._content, into: &nodes, context: child)
         case let effect as _ResolutionEffectView:

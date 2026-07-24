@@ -26,7 +26,7 @@ public extension Toggle where Label == Text {
 extension Toggle: PrimitiveView {
     public func _render(in context: ResolveContext) -> RenderNode {
         let binding = isOn
-        let callbackID = context.callbacks.register(.bool { binding.wrappedValue = $0 })
+        let callbackID = context.registerCallback(.bool { binding.wrappedValue = $0 })
         return RenderNode(
             type: "Toggle",
             id: context.path,

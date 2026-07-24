@@ -14,7 +14,7 @@ public struct _OnTapGestureModifier: RenderModifier, _CallbackModifier {
     let action: () -> Void
     public var _modifierNode: ModifierNode { ModifierNode(kind: "onTapGesture") }
     public func _callbackNode(in context: ResolveContext) -> ModifierNode {
-        let id = context.callbacks.register(.void(action))
+        let id = context.registerCallback(.void(action))
         return ModifierNode(kind: "onTapGesture", args: ["action": .int(Int(id))])
     }
 }
@@ -31,7 +31,7 @@ public struct _OnAppearModifier: RenderModifier, _CallbackModifier {
     let action: () -> Void
     public var _modifierNode: ModifierNode { ModifierNode(kind: "onAppear") }
     public func _callbackNode(in context: ResolveContext) -> ModifierNode {
-        let id = context.callbacks.register(.void(action))
+        let id = context.registerCallback(.void(action))
         return ModifierNode(kind: "onAppear", args: ["action": .int(Int(id))])
     }
 }
@@ -40,7 +40,7 @@ public struct _OnDisappearModifier: RenderModifier, _CallbackModifier {
     let action: () -> Void
     public var _modifierNode: ModifierNode { ModifierNode(kind: "onDisappear") }
     public func _callbackNode(in context: ResolveContext) -> ModifierNode {
-        let id = context.callbacks.register(.void(action))
+        let id = context.registerCallback(.void(action))
         return ModifierNode(kind: "onDisappear", args: ["action": .int(Int(id))])
     }
 }
@@ -83,8 +83,8 @@ public struct _TaskModifier: RenderModifier, _CallbackModifier {
         // when the view leaves the tree.
         let action = self.action
         let path = context.path
-        let start = context.callbacks.register(.void { _TaskRegistry.start(path: path, action: action) })
-        let cancel = context.callbacks.register(.void { _TaskRegistry.cancel(path: path) })
+        let start = context.registerCallback(.void { _TaskRegistry.start(path: path, action: action) })
+        let cancel = context.registerCallback(.void { _TaskRegistry.cancel(path: path) })
         return ModifierNode(kind: "task", args: ["start": .int(Int(start)), "cancel": .int(Int(cancel))])
     }
 }
@@ -102,7 +102,7 @@ public struct _OnChangeModifier<V: Equatable>: RenderModifier, _CallbackModifier
     let action: () -> Void
     public var _modifierNode: ModifierNode { ModifierNode(kind: "onChange") }
     public func _callbackNode(in context: ResolveContext) -> ModifierNode {
-        let id = context.callbacks.register(.void(action))
+        let id = context.registerCallback(.void(action))
         // The interpreter fires the action when this token changes between
         // evaluations (skipping the first composition).
         return ModifierNode(kind: "onChange", args: [

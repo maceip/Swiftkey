@@ -70,7 +70,7 @@ public struct _GestureModifier: RenderModifier, _CallbackModifier {
     public func _callbackNode(in context: ResolveContext) -> ModifierNode {
         let changed = gesture.changedAction
         let ended = gesture.endedAction
-        let id = context.callbacks.register(.string { payload in
+        let id = context.registerCallback(.string { payload in
             guard let value = DragGesture.Value(payload: payload) else { return }
             if payload.hasPrefix("ended") {
                 ended?(value)
@@ -92,7 +92,7 @@ public struct _LongPressModifier: RenderModifier, _CallbackModifier {
     public var _modifierNode: ModifierNode { ModifierNode(kind: "longPress") }
 
     public func _callbackNode(in context: ResolveContext) -> ModifierNode {
-        let id = context.callbacks.register(.void(action))
+        let id = context.registerCallback(.void(action))
         return ModifierNode(kind: "longPress", args: ["action": .int(Int(id))])
     }
 }

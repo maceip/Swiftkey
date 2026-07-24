@@ -27,6 +27,11 @@ public final class PreferenceCollector {
 
     public init() {}
 
+    /// Whether anything published into this collector. A subtree pass uses a
+    /// fresh collector and falls back to a full pass when this trips —
+    /// preferences flow to ancestors a patch can't reach.
+    var hasRecords: Bool { !values.isEmpty }
+
     /// Folds one published value in, starting from the key's default so the
     /// reduction is the same whether or not anything published before.
     internal func record<K: PreferenceKey>(_ key: K.Type, _ value: K.Value) {

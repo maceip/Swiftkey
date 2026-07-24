@@ -43,7 +43,7 @@ public struct Picker<SelectionValue: Hashable & LosslessStringConvertible, Conte
 extension Picker: PrimitiveView {
     public func _render(in context: ResolveContext) -> RenderNode {
         let binding = selection
-        let callbackID = context.callbacks.register(.string { raw in
+        let callbackID = context.registerCallback(.string { raw in
             guard let value = SelectionValue(raw) else { return }
             binding.wrappedValue = value
         })
