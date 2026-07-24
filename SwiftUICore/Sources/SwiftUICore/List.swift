@@ -54,10 +54,15 @@ extension List: PrimitiveView {
             return Evaluator.resolve(rowBuilder(element), rowContext)
         }, path: listPath)
 
+        // rows are fetched on demand, outside the tree: mark the boundary so a
+        // row-state change forces a full pass, and stamp the pass version so
+        // cached rows re-fetch exactly when this container re-evaluated
+        context.anchors?.markLazyBoundary(listPath)
         let keys = elements.map { PropValue.string(identityString(keyFor($0))) }
         var props: [String: PropValue] = [
             "keys": .array(keys),
             "itemProvider": .int(Int(providerID)),
+            "contentVersion": .int(context.passVersion),
         ]
         if let onRefresh = context.refreshSink?.action {
             let refreshID = callbacks.register(.void {
