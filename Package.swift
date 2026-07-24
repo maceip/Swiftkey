@@ -27,6 +27,14 @@ let package = Package(
             name: "SwiftUIDesktopDemo",
             type: .dynamic,
             targets: ["SwiftUIDesktopDemo"]
+        ),
+        // The jextract-JNI export surface, shipped as its own dynamic library
+        // (`libBridgeExport.so`/`.dylib`) so the generated Java's
+        // `System.loadLibrary("BridgeExport")` resolves next to the app library.
+        .library(
+            name: "BridgeExport",
+            type: .dynamic,
+            targets: ["BridgeExport"]
         )
     ],
     dependencies: [
@@ -88,6 +96,25 @@ let package = Package(
             ],
             swiftSettings: [
               .swiftLanguageMode(.v5)
+            ]
+        ),
+        // The jextract-JNI export surface. Isolated thin target: only its tiny
+        // public API is exported (a large surface like ComposeUI's would choke
+        // jextract on result builders/generics). Carries the JExtractSwiftPlugin.
+        .target(
+            name: "BridgeExport",
+            dependencies: [
+                "ComposeUI",
+                .product(name: "SwiftJava", package: "swift-java")
+            ],
+            exclude: [
+                "swift-java.config"
+            ],
+            swiftSettings: [
+              .swiftLanguageMode(.v5)
+            ],
+            plugins: [
+                .plugin(name: "JExtractSwiftPlugin", package: "swift-java")
             ]
         ),
         .target(
