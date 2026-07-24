@@ -932,3 +932,46 @@ struct DisclosureGroupTests {
         #expect(node.children[0].type == "Label")
     }
 }
+
+@Suite("Callback identity")
+struct CallbackIdentityTests {
+
+    @Test("A view's callback id is stable across re-evaluation")
+    func stableAcrossEvaluations() {
+        struct Screen: View {
+            @State var taps = 0
+            var body: some View {
+                Button("Tap \(taps)") { taps += 1 }
+            }
+        }
+        let host = ViewHost(Screen())
+        let first = host.evaluate()
+        guard case .int(let id1)? = first.props["onTap"] else { Issue.record("no onTap"); return }
+        // a state change + re-eval must NOT churn the id (patching relies on this)
+        host.callbacks.invokeVoid(Int64(id1))
+        let second = host.evaluate()
+        guard case .int(let id2)? = second.props["onTap"] else { Issue.record("no onTap"); return }
+        #expect(id1 == id2)
+        // and it still dispatches after many passes (no generation eviction)
+        for _ in 0 ..< 10 { _ = host.evaluate() }
+        host.callbacks.invokeVoid(Int64(id1))
+        let after = host.evaluate()
+        #expect(firstTextString(after) == "Tap 2")   // one tap before, one just now
+    }
+
+    @Test("Distinct callbacks at one view get distinct stable ids")
+    func distinctOrdinals() {
+        struct Screen: View {
+            @State var n = 0
+            var body: some View {
+                Stepper("n \(n)", value: $n, in: 0...10)
+            }
+        }
+        let node = ViewHost(Screen()).evaluate()
+        guard case .int(let inc)? = node.props["onIncrement"],
+              case .int(let dec)? = node.props["onDecrement"] else {
+            Issue.record("missing stepper callbacks"); return
+        }
+        #expect(inc != dec)
+    }
+}

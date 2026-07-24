@@ -104,7 +104,7 @@ public struct Slider: View {
 extension Slider: PrimitiveView {
     public func _render(in context: ResolveContext) -> RenderNode {
         let binding = value
-        let callbackID = context.callbacks.register(.double { binding.wrappedValue = $0 })
+        let callbackID = context.registerCallback(.double { binding.wrappedValue = $0 })
         return RenderNode(
             type: "Slider",
             id: context.path,
@@ -135,7 +135,7 @@ public struct TextField: View {
 extension TextField: PrimitiveView {
     public func _render(in context: ResolveContext) -> RenderNode {
         let binding = text
-        let callbackID = context.callbacks.register(.string { binding.wrappedValue = $0 })
+        let callbackID = context.registerCallback(.string { binding.wrappedValue = $0 })
         return RenderNode(
             type: "TextField",
             id: context.path,
@@ -166,7 +166,7 @@ public struct SecureField: View {
 extension SecureField: PrimitiveView {
     public func _render(in context: ResolveContext) -> RenderNode {
         let binding = text
-        let callbackID = context.callbacks.register(.string { binding.wrappedValue = $0 })
+        let callbackID = context.registerCallback(.string { binding.wrappedValue = $0 })
         return RenderNode(
             type: "TextField",
             id: context.path,

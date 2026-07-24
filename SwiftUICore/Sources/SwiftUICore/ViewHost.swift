@@ -44,7 +44,7 @@ public final class ViewHost: @unchecked Sendable {
     /// Resolves the current view tree to a node tree. Each call opens a fresh
     /// callback generation, so ids in the returned tree are current.
     public func evaluate() -> RenderNode {
-        callbacks.beginGeneration()
+        callbacks.beginPass()
         let context = ResolveContext(storage: storage, callbacks: callbacks, path: "root")
         #if canImport(Observation)
         // Track @Observable reads during evaluation: a later mutation of any

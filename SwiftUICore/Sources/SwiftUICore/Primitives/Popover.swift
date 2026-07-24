@@ -29,7 +29,7 @@ extension _PopoverView: PrimitiveView {
         // write the flag back on an outside tap
         var bodyNodes: [RenderNode] = []
         if binding.wrappedValue {
-            let dismissID = context.callbacks.register(.void { binding.wrappedValue = false })
+            let dismissID = context.registerCallback(.void { binding.wrappedValue = false })
             props["onDismiss"] = .int(Int(dismissID))
             var popoverContext = context.descending("popover")
             popoverContext.environment.values.dismiss = DismissAction { binding.wrappedValue = false }

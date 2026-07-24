@@ -37,13 +37,13 @@ public enum ComposableAction {
     case int((Int) -> Void)
     case string((String) -> Void)
 
-    internal func register(in callbacks: CallbackRegistry) -> Int64 {
+    internal func register(in callbacks: CallbackRegistry, path: String) -> Int64 {
         switch self {
-        case .void(let action): return callbacks.register(.void(action))
-        case .bool(let action): return callbacks.register(.bool(action))
-        case .double(let action): return callbacks.register(.double(action))
-        case .int(let action): return callbacks.register(.int(action))
-        case .string(let action): return callbacks.register(.string(action))
+        case .void(let action): return callbacks.register(.void(action), path: path)
+        case .bool(let action): return callbacks.register(.bool(action), path: path)
+        case .double(let action): return callbacks.register(.double(action), path: path)
+        case .int(let action): return callbacks.register(.int(action), path: path)
+        case .string(let action): return callbacks.register(.string(action), path: path)
         }
     }
 }
@@ -83,7 +83,7 @@ extension ComposableView: PrimitiveView {
         // Each action registers a callback; its id crosses as a prop the factory
         // reads back as a typed lambda.
         for (key, action) in actions {
-            props[key] = .int(Int(action.register(in: context.callbacks)))
+            props[key] = .int(Int(action.register(in: context.callbacks, path: context.path)))
         }
         return RenderNode(
             type: "Composable",

@@ -107,7 +107,7 @@ extension NavigationStack: PrimitiveView {
             resolveScreen(view, index: offset + 1, canDismiss: true)
         }
 
-        let popID = context.callbacks.register(.void { model.pop() })
+        let popID = context.registerCallback(.void { model.pop() })
         return RenderNode(
             type: "NavStack",
             id: context.path,
@@ -155,7 +155,7 @@ extension NavigationLink: PrimitiveView {
     public func _render(in context: ResolveContext) -> RenderNode {
         let model = context.environment.object(of: NavigationModel.self)
         let destination = self.destination
-        let callbackID = context.callbacks.register(.void {
+        let callbackID = context.registerCallback(.void {
             switch destination {
             case .view(let content): model?.pushView(content)
             case .value(let value): model?.pushValue(value)
@@ -203,7 +203,7 @@ public struct _SearchableView<Content: View>: View {
 extension _SearchableView: _ResolutionEffectView {
     public func _applyEffect(_ context: inout ResolveContext) -> any View {
         let binding = text
-        let id = context.callbacks.register(.string { binding.wrappedValue = $0 })
+        let id = context.registerCallback(.string { binding.wrappedValue = $0 })
         context.titleSink?.searchText = text.wrappedValue
         context.titleSink?.searchCallbackID = id
         context.titleSink?.searchPrompt = prompt

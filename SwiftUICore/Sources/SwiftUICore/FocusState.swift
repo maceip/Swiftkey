@@ -70,7 +70,7 @@ public struct _FocusedModifier: RenderModifier, _CallbackModifier {
     public var _modifierNode: ModifierNode { ModifierNode(kind: "focused") }
 
     public func _callbackNode(in context: ResolveContext) -> ModifierNode {
-        let id = context.callbacks.register(.bool(setFocused))
+        let id = context.registerCallback(.bool(setFocused))
         return ModifierNode(kind: "focused", args: [
             "isFocused": .bool(isFocused),
             "onChange": .int(Int(id)),

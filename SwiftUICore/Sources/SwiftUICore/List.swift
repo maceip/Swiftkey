@@ -52,7 +52,7 @@ extension List: PrimitiveView {
                 path: listPath + "/" + key
             )
             return Evaluator.resolve(rowBuilder(element), rowContext)
-        })
+        }, path: listPath)
 
         let keys = elements.map { PropValue.string(identityString(keyFor($0))) }
         var props: [String: PropValue] = [
@@ -62,7 +62,7 @@ extension List: PrimitiveView {
         if let onRefresh = context.refreshSink?.action {
             let refreshID = callbacks.register(.void {
                 Task { await onRefresh() }
-            })
+            }, path: listPath)
             props["onRefresh"] = .int(Int(refreshID))
         }
         return RenderNode(type: "List", id: context.path, props: props, count: elements.count)

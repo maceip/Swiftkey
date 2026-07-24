@@ -27,7 +27,7 @@ extension TabView: PrimitiveView {
         // each child flattens to one node carrying its tabItem/tag as modifiers
         let tabs = Evaluator.resolveChildren(content, context.descending("content"))
         let binding = selection
-        let selectID = context.callbacks.register(.int { binding.wrappedValue = $0 })
+        let selectID = context.registerCallback(.int { binding.wrappedValue = $0 })
         return RenderNode(
             type: "TabView",
             id: context.path,

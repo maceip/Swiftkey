@@ -44,6 +44,13 @@ public struct ResolveContext {
         self.depth = depth
     }
 
+    /// Registers a callback for the view at this context's identity path.
+    /// Ids are stable per (path, registration order), so a re-evaluated view's
+    /// handlers keep the same ids — see `CallbackRegistry`.
+    public func registerCallback(_ callback: CallbackRegistry.Callback) -> Int64 {
+        callbacks.register(callback, path: path)
+    }
+
     /// Context for a child at a structurally stable position.
     public func descending(_ component: String) -> ResolveContext {
         var context = self

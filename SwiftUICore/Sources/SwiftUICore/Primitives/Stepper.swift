@@ -61,8 +61,8 @@ public extension Stepper where Label == Text {
 
 extension Stepper: PrimitiveView {
     public func _render(in context: ResolveContext) -> RenderNode {
-        let incrementID = context.callbacks.register(.void(onIncrement))
-        let decrementID = context.callbacks.register(.void(onDecrement))
+        let incrementID = context.registerCallback(.void(onIncrement))
+        let decrementID = context.registerCallback(.void(onDecrement))
         return RenderNode(
             type: "Stepper",
             id: context.path,

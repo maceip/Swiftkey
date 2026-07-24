@@ -55,7 +55,7 @@ extension GeometryReader: PrimitiveView {
             GeometrySizeStore()
         }
         store.onChange = context.storage.onChange
-        let id = context.callbacks.register(.string { [store] payload in
+        let id = context.registerCallback(.string { [store] payload in
             store.update(from: payload)
         })
         // first pass resolves against .zero; the report brings the real size

@@ -56,7 +56,7 @@ public struct _OnSubmitModifier: RenderModifier, _CallbackModifier {
     let action: () -> Void
     public var _modifierNode: ModifierNode { ModifierNode(kind: "onSubmit") }
     public func _callbackNode(in context: ResolveContext) -> ModifierNode {
-        let id = context.callbacks.register(.void(action))
+        let id = context.registerCallback(.void(action))
         return ModifierNode(kind: "onSubmit", args: ["action": .int(Int(id))])
     }
 }
