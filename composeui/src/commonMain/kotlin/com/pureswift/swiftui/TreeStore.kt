@@ -18,6 +18,15 @@ class TreeStore {
         root = node
     }
 
+    /// Splices a re-evaluated subtree over the node whose id is `targetId`,
+    /// copying only the spine above it. Returns false when the target isn't in
+    /// the current tree — the caller falls back to a full update.
+    fun patch(targetId: String, node: ViewNode): Boolean {
+        val replaced = root?.replacingSubtree(targetId, node) ?: return false
+        root = replaced
+        return true
+    }
+
     /// Debug/fixture path: accepts the Swift side's JSON dump.
     fun updateJson(json: String) {
         root = Json.decodeFromString<ViewNode>(json)
