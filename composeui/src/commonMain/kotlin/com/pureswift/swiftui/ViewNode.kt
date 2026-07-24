@@ -3,6 +3,7 @@ package com.pureswift.swiftui
 import androidx.compose.runtime.Immutable
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.booleanOrNull
@@ -43,12 +44,15 @@ data class ViewNode(
 
     /// Bridge constructor: the Swift materializer builds nodes through this,
     /// crossing JNI with flat arrays (one call per node, arrays as single
-    /// arguments). Scalar values cross typed — a kind tag selects between the
-    /// string slot and the bits slot (doubles bit-cast into the long, so both
-    /// 64-bit callback ids and doubles cross exactly) — so no value takes the
-    /// JSON parser except array-valued props. Modifier args flatten into one
-    /// run of slots, `modifierArgCounts` giving each modifier's share.
-    /// Negative count/provider mean "absent".
+    /// arguments). Every value crosses typed — a kind tag selects the string
+    /// slot or the bits slot (doubles bit-cast into the long, so both 64-bit
+    /// callback ids and doubles cross exactly). Homogeneous arrays ride the
+    /// same slot: the kind marks the element type and the bits slot packs
+    /// (offset << 32 | count) into the node's shared string or long pool. Only
+    /// a heterogeneous/nested array (alert `buttons`, `searches`) still crosses
+    /// as a JSON literal. Modifier args flatten into one run of slots,
+    /// `modifierArgCounts` giving each modifier's share. Negative count/provider
+    /// mean "absent".
     constructor(
         type: String,
         id: String,
@@ -62,6 +66,8 @@ data class ViewNode(
         argKinds: IntArray,
         argStrings: Array<String>,
         argBits: LongArray,
+        stringPool: Array<String>,
+        longPool: LongArray,
         children: Array<ViewNode>,
         count: Int,
         itemProviderId: Long,
@@ -69,7 +75,7 @@ data class ViewNode(
         type = type,
         id = id,
         props = JsonObject(propKeys.indices.associate {
-            propKeys[it] to jsonValue(propKinds[it], propStrings[it], propBits[it])
+            propKeys[it] to jsonValue(propKinds[it], propStrings[it], propBits[it], stringPool, longPool)
         }),
         modifiers = buildList {
             var base = 0
@@ -77,7 +83,7 @@ data class ViewNode(
                 val argCount = modifierArgCounts[m]
                 add(ModifierNode(modifierKinds[m], JsonObject((0 until argCount).associate {
                     val i = base + it
-                    argKeys[i] to jsonValue(argKinds[i], argStrings[i], argBits[i])
+                    argKeys[i] to jsonValue(argKinds[i], argStrings[i], argBits[i], stringPool, longPool)
                 })))
                 base += argCount
             }
@@ -88,20 +94,43 @@ data class ViewNode(
     )
 
     companion object {
-        // value kinds used by the bridge constructor
+        // scalar value kinds
         private const val KIND_STRING = 0
         private const val KIND_DOUBLE = 1
         private const val KIND_BOOL = 2
         private const val KIND_INT = 3
         private const val KIND_JSON = 4
+        // homogeneous-array kinds: bits packs (offset << 32 | count) into a pool
+        private const val KIND_STRING_ARRAY = 5
+        private const val KIND_DOUBLE_ARRAY = 6
+        private const val KIND_BOOL_ARRAY = 7
+        private const val KIND_INT_ARRAY = 8
 
-        private fun jsonValue(kind: Int, string: String, bits: Long): kotlinx.serialization.json.JsonElement =
+        private fun jsonValue(
+            kind: Int,
+            string: String,
+            bits: Long,
+            stringPool: Array<String>,
+            longPool: LongArray,
+        ): kotlinx.serialization.json.JsonElement =
             when (kind) {
                 KIND_STRING -> JsonPrimitive(string)
                 KIND_DOUBLE -> JsonPrimitive(Double.fromBits(bits))
                 KIND_BOOL -> JsonPrimitive(bits != 0L)
                 KIND_INT -> JsonPrimitive(bits)
-                else -> Json.parseToJsonElement(string) // arrays only
+                KIND_JSON -> Json.parseToJsonElement(string) // nested/mixed arrays only
+                else -> {
+                    val offset = (bits ushr 32).toInt()
+                    val count = (bits and 0xFFFFFFFFL).toInt()
+                    JsonArray((0 until count).map { i ->
+                        when (kind) {
+                            KIND_STRING_ARRAY -> JsonPrimitive(stringPool[offset + i])
+                            KIND_DOUBLE_ARRAY -> JsonPrimitive(Double.fromBits(longPool[offset + i]))
+                            KIND_BOOL_ARRAY -> JsonPrimitive(longPool[offset + i] != 0L)
+                            else -> JsonPrimitive(longPool[offset + i]) // KIND_INT_ARRAY
+                        }
+                    })
+                }
             }
     }
 
