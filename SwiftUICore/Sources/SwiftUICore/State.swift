@@ -100,8 +100,10 @@ public final class StateStorage {
     private var boxes: [String: _AnyStateBox] = [:]
     private let reflector: StateReflector
 
-    /// Fired after any state write; the runtime schedules a re-evaluation.
-    public var onChange: (() -> Void)?
+    /// Fired after any state write with the identity path of the view that
+    /// owns the written box; the runtime schedules a re-evaluation and uses
+    /// the path to re-evaluate from the nearest enclosing subtree.
+    public var onChange: ((_ path: String) -> Void)?
 
     public init(reflector: StateReflector = MirrorStateReflector()) {
         self.reflector = reflector
@@ -132,7 +134,9 @@ public final class StateStorage {
                 }
             } else {
                 boxes[key] = box
-                box._setOnChange(onChange)
+                // the persisted box carries its owning view's path for life —
+                // a write reports exactly which subtree went dirty
+                box._setOnChange { [weak self] in self?.onChange?(path) }
             }
         }
     }

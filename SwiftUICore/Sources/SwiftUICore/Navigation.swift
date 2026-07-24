@@ -70,7 +70,11 @@ extension NavigationStack: PrimitiveView {
         let model = context.storage.persistentObject(at: context.path + ".navModel") {
             NavigationModel()
         }
-        model.onChange = context.storage.onChange
+        // a push/pop dirties this stack's own path — the whole stack (its
+        // screens included) is the subtree to re-evaluate
+        let storage = context.storage
+        let path = context.path
+        model.onChange = { storage.onChange?(path) }
 
         // resolve each screen with the model in scope; a per-screen title sink
         // captures its navigationTitle
