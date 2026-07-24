@@ -130,7 +130,10 @@ let package = Package(
                 "Playgrounds/RepresentablePlaygrounds.swift",
             ],
             swiftSettings: [
-              .swiftLanguageMode(.v5)
+              .swiftLanguageMode(.v5),
+              // Marks the desktop test rig so the shared catalog can exclude the
+              // Android-only screens whose playground files this target excludes.
+              .define("DESKTOP_RIG")
             ]
         )
     ]
