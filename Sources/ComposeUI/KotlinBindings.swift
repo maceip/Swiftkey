@@ -38,4 +38,9 @@ open class TreeStore: JavaObject {
     /// Assigns a freshly materialized tree; Compose recomposes changed subtrees.
     @JavaMethod
     open func update(_ node: ViewNodeObject?)
+
+    /// Splices a re-evaluated subtree over the node with `targetId`; false
+    /// when the target isn't in the current tree (caller does a full update).
+    @JavaMethod
+    open func patch(_ targetId: String, _ node: ViewNodeObject?) -> Bool
 }

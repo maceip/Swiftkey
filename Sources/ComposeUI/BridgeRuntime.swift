@@ -56,8 +56,16 @@ public final class BridgeRuntime {
     }
 
     func push() {
-        let tree = host.evaluate()
-        store.update(Materializer.materialize(tree))
+        switch host.evaluateUpdate() {
+        case .full(let tree):
+            store.update(Materializer.materialize(tree))
+        case .patch(let target, let node):
+            // splice miss (the target left the tree since it was recorded):
+            // recover with a full evaluation
+            if !store.patch(target, Materializer.materialize(node)) {
+                store.update(Materializer.materialize(host.evaluate()))
+            }
+        }
     }
 
     // Dispatch entry points, called by the callback sink.
