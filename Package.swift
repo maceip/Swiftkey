@@ -27,14 +27,6 @@ let package = Package(
             name: "SwiftUIDesktopDemo",
             type: .dynamic,
             targets: ["SwiftUIDesktopDemo"]
-        ),
-        // The jextract-JNI export surface, shipped as its own dynamic library
-        // (`libBridgeExport.so`/`.dylib`) so the generated Java's
-        // `System.loadLibrary("BridgeExport")` resolves next to the app library.
-        .library(
-            name: "BridgeExport",
-            type: .dynamic,
-            targets: ["BridgeExport"]
         )
     ],
     dependencies: [
@@ -67,6 +59,7 @@ let package = Package(
             name: "AndroidSwiftUI",
             dependencies: [
                 "ComposeUI",
+                "BridgeExport",
                 .product(
                     name: "SwiftUICore",
                     package: "SwiftUICore"
@@ -121,6 +114,7 @@ let package = Package(
             name: "SwiftUIDesktopDemo",
             dependencies: [
                 "ComposeUI",
+                "BridgeExport",
                 .product(name: "SwiftUICore", package: "SwiftUICore")
             ],
             // `Playgrounds` symlinks the Android demo's shared sources; the rig

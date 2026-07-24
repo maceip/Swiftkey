@@ -3,9 +3,13 @@
 //  The jextract-JNI export surface the host app consumes.
 //
 //  jextract (mode: jni) generates a Java class `com.pureswift.bridge.BridgeExport`
-//  mirroring these global functions, plus the `@_cdecl` thunks, into
-//  `libBridgeExport.so` — its own dynamic library so the generated
-//  `System.loadLibrary("BridgeExport")` resolves alongside the app library.
+//  mirroring these global functions, plus the `@_cdecl` thunks. This target is
+//  linked INTO the app library (the Android `.so` / desktop dylib), not shipped
+//  as its own — a separate library would embed a second copy of ComposeUI and
+//  thus a distinct, never-started `BridgeRuntime.current`, so dispatch would
+//  no-op. The generated Java therefore emits no `loadLibrary` (config
+//  `overrideStaticBlockLibraryLoading: []`): the app's boot already loaded the
+//  single image these thunks resolve against.
 //
 //  Only the event-dispatch surface lives here for now: these are plain
 //  Java→Swift calls (no `enableJavaCallbacks` needed), replacing the five
