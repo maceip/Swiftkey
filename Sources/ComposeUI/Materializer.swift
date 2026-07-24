@@ -86,7 +86,9 @@ public enum Materializer {
         )
     }
 
-    /// Encodes a prop value as a JSON literal (`"text"`, `42`, `true`, `[…]`).
+    /// Encodes an array-valued prop as a JSON literal (`["a",1,true]`), the one
+    /// value shape the typed slots don't carry. Scalars never reach this — they
+    /// cross typed — so the only recursion is through nested array elements.
     static func jsonLiteral(_ value: PropValue) -> String {
         switch value {
         case .string(let string):
@@ -100,11 +102,6 @@ public enum Materializer {
         case .array(let values):
             return "[" + values.map(jsonLiteral).joined(separator: ",") + "]"
         }
-    }
-
-    static func jsonObjectLiteral(_ args: [String: PropValue]) -> String {
-        let members = args.map { "\(escapeJSON($0.key)):\(jsonLiteral($0.value))" }
-        return "{" + members.joined(separator: ",") + "}"
     }
 
     /// Minimal JSON string escaping (quotes, backslashes, control characters).
