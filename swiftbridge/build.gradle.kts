@@ -50,5 +50,11 @@ sourceSets {
             srcDir(swiftKitCoreSrc)
             srcDir(jextract)
         }
+        // SwiftKitCore ships its own `-keep org.swift.swiftkit.**` rules under
+        // META-INF/proguard. We compile it from source rather than consuming its
+        // jar, so without this its rules never reach a minifying consumer.
+        resources {
+            srcDir(rootDir.resolve(".build/checkouts/swift-java/SwiftKitCore/src/main/resources"))
+        }
     }
 }
