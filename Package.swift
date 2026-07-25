@@ -119,15 +119,16 @@ let package = Package(
             ],
             // `Playgrounds` symlinks the Android demo's shared sources; the rig
             // reuses them verbatim on desktop. Excluded: the app entry point (it
-            // needs the Android host or Apple's App/Scene), and the three
-            // Android-only screens — Map (schematic), Video (Media3), and Custom
-            // Views (the native-view composable registry) — which have no desktop
-            // rendering. Their catalog entries are `#if canImport(AndroidSwiftUI)`.
+            // needs the Android host or Apple's App/Scene) and the two Android-
+            // only screens — Map (schematic) and Video (Media3) — which have no
+            // desktop rendering; their catalog entries are gated on `DESKTOP_RIG`.
+            // The Custom Views screen (the composable registry) IS included: the
+            // registry is a cross-platform extension point, and the desktop rig
+            // registers pure-Compose factories for it (see DemoComposables.kt).
             exclude: [
                 "Playgrounds/App.swift",
                 "Playgrounds/MapPlaygrounds.swift",
                 "Playgrounds/VideoPlaygrounds.swift",
-                "Playgrounds/RepresentablePlaygrounds.swift",
             ],
             swiftSettings: [
               .swiftLanguageMode(.v5),

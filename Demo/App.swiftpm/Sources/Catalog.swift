@@ -69,10 +69,9 @@ struct CatalogEntry: Identifiable {
             CatalogEntry(id: "form", title: "Form", screen: AnyCatalogScreen(FormPlayground())),
             CatalogEntry(id: "modifier", title: "Modifiers", screen: AnyCatalogScreen(ModifierPlayground())),
         ]
-        // Android-only: native-view interop through the composable registry
-        #if !DESKTOP_RIG
+        // Custom views through the composable registry — cross-platform: each
+        // host (Android app, desktop rig) registers its own factories.
         entries.append(CatalogEntry(id: "representable", title: "Custom Views", screen: AnyCatalogScreen(RepresentablePlayground())))
-        #endif
         entries += [
             CatalogEntry(id: "appearance", title: "Appearance", screen: AnyCatalogScreen(AppearancePlayground())),
             CatalogEntry(id: "animation", title: "Animation", screen: AnyCatalogScreen(AnimationPlayground())),
