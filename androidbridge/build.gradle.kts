@@ -25,3 +25,8 @@ android {
         jvmTarget = "11"
     }
 }
+
+dependencies {
+    // `BridgeHost`/`SwiftTask`: the generated types `AndroidBridgeHost` implements.
+    api(project(":swiftbridge"))
+}

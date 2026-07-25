@@ -13,8 +13,11 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    // VERSION_11 doesn't parse: generated wrapper types (e.g. `SwiftTask`)
+    // implement `JNISwiftInstance`, whose `equals()` jextract generates using
+    // pattern-matching `instanceof`, a Java 16+ syntax feature.
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 // The pinned swift-java checkout SwiftPM resolved into `.build/checkouts`.
@@ -31,7 +34,13 @@ val jextract by tasks.registering(Exec::class) {
     workingDir = rootDir
     // The plugin invokes `javac`, so it needs a JDK; reuse the one running Gradle.
     environment("JAVA_HOME", System.getProperty("java.home"))
-    commandLine("swift", "build", "--target", "BridgeExport")
+    // `BridgeExport`'s config has `enableJavaCallbacks: true` (needed for
+    // `BridgeHost`), which makes the JExtractSwiftPlugin shell out to
+    // swift-java's own Gradle to build SwiftKitCore. SwiftPM sandboxes build
+    // plugins (no network) by default, which blocks that download — the
+    // outer Gradle process here isn't sandboxed, so without this flag the
+    // inner `swift build` fails where a bare Gradle invocation wouldn't.
+    commandLine("swift", "build", "--target", "BridgeExport", "--disable-sandbox")
     outputs.dir(jextractGenerated)
 }
 

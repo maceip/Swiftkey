@@ -8,6 +8,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
+import com.pureswift.bridge.BridgeExport
+import com.pureswift.swiftandroid.AndroidBridgeHost
 
 // The Android host: one Compose island rendering the whole Swift-evaluated
 // tree. Swift constructs this, hands its store to the bridge runtime, and
@@ -18,6 +20,9 @@ class SwiftUIHostView(context: Context) : FrameLayout(context) {
 
     init {
         SwiftBridge.sink = JextractCallbackSink()
+        // Installed before Swift's `AndroidSwiftUIApp.run` builds its
+        // scheduler closure, since that runs later in this same construction.
+        BridgeExport.bridgeSetHost(AndroidBridgeHost())
         val composeView = ComposeView(context)
         composeView.setContent {
             MaterialTheme {
