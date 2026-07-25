@@ -54,7 +54,7 @@ let package = Package(
     ],
     targets: [
         // The Android umbrella: re-exports SwiftUICore + ComposeUI and adds the
-        // android.view bridging (MainActivity, Application, host view).
+        // android.view bridging (SwiftUIActivity, SwiftUIApplication, host view).
         .target(
             name: "AndroidSwiftUI",
             dependencies: [

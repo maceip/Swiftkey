@@ -75,6 +75,55 @@ public func bridgeScheduleMain(_ block: @escaping () -> Void) {
     currentHost.postToMain(SwiftTask(block))
 }
 
+// MARK: - Android lifecycle
+//
+// The Swift side of these lives in `AndroidSwiftUI`: it needs `AndroidKit`,
+// which this target can't depend on (the desktop demo links `BridgeExport`
+// too), and `AndroidSwiftUI` already depends on *this* target, so importing
+// it back would be a cycle. The call is therefore handed off through fixed
+// symbols — the same trick `AndroidSwiftUIMain` already uses. Unlike a JNI
+// name match, a missing or misspelled definition fails at link time rather
+// than reading garbage at runtime.
+//
+// Every product linking `BridgeExport` must define all four. `AndroidSwiftUI`
+// does for Android hosts; the desktop rig defines no-ops.
+
+@_silgen_name("swiftui_applicationCreated")
+func swiftui_applicationCreated()
+
+@_silgen_name("swiftui_applicationTerminated")
+func swiftui_applicationTerminated()
+
+@_silgen_name("swiftui_activityCreated")
+func swiftui_activityCreated()
+
+@_silgen_name("swiftui_activityResult")
+func swiftui_activityResult(_ requestCode: Int32, _ resultCode: Int32)
+
+/// `Application.onCreate`. Binds the main looper before anything renders.
+public func bridgeApplicationCreated() {
+    swiftui_applicationCreated()
+}
+
+/// `Application.onTerminate`.
+public func bridgeApplicationTerminated() {
+    swiftui_applicationTerminated()
+}
+
+/// `Activity.onCreate`. Reads the activity back out of `HostContext` and
+/// starts the app; the activity itself can't come through as an argument.
+public func bridgeActivityCreated() {
+    swiftui_activityCreated()
+}
+
+/// `Activity.onActivityResult`. The `Intent` stays in `HostContext` — only
+/// the primitive codes cross here.
+public func bridgeActivityResult(_ requestCode: Int32, _ resultCode: Int32) {
+    swiftui_activityResult(requestCode, resultCode)
+}
+
+// MARK: - Event dispatch
+
 /// Dispatches a `() -> Void` handler by id into the active runtime.
 public func bridgeInvokeVoid(_ id: Int64) {
     BridgeRuntime.current?.invokeVoid(id)

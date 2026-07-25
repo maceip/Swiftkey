@@ -28,8 +28,8 @@ public enum AndroidSwiftUIApp {
     private static var runtime: BridgeRuntime?
 
     public static func run(_ root: any SwiftUICore.View) {
-        guard let activity = MainActivity.shared else {
-            assertionFailure("MainActivity not created yet")
+        guard let activity = SwiftUIActivity.shared else {
+            assertionFailure("SwiftUIActivity not created yet")
             return
         }
         let host = SwiftUIHostView(activity as AndroidContent.Context)

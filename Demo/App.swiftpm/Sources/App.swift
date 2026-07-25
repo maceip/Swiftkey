@@ -8,7 +8,7 @@ import SwiftUI
 
 #if canImport(AndroidSwiftUI)
 
-/// App launch point, called from `MainActivity`.
+/// App launch point, called from `SwiftUIActivity`.
 @_silgen_name("AndroidSwiftUIMain")
 func AndroidSwiftUIMain() {
     AndroidSwiftUILog("Starting SwiftUI App")
