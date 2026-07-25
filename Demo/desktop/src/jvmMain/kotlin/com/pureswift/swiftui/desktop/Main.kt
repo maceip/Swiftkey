@@ -87,6 +87,7 @@ private fun LiveContent() {
     val store = remember {
         TreeStore().also {
             com.pureswift.swiftui.SwiftBridge.sink = com.pureswift.swiftui.JextractCallbackSink()
+            registerDemoComposables()
             SwiftRuntime().start(it)
         }
     }
