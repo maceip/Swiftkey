@@ -14,8 +14,21 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - name: "Build Swift Package for Android"
+      # `BridgeExport`'s swift-java.config has `enableJavaCallbacks: true`, which
+      # makes the JExtractSwiftPlugin shell out to swift-java's own Gradle to
+      # build SwiftKitCore during `swift build` — needs a JDK for javac and to
+      # run that Gradle wrapper itself.
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: "Install Swift Android SDK"
         run: |
           brew install skiptools/skip/skip || (brew update && brew install skiptools/skip/skip)
           skip android sdk install --version ${{ matrix.swift }}
-          ANDROID_NDK_ROOT="" ANDROID_SDK_VERSION=${{ matrix.sdk }} skip android build --swift-version ${{ matrix.swift }} --arch ${{ matrix.arch }} --android-api-level ${{ matrix.sdk }}
+      - name: "Build Swift Package for Android"
+        run: |
+          "$HOME/Library/Developer/Toolchains/swift-${{ matrix.swift }}-RELEASE.xctoolchain/usr/bin/swift" build \
+            --swift-sdk ${{ matrix.arch }}-unknown-linux-android${{ matrix.sdk }} \
+            --disable-sandbox \
+            -Xswiftc -DSKIP_BRIDGE -Xswiftc -DTARGET_OS_ANDROID
