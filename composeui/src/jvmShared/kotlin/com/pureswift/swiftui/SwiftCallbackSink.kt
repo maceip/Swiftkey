@@ -1,22 +1,12 @@
 package com.pureswift.swiftui
 
-// The entire Kotlin→Swift bridge surface: five externals dispatching event
-// callback ids into the Swift registry. The JNI symbol for each derives from
-// the SWIFT @JavaImplementation signature — these declarations and the Swift
-// counterparts in SwiftCallbackSink.swift must stay exactly in sync, and this
-// class must never grow per-view methods.
-class SwiftCallbackSink : CallbackSink {
+// The one remaining hand-matched Kotlin→Swift external: a lazy-row query that
+// returns a materialized `ViewNode` subtree. jextract can't express it (an
+// exported Swift function can't return a JavaKit-wrapped type), so this stays a
+// hand-written external whose JNI symbol matches the Swift @JavaImplementation
+// in SwiftCallbackSink.swift. The five scalar event callbacks moved to the
+// generated `BridgeExport` bindings — see JextractCallbackSink.
+class SwiftCallbackSink {
 
-    external override fun invokeVoid(id: Long)
-
-    external override fun invokeBool(id: Long, value: Boolean)
-
-    external override fun invokeDouble(id: Long, value: Double)
-
-    external override fun invokeInt(id: Long, value: Int)
-
-    external override fun invokeString(id: Long, value: String)
-
-    // A lazy row query: returns the materialized row subtree, or null.
-    external override fun itemNode(id: Long, index: Int): ViewNode?
+    external fun itemNode(id: Long, index: Int): ViewNode?
 }

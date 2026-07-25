@@ -52,8 +52,11 @@ struct CatalogEntry: Identifiable {
             CatalogEntry(id: "graphics", title: "Graphics", screen: AnyCatalogScreen(GraphicsPlayground())),
             CatalogEntry(id: "link", title: "Link", screen: AnyCatalogScreen(LinkPlayground())),
         ]
-        // Android-only: Map (schematic tiles), Video (Media3 ExoPlayer)
-        #if canImport(AndroidSwiftUI)
+        // Android-only: Map (schematic tiles), Video (Media3 ExoPlayer).
+        // Gated on the desktop rig's own flag, not `canImport(AndroidSwiftUI)`:
+        // a sibling module's build artifact makes `canImport` true even on the
+        // desktop target, where these playground files are excluded from the build.
+        #if !DESKTOP_RIG
         entries.append(CatalogEntry(id: "map", title: "Map", screen: AnyCatalogScreen(MapPlayground())))
         entries.append(CatalogEntry(id: "video", title: "Video", screen: AnyCatalogScreen(VideoPlayground())))
         #endif
@@ -67,7 +70,7 @@ struct CatalogEntry: Identifiable {
             CatalogEntry(id: "modifier", title: "Modifiers", screen: AnyCatalogScreen(ModifierPlayground())),
         ]
         // Android-only: native-view interop through the composable registry
-        #if canImport(AndroidSwiftUI)
+        #if !DESKTOP_RIG
         entries.append(CatalogEntry(id: "representable", title: "Custom Views", screen: AnyCatalogScreen(RepresentablePlayground())))
         #endif
         entries += [

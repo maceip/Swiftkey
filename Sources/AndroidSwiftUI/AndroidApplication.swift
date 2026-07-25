@@ -6,46 +6,43 @@
 //
 
 import AndroidKit
+import BridgeExport
 #if canImport(AndroidLooper)
 import AndroidLooper
 #endif
 
-@JavaClass("com.pureswift.swiftandroid.Application")
-open class Application: AndroidApp.Application {
-    
-    public internal(set) static var shared: Application!
+/// The reusable host application, implemented in `:androidbridge`. A host app
+/// names the Kotlin `SwiftUIApplication` (or a subclass) in its manifest.
+@JavaClass("com.pureswift.swiftandroid.SwiftUIApplication")
+open class SwiftUIApplication: AndroidApp.Application {}
+
+/// `Application.onCreate`, handed off from the generated `BridgeExport` entry
+/// point (which can't reach this module — see the note at its declaration).
+@_cdecl("swiftui_applicationCreated")
+func swiftui_applicationCreated() {
+    SwiftUIApplication.log("\(#function)")
+
+    // Bind the Android main looper to `AndroidMainActor` at process launch.
+    // `Application.onCreate` runs on the main thread — the required call site
+    // — so `@MainActor` and `DispatchQueue.main` dispatch correctly from here
+    // on, without hand-draining `RunLoop.main`.
+    #if canImport(AndroidLooper)
+    let boundMainLooper = AndroidMainActor.setupMainLooper()
+    SwiftUIApplication.log("AndroidMainActor.setupMainLooper() -> \(boundMainLooper)")
+    #endif
 }
 
-@JavaImplementation("com.pureswift.swiftandroid.Application")
-extension Application {
-    
-    @JavaMethod
-    func onCreateSwift() {
-        log("\(self).\(#function)")
-        Application.shared = self
-
-        // Bind the Android main looper to `AndroidMainActor` at process launch.
-        // `Application.onCreate` runs on the main thread — the required call site
-        // — so `@MainActor` and `DispatchQueue.main` dispatch correctly from here
-        // on, without hand-draining `RunLoop.main`.
-        #if canImport(AndroidLooper)
-        let boundMainLooper = AndroidMainActor.setupMainLooper()
-        log("AndroidMainActor.setupMainLooper() -> \(boundMainLooper)")
-        #endif
-    }
-    
-    @JavaMethod
-    func onTerminateSwift() {
-        log("\(self).\(#function)")
-        Application.shared = nil
-    }
+/// `Application.onTerminate`.
+@_cdecl("swiftui_applicationTerminated")
+func swiftui_applicationTerminated() {
+    SwiftUIApplication.log("\(#function)")
 }
 
-extension Application {
-    
-    static var logTag: String { "Application" }
-    
-    func log(_ string: String) {
+extension SwiftUIApplication {
+
+    static var logTag: String { "SwiftUIApplication" }
+
+    static func log(_ string: String) {
         let log = try! JavaClass<AndroidUtil.Log>()
         _ = log.v(Self.logTag, string)
     }

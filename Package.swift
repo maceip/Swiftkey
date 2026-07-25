@@ -54,11 +54,12 @@ let package = Package(
     ],
     targets: [
         // The Android umbrella: re-exports SwiftUICore + ComposeUI and adds the
-        // android.view bridging (MainActivity, Application, host view).
+        // android.view bridging (SwiftUIActivity, SwiftUIApplication, host view).
         .target(
             name: "AndroidSwiftUI",
             dependencies: [
                 "ComposeUI",
+                "BridgeExport",
                 .product(
                     name: "SwiftUICore",
                     package: "SwiftUICore"
@@ -90,10 +91,30 @@ let package = Package(
               .swiftLanguageMode(.v5)
             ]
         ),
+        // The jextract-JNI export surface. Isolated thin target: only its tiny
+        // public API is exported (a large surface like ComposeUI's would choke
+        // jextract on result builders/generics). Carries the JExtractSwiftPlugin.
+        .target(
+            name: "BridgeExport",
+            dependencies: [
+                "ComposeUI",
+                .product(name: "SwiftJava", package: "swift-java")
+            ],
+            exclude: [
+                "swift-java.config"
+            ],
+            swiftSettings: [
+              .swiftLanguageMode(.v5)
+            ],
+            plugins: [
+                .plugin(name: "JExtractSwiftPlugin", package: "swift-java")
+            ]
+        ),
         .target(
             name: "SwiftUIDesktopDemo",
             dependencies: [
                 "ComposeUI",
+                "BridgeExport",
                 .product(name: "SwiftUICore", package: "SwiftUICore")
             ],
             // `Playgrounds` symlinks the Android demo's shared sources; the rig
@@ -109,7 +130,10 @@ let package = Package(
                 "Playgrounds/RepresentablePlaygrounds.swift",
             ],
             swiftSettings: [
-              .swiftLanguageMode(.v5)
+              .swiftLanguageMode(.v5),
+              // Marks the desktop test rig so the shared catalog can exclude the
+              // Android-only screens whose playground files this target excludes.
+              .define("DESKTOP_RIG")
             ]
         )
     ]

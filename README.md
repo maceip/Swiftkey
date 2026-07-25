@@ -65,12 +65,39 @@ cd Demo/swift
 JAVA_HOME="…/Android Studio.app/Contents/jbr/Contents/Home" \
   swift build --swift-sdk aarch64-unknown-linux-android28
 
-# 2. stage the .so, then assemble & install (gradle root is the repo root)
-cp .build/aarch64-unknown-linux-android28/debug/libSwiftAndroidApp.so \
-   ../app/src/main/jniLibs/arm64-v8a/
+# 2. stage every .so the app dlopens. `jniLibs` is gitignored, so a fresh
+#    clone starts empty and needs all of these, not just the app library.
+JNI=../app/src/main/jniLibs/arm64-v8a
+BUILD=.build/aarch64-unknown-linux-android28/debug
+SDK=$(echo ~/Library/org.swift.swiftpm/swift-sdks/*_android.artifactbundle/swift-android)
+NDK=$(echo "$ANDROID_HOME"/ndk/*/toolchains/llvm/prebuilt/*/sysroot)
+
+mkdir -p "$JNI"
+cp "$BUILD"/libSwiftAndroidApp.so "$BUILD"/libSwiftJava.so "$JNI"/
+# the Swift runtime, from the Android SDK bundle, minus the test-only libraries
+cp "$SDK"/swift-resources/usr/lib/swift-aarch64/android/*.so "$JNI"/
+rm -f "$JNI"/libXCTest.so "$JNI"/libTesting.so \
+      "$JNI"/lib_TestingInterop.so "$JNI"/lib_Testing_Foundation.so
+# and the NDK's C++ runtime
+cp "$NDK"/usr/lib/aarch64-linux-android/libc++_shared.so "$JNI"/
+
+# 3. assemble & install (gradle root is the repo root)
 cd ../..
 JAVA_HOME="…/Android Studio.app/Contents/jbr/Contents/Home" ./gradlew :demo-app:assembleDebug
 ```
+
+Miss a runtime library and the app dies at `Application.onCreate` with
+`UnsatisfiedLinkError: No implementation found for … onCreateSwift`. That error is
+misleading — the JNI symbol *is* in the `.so`; it's the `dlopen` that failed. The
+real cause is the line above it in logcat: `NativeLibrary: Unable to load native
+libraries: … library "libFoo.so" not found`.
+
+If `swift build` instead fails with *"compiled module was created by an older
+version of the compiler"*, the host toolchain doesn't match the one the Android SDK
+bundle was built with — Xcode's bundled Swift and a same-numbered swift.org release
+are different builds. Select the swift.org toolchain explicitly:
+`export TOOLCHAINS=$(plutil -extract CFBundleIdentifier raw \
+~/Library/Developer/Toolchains/swift-<version>-RELEASE.xctoolchain/Info.plist)`.
 
 ## Running the desktop rig (macOS)
 

@@ -16,6 +16,7 @@ android {
     compileSdk = 35
     defaultConfig {
         minSdk = 24
+        consumerProguardFiles("consumer-rules.pro")
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -24,4 +25,13 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+}
+
+dependencies {
+    // `BridgeHost`/`SwiftTask`: the generated types `AndroidBridgeHost` implements.
+    api(project(":swiftbridge"))
+    // `SwiftUIActivity` extends `FragmentActivity` and calls `enableEdgeToEdge`;
+    // `api` so host apps subclassing it get the base type on their compile path.
+    api(libs.androidx.fragment)
+    api(libs.androidx.activity)
 }

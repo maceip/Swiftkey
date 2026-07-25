@@ -23,7 +23,13 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            // On: a release build is the only thing that exercises the keep
+            // rules the bridge modules ship. The JNI surface is invisible to
+            // R8 — a missing rule fails at runtime, not at build time.
+            isMinifyEnabled = true
+            // Signed with the debug key so the minified build is installable
+            // and can actually be run; this demo ships no release keystore.
+            signingConfig = signingConfigs.getByName("debug")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

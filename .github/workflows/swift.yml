@@ -14,8 +14,28 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - name: "Build Swift Package for Android"
+      # `BridgeExport`'s swift-java.config has `enableJavaCallbacks: true`, which
+      # makes the JExtractSwiftPlugin shell out to swift-java's own Gradle to
+      # build SwiftKitCore during `swift build` — needs a JDK for javac and to
+      # run that Gradle wrapper itself.
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: "Install Swift Android SDK"
         run: |
           brew install skiptools/skip/skip || (brew update && brew install skiptools/skip/skip)
           skip android sdk install --version ${{ matrix.swift }}
-          ANDROID_NDK_ROOT="" ANDROID_SDK_VERSION=${{ matrix.sdk }} skip android build --swift-version ${{ matrix.swift }} --arch ${{ matrix.arch }} --android-api-level ${{ matrix.sdk }}
+      - name: "Build Swift Package for Android"
+        run: |
+          # Select the toolchain by identifier (not by invoking its `swift`
+          # binary at an absolute path): a build plugin here shells out to its
+          # own nested `swift`/`swiftc`, which resolves through `xcrun`/PATH
+          # and would otherwise land on the runner's default Xcode toolchain
+          # instead of the one the SDK bundle was built against.
+          export TOOLCHAINS=$(plutil -extract CFBundleIdentifier raw \
+            "$HOME/Library/Developer/Toolchains/swift-${{ matrix.swift }}-RELEASE.xctoolchain/Info.plist")
+          swift build \
+            --swift-sdk ${{ matrix.arch }}-unknown-linux-android${{ matrix.sdk }} \
+            --disable-sandbox \
+            -Xswiftc -DSKIP_BRIDGE -Xswiftc -DTARGET_OS_ANDROID

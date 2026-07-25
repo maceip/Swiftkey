@@ -33,11 +33,18 @@ kotlin {
             // remote streams, so the Android player is Media3.
             implementation("androidx.media3:media3-exoplayer:1.4.1")
             implementation("androidx.media3:media3-ui:1.4.1")
+            // AndroidBridgeHost: the generated BridgeHost's main-thread scheduler.
+            implementation(project(":androidbridge"))
         }
         // `external fun` is JVM-only; both targets are JVM, so the bridge's
-        // Swift-implemented classes live in a source set they share.
+        // Swift-implemented classes live in a source set they share — as does
+        // the jextract-generated event-dispatch binding that replaces the five
+        // scalar `SwiftCallbackSink` externals.
         val jvmShared by creating {
             dependsOn(commonMain.get())
+            dependencies {
+                implementation(project(":swiftbridge"))
+            }
         }
         androidMain.get().dependsOn(jvmShared)
         val desktopMain by getting {
@@ -58,6 +65,7 @@ android {
     compileSdk = 35
     defaultConfig {
         minSdk = 24
+        consumerProguardFiles("consumer-rules.pro")
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
