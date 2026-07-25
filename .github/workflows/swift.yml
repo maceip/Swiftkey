@@ -28,7 +28,14 @@ jobs:
           skip android sdk install --version ${{ matrix.swift }}
       - name: "Build Swift Package for Android"
         run: |
-          "$HOME/Library/Developer/Toolchains/swift-${{ matrix.swift }}-RELEASE.xctoolchain/usr/bin/swift" build \
+          # Select the toolchain by identifier (not by invoking its `swift`
+          # binary at an absolute path): a build plugin here shells out to its
+          # own nested `swift`/`swiftc`, which resolves through `xcrun`/PATH
+          # and would otherwise land on the runner's default Xcode toolchain
+          # instead of the one the SDK bundle was built against.
+          export TOOLCHAINS=$(plutil -extract CFBundleIdentifier raw \
+            "$HOME/Library/Developer/Toolchains/swift-${{ matrix.swift }}-RELEASE.xctoolchain/Info.plist")
+          swift build \
             --swift-sdk ${{ matrix.arch }}-unknown-linux-android${{ matrix.sdk }} \
             --disable-sandbox \
             -Xswiftc -DSKIP_BRIDGE -Xswiftc -DTARGET_OS_ANDROID
