@@ -15,11 +15,18 @@ import re
 import subprocess
 import sys
 import tempfile
+import time
 from typing import Any
 
 
 class PublishError(Exception):
     pass
+
+
+class GitHubAPIError(PublishError):
+    def __init__(self, endpoint: str, status: int):
+        self.status = status
+        super().__init__(f"GitHub API {endpoint} returned HTTP {status}")
 
 
 METADATA_KEYS = {
@@ -121,12 +128,13 @@ def validate_local(directory: Path) -> tuple[dict[str, Any], list[Path]]:
 
 
 class GitHub:
-    def __init__(self, repo: str, runner=None):
+    def __init__(self, repo: str, runner=None, sleeper=None):
         require(re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]*/[A-Za-z0-9][A-Za-z0-9_.-]*", repo) is not None,
                 "GH_REPO must be owner/repository")
         self.repo = repo
         self.prefix = f"repos/{repo}/"
         self.runner = runner or subprocess.run
+        self.sleeper = sleeper or time.sleep
 
     def run(self, *args: str):
         return self.runner(["gh", *args], stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
@@ -135,13 +143,18 @@ class GitHub:
         result = self.run(*args)
         require(result.returncode == 0, f"gh {' '.join(args[:2])} failed (exit {result.returncode})")
 
-    def api(self, endpoint: str, *, missing_ok: bool = False, payload: dict | None = None) -> Any:
+    def api(self, endpoint: str, *, missing_ok: bool = False, payload: dict | None = None,
+            method: str | None = None) -> Any:
+        method = method or ("PATCH" if payload is not None else "GET")
+        require(method in {"GET", "POST", "PATCH"}, "Unsupported GitHub API method")
+        require((method == "GET") == (payload is None), "GitHub API method/body mismatch")
         with tempfile.TemporaryDirectory(prefix="swiftkey-release-api-") as temporary:
-            args = ["api", self.prefix + endpoint, "--include"]
+            args = ["api", self.prefix + endpoint, "--include", "--method", method,
+                    "--header", "Cache-Control: no-cache"]
             if payload is not None:
                 body = Path(temporary) / "request.json"
                 body.write_text(json.dumps(payload), encoding="utf-8")
-                args += ["--method", "PATCH", "--input", str(body)]
+                args += ["--input", str(body)]
             result = self.run(*args)
         header, separator, body = result.stdout.replace(b"\r\n", b"\n", 1).partition(b"\n")
         match = re.fullmatch(rb"HTTP/\S+ (\d{3})(?: .*)?", header.strip())
@@ -155,9 +168,27 @@ class GitHub:
         status = int(match.group(1))
         if status == 404 and missing_ok:
             return None
-        require(result.returncode == 0 and 200 <= status < 300, f"GitHub API {endpoint} returned HTTP {status}")
+        if result.returncode != 0 or not 200 <= status < 300:
+            raise GitHubAPIError(endpoint, status)
         require(separator != b"", "GitHub API response headers are incomplete")
         return decode_json(body)
+
+    def release_by_id(self, release_id: int) -> dict:
+        """Retry only safe reads after a write, never creation or publication."""
+        require(type(release_id) is int and release_id > 0, "Invalid release ID")
+        delays = (1, 2, 4)
+        for attempt in range(len(delays) + 1):
+            try:
+                release = self.api(f"releases/{release_id}")
+            except GitHubAPIError as error:
+                if error.status not in {404, 502, 503, 504} or attempt == len(delays):
+                    raise
+                self.sleeper(delays[attempt])
+                continue
+            require(isinstance(release, dict) and release.get("id") == release_id,
+                    "Release lookup returned a different release ID")
+            return release
+        raise PublishError("Release lookup exhausted its retry limit")
 
     def download(self, asset: dict, *, limit: int | None = None) -> bytes:
         asset_id, size = asset.get("id"), asset.get("size")
@@ -259,23 +290,24 @@ def publish(directory: Path, gh: GitHub) -> dict[str, Any]:
         require(set(release_assets(release, require_uploaded=False)).issubset({build["apk"], "SHA256SUMS", "build.json"}),
                 "Existing draft contains unexpected assets")
     else:
-        with tempfile.TemporaryDirectory(prefix="swiftkey-release-notes-") as temporary:
-            notes = Path(temporary) / "notes.md"
-            notes.write_text(f"Automated SwiftKey Android debug build from `{commit}`.\n\n"
-                             f"Version {build['version_name']} ({build['version_code']}); arm64-v8a.\n"
-                             "APK checksum and build provenance are attached.\n", encoding="utf-8")
-            args = ["release", "create", tag, "--repo", gh.repo, "--draft", "--target", commit,
-                    "--title", "SwiftKey " + build["version_name"], "--notes-file", str(notes)]
-            if target is not None:
-                args.append("--verify-tag")
-            gh.command(*args)
-        release = gh.find_release(tag)
+        # Creation returns the authoritative release object and ID. Do not
+        # discard it and rediscover through the published-tag endpoint (which
+        # excludes drafts) or an immediately repeated, potentially stale list.
+        release = gh.api("releases", method="POST", payload={
+            "tag_name": tag, "target_commitish": commit, "draft": True,
+            "prerelease": False, "name": "SwiftKey " + build["version_name"],
+            "body": (f"Automated SwiftKey Android debug build from `{commit}`.\n\n"
+                     f"Version {build['version_name']} ({build['version_code']}); arm64-v8a.\n"
+                     "APK checksum and build provenance are attached.\n"),
+        })
     require(isinstance(release, dict), "Created release is unavailable")
     require(release.get("draft") is True and release.get("tag_name") == tag, "Expected an unpublished draft")
     require(type(release.get("id")) is int and release["id"] > 0, "Invalid release ID")
+    require(target == commit or release.get("target_commitish") == commit,
+            "Created draft targets another commit")
     release_id = release["id"]
     gh.command("release", "upload", tag, "--repo", gh.repo, "--clobber", *(str(p) for p in files))
-    release = gh.api(f"releases/{release_id}")
+    release = gh.release_by_id(release_id)
     require(release.get("draft") is True, "Release was published concurrently; refusing further changes")
     verify_release(gh, release, build)
     target = gh.tag_commit(tag)
@@ -288,7 +320,7 @@ def publish(directory: Path, gh: GitHub) -> dict[str, Any]:
     gh.api(f"releases/{release_id}", payload={"draft": False, "prerelease": False,
                                            "make_latest": "true" if make_latest else "false"})
     require(gh.tag_commit(tag) == commit, "Published tag target verification failed")
-    published = gh.api(f"releases/{release_id}")
+    published = gh.release_by_id(release_id)
     require(published.get("draft") is False, "Release is still a draft")
     verify_release(gh, published, build)
     return {"status": "published", "tag": tag, "commit": commit, "made_latest": make_latest}

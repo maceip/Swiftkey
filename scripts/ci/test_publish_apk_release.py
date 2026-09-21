@@ -53,6 +53,11 @@ class FakeGh:
         self.fail_upload_after = None
         self.api_status = {}
         self.patch_status = None
+        self.post_status = None
+        self.create_response_overrides = {}
+        self.hide_new_drafts_from_listing = False
+        self.created_tags = set()
+        self.release_read_statuses = []
 
     @staticmethod
     def response(argv, data=None, status=200):
@@ -61,7 +66,7 @@ class FakeGh:
         return subprocess.CompletedProcess(argv, 0 if status < 400 else 1, raw, b"")
 
     def mutations(self):
-        return [c for c in self.calls if c[1] == "release" or "PATCH" in c]
+        return [c for c in self.calls if c[1] == "release" or "PATCH" in c or "POST" in c]
 
     def add_asset(self, release, name, data):
         release["assets"] = [a for a in release["assets"] if a["name"] != name]
@@ -95,6 +100,19 @@ class FakeGh:
             if endpoint.startswith("releases/assets/"):
                 data = self.asset_bytes[int(endpoint.rsplit("/", 1)[1])]
                 return subprocess.CompletedProcess(argv, 0, data, b"")
+            if "POST" in argv:
+                assert endpoint == "releases"
+                if self.post_status is not None:
+                    return self.response(argv, {"message": "failure"}, self.post_status)
+                payload = json.loads(Path(argv[argv.index("--input") + 1]).read_bytes())
+                self.last_create = payload
+                tag = payload["tag_name"]
+                assert tag not in self.releases and payload["draft"] is True
+                release = dict(payload, id=self.next_id, assets=[])
+                self.next_id += 1
+                self.releases[tag] = release
+                self.created_tags.add(tag)
+                return self.response(argv, dict(release, **self.create_response_overrides), 201)
             if "PATCH" in argv:
                 if self.patch_status is not None:
                     return self.response(argv, {"message": "failure"}, self.patch_status)
@@ -122,20 +140,17 @@ class FakeGh:
                 return self.response(argv, release, 200 if release else 404)
             if endpoint.startswith("releases?per_page=100&page="):
                 page = int(endpoint.rsplit("=", 1)[1])
-                return self.response(argv, list(self.releases.values())[(page - 1) * 100:page * 100])
+                releases = [r for tag, r in self.releases.items()
+                            if not (self.hide_new_drafts_from_listing and tag in self.created_tags)]
+                return self.response(argv, releases[(page - 1) * 100:page * 100])
             if endpoint.startswith("releases/"):
+                if self.release_read_statuses:
+                    status = self.release_read_statuses.pop(0)
+                    if status != 200:
+                        return self.response(argv, {"message": "failure"}, status)
                 release_id = int(endpoint.rsplit("/", 1)[1])
                 return self.response(argv, next(r for r in self.releases.values() if r["id"] == release_id))
             raise AssertionError("Unexpected API endpoint " + endpoint)
-        if argv[1:3] == ["release", "create"]:
-            tag = argv[3]
-            assert tag not in self.releases and "--draft" in argv
-            commit = argv[argv.index("--target") + 1]
-            assert len(commit) == 40
-            self.releases[tag] = {"id": self.next_id, "tag_name": tag, "draft": True,
-                                  "prerelease": False, "target_commitish": commit, "assets": []}
-            self.next_id += 1
-            return subprocess.CompletedProcess(argv, 0, b"release URL\n", b"")
         if argv[1:3] == ["release", "upload"]:
             release = self.releases[argv[3]]
             assert release["draft"], "A published release must never be modified"
@@ -156,7 +171,8 @@ class PublisherTests(unittest.TestCase):
         self.directory = Path(self.temporary.name) / "artifacts"
         self.build = artifacts(self.directory)
         self.fake = FakeGh()
-        self.gh = publisher.GitHub("maceip/SwiftKey", runner=self.fake)
+        self.sleeps = []
+        self.gh = publisher.GitHub("maceip/SwiftKey", runner=self.fake, sleeper=self.sleeps.append)
 
     def publish(self):
         return publisher.publish(self.directory, self.gh)
@@ -168,8 +184,73 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual(self.fake.latest, self.build["tag"])
         self.assertEqual(self.fake.tags[self.build["tag"]]["sha"], COMMIT)
         self.assertEqual(set(self.fake.last_patch), {"draft", "prerelease", "make_latest"})
-        operations = [(c[1:3] if c[1] == "release" else ["PATCH"]) for c in self.fake.mutations()]
-        self.assertEqual(operations, [["release", "create"], ["release", "upload"], ["PATCH"]])
+        operations = [(c[1:3] if c[1] == "release" else [c[c.index("--method") + 1]])
+                      for c in self.fake.mutations()]
+        self.assertEqual(operations, [["POST"], ["release", "upload"], ["PATCH"]])
+        self.assertEqual(self.fake.last_create["target_commitish"], COMMIT)
+
+    def test_creation_uses_returned_id_even_when_draft_listing_remains_stale(self):
+        self.fake.hide_new_drafts_from_listing = True
+        self.assertEqual(self.publish()["status"], "published")
+        create_index = next(i for i, c in enumerate(self.fake.calls) if "POST" in c)
+        after_create = self.fake.calls[create_index + 1:]
+        self.assertFalse(any("releases?" in c[2] or "releases/tags/" in c[2] for c in after_create))
+        release_id = self.fake.releases[self.build["tag"]]["id"]
+        self.assertEqual(sum(c[2].endswith(f"releases/{release_id}") and "GET" in c
+                             for c in after_create), 2)
+
+    def test_created_draft_identity_is_checked_before_upload(self):
+        for override in ({"target_commitish": OTHER_COMMIT}, {"tag_name": "v1.0.999"},
+                         {"id": True}, {"draft": False}):
+            with self.subTest(override=override):
+                fake = FakeGh()
+                fake.create_response_overrides = override
+                gh = publisher.GitHub("maceip/SwiftKey", runner=fake)
+                with self.assertRaises(publisher.PublishError):
+                    publisher.publish(self.directory, gh)
+                self.assertEqual(len(fake.mutations()), 1)
+                self.assertIn("POST", fake.mutations()[0])
+
+    def test_transient_by_id_reads_retry_with_bounded_backoff_only(self):
+        self.fake.release_read_statuses = [404, 503, 200, 502, 200]
+        self.assertEqual(self.publish()["status"], "published")
+        self.assertEqual(self.sleeps, [1, 2, 1])
+        self.assertEqual(sum("POST" in c for c in self.fake.calls), 1)
+        self.assertEqual(sum("PATCH" in c for c in self.fake.calls), 1)
+
+    def test_api_reads_revalidate_cached_responses_after_upload_and_publication(self):
+        self.publish()
+        reads = [c for c in self.fake.calls if c[1] == "api" and "GET" in c]
+        self.assertGreater(len(reads), 0)
+        for call in reads:
+            self.assertIn("Cache-Control: no-cache", call)
+        release_id = self.fake.releases[self.build["tag"]]["id"]
+        post_upload_reads = [c for c in reads if c[2].endswith(f"releases/{release_id}")]
+        self.assertEqual(len(post_upload_reads), 2)
+
+    def test_by_id_retry_exhaustion_leaves_complete_draft_unpublished(self):
+        self.fake.release_read_statuses = [404] * 4
+        with self.assertRaisesRegex(publisher.PublishError, "HTTP 404"):
+            self.publish()
+        self.assertEqual(self.sleeps, [1, 2, 4])
+        release = self.fake.releases[self.build["tag"]]
+        self.assertTrue(release["draft"])
+        self.assertEqual(len(release["assets"]), 3)
+        self.assertFalse(any("PATCH" in c for c in self.fake.calls))
+
+    def test_by_id_auth_error_does_not_retry_or_publish(self):
+        self.fake.release_read_statuses = [403]
+        with self.assertRaisesRegex(publisher.PublishError, "HTTP 403"):
+            self.publish()
+        self.assertEqual(self.sleeps, [])
+        self.assertFalse(any("PATCH" in c for c in self.fake.calls))
+
+    def test_creation_error_is_never_retried(self):
+        self.fake.post_status = 503
+        with self.assertRaisesRegex(publisher.PublishError, "HTTP 503"):
+            self.publish()
+        self.assertEqual(self.sleeps, [])
+        self.assertEqual(len(self.fake.mutations()), 1)
 
     def test_published_rerun_preserves_original_bytes_and_metadata(self):
         release = self.fake.add_release(self.directory, latest=True)
@@ -281,8 +362,7 @@ class PublisherTests(unittest.TestCase):
         self.fake.annotated["d" * 40] = {"type": "tag", "sha": "e" * 40}
         self.fake.annotated["e" * 40] = {"type": "commit", "sha": COMMIT}
         self.assertEqual(self.publish()["status"], "published")
-        create = next(c for c in self.fake.calls if c[1:3] == ["release", "create"])
-        self.assertIn("--verify-tag", create)
+        self.assertEqual(self.fake.last_create["target_commitish"], COMMIT)
         self.assertEqual(self.fake.tags[self.build["tag"]]["sha"], "d" * 40)
 
     def test_annotated_tag_cycle_and_excessive_nesting_fail(self):
