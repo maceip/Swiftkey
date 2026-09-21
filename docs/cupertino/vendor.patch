@@ -98,6 +98,17 @@
                  shape = m.shape,
                  title = m.title.let { { it(title) } },
                  text = m.text.let { { it(message) } },
+--- a/cupertino/src/androidMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoDialogs.android.kt
++++ b/cupertino/src/androidMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoDialogs.android.kt
+@@ -31,6 +31,8 @@
+     dismissOnClickOutside: Boolean,
+     usePlatformDefaultWidth: Boolean,
+ ) : PopupProperties = PopupProperties(
++    // A modal window must own focus for Back/key events and active-window accessibility.
++    focusable = true,
+     dismissOnBackPress = dismissOnBackPress,
+     dismissOnClickOutside = dismissOnClickOutside,
+     usePlatformDefaultWidth = usePlatformDefaultWidth
 --- a/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoBottomSheet.kt
 +++ b/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoBottomSheet.kt
 @@ -220,7 +220,7 @@

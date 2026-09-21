@@ -2,10 +2,20 @@
 
 package com.pureswift.swiftui
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.graphics.toPixelMap
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.unit.Density
+import androidx.compose.ui.unit.dp
 import io.github.alexzhirkevich.cupertino.AlertActionStyle
 import kotlinx.serialization.json.*
 import org.junit.After
@@ -172,6 +182,45 @@ class CupertinoPresentationTests {
         compose.runOnIdle { tree.value = withProps(tree.value, "commandID" to JsonPrimitive("3"), "allowedValues" to JsonArray(listOf(JsonPrimitive("Hidden")))) }
         compose.waitForIdle()
         assertEquals(501L to "Hidden", states.last())
+    }
+
+    @Test fun hiddenSheetIsClippedWithinItsFrameOnATallerHostAndStillOpensAndDrags() {
+        sink()
+        val sheetContent = component("CupertinoBottomSheetContent", extra = props(
+            "containerColor" to JsonPrimitive(0xffff00ffL)), children = arrayOf(
+                slot("content", text("hidden-marker", "Hidden sheet marker"))))
+            .copy(modifiers = listOf(ModifierNode("frame", props(
+                "fillWidth" to JsonPrimitive(true), "fillHeight" to JsonPrimitive(true)))))
+        val tree = mutableStateOf(component("CupertinoBottomSheetScaffold", extra = props(
+            "onStateChange" to JsonPrimitive(502), "value" to JsonPrimitive("Hidden")), children = arrayOf(
+                slot("content", text("scaffold-marker", "Scaffold background")), slot("sheetContent", sheetContent)))
+            .copy(modifiers = listOf(
+                ModifierNode("frame", props("width" to JsonPrimitive(360), "height" to JsonPrimitive(420))),
+                ModifierNode("accessibilityIdentifier", props("id" to JsonPrimitive("clipped-sheet"))))))
+        compose.setContent {
+            Box(Modifier.size(360.dp, 720.dp).background(Color.White).testTag("tall-sheet-host")) {
+                Render(tree.value)
+            }
+        }
+        fun assertHiddenAndNoPixelsBeyondFrame() {
+            compose.onNodeWithText("Hidden sheet marker").assertIsNotDisplayed()
+            val pixels = compose.onNodeWithTag("tall-sheet-host").captureToImage().toPixelMap()
+            for (y in 440 until 720 step 40) for (x in 20 until 360 step 40) {
+                assertEquals(Color.White.toArgb(), pixels[x, y].toArgb(),
+                    "Hidden sheet paints outside its 420-point frame at ($x, $y)")
+            }
+        }
+        awaitCondition { states.lastOrNull() == 502L to "Hidden" }
+        assertHiddenAndNoPixelsBeyondFrame()
+        compose.runOnIdle { tree.value = withProps(tree.value,
+            "command" to JsonPrimitive("show"), "commandID" to JsonPrimitive("open")) }
+        awaitCondition { states.lastOrNull() == 502L to "Expanded" }
+        compose.onNodeWithText("Hidden sheet marker").assertIsDisplayed()
+        compose.onNodeWithTag("clipped-sheet").performTouchInput {
+            swipe(Offset(180f, 35f), Offset(180f, 410f), durationMillis = 250)
+        }
+        awaitCondition { states.lastOrNull() == 502L to "Hidden" }
+        assertHiddenAndNoPixelsBeyondFrame()
     }
 
     private fun swipe(extra: JsonObject) = component("CupertinoSwipeBox", "swipe", extra, slot("items",

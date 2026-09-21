@@ -12,24 +12,34 @@ struct SwiftKeyPhoneEntryView: View {
         VStack(spacing: 0) {
             if showsCupertinoCatalog {
                 VStack(spacing: 0) {
-                    Button("Back to SwiftKey") { showsCupertinoCatalog = false }
+                    Button { showsCupertinoCatalog = false } label: {
+                        SwiftKeyHostActionLabel("Back to SwiftKey", secondary: true)
+                    }
+                        .buttonStyle(.plain)
                         .accessibilityIdentifier("swiftkey.close-cupertino-catalog")
-                        .padding(12)
+                        .padding(SwiftKeyAppearance.pageInset)
                     CupertinoCatalogView()
                 }
             } else if showsPairing {
                 AndroidPhoneProtocolView(onClose: { showsPairing = false })
             } else {
                 HStack {
-                    Text("Existing identity · legacy v1").font(.system(size: 12))
+                    Text("Existing identity · legacy v1").font(SwiftKeyAppearance.body(12)).lineHeight(18)
                         .foregroundColor(SwiftKeyAppearance.muted)
                     Spacer()
-                    Button("Pair phones · v2") { showsPairing = true }
+                    Button { showsPairing = true } label: {
+                        SwiftKeyHostActionLabel("Pair phones · v2")
+                    }
+                        .buttonStyle(.plain)
                         .accessibilityIdentifier("swiftkey.open-phone-protocol")
                 }.padding(16).background(SwiftKeyAppearance.canvas)
-                Button("Cupertino component catalog") { showsCupertinoCatalog = true }
+                Button { showsCupertinoCatalog = true } label: {
+                    SwiftKeyHostActionLabel("Cupertino component catalog", secondary: true)
+                }
+                    .buttonStyle(.plain)
                     .accessibilityIdentifier("swiftkey.open-cupertino-catalog")
-                    .padding(12)
+                    .padding(EdgeInsets(top: 0, leading: SwiftKeyAppearance.pageInset,
+                                       bottom: 12, trailing: SwiftKeyAppearance.pageInset))
                 HardwareKeyView()
             }
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -50,15 +60,21 @@ struct AndroidPhoneProtocolView: View {
     }
     var body: some View {
         VStack(spacing: 0) {
-            HStack {
-                Button("Back to legacy identity") {
+            VStack(spacing: 8) {
+                Button {
                     Task { await session?.disconnect(observerID) }
                     onClose()
-                }.accessibilityIdentifier("swiftkey.close-phone-protocol")
-                Spacer()
-                Button("Trusted authority") { Task { await session?.configureAuthority() } }
+                } label: {
+                    SwiftKeyHostActionLabel("Back to legacy identity", secondary: true)
+                }
+                    .buttonStyle(.plain)
+                    .accessibilityIdentifier("swiftkey.close-phone-protocol")
+                Button { Task { await session?.configureAuthority() } } label: {
+                    SwiftKeyHostActionLabel("Trusted authority", secondary: true)
+                }
+                    .buttonStyle(.plain)
                     .disabled(snapshot.busy).accessibilityIdentifier("swiftkey.configure-pairing-authority")
-            }.padding(16).background(SwiftKeyAppearance.canvas)
+            }.padding(SwiftKeyAppearance.pageInset).background(SwiftKeyAppearance.canvas)
             if let message {
                 Text(message).font(.system(size: 14)).padding(16)
                     .background(SwiftKeyAppearance.citron).accessibilityIdentifier("swiftkey.native-phone-message")
@@ -83,6 +99,29 @@ struct AndroidPhoneProtocolView: View {
             }
         }
         .onDisappear { Task { await session?.disconnect(observerID) } }
+    }
+}
+
+/// Host navigation follows the shared product controls; catalog content keeps
+/// the native Cupertino appearance of the component being demonstrated.
+private struct SwiftKeyHostActionLabel: View {
+    let title: String
+    let secondary: Bool
+
+    init(_ title: String, secondary: Bool = false) {
+        self.title = title
+        self.secondary = secondary
+    }
+
+    var body: some View {
+        Text(title)
+            .font(SwiftKeyAppearance.body(14, weight: 500)).lineHeight(21).tracking(0)
+            .multilineTextAlignment(.leading)
+            .foregroundColor(secondary ? SwiftKeyAppearance.accent : SwiftKeyAppearance.onAccent)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(12)
+            .background(secondary ? SwiftKeyAppearance.emphasis : SwiftKeyAppearance.accent)
+            .cornerRadius(SwiftKeyAppearance.controlRadius)
     }
 }
 #endif

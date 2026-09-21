@@ -39,6 +39,58 @@ internal fun cupertinoEditingJSON(value: TextFieldValue): String = buildJsonObje
     value.composition?.let { put("compositionStart", it.start); put("compositionEnd", it.end) }
 }.toString()
 
+/**
+ * Native editing happens before Swift's scheduled render reaches this field.
+ * An acknowledged earlier edit must not replace a newer local edit. Matching
+ * by the wire value also preserves selection/composition for String bindings,
+ * which cannot carry those details back from Swift.
+ */
+internal class CupertinoTextInputState(initial: TextFieldValue, private val editingMode: Boolean) {
+    var value by mutableStateOf(initial)
+        private set
+    private var received = initial
+    private val pending = mutableListOf<TextFieldValue>()
+
+    private fun matches(left: TextFieldValue, right: TextFieldValue): Boolean =
+        if (editingMode) left == right else left.text == right.text
+
+    fun edit(next: TextFieldValue, sentToSwift: Boolean) {
+        value = next
+        if (sentToSwift && (pending.isEmpty() || !matches(pending.last(), next))) pending += next
+    }
+
+    fun receive(external: TextFieldValue) {
+        // Unchanged parent state is not a new instruction to reset the editor.
+        if (matches(received, external)) return
+        received = external
+        val acknowledged = pending.indexOfFirst { matches(it, external) }
+        if (acknowledged >= 0) {
+            // Swift may coalesce multiple callbacks into this render. Its main
+            // looper delivers renders in order; discard all edits through the
+            // acknowledged one, retaining any newer native edit and its cursor.
+            pending.subList(0, acknowledged + 1).clear()
+            return
+        }
+        pending.clear()
+        value = if (editingMode) external else TextFieldValue(external.text, TextRange(external.text.length))
+    }
+}
+
+@Composable
+internal fun cupertinoStringInputState(node: ViewNode): CupertinoTextInputState {
+    val external = TextFieldValue(node.string("value") ?: "")
+    val state = remember(node.id) { CupertinoTextInputState(external, editingMode = false) }
+    state.receive(external)
+    return state
+}
+
+internal fun cupertinoChangeString(node: ViewNode, state: CupertinoTextInputState, enabled: Boolean, next: String) {
+    if (!enabled || node.bool("readOnly") == true) return
+    val callback = Props(node.props).stringAction("onValueChange")
+    state.edit(TextFieldValue(next, TextRange(next.length)), sentToSwift = callback != null)
+    callback?.invoke(next)
+}
+
 @Composable
 internal fun textEntryColors(node: ViewNode, kind: String): CupertinoTextFieldColors {
     val source = cupertinoObject(node, "colors")?.let { node.copy(props = it) } ?: node
@@ -170,24 +222,25 @@ private fun RenderCupertinoInput(node: ViewNode) {
         return
     }
     val external = editingObject?.let(::cupertinoEditingValue) ?: TextFieldValue(node.string("value") ?: "")
-    var value by remember(node.id) { mutableStateOf(external) }
-    // A String echo from Swift must not destroy the IME's active composing region or cursor.
-    LaunchedEffect(external, editingMode) {
-        if (editingMode) { if (external != value) value = external }
-        else if (external.text != value.text) value = TextFieldValue(external.text,
-            TextRange(value.selection.start.coerceIn(0, external.text.length), value.selection.end.coerceIn(0, external.text.length)))
-    }
+    val editor = remember(node.id, editingMode) { CupertinoTextInputState(external, editingMode) }
+    // Reconcile before rendering, not in a deferred effect that can run after
+    // another IME event with an already obsolete external value.
+    editor.receive(external)
+    val value = editor.value
     val enabled = cupertinoEnabled(node)
     val readOnly = node.bool("readOnly") ?: false
     val callback = props.stringAction("onValueChange")
     val onValue: (TextFieldValue) -> Unit = { next ->
-        if (enabled && (!readOnly || next.text == value.text)) {
-            val previousText = value.text
-            value = next
-            if (editingMode) callback?.invoke(cupertinoEditingJSON(next)) else if (!readOnly && next.text != previousText) callback?.invoke(next.text)
+        if (enabled && (!readOnly || next.text == editor.value.text)) {
+            val emits = callback != null && (editingMode || (!readOnly && next.text != editor.value.text))
+            editor.edit(next, sentToSwift = emits)
+            if (emits) callback?.invoke(if (editingMode) cupertinoEditingJSON(next) else next.text)
         }
     }
-    val onString: (String) -> Unit = { next -> if (enabled && !readOnly) { value = TextFieldValue(next, TextRange(next.length)); callback?.invoke(next) } }
+    val onString: (String) -> Unit = { next -> if (enabled && !readOnly) {
+        editor.edit(TextFieldValue(next, TextRange(next.length)), sentToSwift = callback != null)
+        callback?.invoke(next)
+    } }
     val keyboardOptions = cupertinoKeyboardOptions(node, if (name == "CupertinoSearchTextField") ImeAction.Search else ImeAction.Default)
     val keyboardActions = cupertinoKeyboardActions(node, enabled)
     val transformation = cupertinoVisualTransformation(node)

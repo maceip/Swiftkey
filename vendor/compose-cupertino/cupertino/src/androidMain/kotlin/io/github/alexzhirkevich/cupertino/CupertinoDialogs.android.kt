@@ -31,6 +31,8 @@ internal actual fun FullscreenPopupProperties(
     dismissOnClickOutside: Boolean,
     usePlatformDefaultWidth: Boolean,
 ) : PopupProperties = PopupProperties(
+    // A modal window must own focus for Back/key events and active-window accessibility.
+    focusable = true,
     dismissOnBackPress = dismissOnBackPress,
     dismissOnClickOutside = dismissOnClickOutside,
     usePlatformDefaultWidth = usePlatformDefaultWidth

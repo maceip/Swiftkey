@@ -49,6 +49,9 @@ kotlin {
                 implementation(compose.desktop.uiTestJUnit4)
             }
         }
+        androidUnitTest.dependencies {
+            implementation(kotlin("test-junit"))
+        }
         commonMain.dependencies {
             api(project(":cupertino-core"))
             implementation(compose.runtime)
@@ -65,6 +68,9 @@ android {
     namespace = "io.github.alexzhirkevich.cupertino"
     compileSdk = 35
     defaultConfig { minSdk = 24 }
+    // The host-only properties test evaluates Compose runtime; Android tracing
+    // calls are inert here. Actual window focus/accessibility is checked on device.
+    testOptions.unitTests.isReturnDefaultValues = true
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11

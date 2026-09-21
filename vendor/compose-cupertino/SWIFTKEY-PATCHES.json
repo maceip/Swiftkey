@@ -14,6 +14,12 @@
       "reason": "Preserve every native builder action in order in the Material3 fallback, with the correct cancel slot."
     },
     {
+      "path": "cupertino/src/androidMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoDialogs.android.kt",
+      "original_sha256": "e7e840d86a6fd59185ef07a97249fbaf820840dcca7b0eb1c6fd5c5d829df9b6",
+      "sha256": "0f72103177eab783aad8726c3cc74f5579d59301094b7cbedd430618a84b40a1",
+      "reason": "Make Android modal dialog and action-sheet popups focusable, matching desktop, so Back/key events and active-window accessibility target the popup."
+    },
+    {
       "path": "cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoBottomSheet.kt",
       "original_sha256": "e5adb928883258aef74563dae83b2fa1b71439af881ee7c44bbbfdfe52fc5e63",
       "sha256": "0302691e0f2216c00463a27a2075d3378df265eda6f12bfdcf1aa0f63835522d",

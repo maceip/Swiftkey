@@ -118,8 +118,9 @@ actor AndroidPhoneProtocolSession {
     private var observerID: UUID?
     private var pollTask: Task<Void, Never>?
     private var value = PhoneProtocolSnapshot()
-    private var performing = false
-    private var preserveInvitationDuringRead = false
+    private var actionSchedule = PhoneProtocolActionSchedule()
+    private var queuedInvitationObserverID: UUID?
+    private var performing: Bool { actionSchedule.isPerforming }
     private var refreshTick = 0
     private var nativeStatus: String?
     init(bridge: AndroidPhoneProtocolBridge) { self.bridge = bridge }
@@ -145,30 +146,70 @@ actor AndroidPhoneProtocolSession {
     func configureAuthority() { bridge.host.requestConfiguration() }
 
     func send(_ action: PhoneProtocolAction, quiet: Bool = false) async {
-        guard let store, !performing else { return }
+        guard let store else { return }
+        switch actionSchedule.begin(action, quiet: quiet) {
+        case .busy: return
+        case .deferred:
+            nativeStatus = nil; value.busy = true; publish()
+            return
+        case .start: break
+        }
         if !quiet { nativeStatus = nil }
-        performing = true; preserveInvitationDuringRead = quiet && action == .refresh
         value.busy = true
         if action == .prepareIdentity { value.phase = .preparingIdentity }
         if action == .renewIdentity { value.phase = .renewingTrust }
         publish()
         let result = await store.send(action)
-        value = result; performing = false; preserveInvitationDuringRead = false; publish()
+        value = result
+        await completeScheduledWork()
+    }
+    private func completeScheduledWork() async {
+        if let queued = actionSchedule.finish() {
+            // Keep the binding captured at the tap. Store/effect validation
+            // rejects it if the read changed the reviewed object or phase.
+            switch queued {
+            case .action(let action): await send(action)
+            case .presentInvitation(let binding):
+                let expectedObserver = queuedInvitationObserverID
+                queuedInvitationObserverID = nil
+                if expectedObserver != nil, expectedObserver == observerID, bridge.host.isForeground() {
+                    await presentInvitation(binding)
+                } else { publish() }
+            }
+        } else { publish() }
     }
     func effect(_ effect: PhoneProtocolEffect) async {
         switch effect {
         case .scanInvitation: bridge.host.requestImport(true)
         case .enterInvitation: bridge.host.requestImport(false)
         case .dismissInvitation: bridge.host.dismiss()
-        case .presentInvitation(let binding):
-            guard let service, binding == value.binding, !value.busy, value.phase == .invitation else { return }
+        case .presentInvitation(let binding): await presentInvitation(binding)
+        }
+    }
+    private func presentInvitation(_ binding: PhoneProtocolBinding) async {
+        guard let service, let expectedObserver = observerID, bridge.host.isForeground() else { return }
+        switch actionSchedule.beginInvitation(binding) {
+        case .busy: return
+        case .deferred:
+            queuedInvitationObserverID = expectedObserver
+            nativeStatus = nil; value.busy = true; publish()
+            return
+        case .start: break
+        }
+        if PhoneProtocolActionSchedule.canPresentInvitation(binding, in: value) {
             do {
                 let link = try await service.invitation(for: binding)
-                // Recheck the current public binding after the async service read.
-                guard binding == value.binding, value.phase == .invitation, !value.busy else { return }
-                bridge.host.presentInvitation(link, AndroidPhoneProtocolBridge.bindingKey(binding), String(binding.expiresAt))
+                // Recheck the original public binding after the async service read.
+                if expectedObserver == observerID, bridge.host.isForeground(),
+                   PhoneProtocolActionSchedule.canPresentInvitation(binding, in: value) {
+                    // A queued tap temporarily cleared the native context while
+                    // waiting. Restore this verified binding before opening it.
+                    bridge.updatePresentation(value)
+                    bridge.host.presentInvitation(link, AndroidPhoneProtocolBridge.bindingKey(binding), String(binding.expiresAt))
+                }
             } catch { publish("The invitation is no longer available. Refresh its status before trying again.") }
         }
+        await completeScheduledWork()
     }
     private func configure() async {
         nativeStatus = nil
@@ -203,17 +244,18 @@ actor AndroidPhoneProtocolSession {
             }
         }
         refreshTick += 1
-        if !performing && refreshTick % 4 == 0 &&
-            [.preparingIdentity, .invitation, .waitingForPairConsent, .waitingForGenesisConsent, .waitingForMembershipConsent].contains(value.phase) {
+        // Interactive reviews also need current remote state: the other phone
+        // can propose after pairing or replace/reject/cancel a reviewed object.
+        // The shared policy keeps every approval tied to the newly shown binding.
+        if !performing && refreshTick % 4 == 0 && value.phase.requiresCeremonyRefresh {
             await send(.refresh, quiet: true)
         } else if !performing { publish() } // Updates visible deadline without network/signing.
     }
     private func publish(_ message: String? = nil) {
         if let message { nativeStatus = message }
-        var presentation = value
-        if preserveInvitationDuringRead { presentation.busy = false }
+        let presentation = actionSchedule.presentation(value)
         bridge.updatePresentation(presentation)
-        let observer = observer, snapshot = value, status = nativeStatus, expectedObserver = observerID
+        let observer = observer, snapshot = presentation, status = nativeStatus, expectedObserver = observerID
         Task { @MainActor in
             guard await self.isCurrentObserver(expectedObserver) else { return }
             observer?(snapshot, status)

@@ -7,6 +7,20 @@ and 879 shared icons. In the parent SwiftKey workspace, use
 `bash scripts/androidswiftui.sh android-build` for the pinned Swift/Android
 toolchain; the generic upstream setup below is retained for reference.
 
+The current SwiftKey debug APK is `2a1a736` (full SHA-256 and build log in the
+parent workspace's `artifacts/cupertino/android-apk-build.json`). Local checks
+passed: 141 SwiftUICore tests, 401 desktop Kotlin tests, one Android popup-properties
+test, 43 Application tests and 27 shared UI tests. This build includes invitation
+expiry and quiet-refresh scheduling fixes. It is installed on both phones with
+all four existing legacy/v2 files preserved before launch; final inspection expiry
+and sampled polling-layout checks passed. Two-phone StrongBox pairing and joint
+genesis passed against an isolated Vapor authority: the second approval commits
+one account with two owners. Both phones then independently obtained verified
+epoch credentials. This used native Copy link/manual import on isolated port 18191;
+optical scanning and v2 workload submission are not claimed. Earlier
+selected-control checks are recorded separately
+for Xiaomi `4060284` and Pixel `43537a5`.
+
 <img width="200" height="398" alt="2026-07-24 13 23 04" src="https://github.com/user-attachments/assets/c72de93c-652d-49fd-b2e7-37cd584e1807" />
 
 Write your UI in real SwiftUI, compiled natively with the official Swift SDK for

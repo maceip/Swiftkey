@@ -10,6 +10,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpOffset
@@ -327,8 +328,9 @@ private fun RenderCupertinoSheet(node: ViewNode) {
         else -> ({ CupertinoBottomSheetDefaults.DragHandle() })
     }
     // The upstream modifier reaches only its background scaffold. Constrain the
-    // common parent so the independently measured sheet receives the same bounds.
-    Box(node.composeModifiers(), propagateMinConstraints = true) {
+    // common parent so both layers share its bounds, including the hidden sheet
+    // translated below the viewport on hosts taller than the requested frame.
+    Box(node.composeModifiers().clipToBounds(), propagateMinConstraints = true) {
     CupertinoBottomSheetScaffold(sheetContent = { cupertinoSlot(node, "sheetContent") }, modifier = Modifier,
         scaffoldState = scaffold,
         colors = CupertinoBottomSheetScaffoldDefaults.colors(

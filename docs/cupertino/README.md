@@ -22,6 +22,7 @@ The renderer calls upstream Compose implementations. Application registrations i
 - Slots are `CupertinoSlot` child nodes with exact parameter names. Slot identity and callback identity use names, so adding an optional leading slot or action does not reassign other callbacks.
 - Scalars and colors use the existing typed bridge. Adaptive colors are `[lightARGB, darkARGB]`. Structured option objects use canonical JSON strings; Kotlin also accepts JSON objects/arrays.
 - Text editing values preserve text, selection, and composing range. String echoes preserve the IME cursor and composing region. IME callbacks retain their actual action names.
+- Local edits remain authoritative while earlier Swift echoes are in flight, including regular and lazy section fields. Android modal dialogs own window focus; bounded sheet previews clip hidden content outside their frame.
 - Date callbacks carry 64-bit UTC milliseconds in JSON, avoiding truncation through the integer callback channel. Time and date-time callbacks carry hour/minute fields. Dates use UTC calendar days.
 - Sheet/swipe commands use a changing `commandID`; changing unrelated props does not replay a command. Synchronous transition vetoes use an `allowedValues` whitelist because a cross-runtime notification cannot synchronously return a Boolean.
 - Lazy sections use the existing Swift item provider, stable row keys, and content version. Swift row rendering occurs on demand for visible items.
@@ -50,17 +51,42 @@ The raw public Kotlin API remains available to custom factories, including nativ
 - `vendor/compose-cupertino/SWIFTKEY-PATCHES.json`: exact local source modifications with original and modified hashes.
 - `../../composeui/src/desktopTest`: real Compose interaction, state, icon, and render tests.
 - `../../gradle/cupertino/cupertino/src/desktopTest`: regression tests against upstream picker internals.
+- `../../gradle/cupertino/cupertino/src/androidUnitTest`: evaluates the Android popup-properties implementation, including focus and explicit dismissal policies. Android tracing is stubbed in this host test; actual window behavior is checked separately on hardware.
 
-`python3 scripts/verify-cupertino-vendor.py` verifies all 1,911 pinned source files and every declared local patch. `vendor.patch` records the changes; original and modified hashes are retained in the manifests. Android host apps must enable core library desugaring (as this checkout's demo does) for the vendored date/time implementation on older supported Android versions.
+`python3 scripts/verify-cupertino-vendor.py` verifies all 1,911 pinned source files and nine declared local patches. `vendor.patch` records the changes; original and modified hashes are retained in the manifests. Android host apps must enable core library desugaring (as this checkout's demo does) for the vendored date/time implementation on older supported Android versions.
 
 From the repository parent, source `scripts/androidswiftui-env.sh` in Bash. Then run:
 
 ```bash
 source scripts/androidswiftui-env.sh
 cd AndroidSwiftUI
-./gradlew verifyCupertinoBuild :cupertino:desktopTest :composeui:desktopTest :composeui:compileDebugKotlinAndroid
+./gradlew verifyCupertinoBuild :cupertino:desktopTest :cupertino:testDebugUnitTest :composeui:desktopTest :composeui:compileDebugKotlinAndroid
 cd SwiftUICore
 "$SWIFTKEY_SWIFT" test --no-parallel
 ```
 
 The host test evidence is separate from an exercised Android hardware session. See the parent repository's `artifacts/cupertino` and `BUILD_STATUS.md` for the actual verification status.
+
+The current SwiftKey APK build is `2a1a736` (339,809,795 bytes; the full digest is
+in the parent `artifacts/cupertino/android-apk-build.json`). Validation currently
+records 141 SwiftUICore, 401 desktop Kotlin, one Android popup-properties,
+43 Application and 27 shared UI tests. The latest changes are in the Swift phone
+host: invitation reviews advance locally when they expire, quiet refresh keeps
+the displayed layout stable, and one explicit action or QR effect waits for the
+read with its original binding. QR effects additionally verify the original
+observer and foreground state. Kotlin remains at the tested revision.
+
+Corrected selected-control device checks are recorded for Xiaomi `4060284` and
+Pixel `43537a5`. Current `2a1a736` is installed on both phones with all four
+existing legacy/v2 files preserved before launch. Pixel inspection expires
+automatically with recovery visible; Pixel's four polling samples and Xiaomi's
+two pre-expiry QR samples retain their control bounds without a busy banner.
+Xiaomi's longer planned geometry check was interrupted by expiry. Physical
+StrongBox pairing and joint genesis also passed against an isolated Vapor
+authority: matching reviews, zero accounts after the first approval, then one
+account/two owners after the second, with a verified ledger. Native Copy link and
+manual import carried the invitation. Both phones then independently obtained
+epoch credentials with verified root/authority signatures and delegation bindings.
+This ran on isolated Vapor port 18191; optical camera scanning and v2 workload
+submission are not claimed. These selected-control and protocol checks do not
+establish all 127 surfaces on hardware, and remain separate from host test counts.

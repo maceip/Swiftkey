@@ -135,8 +135,11 @@ private fun SectionScope.SectionRow(node: ViewNode) {
                 },
                 picker = { CupertinoPickerInputGate(enabled) { if (cupertinoHasSlot(node, "picker")) cupertinoSlot(node, "picker") else CupertinoTimePicker(state) } }, title = { sectionTitle(node) })
         }
-        "SectionScope.SectionTextField" -> SectionTextField(
-            value = node.string("value") ?: "", onValueChange = { if (enabled) p.stringAction("onValueChange")?.invoke(it) },
+        "SectionScope.SectionTextField" -> {
+            val input = cupertinoStringInputState(node)
+            val change: (String) -> Unit = { cupertinoChangeString(node, input, enabled, it) }
+            SectionTextField(
+            value = input.value.text, onValueChange = change,
             modifier = node.composeModifiers(), enabled = enabled, readOnly = node.bool("readOnly") ?: false,
             textStyle = cupertinoTextStyle(node, "textStyle", CupertinoTheme.typography.body),
             placeholder = if (cupertinoHasSlot(node, "placeholder")) ({ cupertinoSlot(node, "placeholder") }) else null,
@@ -147,16 +150,18 @@ private fun SectionScope.SectionRow(node: ViewNode) {
             trailingIcon = { interaction ->
                 if (cupertinoHasSlot(node, "trailingIcon")) cupertinoSlot(node, "trailingIcon")
                 else { val focused by interaction.collectIsFocusedAsState()
-                    CupertinoSectionDefaults.TextFieldClearButton(focused && !node.string("value").isNullOrEmpty()) { if (enabled && node.bool("readOnly") != true) p.stringAction("onValueChange")?.invoke("") }
+                    CupertinoSectionDefaults.TextFieldClearButton(focused && input.value.text.isNotEmpty()) { change("") }
                 }
             })
+        }
         else -> CupertinoText("Unknown section row: ${node.string("name")}")
     }
 }
 
 private data class LazyRow(val node: ViewNode, val modifier: Modifier, val enabled: Boolean,
     val textStyle: androidx.compose.ui.text.TextStyle, val textColors: CupertinoTextFieldColors,
-    val date: CupertinoDatePickerState?, val time: CupertinoTimePickerState?, val color: Color, val dateStyle: DatePickerStyle)
+    val date: CupertinoDatePickerState?, val time: CupertinoTimePickerState?, val color: Color, val dateStyle: DatePickerStyle,
+    val textInput: CupertinoTextInputState?)
 private data class LazySection(val node: ViewNode, val state: SectionState, val color: Color, val rows: List<LazyRow>)
 
 @Composable
@@ -168,7 +173,8 @@ private fun LazySections(node: ViewNode) {
                 cupertinoTextStyle(row, "textStyle", CupertinoTheme.typography.body), textEntryColors(row, "plain"),
                 if (row.string("name") == "LazySectionScope.datePicker") cupertinoDateState(row) else null,
                 if (row.string("name") == "LazySectionScope.timePicker") cupertinoTimeState(row) else null,
-                cupertinoColor(row, "buttonColor") ?: Color.Unspecified, cupertinoDateStyle(row))
+                cupertinoColor(row, "buttonColor") ?: Color.Unspecified, cupertinoDateStyle(row),
+                if (row.string("name") == "LazySectionScope.textField") cupertinoStringInputState(row) else null)
         } }
         LazySection(section, sectionState(section), cupertinoColor(section, "color") ?: Color.Unspecified, rows)
     } }
@@ -209,7 +215,10 @@ private fun LazySectionScope.lazyRow(row: LazyRow) {
         "LazySectionScope.timePicker" -> timePicker(state = row.time!!, expanded = n.bool("expanded") ?: false,
             onExpandedChange = { if (enabled) p.boolAction("onExpandedChange")?.invoke(it) }, modifier = row.modifier,
             enabled = enabled, icon = icon, buttonColor = row.color, title = title)
-        "LazySectionScope.textField" -> textField(value = n.string("value") ?: "", onValueChange = { if (enabled) p.stringAction("onValueChange")?.invoke(it) },
+        "LazySectionScope.textField" -> {
+            val input = row.textInput!!
+            val change: (String) -> Unit = { cupertinoChangeString(n, input, enabled, it) }
+            textField(value = input.value.text, onValueChange = change,
             modifier = row.modifier, enabled = enabled, readOnly = n.bool("readOnly") ?: false,
             placeholder = if (cupertinoHasSlot(n, "placeholder")) ({ cupertinoSlot(n, "placeholder") }) else null,
             singleLine = n.bool("singleLine") ?: false,
@@ -221,9 +230,10 @@ private fun LazySectionScope.lazyRow(row: LazyRow) {
             trailingIcon = { interaction ->
                 if (cupertinoHasSlot(n, "trailingIcon")) cupertinoSlot(n, "trailingIcon")
                 else { val focused by interaction.collectIsFocusedAsState()
-                    CupertinoSectionDefaults.TextFieldClearButton(focused && !n.string("value").isNullOrEmpty()) { if (enabled && n.bool("readOnly") != true) p.stringAction("onValueChange")?.invoke("") }
+                    CupertinoSectionDefaults.TextFieldClearButton(focused && input.value.text.isNotEmpty()) { change("") }
                 }
             })
+        }
         "LazySectionScope.items" -> {
             val provider = n.long("itemProvider") ?: n.itemProviderId
             val count = n.count ?: n.long("count")?.toInt() ?: 0
