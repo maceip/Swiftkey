@@ -64,6 +64,11 @@ internal func _lazyStackNode<Content: View>(
     let count = provider._elementCount
 
     let providerID = callbacks.register(.item { index in
+        // A platform's queued lazy request can outlive a collection shrink.
+        // Reject stale indices before indexing the Swift collection.
+        guard index >= 0 && index < count else {
+            return RenderNode(type: "EmptyView", id: containerPath + "/stale-item")
+        }
         let elementContext = ResolveContext(
             storage: storage,
             callbacks: callbacks,

@@ -82,8 +82,9 @@ extension ComposableView: PrimitiveView {
         props["name"] = .string(name)   // reserved: identifies the registered factory
         // Each action registers a callback; its id crosses as a prop the factory
         // reads back as a typed lambda.
-        for (key, action) in actions {
-            props[key] = .int(Int(action.register(in: context.callbacks, path: context.path)))
+        for key in actions.keys.sorted() {
+            guard let action = actions[key] else { continue }
+            props[key] = .int(Int(action.register(in: context.callbacks, path: context.path + "/action/" + key)))
         }
         return RenderNode(
             type: "Composable",

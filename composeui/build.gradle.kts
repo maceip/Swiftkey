@@ -23,12 +23,24 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            // Full vendored API surface, including native fallbacks, Decompose
+            // integration and every extended icon (not a curated subset).
+            api(project(":cupertino-core"))
+            api(project(":cupertino"))
+            api(project(":cupertino-native"))
+            api(project(":cupertino-adaptive"))
+            api(project(":cupertino-decompose"))
+            api(project(":cupertino-icons-extended"))
+            implementation(libs.decompose.core)
+            implementation(libs.decompose.compose)
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
             implementation(libs.kotlinx.serialization.json)
         }
         androidMain.dependencies {
+            // Native Android predictive-back events drive the Decompose adapter.
+            implementation(libs.androidx.activity.compose)
             // VideoPlayer: the legacy MediaPlayer stack is unreliable for
             // remote streams, so the Android player is Media3.
             implementation("androidx.media3:media3-exoplayer:1.4.1")

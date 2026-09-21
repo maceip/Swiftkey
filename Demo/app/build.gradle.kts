@@ -37,6 +37,8 @@ android {
         }
     }
     compileOptions {
+        // Cupertino calendar uses java.time on the existing minSdk24 profile.
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
@@ -73,6 +75,7 @@ android {
 }
 
 dependencies {
+    coreLibraryDesugaring(libs.android.desugar.jdk)
     implementation(project(":composeui"))
     implementation(project(":androidbridge"))
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")

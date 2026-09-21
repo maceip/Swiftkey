@@ -31,3 +31,12 @@ include(":demo-app")
 project(":demo-app").projectDir = file("Demo/app")
 include(":demo-desktop")
 project(":demo-desktop").projectDir = file("Demo/desktop")
+
+// Retain the complete upstream tree and its original build files. Local build
+// files compile all six libraries without upstream release/signing configuration;
+// bounded source fixes are recorded in SWIFTKEY-PATCHES.json.
+for (module in listOf("cupertino-core", "cupertino", "cupertino-native",
+    "cupertino-adaptive", "cupertino-decompose", "cupertino-icons-extended")) {
+    include(":" + module)
+    project(":" + module).projectDir = file("gradle/cupertino/" + module)
+}

@@ -1,0 +1,53 @@
+{
+  "revision": "f66875aa6f3848b30c38e42a89fc99c9ac24a585",
+  "files": [
+    {
+      "path": "cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveAlertDialog.kt",
+      "original_sha256": "314bf72951221b3389b13f547dc13d082015c1f263ca7f0149cad41d258bbff6",
+      "sha256": "1468475654b0b9f3f80a86ba63f37663736868952a6e7c50f940bad2fdfd2414",
+      "reason": "Preserve every builder action in order in the Material3 fallback, including cancel/destructive actions."
+    },
+    {
+      "path": "cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveAlertDialogNative.kt",
+      "original_sha256": "01e06b9d4d5f78bb32fa4269465fa56a57626c31412524a3882e1dbfc0962e3e",
+      "sha256": "e9b20c4054e5382d88c8005c60481b689e01c43bbb85dc1871a4cec13bd50898",
+      "reason": "Preserve every native builder action in order in the Material3 fallback, with the correct cancel slot."
+    },
+    {
+      "path": "cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoBottomSheet.kt",
+      "original_sha256": "e5adb928883258aef74563dae83b2fa1b71439af881ee7c44bbbfdfe52fc5e63",
+      "sha256": "0302691e0f2216c00463a27a2075d3378df265eda6f12bfdcf1aa0f63835522d",
+      "reason": "Convert fixed-height presentation detents to pixels once, capped at available height."
+    },
+    {
+      "path": "cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoDatePicker.kt",
+      "original_sha256": "2492a6ba0c8a0bc956524e63e8b35e46f373a9fa40fd3c9e206d49d89409214c",
+      "sha256": "9aef085e80b6f53f46701514bdaca6d6ac7599114b3cea01911b81749f365889",
+      "reason": "Synchronize public selections with wheels; preserve canonical UTC days across manual mode; validate manual selections; normalize backward day cycles."
+    },
+    {
+      "path": "cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoDateTimePicker.kt",
+      "original_sha256": "53e3fa4fe4b089db715cae33b9b0b0c7c4a3fa88c823b469dde0bde1d49f37a5",
+      "sha256": "1cc7b8154eff5535f07b7495c9790138e9e3582a36b33819d3a8e827dac1aff3",
+      "reason": "Preserve PM and whole 24-hour values; correct manual milliseconds-to-hour/minute conversion; synchronize public/manual selections with all wheels and validate ranges."
+    },
+    {
+      "path": "cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoPicker.kt",
+      "original_sha256": "b3ace1e54a7282bc1b2e668b93ed890028cb0a9df63fcc076d123827f98eac68",
+      "sha256": "3fcedb5c96951029eab4ea3911f795eaf1386201141b6ea1b695f16cf71cfbd5",
+      "reason": "Use logical indices consistently for animated scroll and item clicks; cycle-qualify stable infinite-wheel keys; retain unmeasured programmatic selection; add internal synchronous wheel synchronization helper."
+    },
+    {
+      "path": "cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoSwipeBox.kt",
+      "original_sha256": "7cba1761ab188f71791dfb9dde095d3e54b8ce6c3d2d3c7e7f045fce7adcafed",
+      "sha256": "2cb5ae7f0022b87dceed6875d4e32ea8724ff265a035a4142946021fabb516d3",
+      "reason": "Honor state confirmation for shared collapse; buffer synchronous collapse events; expose measured anchor readiness for command sequencing."
+    },
+    {
+      "path": "cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoTimePicker.kt",
+      "original_sha256": "16d019b0cbe9fbccd77392c7fd6377c61b818981585c22444b956c83472add97",
+      "sha256": "6bccb00d05275a59656aac8ae3d166d0c610014484455a42c739eabec64f51a0",
+      "reason": "Initialize AM/PM from the initial hour and preserve hour/minute across manual mode changes."
+    }
+  ]
+}

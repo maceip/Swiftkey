@@ -18,8 +18,9 @@ class Props internal constructor(private val json: JsonObject) {
     fun float(key: String): Float? = double(key)?.toFloat()
     fun int(key: String): Int? = (json[key] as? JsonPrimitive)?.intOrNull
     fun bool(key: String): Boolean? = (json[key] as? JsonPrimitive)?.booleanOrNull
-    /// A color passed from Swift as `PropValue.color(_:)` (an ARGB int).
-    fun color(key: String): Color? = (json[key] as? JsonPrimitive)?.longOrNull?.let { Color(it.toInt()) }
+    /// A static or light/dark adaptive color passed from Swift.
+    @Composable
+    fun color(key: String): Color? = resolveAppearanceColor(json[key], LocalAppearanceIsDark.current)
 
     // Actions: a `ComposableView(actions:)` entry arrives as a callback id; each
     // accessor returns a typed lambda that dispatches back to Swift, or null if
@@ -65,7 +66,7 @@ object ComposableRegistry {
                     RenderChild(child)
                 }
             }
-        } else {
+        } else if (!RenderCupertino(node)) {
             Text("⟨unregistered composable: $name⟩", color = Color.Red)
         }
     }

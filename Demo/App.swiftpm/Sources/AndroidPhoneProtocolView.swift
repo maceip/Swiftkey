@@ -7,9 +7,17 @@ import SwiftKeyUI
 /// Explicit entry preserves the original v1 identity view and never migrates it.
 struct SwiftKeyPhoneEntryView: View {
     @State private var showsPairing = false
+    @State private var showsCupertinoCatalog = false
     var body: some View {
         VStack(spacing: 0) {
-            if showsPairing {
+            if showsCupertinoCatalog {
+                VStack(spacing: 0) {
+                    Button("Back to SwiftKey") { showsCupertinoCatalog = false }
+                        .accessibilityIdentifier("swiftkey.close-cupertino-catalog")
+                        .padding(12)
+                    CupertinoCatalogView()
+                }
+            } else if showsPairing {
                 AndroidPhoneProtocolView(onClose: { showsPairing = false })
             } else {
                 HStack {
@@ -19,6 +27,9 @@ struct SwiftKeyPhoneEntryView: View {
                     Button("Pair phones · v2") { showsPairing = true }
                         .accessibilityIdentifier("swiftkey.open-phone-protocol")
                 }.padding(16).background(SwiftKeyAppearance.canvas)
+                Button("Cupertino component catalog") { showsCupertinoCatalog = true }
+                    .accessibilityIdentifier("swiftkey.open-cupertino-catalog")
+                    .padding(12)
                 HardwareKeyView()
             }
         }.frame(maxWidth: .infinity, maxHeight: .infinity)

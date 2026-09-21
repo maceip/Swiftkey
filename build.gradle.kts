@@ -8,3 +8,14 @@ plugins {
     alias(libs.plugins.kotlin.serialization) apply false
     alias(libs.plugins.compose.multiplatform) apply false
 }
+
+// Compile the complete vendored library surface independently of Swift/JNI and
+// application adapters. No upstream publication/signing task is registered.
+tasks.register("verifyCupertinoBuild") {
+    group = "verification"
+    description = "Compile all six vendored Cupertino libraries for Android and desktop"
+    for (module in listOf("cupertino-core", "cupertino", "cupertino-native",
+        "cupertino-adaptive", "cupertino-decompose", "cupertino-icons-extended")) {
+        dependsOn(":$module:compileKotlinDesktop", ":$module:compileDebugKotlinAndroid")
+    }
+}

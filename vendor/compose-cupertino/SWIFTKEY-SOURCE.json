@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/alexzhirkevich/compose-cupertino",
+  "revision": "f66875aa6f3848b30c38e42a89fc99c9ac24a585",
+  "scope": "Complete upstream source including all six library modules, examples, docs and license notices; local build integration uses separate Gradle scripts."
+}

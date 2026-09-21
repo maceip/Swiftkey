@@ -1,6 +1,12 @@
 # AndroidSwiftUI
 SwiftUI for Android
 
+This SwiftKey branch includes the complete six-module
+[Compose Cupertino bridge](docs/cupertino/README.md): 127 Swift catalog surfaces
+and 879 shared icons. In the parent SwiftKey workspace, use
+`bash scripts/androidswiftui.sh android-build` for the pinned Swift/Android
+toolchain; the generic upstream setup below is retained for reference.
+
 <img width="200" height="398" alt="2026-07-24 13 23 04" src="https://github.com/user-attachments/assets/c72de93c-652d-49fd-b2e7-37cd584e1807" />
 
 Write your UI in real SwiftUI, compiled natively with the official Swift SDK for
