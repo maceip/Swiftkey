@@ -109,6 +109,70 @@ private struct NativeProjectionFixture {
     #expect(preparedDecline.phase == .invitation && preparedDecline.localIdentity != nil && preparedDecline.binding == nil)
 }
 
+@Test func invitationReviewRefreshReprojectsItsDeadlineWithoutJoining() async throws {
+    let f = NativeProjectionFixture(), service = try f.service(), inspection = try f.inspection()
+    for identity in [nil, try f.identity()] {
+        let reviewed = try await service.project(f.snapshot(identity: identity, inspection: inspection,
+            now: inspection.payload.expiresAt - 1))
+        #expect(reviewed.phase == .inspectInvitation && reviewed.phase.requiresCeremonyRefresh)
+        let binding = try #require(reviewed.binding)
+        let expired = try await service.project(f.snapshot(identity: identity, inspection: inspection,
+            now: inspection.payload.expiresAt))
+        #expect(expired.phase == .expired && expired.binding == binding)
+        #expect(!expired.phase.requiresCeremonyRefresh)
+        #expect(expired.rejection(for: .restart, now: inspection.payload.expiresAt) == nil)
+        #expect(expired.rejection(for: .join(binding), now: inspection.payload.expiresAt) == .expired)
+        #expect(expired.receipt == nil && expired.lastRequestID == nil)
+    }
+}
+
+@Test func unjoinedInspectionAfterRenewalRefreshesLocallyWithoutSigningOrTransport() async throws {
+    let f = NativeProjectionFixture(), inspection = try f.inspection()
+    let admission = PairingV2.PreEnrollmentChallenge(authorityID: f.config.authorityID, origin: f.origin,
+        audience: PairingV2.audience, challengeID: "00000000-0000-0000-0000-000000000040",
+        requestID: "00000000-0000-0000-0000-000000000041", deviceID: f.localID, rootKind: .androidStrongBox,
+        trustPolicyID: "projection-test-only", nonce: f.hash, issuedAt: 1000, expiresAt: 1900)
+    let evidence = AndroidEnrollmentEvidence(publicKey: f.root.publicKey,
+        certificateChain: [Data([1])], platform: "androidStrongBox")
+    let identity = try f.signed(PairingV2.DeviceTrustReceipt(authorityID: f.config.authorityID, origin: f.origin,
+        audience: PairingV2.audience, deviceID: f.localID, rootKind: .androidStrongBox, rootKeyEpoch: 1,
+        rootPublicKey: f.root.publicKey, originalChallengeHash: admission.digest(),
+        evidenceHash: PairingV2.AttestationEvidence(rootKind: .androidStrongBox, certificates: evidence.certificateChain).digest(),
+        trustPolicyID: "projection-test-only", verifiedAt: 1000, leaseExpiresAt: 1900))
+    let renewal = PairingV2.OperationPayload.renewIdentityLease(.init(authorityID: f.config.authorityID,
+        origin: f.origin, audience: PairingV2.audience, deviceID: f.localID, rootKeyEpoch: 1,
+        existingTrustReceiptHash: try identity.payload.digest()))
+    let challenge = PairingV2.RootChallenge(authorityID: f.config.authorityID, origin: f.origin,
+        audience: PairingV2.audience, challengeID: "00000000-0000-0000-0000-000000000042",
+        requestID: "00000000-0000-0000-0000-000000000043", deviceID: f.localID, rootKeyEpoch: 1,
+        purpose: renewal.purpose, scopeID: f.localID, payloadHash: try renewal.digest(), sequence: 1,
+        issuedAt: 1000, expiresAt: 1120, nonce: f.hash)
+    let request = PairingV2.OperationRequest(payload: renewal, proof: .init(rootKind: .androidStrongBox,
+        challenge: challenge, proof: try f.root.sign(message: challenge.canonicalBytes())))
+    func object<T: Encodable>(_ value: T) throws -> Any {
+        try JSONSerialization.jsonObject(with: JSONEncoder().encode(value))
+    }
+    // A signed software fixture for a restored post-renewal/pre-join journal;
+    // it exercises client validation, not attestation acceptance.
+    let bytes = try JSONSerialization.data(withJSONObject: [
+        "version": 2, "configuration": object(f.config),
+        "preparation": object(PairingV2.PreparationResponse(challenge: f.signed(admission), preparationCapability: f.hash)),
+        "evidence": object(evidence), "identity": object(identity), "inspection": object(inspection),
+        "lastRequest": object(request), "localApprovals": [:], "sequence": 1, "ledgerSequence": 0,
+    ])
+    for now in [inspection.payload.expiresAt - 1, inspection.payload.expiresAt] {
+        let platform = ClientPlatform(enroll: { _ in throw NativeProjectionFixture.Failure.unexpectedPlatformCall },
+            signRootMessage: { _ in throw NativeProjectionFixture.Failure.unexpectedPlatformCall },
+            post: { _, _, _ in throw NativeProjectionFixture.Failure.unexpectedPlatformCall },
+            readState: { bytes }, writeState: { _ in throw NativeProjectionFixture.Failure.unexpectedPlatformCall }, now: { now })
+        let service = NativePhoneProtocolService(client: try PairingClient(configuration: f.config, platform: platform))
+        let result = try await service.perform(.refresh, requestID: "local-refresh")
+        #expect(result.phase == (now < inspection.payload.expiresAt ? .inspectInvitation : .expired))
+        #expect(result.failure == nil && result.lastRequestID == nil)
+        #expect(result.localIdentity?.id == f.localID && result.receipt == nil)
+    }
+}
+
 @Test func nativeTrustRenewalRetainsIdentityReceiptAndAccountContext() async throws {
     let f = NativeProjectionFixture(), service = try f.service(), committed = try f.committed()
     let expired = try await service.project(f.snapshot(identity: f.identity(expires: 1100), committed: committed, signedIn: true))

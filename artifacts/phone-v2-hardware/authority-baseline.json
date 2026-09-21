@@ -1,0 +1,70 @@
+{
+  "accounts": {
+    "accounts": []
+  },
+  "attestationPolicy": {
+    "androidMinimumVersion": 1,
+    "androidPackage": "com.pureswift.swiftandroidui",
+    "androidSigningCertificateSHA256": "abdf2c3a584b9accbd1b51ae474aa840becc46aa5c5f669bccf422dc501acf39",
+    "workloadAudience": "swiftkey.local",
+    "workloadDomain": "swiftkey.demo.echo.v1"
+  },
+  "authorityID": "c4b8e1dc1b6737968fc1111309b10e059a0964146d39b5715799a918a4816f12",
+  "capturedAtUTC": "2026-09-21T17:16:50.091869+00:00",
+  "ledger": {
+    "events": [
+      {
+        "details": {
+          "schemaVersion": "2"
+        },
+        "hash": "a2xdZA9gTc2R2Eo8R95tkVZzoDfpjSgHS5oOvGtAbmw=",
+        "kind": "authority.created",
+        "previousHash": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+        "sequence": 1,
+        "timestamp": 1790010858
+      },
+      {
+        "details": {
+          "legacyFirstEnrollment": "retired",
+          "origin": "http://127.0.0.1:18191",
+          "schemaVersion": "3"
+        },
+        "hash": "8hmLyfooo+Ee9LR3flZxIqkQsRBNB506NYRjC9rvS4k=",
+        "kind": "v2.provisioning.enabled",
+        "previousHash": "a2xdZA9gTc2R2Eo8R95tkVZzoDfpjSgHS5oOvGtAbmw=",
+        "sequence": 2,
+        "timestamp": 1790010858
+      }
+    ],
+    "hasMore": false,
+    "head": {
+      "hash": "8hmLyfooo+Ee9LR3flZxIqkQsRBNB506NYRjC9rvS4k=",
+      "sequence": 2,
+      "signature": "MEUCIF+tmRwAGxv/+WxPXDqGpAqp8DrAS+izpGYqPataWnqcAiEAu68jS9jYzaMjoPlNTlxWUdThL2IvKHYNH8PKP1NPjfY="
+    },
+    "nextAfter": 2
+  },
+  "origin": "http://127.0.0.1:18191",
+  "scope": "Isolated authority baseline before two-phone admission; no hardware acceptance claimed. Read-only admin observations; no accounts or devices seeded.",
+  "serverPublicKey": "BCV9EpwAHWblrn2xXsfEXZijYRoNKoyeYQh5634OUQ1DOfS5bcSPyiTn+EnVcyFUqs/LheqqeUXIdSAg9iqUi3c=",
+  "status": {
+    "accountCount": 0,
+    "activeDeviceCount": 0,
+    "credentialCount": 0,
+    "epoch": 124306,
+    "epochEnd": 1790020800,
+    "epochStart": 1790006400,
+    "ledgerHead": {
+      "hash": "8hmLyfooo+Ee9LR3flZxIqkQsRBNB506NYRjC9rvS4k=",
+      "sequence": 2,
+      "signature": "MEUCIQCvI9W8Zf4sf16JyCqNi+oPjzv2rMf+4kb4nMPOlFFqwwIgBRJ4jpKDv8f2u8c8Z6k8oIlsdNcotqMQ2YTD0+u/9nA="
+    },
+    "legacyProvisioningAllowed": false,
+    "revokedDeviceCount": 0,
+    "schemaVersion": 3,
+    "serverPublicKey": "BCV9EpwAHWblrn2xXsfEXZijYRoNKoyeYQh5634OUQ1DOfS5bcSPyiTn+EnVcyFUqs/LheqqeUXIdSAg9iqUi3c=",
+    "storage": "sqlite",
+    "unixTime": 1790011010
+  },
+  "transport": "Vapor"
+}

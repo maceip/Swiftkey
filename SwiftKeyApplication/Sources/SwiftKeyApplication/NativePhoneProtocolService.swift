@@ -26,7 +26,13 @@ public actor NativePhoneProtocolService: PhoneProtocolService {
         }
         do {
             switch action {
-            case .refresh, .resume: try await client.refresh()
+            case .refresh, .resume:
+                // An unjoined inspection is a signed, expiring review, not an
+                // authenticated participant scope. Re-project its current clock
+                // locally; an earlier renewal request must not trigger lookup.
+                if before.inspection == nil || before.operation != nil || before.pendingRequestID != nil {
+                    try await client.refresh()
+                }
             case .recover(let id): try await client.recover(requestID: id)
             case .prepareIdentity: try await client.prepareIdentity(requestID: requestID)
             case .renewIdentity: try await client.renewIdentity(requestID: requestID)

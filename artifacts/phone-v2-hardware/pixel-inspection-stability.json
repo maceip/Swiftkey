@@ -1,0 +1,13 @@
+{
+  "capturedAtUTC": "2026-09-21T18:07:30.178207+00:00",
+  "apkSHA256": "2a1a736512343cdf617bed94af2711d83f54f3035f5bcff3ce6559524a514667",
+  "samples": 4,
+  "buttonBounds": [
+    "[147,2724][548,2809]",
+    "[147,2724][548,2809]",
+    "[147,2724][548,2809]",
+    "[147,2724][548,2809]"
+  ],
+  "stableAcrossBackgroundRefresh": true,
+  "busyBannerAbsent": true
+}

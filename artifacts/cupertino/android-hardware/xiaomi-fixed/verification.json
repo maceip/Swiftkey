@@ -1,0 +1,44 @@
+{
+  "checkedAtUTC": "2026-09-21T17:20:58.673804+00:00",
+  "deviceSerial": "D6OZUCKVEIQ4LVLV",
+  "apkIdentifierReportedByRoot": "4060284",
+  "display": {
+    "widthPixels": 1280,
+    "heightPixels": 2772,
+    "fontScale": 1.45,
+    "appearance": "dark"
+  },
+  "checks": {
+    "catalogButtonCallback": "passed: events 0 -> 1 onClick",
+    "alertActiveAccessibilityWindow": "passed: open XML contains only dialog title, message and three actions",
+    "alertWindowFocus": "passed: mCurrentFocus is Pop-Up Window; owning app is SwiftKey",
+    "alertCancel": "passed: popup removed; event 2 cancel",
+    "alertSystemBack": "passed: popup removed; event 3 onDismissRequest",
+    "sheetHiddenOpenClosed": "passed: Hidden -> Expanded -> Hidden; sheet content absent from hidden and closed XML",
+    "sheetBoundsVisual": "passed: inspected hidden/open/closed screenshots; content stays within bounded catalog area",
+    "fastTextEntry": "passed: exact 21-character suffix retained after callbacks and keyboard dismissal",
+    "navigationRoundtrip": "passed: Back to SwiftKey then reopen catalog retained text and event state",
+    "legacyDisplayedKeyUnchanged": "passed: equality assertion across identity and identity-returned XML"
+  },
+  "screenshotsInspected": [
+    "identity.png",
+    "alert-open.png",
+    "sheet-hidden.png",
+    "sheet-open.png",
+    "sheet-closed.png",
+    "text-after-fast-entry.png",
+    "catalog-final.png"
+  ],
+  "scope": {
+    "onlyAuthorizedSerialUsed": true,
+    "v2ActionsPerformed": false,
+    "appDataCleared": false,
+    "installedOrResetDevice": false,
+    "finalScreen": "CupertinoBorderedTextField catalog; keyboard hidden",
+    "deviceReleasedToRoot": true
+  },
+  "limitations": [
+    "Runtime smoke covers selected controls, not all 127 surfaces.",
+    "Legacy launcher onAppear behavior was allowed; no new v2 configuration or account actions were invoked."
+  ]
+}

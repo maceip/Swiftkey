@@ -1,0 +1,24 @@
+{
+  "privateFilePresence": {
+    "swiftkey-pairing-v2-config.json": {
+      "exists": false
+    },
+    "swiftkey-pairing-v2-config.json.bak": {
+      "exists": false
+    },
+    "swiftkey-pairing-v2-config.json.new": {
+      "exists": false
+    },
+    "swiftkey-pairing-v2-state.json": {
+      "exists": false
+    },
+    "swiftkey-pairing-v2-state.json.bak": {
+      "exists": false
+    },
+    "swiftkey-pairing-v2-state.json.new": {
+      "exists": false
+    }
+  },
+  "safeFreshEntryWithoutV2Identity": true,
+  "scope": "Presence checks only; no private file contents exported."
+}

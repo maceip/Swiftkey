@@ -2,6 +2,7 @@
   "tasks": [
     ":composeui:desktopTest",
     ":cupertino:desktopTest",
+    ":cupertino:testDebugUnitTest",
     ":composeui:compileDebugKotlinAndroid"
   ],
   "result": "passed",
@@ -25,7 +26,7 @@
     {
       "module": "composeui",
       "suite": "com.pureswift.swiftui.CupertinoPresentationTests",
-      "tests": 11,
+      "tests": 12,
       "failures": 0,
       "errors": 0,
       "skipped": 0
@@ -34,6 +35,14 @@
       "module": "composeui",
       "suite": "com.pureswift.swiftui.CupertinoStateBridgeTests",
       "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "module": "composeui",
+      "suite": "com.pureswift.swiftui.CupertinoTextEntryTests",
+      "tests": 11,
       "failures": 0,
       "errors": 0,
       "skipped": 0
@@ -55,9 +64,9 @@
       "skipped": 0
     }
   ],
-  "totalTests": 389,
+  "totalTests": 401,
   "failures": 0,
-  "logSHA256": "82e10fcdf489fe25f82243a4cdadd64406b7e2940b94b8f37e34a5a481214450",
+  "logSHA256": "920761e4ef31d2a0e7c178c8e36167cb19519fc515ce58107de38e06ba5dc29f",
   "catalogViewportPixels": [
     360,
     720
@@ -67,5 +76,7 @@
     720
   ],
   "testHost": "runSkikoComposeUiTest(size=Size(360f,720f),density=Density(1f,fontScale)); actual scene/window dimensions",
-  "scope": "Host Kotlin Android compilation and JVM/Skia desktop rendering and interaction tests; does not assert deployed Android device acceptance."
+  "scope": "Host Kotlin Android compilation and JVM/Skia desktop rendering and interaction tests; does not assert deployed Android device acceptance.",
+  "additionalAndroidUnitTests": 1,
+  "additionalAndroidUnitEvidence": "android-popup-properties-test.json"
 }

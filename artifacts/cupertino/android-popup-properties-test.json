@@ -1,0 +1,10 @@
+{
+  "task": ":cupertino:testDebugUnitTest",
+  "suite": "io.github.alexzhirkevich.cupertino.CupertinoAndroidDialogPropertiesTests",
+  "tests": 1,
+  "failures": 0,
+  "errors": 0,
+  "result": "passed",
+  "logSHA256": "fd841efaf7d462ac534a88d4d22a8cf252de3b114ce91fe3de2b6810d7ad33a7",
+  "scope": "Evaluates the Android actual FullscreenPopupProperties composable and checks focus plus explicit dismissal/width flags. Host unit tests use Android default-return stubs for Compose tracing; this is not device window or TalkBack acceptance."
+}

@@ -1,0 +1,38 @@
+{
+  "sessionBaselineSHA256": {
+    "files/swiftkey-client.json": "60042750d4fdb58902979ac2c77db68ea627a0e5f67b083dbf262146bbe1b3fb",
+    "files/swiftkey-protocol-state.json": "dc867c67241f7990e7bb709ccb9ab8c5ba51c62c95bc42bafeae59ca4f7f1401"
+  },
+  "afterInstallationSHA256": {
+    "files/swiftkey-client.json": "60042750d4fdb58902979ac2c77db68ea627a0e5f67b083dbf262146bbe1b3fb",
+    "files/swiftkey-protocol-state.json": "9036bfe5fd5594f1497b5e325bc4a540645c53f968677e81fe3c31dcd40e0e75"
+  },
+  "sameBytes": false,
+  "requiresStateReview": false,
+  "reviewedAtUTC": "2026-09-21T17:36:39.643357+00:00",
+  "reviewCompleted": true,
+  "configurationBytesPreserved": true,
+  "legacyPublicRootPreserved": true,
+  "legacyPublicRootSHA256": "487177570fc87895d9259df6b63b97c0a194f8f2932006f5bd40f82b3f0dbf08",
+  "publicRootEvidence": [
+    {
+      "path": "artifacts/cupertino/android-hardware/identity.xml",
+      "sha256": "84cb8bb09cb5dc0954b1d8d0ebb2c96609c94551167a13250fefef68e30ac56d"
+    },
+    {
+      "path": "artifacts/cupertino/android-hardware/pixel-fixed/identity.xml",
+      "sha256": "9b0358d4cbe92b76ff601801e82f25f04e29cd330129a691ddba3983d248b4ff"
+    }
+  ],
+  "accountAndAuthorityBinding": {
+    "preserved": true,
+    "verification": "The device operator independently compared current enrollment/account and configured authority pin in private memory; unchanged configuration bytes and matching displayed public root are archived separately. Raw journal/configuration contents are not archived."
+  },
+  "journalReview": {
+    "bytesChanged": true,
+    "actualCauseEstablished": false,
+    "observation": "The current epoch snapshot contains a prepared delegation and private key but no issued credential, as checked privately by the device operator. No private key bytes are retained in this evidence.",
+    "possibleExplanation": "The app performs legacy credential preparation on launch and persists epoch preparation before network issuance. That path can change the journal, but these observations do not establish that it caused this particular change or that renewal succeeded.",
+    "limit": "This is a session-baseline versus post-update comparison. It does not establish byte preservation across the installation itself or attribute the change to the APK installer."
+  }
+}

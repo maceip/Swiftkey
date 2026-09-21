@@ -1,5 +1,5 @@
 {
-  "generatedAtUTC": "2026-09-21T06:52:00.322057+00:00",
+  "generatedAtUTC": "2026-09-21T17:38:19.412732+00:00",
   "upstreamCommit": "f66875aa6f3848b30c38e42a89fc99c9ac24a585",
   "distinctSurfaces": 127,
   "swiftFixtures": 254,
@@ -50,7 +50,8 @@
     "AdaptiveAlertDialog-open-light-360px-font1.0-material3-popup1.png",
     "CupertinoSearchTextFieldDefaults.cancelButton-open-light-360px-font1.0.png",
     "CupertinoSectionDefaults.PickerButton-open-light-360px-font1.0.png",
-    "CupertinoNavigationBarDefaults.divider-open-light-360px-font1.0.png"
+    "CupertinoNavigationBarDefaults.divider-open-light-360px-font1.0.png",
+    "CupertinoBottomSheetScaffold-closed-light-360px-font1.0.png"
   ],
   "limits": [
     "Host JVM/Skia rendering; Android device evidence is separate.",
@@ -891,55 +892,55 @@
       "file": "CupertinoBottomSheetContent-closed-light-360px-font1.0.png",
       "width": 360,
       "height": 720,
-      "sha256": "a550c7b54147ad1b5a311fb6d318d79ca4da238d9819739c587a02aa5b4050d2"
+      "sha256": "316a1845ba0c5ce48ad53ec1be561c74d411e7f487108eb8493ab8bb040e5771"
     },
     {
       "file": "CupertinoBottomSheetContent-open-light-360px-font1.0.png",
       "width": 360,
       "height": 720,
-      "sha256": "a3484b8cd69841c06a4e8b5e11c6cd16e4da28194b70b42cf2280cb49afc662e"
+      "sha256": "3d59d576a3b52ee95eecef6c97e3b2520a8318f51c594d22e67487c2d68d4f3e"
     },
     {
       "file": "CupertinoBottomSheetDefaults.DragHandle-closed-light-360px-font1.0.png",
       "width": 360,
       "height": 720,
-      "sha256": "8ebf14d5669780f32364a2e920ad9e03bb93c82e85442427823cdced847bca39"
+      "sha256": "0bd9da84f42a2f46b2d3a8d507c8b27f90fd335fe6a162e7d560817d952512c4"
     },
     {
       "file": "CupertinoBottomSheetDefaults.DragHandle-open-light-360px-font1.0.png",
       "width": 360,
       "height": 720,
-      "sha256": "98cb59c807aecf1d065ca7e7ad09d31379fb24eb334cb81d85632d944670b17c"
+      "sha256": "51397b90446b3106ce89ceb30a885fb8c56780d77692614e251f2e4653d0ff7a"
     },
     {
       "file": "CupertinoBottomSheetScaffold-closed-light-360px-font1.0.png",
       "width": 360,
       "height": 720,
-      "sha256": "b788b6489e08337206e8c923416f9a700374eae413f9187908222144b222c83e"
+      "sha256": "f0091bd496fbc59b2569409e5433c9239ddb33e4ef211aaa7b32961f68c99b55"
     },
     {
       "file": "CupertinoBottomSheetScaffold-open-dark-360px-font1.0.png",
       "width": 360,
       "height": 720,
-      "sha256": "c8816fa4fa0a60a4d86019db4d27bc4dc68fcda27ab05fb36433ed95f40cae14"
+      "sha256": "97f5a3bbe5af4510379897e54960971a37554e748d968a58e42aaea401edd43a"
     },
     {
       "file": "CupertinoBottomSheetScaffold-open-dark-360px-font1.4.png",
       "width": 360,
       "height": 720,
-      "sha256": "fca7e45afbfb4444210ab4640064111e8a1287d7dd6d85f3040db07d413a8ceb"
+      "sha256": "e45d32a155f478df062e875de4c624964f9e0e1de79327e08cc06d2139109d16"
     },
     {
       "file": "CupertinoBottomSheetScaffold-open-light-360px-font1.0.png",
       "width": 360,
       "height": 720,
-      "sha256": "60220440084170ae3f4f4f986e05cac4d4345ff3b5260428207d7a1a4a67d008"
+      "sha256": "967f69e77851afc2edce3b0fe4d406b6e7331d163546bf03178347d1e294e2b3"
     },
     {
       "file": "CupertinoBottomSheetScaffold-open-light-360px-font1.4.png",
       "width": 360,
       "height": 720,
-      "sha256": "36d45b8fbd4c6c6f89779877df884e7b2515073585a28c20064204b80040e5ef"
+      "sha256": "0cedf8a0c5906badedb09a63014970c6c8e5cf607752892b4da69248fc415554"
     },
     {
       "file": "CupertinoButton-closed-light-360px-font1.0.png",
@@ -2261,5 +2262,41 @@
       "height": 720,
       "sha256": "ad609d01757b800893fc0137f014105f42cb4ecc6b4165ee97d78513fb361837"
     }
-  ]
+  ],
+  "previousAuditGeneratedAtUTC": "2026-09-21T06:52:00.322057+00:00",
+  "captureHashesRefreshed": [
+    "CupertinoBottomSheetContent-closed-light-360px-font1.0.png",
+    "CupertinoBottomSheetContent-open-light-360px-font1.0.png",
+    "CupertinoBottomSheetDefaults.DragHandle-closed-light-360px-font1.0.png",
+    "CupertinoBottomSheetDefaults.DragHandle-open-light-360px-font1.0.png",
+    "CupertinoBottomSheetScaffold-closed-light-360px-font1.0.png",
+    "CupertinoBottomSheetScaffold-open-dark-360px-font1.0.png",
+    "CupertinoBottomSheetScaffold-open-dark-360px-font1.4.png",
+    "CupertinoBottomSheetScaffold-open-light-360px-font1.0.png",
+    "CupertinoBottomSheetScaffold-open-light-360px-font1.4.png"
+  ],
+  "manuallyInspectedCaptureSHA256": {
+    "CupertinoButton-open-dark-360px-font1.4.png": "67eb5f814af8b0847d5f8f185d07470ca81975e09b88908bdbe82daecfc0511f",
+    "CupertinoScaffold-open-dark-360px-font1.4.png": "f97aa39f33648d933f80c1a15197ac4ce2acd5c14185a326797c191b875ea767",
+    "CupertinoSection-open-dark-360px-font1.4.png": "2768e071297b5c1f2a1eb37367ebc20f9b0ee54aaca3c0c316c2bd5133419c82",
+    "CupertinoBorderedTextField-open-dark-360px-font1.4.png": "759804491963e9743f43bda926d7a1b30e7e6ad0b7d1f39fe9314add2376f148",
+    "CupertinoSearchTextField-open-dark-360px-font1.4.png": "00b93641200a98361cf9e9a1091401210c903709364c1178c25bfd9cfa457689",
+    "CupertinoNavigationBar-open-dark-360px-font1.4.png": "724eaaf719a202220baa283c63d90e009c3b0a66e32b71ef10d207ee8b562806",
+    "CupertinoSegmentedControl-open-dark-360px-font1.4.png": "9d0c01de48a0e2fd93a53657d6b5b20234003fe943bcd7c9edf50284895f6a72",
+    "CupertinoDatePicker-open-dark-360px-font1.4.png": "c3d926a4dd4a2a113f9533cfaba0604b0750d3a94e4854cc638db21cbb107ca8",
+    "CupertinoWheelPicker-open-dark-360px-font1.4.png": "da429b24e1699214786ccf0027526ff5c3f137620e56fe06a2300ae0ef69c61b",
+    "CupertinoBottomSheetScaffold-open-light-360px-font1.0.png": "967f69e77851afc2edce3b0fe4d406b6e7331d163546bf03178347d1e294e2b3",
+    "CupertinoBottomSheetScaffold-open-dark-360px-font1.4.png": "e45d32a155f478df062e875de4c624964f9e0e1de79327e08cc06d2139109d16",
+    "CupertinoAlertDialog-open-dark-360px-font1.4-popup1.png": "932f3d98f450aaf2d36d72793a4df4089fe92aed19d8753a3b0daa68e18ad8d3",
+    "CupertinoAlertDialog-open-light-360px-font1.0-popup1.png": "e8600bc78f89d43b2504d5adcb48c0061bd8400ef0e451b7710c500dea5158fa",
+    "CupertinoAlertDialog-closed-light-360px-font1.0.png": "60a1a0da3dd4e1eb6df9544d77d839e960973a395208577522021d613441829b",
+    "AdaptiveButton-open-light-360px-font1.0-material3.png": "864362e0d98e193ffd5722a8e29627393879582091207baa3c59e3fb36962af7",
+    "AdaptiveSlider-open-light-360px-font1.0-material3.png": "e9b3109f31edf28fd4d275762df63321704aad5283e33f19c130774a38bcbe16",
+    "AdaptiveSwitch-open-light-360px-font1.0-material3.png": "89008632ab416d3bf2be5cade888b1a0531c581eafb47314cd12435c693be4f3",
+    "AdaptiveAlertDialog-open-light-360px-font1.0-material3-popup1.png": "3fecf78307020292c0d6f61c43db5450db87ab748d7036cda74e42467d1be6c2",
+    "CupertinoSearchTextFieldDefaults.cancelButton-open-light-360px-font1.0.png": "d5eb3f43ee034233a5a69d72a445b1d842fe80e2d1ed89369ed8c5f42534492f",
+    "CupertinoSectionDefaults.PickerButton-open-light-360px-font1.0.png": "9a43d8c33b653c9bdb353964416b9cbe1629e4cfcdecff522576b7b09d8175b2",
+    "CupertinoNavigationBarDefaults.divider-open-light-360px-font1.0.png": "d86030cacfffe50ba2c2f192e58f1a671e705e305e4f29a758826cf3b5030f22",
+    "CupertinoBottomSheetScaffold-closed-light-360px-font1.0.png": "f0091bd496fbc59b2569409e5433c9239ddb33e4ef211aaa7b32961f68c99b55"
+  }
 }

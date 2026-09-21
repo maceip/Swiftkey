@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pureswift.swiftui.CupertinoTextEntryTests" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-09-21T17:09:41" hostname="macs-MacBook-Pro.local" time="1.037">
+  <properties/>
+  <testcase name="renderedLazySectionInputSurvivesDelayedSwiftEchoAndClear[desktop]" classname="com.pureswift.swiftui.CupertinoTextEntryTests" time="0.584"/>
+  <testcase name="distinctProgrammaticChangeWinsOverPendingInputAndClearsComposition[desktop]" classname="com.pureswift.swiftui.CupertinoTextEntryTests" time="0.023"/>
+  <testcase name="unchangedInitialTreeDoesNotUndoNativeInput[desktop]" classname="com.pureswift.swiftui.CupertinoTextEntryTests" time="0.023"/>
+  <testcase name="selectionOnlyNativeChangeSurvivesStringAcknowledgement[desktop]" classname="com.pureswift.swiftui.CupertinoTextEntryTests" time="0.022"/>
+  <testcase name="renderedSearchInputSurvivesDelayedSwiftEcho[desktop]" classname="com.pureswift.swiftui.CupertinoTextEntryTests" time="0.164"/>
+  <testcase name="delayedStringEchoKeepsNewerTextCursorAndComposition[desktop]" classname="com.pureswift.swiftui.CupertinoTextEntryTests" time="0.024"/>
+  <testcase name="renderedPlainInputSurvivesDelayedSwiftEcho[desktop]" classname="com.pureswift.swiftui.CupertinoTextEntryTests" time="0.041"/>
+  <testcase name="renderedSectionInputSurvivesDelayedSwiftEchoAndClear[desktop]" classname="com.pureswift.swiftui.CupertinoTextEntryTests" time="0.073"/>
+  <testcase name="renderedBorderedInputSurvivesDelayedSwiftEcho[desktop]" classname="com.pureswift.swiftui.CupertinoTextEntryTests" time="0.039"/>
+  <testcase name="coalescedEchoAcknowledgesSkippedIntermediateEdits[desktop]" classname="com.pureswift.swiftui.CupertinoTextEntryTests" time="0.021"/>
+  <testcase name="editingEchoCannotRewindNewerSelectionOrComposition[desktop]" classname="com.pureswift.swiftui.CupertinoTextEntryTests" time="0.022"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

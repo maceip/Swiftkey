@@ -16,4 +16,6 @@
 **/.state/
 **/swiftkey-client.json
 **/swiftkey-protocol-state.json
+**/swiftkey-pairing-v2-config.json
+**/swiftkey-pairing-v2-state.json
 **/private-backup-location.txt

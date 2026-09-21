@@ -8,6 +8,23 @@ public enum PhoneProtocolPhase: String, Codable, CaseIterable, Sendable {
     case comparePeers, waitingForPairConsent, paired, reviewGenesis, waitingForGenesisConsent
     case committed, signIn, owners, chooseOwnerChange, reviewMembership, waitingForMembershipConsent
     case reviewRevocation, reviewPolicy, reviewBrowserLogin, renewingTrust, trustUnavailable, revoked, cancelled, rejected, invalidated, expired, outcomeUnknown
+
+    /// Ceremonies can change while this phone is still reviewing them.
+    /// In particular, either peer may propose after pairing, replace a genesis,
+    /// approve, reject or cancel. Refresh never supplies that phone's consent.
+    /// An unjoined inspection also needs clock re-projection so its deadline
+    /// transitions to the expired/restart flow. Unknown outcomes retain explicit
+    /// recovery; committed accounts use their roster refresh flow.
+    public var requiresCeremonyRefresh: Bool {
+        switch self {
+        case .preparingIdentity, .invitation, .inspectInvitation, .comparePeers, .waitingForPairConsent,
+             .paired, .reviewGenesis, .waitingForGenesisConsent,
+             .reviewMembership, .waitingForMembershipConsent:
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 public enum PhoneProtocolAvailability: String, Codable, Sendable {

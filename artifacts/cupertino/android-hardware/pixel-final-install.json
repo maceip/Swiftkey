@@ -1,0 +1,20 @@
+{
+  "recordedAtUTC": "2026-09-21T18:04:53Z",
+  "device": "pixel-final",
+  "apkSHA256": "2a1a736512343cdf617bed94af2711d83f54f3035f5bcff3ce6559524a514667",
+  "apkBytes": 339809795,
+  "installResult": "Success",
+  "statePreservedBeforeLaunch": true,
+  "beforeSHA256": {
+    "files/swiftkey-client.json": "60042750d4fdb58902979ac2c77db68ea627a0e5f67b083dbf262146bbe1b3fb",
+    "files/swiftkey-protocol-state.json": "efbb037246b13354a4f0de36687ea85cb2e37280effbc69a381a434ed294fc92",
+    "no_backup/swiftkey-pairing-v2-config.json": "c475db8730ecb2f064d054bdfe228a5833d1234a5659a48ab8456031596087db",
+    "no_backup/swiftkey-pairing-v2-state.json": "e3a0f20c2f8e1984086f3170e2a681b492fb0b1639a0476f77ff23d2047f4d40"
+  },
+  "afterSHA256": {
+    "files/swiftkey-client.json": "60042750d4fdb58902979ac2c77db68ea627a0e5f67b083dbf262146bbe1b3fb",
+    "files/swiftkey-protocol-state.json": "efbb037246b13354a4f0de36687ea85cb2e37280effbc69a381a434ed294fc92",
+    "no_backup/swiftkey-pairing-v2-config.json": "c475db8730ecb2f064d054bdfe228a5833d1234a5659a48ab8456031596087db",
+    "no_backup/swiftkey-pairing-v2-state.json": "e3a0f20c2f8e1984086f3170e2a681b492fb0b1639a0476f77ff23d2047f4d40"
+  }
+}

@@ -57,6 +57,130 @@ private func phoneCommitted() -> PhoneProtocolSnapshot {
     return result
 }
 
+@Test func pairedPhoneDiscoversPeerProposalWithoutIssuingItsOwnProposal() async {
+    let service = PhoneServiceFixture(phoneReview(.paired))
+    let store = PhoneProtocolStore(service: service, clock: { phoneNow })
+    let paired = await store.send(.refresh)
+    #expect(paired.phase.requiresCeremonyRefresh)
+    await service.set(phoneReview(.reviewGenesis))
+    let refreshed = await store.send(.refresh)
+    #expect(refreshed.phase == .reviewGenesis)
+    #expect(await service.requests().allSatisfy { $0.action == .refresh })
+}
+
+@Test func unapprovedReviewRefreshesReplacementAndRejectsThePreviousConsentBinding() async {
+    let service = PhoneServiceFixture(phoneReview())
+    let store = PhoneProtocolStore(service: service, clock: { phoneNow })
+    let first = await store.send(.refresh)
+    #expect(first.phase.requiresCeremonyRefresh)
+    var replacement = phoneReview()
+    replacement.binding = PhoneProtocolBinding(objectID: "replacement-proposal", revision: phoneBinding.revision + 1,
+        digest: String(repeating: "d", count: 64), expiresAt: phoneBinding.expiresAt)
+    replacement.accountLabel = "Changed by the other phone"
+    await service.set(replacement)
+    let refreshed = await store.send(.refresh)
+    #expect(refreshed.binding == replacement.binding && refreshed.accountLabel == replacement.accountLabel)
+    #expect(await store.send(.approveGenesis(phoneBinding)).failure == .staleBinding)
+    #expect(await service.requests().allSatisfy { $0.action == .refresh })
+}
+
+@Test func ceremonyRefreshIncludesInvitationAndParticipantReviewsButNotTerminalStates() {
+    for phase in [PhoneProtocolPhase.inspectInvitation, .comparePeers, .paired, .reviewGenesis, .reviewMembership] {
+        #expect(phase.requiresCeremonyRefresh)
+    }
+    for phase in [PhoneProtocolPhase.introduction, .importingInvitation, .committed,
+                  .owners, .signIn, .outcomeUnknown, .cancelled, .rejected, .invalidated, .expired, .revoked] {
+        #expect(!phase.requiresCeremonyRefresh)
+    }
+}
+
+@Test func quietRefreshKeepsLayoutStableAndDefersOnlyOneOriginalExplicitAction() async throws {
+    let service = PhoneServiceFixture(phoneReview())
+    let store = PhoneProtocolStore(service: service, clock: { phoneNow })
+    _ = await store.send(.refresh)
+    await service.pause()
+    var schedule = PhoneProtocolActionSchedule()
+    #expect(schedule.begin(.refresh, quiet: true) == .start)
+    let read = Task { await store.send(.refresh) }
+    await service.waitUntilStarted()
+    let whileReading = await store.snapshot()
+    #expect(whileReading.busy)
+    #expect(!schedule.presentation(whileReading).busy)
+    #expect(schedule.presentation(whileReading).phase == .reviewGenesis)
+    let approval = PhoneProtocolAction.approveGenesis(phoneBinding)
+    #expect(schedule.begin(approval) == .deferred)
+    #expect(schedule.presentation(whileReading).busy)
+    #expect(schedule.begin(approval) == .busy)
+    #expect(schedule.begin(.cancel(phoneBinding)) == .busy)
+    #expect(await service.requests().allSatisfy { $0.action == .refresh })
+    await service.resume()
+    _ = await read.value
+    let finished = schedule.finish()
+    let intent = try #require(finished)
+    guard case .action(let queued) = intent else { Issue.record("Expected the original approval"); return }
+    #expect(queued == approval && !schedule.isPerforming)
+    #expect(schedule.begin(queued) == .start)
+    #expect(schedule.begin(approval) == .busy)
+    await service.set(phoneCommitted())
+    #expect(await store.send(queued).phase == .committed)
+    #expect(schedule.finish() == nil)
+    #expect(await service.requests().filter { !$0.action.isReadOnly }.map(\.action) == [approval])
+}
+
+@Test func deferredApprovalKeepsOldBindingAndIsRejectedAfterQuietRefreshChangesReview() async throws {
+    let service = PhoneServiceFixture(phoneReview())
+    let store = PhoneProtocolStore(service: service, clock: { phoneNow })
+    _ = await store.send(.refresh)
+    var replacement = phoneReview()
+    replacement.binding = PhoneProtocolBinding(objectID: "replacement-during-read", revision: 1,
+        digest: String(repeating: "d", count: 64), expiresAt: phoneBinding.expiresAt)
+    await service.set(replacement)
+    await service.pause()
+    var schedule = PhoneProtocolActionSchedule()
+    #expect(schedule.begin(.refresh, quiet: true) == .start)
+    let read = Task { await store.send(.refresh) }
+    await service.waitUntilStarted()
+    let approval = PhoneProtocolAction.approveGenesis(phoneBinding)
+    #expect(schedule.begin(approval) == .deferred)
+    await service.resume()
+    #expect(await read.value.binding == replacement.binding)
+    let finished = schedule.finish()
+    let intent = try #require(finished)
+    guard case .action(let queued) = intent else { Issue.record("Expected the original approval"); return }
+    #expect(queued == approval && queued.binding == phoneBinding)
+    #expect(schedule.begin(queued) == .start)
+    let rejected = await store.send(queued)
+    #expect(rejected.failure == .staleBinding && rejected.binding == replacement.binding)
+    #expect(schedule.finish() == nil)
+    #expect(await service.requests().allSatisfy { $0.action == .refresh })
+}
+
+@Test func invitationPresentationSharesTheSingleDeferredSlotAndKeepsItsOriginalBinding() {
+    var schedule = PhoneProtocolActionSchedule()
+    #expect(schedule.begin(.refresh, quiet: true) == .start)
+    #expect(schedule.beginInvitation(phoneBinding) == .deferred)
+    #expect(schedule.beginInvitation(phoneBinding) == .busy)
+    #expect(schedule.begin(.approveGenesis(phoneBinding)) == .busy)
+    let pending = schedule.finish()
+    #expect(pending == .presentInvitation(phoneBinding))
+    var unchanged = phoneReview(.invitation)
+    #expect(PhoneProtocolActionSchedule.canPresentInvitation(phoneBinding, in: unchanged))
+    for phase in [PhoneProtocolPhase.comparePeers, .expired, .cancelled] {
+        var advanced = unchanged; advanced.phase = phase
+        #expect(!PhoneProtocolActionSchedule.canPresentInvitation(phoneBinding, in: advanced))
+    }
+    var rotated = unchanged
+    rotated.binding?.revision += 1
+    #expect(!PhoneProtocolActionSchedule.canPresentInvitation(phoneBinding, in: rotated))
+    unchanged.busy = true
+    #expect(!PhoneProtocolActionSchedule.canPresentInvitation(phoneBinding, in: unchanged))
+    #expect(schedule.beginInvitation(phoneBinding) == .start)
+    #expect(schedule.begin(.refresh, quiet: true) == .busy)
+    #expect(schedule.begin(.cancel(phoneBinding)) == .busy)
+    #expect(schedule.finish() == nil)
+    #expect(!schedule.isPerforming)
+}
+
 @Test func phoneProtocolWithoutAdapterCannotStartOrPretendToRefresh() async {
     let store = PhoneProtocolStore(clock: { phoneNow })
     for action in [PhoneProtocolAction.prepareIdentity, .refresh, .createPairing] {

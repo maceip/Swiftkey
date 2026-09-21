@@ -1,0 +1,36 @@
+{
+  "checkedAtUTC": "2026-09-21T17:41:02.450578+00:00",
+  "deviceSerial": "10.0.0.157:37429",
+  "device": "Pixel",
+  "apkSHA256ReportedByRoot": "43537a5d96f2075a0fdecc6811f35fb47de93b03e929e19524170ad983666e8e",
+  "priorV2ConfigAndJournalAbsentIncludingBackupAndStaging": true,
+  "authority": {
+    "serverURL": "http://127.0.0.1:18191",
+    "audience": "swiftkey-authority-v2",
+    "workloadAudience": "swiftkey.local",
+    "publicKeySHA256": "c4b8e1dc1b6737968fc1111309b10e059a0964146d39b5715799a918a4816f12",
+    "configuredThroughSecureNativeUI": true
+  },
+  "admission": {
+    "uiStatus": "Verified hardware identity",
+    "identityID": "098a4159-b308-4d7f-9bc5-a4f2f9440883",
+    "rootFingerprint": "62138df796ff596897124c114787c81cc38e5ca0ce2e57589226518df64a7faf",
+    "rootKind": "Android StrongBox P-256",
+    "rootKeyEpoch": 1,
+    "prepareActionsInvoked": 1
+  },
+  "scope": {
+    "secureDialogScreenshotsTaken": false,
+    "invitationCreated": false,
+    "joined": false,
+    "genesisApproved": false,
+    "signedIn": false,
+    "stateCleared": false,
+    "reinstalled": false,
+    "deviceReleasedToRoot": true
+  },
+  "screenshotsInspected": [
+    "prepared-identity.png",
+    "prepared-trust.png"
+  ]
+}

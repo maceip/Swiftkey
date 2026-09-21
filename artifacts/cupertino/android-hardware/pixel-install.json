@@ -1,0 +1,15 @@
+{
+  "recordedAtUTC": "2026-09-21T17:36:39.643357+00:00",
+  "device": "pixel",
+  "apkSHA256": "43537a5d96f2075a0fdecc6811f35fb47de93b03e929e19524170ad983666e8e",
+  "apkBytes": 339727875,
+  "installationVerification": "The device operator reported successful package update and verified the transferred APK SHA256 against this build. APK contents were not reinstalled by this review.",
+  "configurationBytesPreserved": true,
+  "legacyPublicRootPreserved": true,
+  "legacyAccountAndAuthorityBindingPreserved": true,
+  "sessionBaselineJournalBytesPreserved": false,
+  "installationBytePreservationEstablished": false,
+  "journalChangeCauseEstablished": false,
+  "stateReview": "pixel-install-state-review.json",
+  "scope": "Public/hash metadata only; no private keys, bearer tokens or raw journals."
+}

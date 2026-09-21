@@ -13,132 +13,29 @@ warning: 'android': Conflicting identity for swift-android-native: dependency 'g
 [11/14] Write Objects.LinkFileList
 [12/14] Linking StaticBuildConfigPluginExecutable-tool
 [13/14] Applying StaticBuildConfigPluginExecutable-tool
-[0/1] Planning build
 Building for debugging...
-[0/3] Write sources
-[1/3] Write swift-version-43AF9A9ED32E53B.txt
-[3/8] Compiling SwiftUICore CupertinoDefaults.swift
-[4/8] Compiling SwiftUICore CupertinoPresentation.swift
-[5/8] Compiling SwiftUICore LazyStacks.swift
-[6/65] Compiling SwiftUICore Text.swift
-[7/65] Compiling SwiftUICore Transition.swift
-[8/65] Compiling SwiftUICore VideoPlayer.swift
-[9/68] Compiling SwiftUICore Gradient.swift
-[10/68] Compiling SwiftUICore Label.swift
-[11/68] Compiling SwiftUICore Link.swift
-[12/71] Compiling SwiftUICore Shapes.swift
-[13/71] Compiling SwiftUICore Stacks.swift
-[14/71] Compiling SwiftUICore Stepper.swift
-[15/71] Compiling SwiftUICore CupertinoCatalogView.swift
-[16/71] Compiling SwiftUICore Views.swift
-[17/71] Compiling SwiftUICore RenderNode.swift
-[18/71] Compiling SwiftUICore State.swift
-[19/71] Compiling SwiftUICore AppearanceModifiers.swift
-[20/71] Compiling SwiftUICore ControlStyles.swift
-[21/71] Compiling SwiftUICore InteractionModifiers.swift
-[22/71] Compiling SwiftUICore KeyboardModifiers.swift
-[23/71] Compiling SwiftUICore ForEach.swift
-[24/71] Compiling SwiftUICore Form.swift
-[25/71] Compiling SwiftUICore GeometryReader.swift
-[26/71] Compiling SwiftUICore ContextMenu.swift
-[27/71] Compiling SwiftUICore Controls.swift
-[28/71] Compiling SwiftUICore DatePicker.swift
-[29/71] Compiling SwiftUICore DisclosureGroup.swift
-[30/71] Compiling SwiftUICore Map.swift
-[31/71] Compiling SwiftUICore Menu.swift
-[32/71] Compiling SwiftUICore Overlay.swift
-[33/71] Compiling SwiftUICore View.swift
-[34/71] Compiling SwiftUICore ViewBuilder.swift
-[35/71] Compiling SwiftUICore ViewHost.swift
-[36/71] Compiling SwiftUICore SubtreeAnchors.swift
-[37/71] Compiling SwiftUICore TabView.swift
-[38/71] Compiling SwiftUICore Toolbar.swift
-[39/71] Compiling SwiftUICore Presentation.swift
-[40/71] Compiling SwiftUICore AsyncImage.swift
-[41/71] Compiling SwiftUICore Button.swift
-[42/71] Compiling SwiftUICore ComposableView.swift
-[43/71] Compiling SwiftUICore CupertinoTextEntry.swift
-[44/71] Compiling SwiftUICore Environment.swift
-[45/71] Compiling SwiftUICore Evaluator.swift
-[46/71] Compiling SwiftUICore FocusState.swift
-[47/71] Compiling SwiftUICore Picker.swift
-[48/71] Compiling SwiftUICore Popover.swift
-[49/71] Compiling SwiftUICore ProgressView.swift
-[50/71] Compiling SwiftUICore Modifiers.swift
-[51/71] Compiling SwiftUICore TextModifiers.swift
-[52/71] Compiling SwiftUICore Navigation.swift
-[53/71] Compiling SwiftUICore Preferences.swift
-[54/71] Compiling SwiftUICore Animation.swift
-[55/71] Compiling SwiftUICore Color.swift
-[56/71] Compiling SwiftUICore CupertinoComponent.swift
-[57/71] Compiling SwiftUICore CupertinoControls.swift
-[58/71] Compiling SwiftUICore Gesture.swift
-/Users/mac/SwiftKey/AndroidSwiftUI/SwiftUICore/Sources/SwiftUICore/List.swift:48:17: warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
-46 |             let element = elements[index]
-47 |             let key = "#\(identityString(keyFor(element)))"
-48 |             var rowContext = ResolveContext(
-   |                 `- warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
-49 |                 storage: storage,
-50 |                 callbacks: callbacks,
-[59/71] Compiling SwiftUICore Grids.swift
-/Users/mac/SwiftKey/AndroidSwiftUI/SwiftUICore/Sources/SwiftUICore/List.swift:48:17: warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
-46 |             let element = elements[index]
-47 |             let key = "#\(identityString(keyFor(element)))"
-48 |             var rowContext = ResolveContext(
-   |                 `- warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
-49 |                 storage: storage,
-50 |                 callbacks: callbacks,
-[60/71] Compiling SwiftUICore List.swift
-/Users/mac/SwiftKey/AndroidSwiftUI/SwiftUICore/Sources/SwiftUICore/List.swift:48:17: warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
-46 |             let element = elements[index]
-47 |             let key = "#\(identityString(keyFor(element)))"
-48 |             var rowContext = ResolveContext(
-   |                 `- warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
-49 |                 storage: storage,
-50 |                 callbacks: callbacks,
-[61/71] Compiling SwiftUICore Accessibility.swift
-/Users/mac/SwiftKey/AndroidSwiftUI/SwiftUICore/Sources/SwiftUICore/List.swift:48:17: warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
-46 |             let element = elements[index]
-47 |             let key = "#\(identityString(keyFor(element)))"
-48 |             var rowContext = ResolveContext(
-   |                 `- warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
-49 |                 storage: storage,
-50 |                 callbacks: callbacks,
-[62/71] Compiling SwiftUICore CupertinoPickers.swift
-[63/71] Compiling SwiftUICore CupertinoRichText.swift
-[64/71] Compiling SwiftUICore CupertinoSections.swift
-[65/71] Compiling SwiftUICore CupertinoState.swift
-[66/71] Emitting module SwiftUICore
-[67/71] Compiling SwiftUICore CupertinoHostEffects.swift
-[68/71] Compiling SwiftUICore CupertinoIcons.swift
-[69/71] Compiling SwiftUICore CupertinoLayout.swift
-[70/71] Compiling SwiftUICore CupertinoNavigation.swift
-[71/118] Compiling CSwiftJavaJNI dummy.c
-[72/124] Compiling _SwiftSyntaxCShims PlatformMutex.c
-[73/124] Wrapping AST for SwiftUICore for debugging
-[74/124] Compiling CSystem shims.c
-[75/132] Compiling _SubprocessCShims process_shims.c
-[76/132] Write Objects.LinkFileList
-[79/132] Compiling SwiftKeyUI WorkspaceView.swift
-[80/132] Compiling SwiftKeyUI SwiftKeyAppearance.swift
-[81/132] Compiling SwiftKeyUI SwiftKeyPublicKeyView.swift
-[81/132] Linking StaticBuildConfigPluginExecutable-tool
-[82/132] Linking SwiftJavaMacros-tool
-[84/99] Compiling SwiftKeyUI SwiftKeyIdentityView.swift
-[85/99] Compiling SwiftKeyUI SwiftKeyComponents.swift
-[86/99] Emitting module SwiftKeyUI
-[87/99] Compiling SwiftKeyUI PhoneProtocolView.swift
-[88/104] Run -print-static-build-config
-[89/104] Copying static-build-config.json
-[90/104] Write Objects.LinkFileList
-[92/104] Compiling ComposeUI Materializer.swift
-[93/104] Emitting module ComposeUI
-[94/104] Compiling ComposeUI BridgeRuntime.swift
-[95/104] Compiling ComposeUI KotlinBindings.swift
-[96/104] Compiling ComposeUI SwiftCallbackSink.swift
-[97/104] Linking swift-java-tool
-2026-09-20T23:48:00-0700 info swift-java: [swift_java] Run JExtractCommand: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/arm64-apple-macosx/debug/swift-java-tool jextract --config /Users/mac/SwiftKey/AndroidSwiftUI/Sources/BridgeExport/swift-java.config --swift-module BridgeExport --input-swift /Users/mac/SwiftKey/AndroidSwiftUI/Sources/BridgeExport/ --output-java /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/src/generated/java --output-swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/Sources --write-empty-files --depends-on SwiftJava=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/ --depends-on SwiftJavaRuntimeSupport=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/ --depends-on SwiftJava=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/ --depends-on SwiftJavaRuntimeSupport=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/ --linker-export-list-output /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/swift-java-jni-exports.map --generated-java-sources-list-file-output jextract-generated-sources.txt
-2026-09-20T23:48:00-0700 info swift-java: [swift_java] Current work directory: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift
+[0/60] Write sources
+[1/62] Compiling _SwiftSyntaxCShims PlatformMutex.c
+[2/62] Write swift-version-43AF9A9ED32E53B.txt
+[3/49] Compiling CSwiftJavaJNI dummy.c
+[4/57] Compiling CSystem shims.c
+[5/58] Compiling _SubprocessCShims process_shims.c
+[7/58] Emitting module SwiftKeyApplication
+[8/58] Compiling SwiftKeyApplication PhoneProtocolActionSchedule.swift
+[8/58] Write Objects.LinkFileList
+[10/59] Wrapping AST for SwiftKeyApplication for debugging
+[11/59] Write Objects.LinkFileList
+[12/62] Linking StaticBuildConfigPluginExecutable-tool
+[13/62] Linking SwiftJavaMacros-tool
+[15/28] Emitting module SwiftKeyUI
+[16/28] Compiling SwiftKeyUI PhoneProtocolView.swift
+[17/28] Compiling SwiftKeyUI WorkspaceView.swift
+[18/28] Run -print-static-build-config
+[19/28] Copying static-build-config.json
+[20/28] Write Objects.LinkFileList
+[21/28] Linking swift-java-tool
+2026-09-21T10:59:41-0700 info swift-java: [swift_java] Run JExtractCommand: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/arm64-apple-macosx/debug/swift-java-tool jextract --config /Users/mac/SwiftKey/AndroidSwiftUI/Sources/BridgeExport/swift-java.config --swift-module BridgeExport --input-swift /Users/mac/SwiftKey/AndroidSwiftUI/Sources/BridgeExport/ --output-java /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/src/generated/java --output-swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/Sources --write-empty-files --depends-on SwiftJava=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/ --depends-on SwiftJavaRuntimeSupport=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/ --depends-on SwiftJava=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/ --depends-on SwiftJavaRuntimeSupport=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/ --linker-export-list-output /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/swift-java-jni-exports.map --generated-java-sources-list-file-output jextract-generated-sources.txt
+2026-09-21T10:59:41-0700 info swift-java: [swift_java] Current work directory: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift
 [debug][swift-java] Load config from passed in path: file:///Users/mac/SwiftKey/AndroidSwiftUI/Sources/BridgeExport/swift-java.config
 [debug][swift-java] Running 'swift-java jextract' in mode: jni
 [debug][swift-java] Dependency configs: 4
@@ -149,7 +46,7 @@ Building for debugging...
 [info][JExtractSwiftLib/JavaSourceDependencies.swift:78](loadSwiftSources(from:log:)) Loaded 78 source file(s) for dependency module 'SwiftJava' from ["/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava"] 
 [info][JExtractSwiftLib/JavaSourceDependencies.swift:78](loadSwiftSources(from:log:)) Loaded 11 source file(s) for dependency module 'SwiftJavaRuntimeSupport' from ["/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport"] 
 [info][JExtractSwiftLib/JNISwift2JavaGenerator+SwiftThunkPrinting.swift:73](writeSwiftThunkSources(_:)) Generated: BridgeExportModule+SwiftJava.swift (at file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/Sources/BridgeExportModule+SwiftJava.swift) 
-[warning][JExtractSwiftLib/JNISwift2JavaGenerator+SwiftThunkPrinting.swift:93](writeSwiftThunkSources(_:)) Writing types in file group: /Users/mac/SwiftKey/AndroidSwiftUI/Sources/BridgeExport/BridgeExport.swift: ["BridgeHost", "SwiftTask"] 
+[warning][JExtractSwiftLib/JNISwift2JavaGenerator+SwiftThunkPrinting.swift:93](writeSwiftThunkSources(_:)) Writing types in file group: /Users/mac/SwiftKey/AndroidSwiftUI/Sources/BridgeExport/BridgeExport.swift: ["SwiftTask", "BridgeHost"] 
 [info][JExtractSwiftLib/JNISwift2JavaGenerator+SwiftThunkPrinting.swift:103](writeSwiftThunkSources(_:)) Printing Swift thunks for type: BridgeHost 
 [info][JExtractSwiftLib/JNISwift2JavaGenerator+SwiftThunkPrinting.swift:103](writeSwiftThunkSources(_:)) Printing Swift thunks for type: SwiftTask 
 [warning][JExtractSwiftLib/JNISwift2JavaGenerator+SwiftThunkPrinting.swift:116](writeSwiftThunkSources(_:)) Write Swift thunks file: BridgeExport+SwiftJava.swift 
@@ -162,7 +59,7 @@ Building for debugging...
 [info][JExtractSwiftLib/JNISwift2JavaGenerator+SwiftThunkPrinting.swift:177](writeLinkerExportList()) [swift-java] Generated linker export list (15 symbols): /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/swift-java-jni-exports.map 
 [swift-java] Write empty [1] 'expected' files in: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/Sources/
 [swift-java] Imported Swift module 'BridgeExport': done.
-[98/104] Generate Java wrappers for Swift types
+[22/28] Generate Java wrappers for Swift types
 To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.4.0/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
 Daemon will be stopped at the end of the build 
 Configuration on demand is an incubating feature.
@@ -198,25 +95,25 @@ Type-safe project accessors is an incubating feature.
 
 BUILD SUCCESSFUL in 3s
 18 actionable tasks: 18 up-to-date
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Run ConfigureCommand: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/arm64-apple-macosx/debug/swift-java-tool configure --output-directory /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output --cp /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output --swift-module BridgeExport --swift-type-prefix Java
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Current work directory: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift
-2026-09-20T23:48:05-0700 warning swift-java: [swift_java] [swift-java] Failed to load initial configuration. Proceeding with empty configuration.
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Run ConfigureCommand: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/arm64-apple-macosx/debug/swift-java-tool configure --output-directory /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output --cp /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output --swift-module BridgeExport --swift-type-prefix Java
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Current work directory: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift
+2026-09-21T10:59:47-0700 warning swift-java: [swift_java] [swift-java] Failed to load initial configuration. Proceeding with empty configuration.
 [debug][swift-java] Load config from module base directory: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/Sources/BridgeExport
-Failed to read SwiftJava configuration at 'file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/Sources/BridgeExport/swift-java.config', error: Error Domain=NSCocoaErrorDomain Code=260 "The file “swift-java.config” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/Sources/BridgeExport/swift-java.config, NSURL=./Sources/BridgeExport/swift-java.config -- file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/, NSUnderlyingError=0x1060debf0 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+Failed to read SwiftJava configuration at 'file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/Sources/BridgeExport/swift-java.config', error: Error Domain=NSCocoaErrorDomain Code=260 "The file “swift-java.config” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/Sources/BridgeExport/swift-java.config, NSURL=./Sources/BridgeExport/swift-java.config -- file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/, NSUnderlyingError=0x1077219a0 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
 [debug][swift-java] Searching for *.swift-java.classpath files in: file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/Sources/BridgeExport
 [warning][swift-java][JavaVirtualMachine] Missing classpath element: file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/%5B%22/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output%22%5D
-2026-09-20T23:48:05-0700 info swift-java:configure: [swift_java] Run: emit configuration...
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.BridgeHostBox' as 'JavaBridgeHostBox' Swift type.
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.BridgeHost' as 'JavaBridgeHost' Swift type.
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.BridgeExport$bridgeScheduleMain' as 'JavaBridgeExport.bridgeScheduleMain' Swift type.
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.BridgeExport' as 'JavaBridgeExport' Swift type.
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.SwiftTask' as 'JavaSwiftTask' Swift type.
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.BridgeExport$bridgeScheduleMain$block' as 'JavaBridgeExport.bridgeScheduleMain.block' Swift type.
+2026-09-21T10:59:47-0700 info swift-java:configure: [swift_java] Run: emit configuration...
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.BridgeHostBox' as 'JavaBridgeHostBox' Swift type.
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.BridgeHost' as 'JavaBridgeHost' Swift type.
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.BridgeExport$bridgeScheduleMain' as 'JavaBridgeExport.bridgeScheduleMain' Swift type.
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.BridgeExport' as 'JavaBridgeExport' Swift type.
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.SwiftTask' as 'JavaSwiftTask' Swift type.
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.BridgeExport$bridgeScheduleMain$block' as 'JavaBridgeExport.bridgeScheduleMain.block' Swift type.
 [debug][swift-java] Importing classpath entry: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output
 [debug][swift-java] Importing classpath as directory: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output
 [trace][swift-java] Writing swift-java configuration file to '/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output/swift-java.config'... done.
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Run WrapJavaCommand: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/arm64-apple-macosx/debug/swift-java-tool wrap-java --swift-module BridgeExport --output-directory /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/Sources --config /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output/swift-java.config --cp /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/SwiftKitCore/build/classes/java/main --single-swift-file-output WrapJavaGenerated.swift --depends-on SwiftJava=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/ --depends-on SwiftJavaRuntimeSupport=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/ --depends-on SwiftJava=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/ --depends-on SwiftJavaRuntimeSupport=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Current work directory: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Run WrapJavaCommand: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/arm64-apple-macosx/debug/swift-java-tool wrap-java --swift-module BridgeExport --output-directory /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/Sources --config /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output/swift-java.config --cp /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/SwiftKitCore/build/classes/java/main --single-swift-file-output WrapJavaGenerated.swift --depends-on SwiftJava=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/ --depends-on SwiftJavaRuntimeSupport=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/ --depends-on SwiftJava=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/ --depends-on SwiftJavaRuntimeSupport=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Current work directory: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift
 [debug][swift-java] Load config from passed in path: file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output/swift-java.config
 self.filterInclude = []
 [trace][swift-java] Cache directory: none
@@ -232,35 +129,44 @@ self.filterInclude = []
 [warning][swift-java][JavaVirtualMachine] Missing classpath element: file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/%5B%22/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/SwiftKitCore/build/classes/java/main%22%5D
 [warning][swift-java][JavaVirtualMachine] Missing classpath element: file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/SwiftKitCore/build/classes/java/main
 [warning][swift-java][JavaVirtualMachine] Missing classpath element: file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/SwiftKitCore/build/classes/java/main
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Active include filters: []
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Active exclude filters: []
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Wrapping java type: com.pureswift.bridge.BridgeExport$bridgeScheduleMain$block
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Wrapping java type: com.pureswift.bridge.BridgeHost
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Wrapping java type: com.pureswift.bridge.SwiftTask
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Wrapping java type: com.pureswift.bridge.BridgeExport
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Skip Java type: com.pureswift.bridge.BridgeHostBox (does not match minimum access level)
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] Wrapping java type: com.pureswift.bridge.BridgeExport$bridgeScheduleMain
-2026-09-20T23:48:05-0700 info swift-java: [swift_java] OK now we go to nested classes
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Active include filters: []
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Active exclude filters: []
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Wrapping java type: com.pureswift.bridge.BridgeExport$bridgeScheduleMain$block
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Skip Java type: com.pureswift.bridge.BridgeHostBox (does not match minimum access level)
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Wrapping java type: com.pureswift.bridge.BridgeExport
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Wrapping java type: com.pureswift.bridge.BridgeHost
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Wrapping java type: com.pureswift.bridge.BridgeExport$bridgeScheduleMain
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] Wrapping java type: com.pureswift.bridge.SwiftTask
+2026-09-21T10:59:47-0700 info swift-java: [swift_java] OK now we go to nested classes
 [warning] Unable to translate 'com.pureswift.bridge.BridgeHost' interface 'org.swift.swiftkit.core.SwiftDowncastable': Java class 'org.swift.swiftkit.core.SwiftDowncastable' has not been translated into Swift
 [warning] Unable to translate 'com.pureswift.bridge.SwiftTask' method '$cleanup': Java class 'org.swift.swiftkit.core.SwiftInstanceCleanup' has not been translated into Swift
 [trace][swift-java] Writing Java class translation to '/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/Sources/WrapJavaGenerated.swift'... done.
-[99/106] Build SwiftKitCore, compile Java callbacks, and generate Swift wrappers
-[100/106] Write sources
-[102/112] Compiling BridgeExport WrapJavaGenerated.swift
-[103/112] Emitting module BridgeExport
-[104/112] Compiling BridgeExport BridgeExport+SwiftJava.swift
-[105/112] Compiling BridgeExport BridgeExport.swift
-[106/112] Compiling BridgeExport BridgeExportModule+SwiftJava.swift
-[107/112] Compiling BridgeExport Foundation+SwiftJava.swift
-[108/113] Wrapping AST for BridgeExport for debugging
-[110/118] Compiling AndroidSwiftUI AndroidApplication.swift
-[111/118] Compiling AndroidSwiftUI SwiftUIHostView.swift
-[112/118] Emitting module AndroidSwiftUI
-[113/118] Compiling AndroidSwiftUI SwiftUIActivity.swift
-[114/118] Compiling AndroidSwiftUI AndroidSwiftUI.swift
-[115/117] Write Objects.LinkFileList
-[116/117] Linking libSwiftAndroidApp.so
-Build of product 'SwiftAndroidApp' complete! (23.01s)
+[23/30] Build SwiftKitCore, compile Java callbacks, and generate Swift wrappers
+[24/30] Write sources
+[26/35] Emitting module BridgeExport
+[27/35] Compiling BridgeExport BridgeExport+SwiftJava.swift
+[28/35] Compiling BridgeExport WrapJavaGenerated.swift
+[29/35] Compiling BridgeExport BridgeExportModule+SwiftJava.swift
+[30/35] Compiling BridgeExport Foundation+SwiftJava.swift
+[31/36] Wrapping AST for BridgeExport for debugging
+[33/41] Compiling AndroidSwiftUI AndroidApplication.swift
+[34/41] Compiling AndroidSwiftUI SwiftUIActivity.swift
+[35/41] Emitting module AndroidSwiftUI
+[36/41] Compiling AndroidSwiftUI AndroidSwiftUI.swift
+[37/41] Compiling AndroidSwiftUI SwiftUIHostView.swift
+[39/50] Compiling SwiftAndroidApp ImagePlaygrounds.swift
+[40/50] Compiling SwiftAndroidApp HardwareKeyView.swift
+[41/50] Compiling SwiftAndroidApp App.swift
+[42/50] Compiling SwiftAndroidApp AnimationPlaygrounds.swift
+[43/50] Compiling SwiftAndroidApp AndroidProtocolBridge.swift
+[44/50] Compiling SwiftAndroidApp AccessibilityPlaygrounds.swift
+[45/50] Emitting module SwiftAndroidApp
+[46/50] Compiling SwiftAndroidApp AndroidPhoneProtocolBridge.swift
+[47/50] Compiling SwiftAndroidApp AndroidPhoneProtocolView.swift
+[48/51] Wrapping AST for SwiftAndroidApp for debugging
+[49/51] Write Objects.LinkFileList
+[50/51] Linking libSwiftAndroidApp.so
+Build of product 'SwiftAndroidApp' complete! (16.37s)
 
 > Configure project :composeui
 w: Kotlin Multiplatform <-> Android Gradle Plugin compatibility issue:
@@ -616,6 +522,7 @@ Learn more about hierarchy templates: https://kotl.in/hierarchy-template
 > Task :composeui:compileDebugKotlinAndroid UP-TO-DATE
 > Task :composeui:javaPreCompileDebug UP-TO-DATE
 > Task :composeui:compileDebugJavaWithJavac NO-SOURCE
+> Task :composeui:bundleLibCompileToJarDebug UP-TO-DATE
 > Task :demo-app:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :androidbridge:compileDebugLibraryResources UP-TO-DATE
 > Task :composeui:compileDebugLibraryResources UP-TO-DATE
@@ -633,7 +540,6 @@ Learn more about hierarchy templates: https://kotl.in/hierarchy-template
 > Task :cupertino-decompose:writeDebugAarMetadata UP-TO-DATE
 > Task :cupertino-icons-extended:writeDebugAarMetadata UP-TO-DATE
 > Task :cupertino-native:writeDebugAarMetadata UP-TO-DATE
-> Task :composeui:bundleLibCompileToJarDebug
 > Task :demo-app:checkDebugAarMetadata UP-TO-DATE
 > Task :demo-app:generateDebugResValues UP-TO-DATE
 > Task :demo-app:mapDebugSourceSetPaths UP-TO-DATE
@@ -663,7 +569,9 @@ Learn more about hierarchy templates: https://kotl.in/hierarchy-template
 > Task :demo-app:processDebugManifest UP-TO-DATE
 > Task :demo-app:processDebugManifestForPackage UP-TO-DATE
 > Task :demo-app:processDebugResources UP-TO-DATE
+> Task :demo-app:compileDebugKotlin UP-TO-DATE
 > Task :demo-app:javaPreCompileDebug UP-TO-DATE
+> Task :demo-app:compileDebugJavaWithJavac NO-SOURCE
 > Task :androidbridge:mergeDebugShaders UP-TO-DATE
 > Task :androidbridge:compileDebugShaders NO-SOURCE
 > Task :androidbridge:generateDebugAssets UP-TO-DATE
@@ -724,13 +632,12 @@ Learn more about hierarchy templates: https://kotl.in/hierarchy-template
 > Task :cupertino-decompose:processDebugJavaRes UP-TO-DATE
 > Task :cupertino-icons-extended:processDebugJavaRes UP-TO-DATE
 > Task :cupertino-native:processDebugJavaRes UP-TO-DATE
+> Task :demo-app:processDebugJavaRes UP-TO-DATE
+> Task :demo-app:mergeDebugJavaResource UP-TO-DATE
 > Task :demo-app:checkDebugDuplicateClasses UP-TO-DATE
 > Task :demo-app:desugarDebugFileDependencies UP-TO-DATE
 > Task :demo-app:mergeExtDexDebug UP-TO-DATE
-> Task :demo-app:compileDebugKotlin
-> Task :demo-app:compileDebugJavaWithJavac NO-SOURCE
-> Task :demo-app:processDebugJavaRes UP-TO-DATE
-> Task :demo-app:mergeDebugJavaResource UP-TO-DATE
+> Task :composeui:bundleLibRuntimeToDirDebug UP-TO-DATE
 > Task :androidbridge:bundleLibRuntimeToDirDebug UP-TO-DATE
 > Task :cupertino-adaptive:bundleLibRuntimeToDirDebug UP-TO-DATE
 > Task :cupertino-native:bundleLibRuntimeToDirDebug UP-TO-DATE
@@ -741,6 +648,7 @@ Learn more about hierarchy templates: https://kotl.in/hierarchy-template
 > Task :demo-app:dexBuilderDebug UP-TO-DATE
 > Task :demo-app:mergeProjectDexDebug UP-TO-DATE
 > Task :androidbridge:mergeDebugJniLibFolders UP-TO-DATE
+> Task :demo-app:mergeLibDexDebug UP-TO-DATE
 > Task :androidbridge:mergeDebugNativeLibs NO-SOURCE
 > Task :androidbridge:copyDebugJniLibsProjectOnly UP-TO-DATE
 > Task :composeui:mergeDebugJniLibFolders UP-TO-DATE
@@ -764,12 +672,10 @@ Learn more about hierarchy templates: https://kotl.in/hierarchy-template
 > Task :cupertino-native:mergeDebugJniLibFolders UP-TO-DATE
 > Task :cupertino-native:mergeDebugNativeLibs NO-SOURCE
 > Task :cupertino-native:copyDebugJniLibsProjectOnly UP-TO-DATE
-> Task :composeui:bundleLibRuntimeToDirDebug
 > Task :demo-app:mergeDebugJniLibFolders
 > Task :demo-app:validateSigningDebug UP-TO-DATE
 > Task :demo-app:writeDebugAppMetadata UP-TO-DATE
 > Task :demo-app:writeDebugSigningConfigVersions UP-TO-DATE
-> Task :demo-app:mergeLibDexDebug
 > Task :demo-app:mergeDebugNativeLibs
 > Task :demo-app:stripDebugDebugSymbols
 > Task :demo-app:packageDebug
@@ -783,6 +689,6 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 3s
-190 actionable tasks: 8 executed, 182 up-to-date
+BUILD SUCCESSFUL in 2s
+190 actionable tasks: 4 executed, 186 up-to-date
 APK: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/app/build/outputs/apk/debug/demo-app-debug.apk

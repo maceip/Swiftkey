@@ -1,0 +1,12 @@
+{
+  "capturedAtUTC": "2026-09-21T18:08:58.019075+00:00",
+  "apkSHA256": "2a1a736512343cdf617bed94af2711d83f54f3035f5bcff3ce6559524a514667",
+  "phone": "Pixel",
+  "unjoinedInspectionExpiredAutomatically": true,
+  "recoveryActionVisible": true,
+  "noAppRestartOrManualRefreshBetweenInspectionAndExpiry": true,
+  "evidence": [
+    "artifacts/phone-v2-hardware/p-final-expiry-recovery-0.xml"
+  ],
+  "priorInspection": "final-inspection-before-expiry.json"
+}

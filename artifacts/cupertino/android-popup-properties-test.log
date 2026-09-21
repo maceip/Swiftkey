@@ -1,0 +1,198 @@
+
+> Configure project :composeui
+w: Kotlin Multiplatform <-> Android Gradle Plugin compatibility issue:
+The applied Android Gradle Plugin version (8.10.1) is higher 
+than the maximum known to the Kotlin Gradle Plugin.
+Tooling stability in such configuration isn't tested, please report encountered issues to https://kotl.in/issue
+
+Minimum supported Android Gradle Plugin version: 7.1
+Maximum tested Android Gradle Plugin version: 8.5
+
+To suppress this message add 'kotlin.mpp.androidGradlePluginCompatibility.nowarn=true' to your gradle.properties
+
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':composeui'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmShared]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Configure project :cupertino
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':cupertino'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmMain, nonIosMain, skikoMain]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Configure project :cupertino-adaptive
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':cupertino-adaptive'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmMain, nonIosMain, skikoMain]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Configure project :cupertino-core
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':cupertino-core'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmMain, nonIosMain, skikoMain]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Configure project :cupertino-decompose
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':cupertino-decompose'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmMain, nonIosMain, skikoMain]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Configure project :cupertino-icons-extended
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':cupertino-icons-extended'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmMain, nonIosMain, skikoMain]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Configure project :cupertino-native
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':cupertino-native'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmMain, nonIosMain, skikoMain]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Task :cupertino:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :cupertino:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :cupertino:generateResourceAccessorsForAndroidMain SKIPPED
+> Task :cupertino:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :cupertino:generateResourceAccessorsForCommonMain SKIPPED
+> Task :cupertino:convertXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino:copyNonXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino:prepareComposeResourcesTaskForJvmMain NO-SOURCE
+> Task :cupertino:generateResourceAccessorsForJvmMain SKIPPED
+> Task :cupertino:convertXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino:copyNonXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino:prepareComposeResourcesTaskForNonIosMain NO-SOURCE
+> Task :cupertino:generateResourceAccessorsForNonIosMain SKIPPED
+> Task :cupertino:generateActualResourceCollectorsForAndroidMain SKIPPED
+> Task :cupertino:generateComposeResClass SKIPPED
+> Task :cupertino:preBuild UP-TO-DATE
+> Task :cupertino:preDebugBuild UP-TO-DATE
+> Task :cupertino:generateDebugResValues UP-TO-DATE
+> Task :cupertino:generateDebugResources UP-TO-DATE
+> Task :cupertino:packageDebugResources UP-TO-DATE
+> Task :cupertino:parseDebugLocalResources UP-TO-DATE
+> Task :cupertino:generateDebugRFile UP-TO-DATE
+> Task :cupertino:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :cupertino:convertXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino:copyNonXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino:prepareComposeResourcesTaskForAndroidDebug NO-SOURCE
+> Task :cupertino:generateResourceAccessorsForAndroidDebug SKIPPED
+> Task :cupertino-core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :cupertino-core:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino-core:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino-core:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :cupertino-core:generateResourceAccessorsForAndroidMain SKIPPED
+> Task :cupertino-core:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino-core:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino-core:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :cupertino-core:generateResourceAccessorsForCommonMain SKIPPED
+> Task :cupertino-core:convertXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino-core:copyNonXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino-core:prepareComposeResourcesTaskForJvmMain NO-SOURCE
+> Task :cupertino-core:generateResourceAccessorsForJvmMain SKIPPED
+> Task :cupertino-core:convertXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino-core:copyNonXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino-core:prepareComposeResourcesTaskForNonIosMain NO-SOURCE
+> Task :cupertino-core:generateResourceAccessorsForNonIosMain SKIPPED
+> Task :cupertino-core:generateActualResourceCollectorsForAndroidMain SKIPPED
+> Task :cupertino-core:generateComposeResClass SKIPPED
+> Task :cupertino-core:preBuild UP-TO-DATE
+> Task :cupertino-core:preDebugBuild UP-TO-DATE
+> Task :cupertino-core:generateDebugResValues UP-TO-DATE
+> Task :cupertino-core:generateDebugResources UP-TO-DATE
+> Task :cupertino-core:packageDebugResources UP-TO-DATE
+> Task :cupertino-core:parseDebugLocalResources UP-TO-DATE
+> Task :cupertino-core:generateDebugRFile UP-TO-DATE
+> Task :cupertino-core:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :cupertino-core:convertXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino-core:copyNonXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino-core:prepareComposeResourcesTaskForAndroidDebug NO-SOURCE
+> Task :cupertino-core:generateResourceAccessorsForAndroidDebug SKIPPED
+> Task :cupertino-core:compileDebugKotlinAndroid UP-TO-DATE
+> Task :cupertino-core:javaPreCompileDebug UP-TO-DATE
+> Task :cupertino-core:compileDebugJavaWithJavac NO-SOURCE
+> Task :cupertino-core:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :cupertino:compileDebugKotlinAndroid UP-TO-DATE
+> Task :cupertino:javaPreCompileDebug UP-TO-DATE
+> Task :cupertino:compileDebugJavaWithJavac NO-SOURCE
+> Task :cupertino:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :cupertino:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :cupertino:preDebugUnitTestBuild UP-TO-DATE
+> Task :cupertino:generateDebugUnitTestStubRFile UP-TO-DATE
+> Task :cupertino:convertXmlValueResourcesForAndroidUnitTest NO-SOURCE
+> Task :cupertino:copyNonXmlValueResourcesForAndroidUnitTest NO-SOURCE
+> Task :cupertino:prepareComposeResourcesTaskForAndroidUnitTest NO-SOURCE
+> Task :cupertino:generateResourceAccessorsForAndroidUnitTest SKIPPED
+> Task :cupertino:convertXmlValueResourcesForAndroidUnitTestDebug NO-SOURCE
+> Task :cupertino:copyNonXmlValueResourcesForAndroidUnitTestDebug NO-SOURCE
+> Task :cupertino:prepareComposeResourcesTaskForAndroidUnitTestDebug NO-SOURCE
+> Task :cupertino:generateResourceAccessorsForAndroidUnitTestDebug SKIPPED
+> Task :cupertino:convertXmlValueResourcesForCommonTest NO-SOURCE
+> Task :cupertino:copyNonXmlValueResourcesForCommonTest NO-SOURCE
+> Task :cupertino:prepareComposeResourcesTaskForCommonTest NO-SOURCE
+> Task :cupertino:generateResourceAccessorsForCommonTest SKIPPED
+> Task :cupertino:compileDebugUnitTestKotlinAndroid UP-TO-DATE
+> Task :cupertino:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :cupertino:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :cupertino:processDebugJavaRes UP-TO-DATE
+> Task :cupertino:processDebugUnitTestJavaRes UP-TO-DATE
+> Task :cupertino-core:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :cupertino-core:processDebugJavaRes UP-TO-DATE
+> Task :cupertino:testDebugUnitTest
+[Incubating] Problems report is available at: file:///Users/mac/SwiftKey/AndroidSwiftUI/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 2s
+25 actionable tasks: 1 executed, 24 up-to-date

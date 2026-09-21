@@ -1,0 +1,30 @@
+{
+  "capturedAtUTC": "2026-09-21T18:06:35.698044+00:00",
+  "apkSHA256": "2a1a736512343cdf617bed94af2711d83f54f3035f5bcff3ce6559524a514667",
+  "inspectionFields": [
+    "Back to legacy identity",
+    "Trusted authority",
+    "SwiftKey",
+    "Review the invitation",
+    "Authority",
+    "c4b8e1dc1b6737968fc1111309b10e059a0964146d39b5715799a918a4816f12",
+    "Origin",
+    "http://127.0.0.1:18191",
+    "Audience",
+    "swiftkey-authority-v2",
+    "Other phone",
+    "Identity",
+    "32abed0f-6d90-4568-bac8-54d6906dbb8f",
+    "Full root fingerprint",
+    "6d215e88c19f9789a570d1b4ec921275e405df5f0c0550e73c54e9e2f3c15289",
+    "Hardware root",
+    "Android StrongBox P-256",
+    "Root key epoch",
+    "1",
+    "Trust",
+    "Verified hardware identity",
+    "Joining fixes the two participants. You will compare both phones and separately confirm before they are paired.",
+    "Join this pairing"
+  ],
+  "secondsRemainingForExpiryTest": 97.93663262482733
+}

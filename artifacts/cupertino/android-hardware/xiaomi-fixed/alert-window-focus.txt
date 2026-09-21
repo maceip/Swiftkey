@@ -1,0 +1,5 @@
+  mCurrentFocus=Window{d120d53 u0 Pop-Up Window}
+  mFocusedApp=ActivityRecord{182560003 u0 com.pureswift.swiftandroidui/com.pureswift.swiftandroid.MainActivity t1370}
+  imeLayeringTarget in display# 0 Window{d120d53 u0 Pop-Up Window}
+  imeInputTarget in display# 0 Window{d120d53 u0 Pop-Up Window}
+  imeControlTarget in display# 0 Window{d120d53 u0 Pop-Up Window}

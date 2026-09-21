@@ -1,0 +1,20 @@
+{
+  "recordedAtUTC": "2026-09-21T18:00:52Z",
+  "device": "xiaomi-final",
+  "apkSHA256": "2a1a736512343cdf617bed94af2711d83f54f3035f5bcff3ce6559524a514667",
+  "apkBytes": 339809795,
+  "installResult": "Performing Streamed Install\nSuccess",
+  "statePreservedBeforeLaunch": true,
+  "beforeSHA256": {
+    "files/swiftkey-client.json": "d06481d1a7eb8df0d71629dcaf59b74ee096f6533f7d34100c3e60429efc1288",
+    "files/swiftkey-protocol-state.json": "a0a2fd5543ba94fa1fced0f478d9d89143fb444b8e9225410bac039f1d16b55f",
+    "no_backup/swiftkey-pairing-v2-config.json": "c475db8730ecb2f064d054bdfe228a5833d1234a5659a48ab8456031596087db",
+    "no_backup/swiftkey-pairing-v2-state.json": "e19c1e3b3330b2b75e9472cb194d7f8e723c57a911aa5dda927ffe150b3a4594"
+  },
+  "afterSHA256": {
+    "files/swiftkey-client.json": "d06481d1a7eb8df0d71629dcaf59b74ee096f6533f7d34100c3e60429efc1288",
+    "files/swiftkey-protocol-state.json": "a0a2fd5543ba94fa1fced0f478d9d89143fb444b8e9225410bac039f1d16b55f",
+    "no_backup/swiftkey-pairing-v2-config.json": "c475db8730ecb2f064d054bdfe228a5833d1234a5659a48ab8456031596087db",
+    "no_backup/swiftkey-pairing-v2-state.json": "e19c1e3b3330b2b75e9472cb194d7f8e723c57a911aa5dda927ffe150b3a4594"
+  }
+}

@@ -1,4 +1,4 @@
-# SwiftKey build status — 2026-09-20
+# SwiftKey build status — 2026-09-21
 
 ## Full Compose Cupertino integration (2026-09-20)
 
@@ -6,11 +6,12 @@ The complete pinned upstream source (1,911 files, six modules) is vendored in
 AndroidSwiftUI. All 127 distinct visual surfaces and 879 shared icons are
 available through Swift wrappers, named slots, bindings and the interactive
 catalog. The coverage inventory maps every pinned shared callable and identifies
-UIKit-only APIs explicitly. Eight bounded upstream fixes are recorded with
+UIKit-only APIs explicitly. Nine bounded upstream fixes are recorded with
 original/modified hashes and a reproducible patch.
 
-Final verification passed: **141 serial SwiftUICore tests, 389 native Kotlin
-render/interaction/regression tests, and 27 shared UI tests**. The 254 Swift
+Current verification passed: **141 serial SwiftUICore tests, 401 desktop Kotlin
+render/interaction/regression tests, one Android popup-properties unit test,
+43 Application tests and 27 shared UI tests**. The 254 Swift
 fixtures drive 338 real Compose render cases, including Material3 alternatives,
 dark appearance and enlarged type. All six vendored modules compile for Android
 and desktop; Android Kotlin and the complete ARM64 Swift/JNI APK build passed.
@@ -18,12 +19,45 @@ See [bridge contract](AndroidSwiftUI/docs/cupertino/README.md),
 [coverage](AndroidSwiftUI/docs/cupertino/BRIDGE-COVERAGE.md) and
 [verification evidence](artifacts/cupertino/README.md).
 
-The final APK installed on the Pixel with both private client files byte-for-byte
-unchanged before launch. A cold process launch passed without a fatal startup
-error. The phone is locked and asleep: on-device visual checks, interactive
-Cupertino controls and predictive-back gestures remain unverified. Two-phone v2
-hardware pairing also remains pending. Earlier Vapor acceptance is recorded
-separately below; installation does not repeat that acceptance.
+The current built APK is 339,809,795 bytes, SHA-256
+`2a1a736512343cdf617bed94af2711d83f54f3035f5bcff3ce6559524a514667`.
+It is installed on both phones. Each final-install record verifies all four
+existing legacy/v2 configuration and state files remained byte-identical before
+the first launch. Hardware testing
+found and fixed Android modal-window focus, stale Swift text echoes dropping fast
+input, and hidden sheets painting outside their bounded preview. The corrected
+Xiaomi smoke run verifies active dialog accessibility nodes, Cancel and system
+Back callbacks, hidden/open/closed sheet bounds, exact fast text entry, and return
+to the same displayed legacy key on `4060284`. The corrected Pixel smoke on
+`43537a5` verifies dialog focus and Back, sheet states/bounds, fast text retention,
+a one-step cursor edit and return navigation. These remain selected-control checks.
+The current `2a1a736` build adds inspected-invitation expiry projection and stable
+quiet refresh: one explicit action or QR request waits for the read with its
+original binding, and a changed review cannot reuse consent. QR presentation
+also rechecks the original observer and foreground state. Kotlin rendering is
+unchanged. On this final APK, Pixel's unjoined inspection automatically reaches
+expiry with a recovery action and no app restart/manual refresh. Four Pixel
+samples keep the Join button bounds stable with no busy banner. Xiaomi's two
+pre-deadline QR samples also retain their bounds; its intended longer geometry
+check was cut short by expiry. See the [hardware evidence boundaries](artifacts/cupertino/android-hardware/README.md).
+
+The initial Pixel install preserved both client files before launch. A later
+Pixel comparison records a changed protocol-state file, so blanket byte-for-byte
+preservation across the whole session is not claimed. The final `2a1a736` install
+records establish the narrower four-file preservation check on both phones.
+Physical two-phone v2 pairing and joint genesis now passed on final `2a1a736`
+against the isolated Vapor authority. Pixel and Xiaomi reviewed the same proposal
+for `Pixel-Xiaomi`; after the first approval the authority still had zero accounts,
+owners and credentials. The second approval atomically produced one account with
+two owners and zero credentials. The ledger checkpoints verify hashes, links and
+the signed head. See [two-phone evidence](artifacts/phone-v2-hardware/README.md).
+Both phones then signed in independently: the credential count advanced 0 → 1 → 2
+while the account retained its two owners. The public checkpoints verify each
+credential's root/authority signatures and delegation binding against the admitted
+hardware root. This run used the isolated Vapor authority on port 18191 and native
+Copy link/manual import; optical scanning and v2 workload submission are not
+claimed. The existing legacy authority and accounts were separate from this run;
+earlier Vapor acceptance is below.
 
 The workspace is published at `maceip/Swiftkey`: `main` pins the AndroidSwiftUI
 history on `androidswiftui` through a recursive submodule. No live authority
@@ -38,9 +72,10 @@ The webpage and shared identity/workspace/phone components use adaptive purple
 colors, rounded cards and bundled Host Grotesk/JetBrains Mono. All 43 protocol
 states passed the browser layout sweep; the isolated Vapor workspace completed
 account creation. Shared UI, renderer, server and serial core tests passed.
-The new APK installed on the Pixel while preserving existing client storage;
-native visual verification is pending the locked device. Earlier visual evidence
-below describes its recorded build, not this new design.
+The initial APK installed on the Pixel while preserving existing client storage.
+Selected native visual and control checks are now recorded in the Cupertino
+hardware evidence above; they do not establish coverage of every product screen.
+Earlier visual evidence below describes its recorded build.
 
 
 ## Vapor backend migration
@@ -67,7 +102,8 @@ older installed workload app, not the newly built v2 phone UI. Pixel wireless AD
 is connected; its retry needs the phone unlocked because Doze blocked app networking.
 
 The phone-build counts and physical-device history below describe their earlier
-checkpoints. Two-phone v2 hardware acceptance remains pending.
+checkpoints. Final two-phone pairing/genesis and independent sign-in acceptance
+are recorded above; remaining hardware recovery/membership cases are pending.
 
 ## Android phone pairing v2
 
@@ -79,18 +115,27 @@ trust lease renewal and interrupted-request recovery. V2 is opt-in; enabling it
 permanently retires unused legacy provisioning and persists schema 3 so older
 binaries cannot bypass the cutover. No live state was changed.
 
-Phone-build local checks: **Core 26, Client 47, Application 35, UI 26 and Server 73 tests
-passed** (207 Swift tests), plus **7 native phone-host tests**. The Android ARM64
+Initial phone-build local checks: **Core 26, Client 47, Application 35, UI 26 and Server 73 tests
+passed** (207 Swift tests), plus **7 native phone-host tests**. Application now has
+43 passing tests, including peer-proposal discovery, inspected-invitation expiry,
+local refresh after renewal, and deferred action/QR serialization with original
+bindings. The Android ARM64
 Swift/JNI library and debug APK built. The actual shared Swift components expose
 27 phases and a [43-surface catalog](artifacts/phone-ui/README.md); all surfaces
 passed Chrome checks at 320 px with enlarged layout without document overflow
 or console warnings/errors.
 
 [Current evidence](artifacts/phone-v2/README.md) includes test logs, browser
-checks and the APK hash. The APK was not installed during that build. Phones are
-now connected for Vapor checks, but the v2 APK remains uninstalled.
-Physical two-phone StrongBox pairing, camera/secure sheets, process restart,
-response loss and replacement remain acceptance gates. A fail-closed provider
+checks and that checkpoint's APK hash. The APK was not installed during that
+initial build. The preceding `43537a5` APK was installed on both phones for isolated
+v2 acceptance. The current `2a1a736` build is installed on both phones with final
+expiry/stable-polling checks recorded; its build evidence is in
+[Cupertino verification](artifacts/cupertino/README.md).
+Physical StrongBox pairing and joint genesis passed on the isolated Vapor
+authority using native Copy link and manual import. Both phones independently
+obtained epoch credentials verified against their admitted hardware roots.
+Optical camera scanning, v2 workload submission, process restart, response loss
+and replacement remain outside this completed hardware scope. A fail-closed provider
 verification disagreement on a deliberately tiny fixture key is preserved in the
 [Core validation note](artifacts/phone-v2/core-client-validation.md); changing
 fixture keys did not resolve that provider behavior.

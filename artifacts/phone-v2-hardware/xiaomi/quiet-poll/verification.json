@@ -1,0 +1,68 @@
+{
+  "checkedAtUTC": "2026-09-21T18:09:22.825472+00:00",
+  "deviceSerial": "D6OZUCKVEIQ4LVLV",
+  "apkSHA256": "2a1a736512343cdf617bed94af2711d83f54f3035f5bcff3ce6559524a514667",
+  "privateFilesPreservedDuringInstall": true,
+  "displayPixels": [
+    2772,
+    1280
+  ],
+  "sampleCount": 5,
+  "contactingAuthorityAbsentInAllSamples": true,
+  "qrGeometryBeforeExpiryStable": true,
+  "full15SecondQRGeometryAssertion": "not completed: invitation deadline reached before third planned sample",
+  "deadlineUnixSeconds": 1790014085,
+  "samples": [
+    {
+      "index": 1,
+      "xml": "sample-01.xml",
+      "artifactWrittenAtUTC": "2026-09-21T18:08:02.026716+00:00",
+      "showQRBounds": [
+        "[173,879][810,962]"
+      ],
+      "contactingAuthorityVisible": false,
+      "deadlineReached": false
+    },
+    {
+      "index": 2,
+      "xml": "sample-02.xml",
+      "artifactWrittenAtUTC": "2026-09-21T18:08:05.694705+00:00",
+      "showQRBounds": [
+        "[173,879][810,962]"
+      ],
+      "contactingAuthorityVisible": false,
+      "deadlineReached": false
+    },
+    {
+      "index": 3,
+      "xml": "sample-03.xml",
+      "artifactWrittenAtUTC": "2026-09-21T18:08:26.089492+00:00",
+      "showQRBounds": [],
+      "contactingAuthorityVisible": false,
+      "deadlineReached": true
+    },
+    {
+      "index": 4,
+      "xml": "sample-04.xml",
+      "artifactWrittenAtUTC": "2026-09-21T18:09:17.218633+00:00",
+      "showQRBounds": [],
+      "contactingAuthorityVisible": false,
+      "deadlineReached": true
+    },
+    {
+      "index": 5,
+      "xml": "sample-05.xml",
+      "artifactWrittenAtUTC": "2026-09-21T18:09:22.421857+00:00",
+      "showQRBounds": [],
+      "contactingAuthorityVisible": false,
+      "deadlineReached": true
+    }
+  ],
+  "scope": {
+    "readOnly": true,
+    "taps": 0,
+    "scrolls": 0,
+    "orientationChanged": false,
+    "deviceReleasedToRoot": true
+  }
+}

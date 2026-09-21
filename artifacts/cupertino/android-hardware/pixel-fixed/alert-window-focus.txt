@@ -1,0 +1,2 @@
+  mCurrentFocus=Window{478c7ac u0 Pop-Up Window}
+  mFocusedApp=ActivityRecord{191251217 u0 com.pureswift.swiftandroidui/com.pureswift.swiftandroid.MainActivity t658}

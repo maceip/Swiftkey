@@ -1,0 +1,38 @@
+{
+  "checkedAtUTC": "2026-09-21T17:41:02.450578+00:00",
+  "deviceSerial": "10.0.0.157:37429",
+  "apkSHA256ReportedByRoot": "43537a5d96f2075a0fdecc6811f35fb47de93b03e929e19524170ad983666e8e",
+  "display": {
+    "widthPixels": 1344,
+    "heightPixels": 2992,
+    "fontScale": 1.3,
+    "appearance": "light"
+  },
+  "checks": {
+    "buttonCallback": "passed: 0 -> 1 onClick",
+    "alertFocus": "passed: active XML contains dialog only and mCurrentFocus Pop-Up Window",
+    "alertSystemBack": "passed: returns to catalog; onDismissRequest event",
+    "sheetStates": "passed: Hidden -> Expanded -> Hidden; hidden/closed omit sheet children",
+    "sheetBoundsVisual": "passed: inspected open/closed screenshots; bounded sheet content",
+    "textContents": "passed: all suffix and inserted characters retained; exact final text Cupertino text_PixelFast1MID23456789Z0",
+    "cursorEdit": "passed: explicit Move End then one Left placed Z before final 0",
+    "returnNavigation": "passed: Back to SwiftKey returns legacy identity"
+  },
+  "screenshotsInspected": [
+    "alert-open.png",
+    "sheet-open.png",
+    "sheet-closed.png",
+    "text-after-cursor-edit.png"
+  ],
+  "limitations": [
+    "Selected-control smoke, not all catalog surfaces.",
+    "Rapid batched ten-Left injection positioned MID after the first digit; cursor position for that rapid batch was not asserted. Separate one-Left insertion passed."
+  ],
+  "scope": {
+    "onlyAssignedPixelSerialUsed": true,
+    "reinstalled": false,
+    "stateCleared": false,
+    "secureDialogScreenshotsTaken": false,
+    "deviceReleasedToRoot": true
+  }
+}
