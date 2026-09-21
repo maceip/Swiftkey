@@ -61,6 +61,12 @@ flowchart TD
    signature alone is insufficient if its owner has been removed or the request
    has expired or already been used.
 
+<p><img src="docs/images/android-pairing.png" alt="SwiftKey pairing preparation on a Pixel, showing the phone's StrongBox identity and full root fingerprint" width="360"></p>
+
+Pairing preparation on a real Pixel, captured during
+[physical-device verification](artifacts/phone-v2-hardware/README.md).
+The hardware identity is public; no invitation link or QR code is shown.
+
 ### What rotates
 
 The hardware root remains stable. The delegated **software** key changes on the
@@ -204,6 +210,12 @@ website renders server-evaluated Swift view trees through a small browser adapte
 The [Compose Cupertino integration](AndroidSwiftUI/docs/cupertino/README.md)
 includes all six pinned upstream modules, 127 catalog surfaces and 879 icons.
 Upstream licenses and [source provenance](AndroidSwiftUI/UPSTREAM.md) are retained.
+
+<p><img src="docs/images/android-cupertino-catalog.png" alt="Cupertino catalog running on a Pixel with its surface selector, buttons, and expanded bottom sheet with drag handle" width="360"></p>
+
+The running Cupertino catalog on a real Pixel during
+[hardware verification](artifacts/cupertino/android-hardware/README.md), showing
+the surface selector, buttons, bottom-sheet scaffold and drag handle together.
 
 [Build status](BUILD_STATUS.md) separates local tests from hardware proof and
 remaining acceptance work. [Optional design research](tools/DesignResearch/README.md)

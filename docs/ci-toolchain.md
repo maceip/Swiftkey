@@ -50,6 +50,13 @@ build-tools and NDK versions and CI license acceptance.
 
 ## Cache and local checks
 
+The tracked `AndroidSwiftUI/Package.resolved` and
+`AndroidSwiftUI/Demo/swift/Package.resolved` files preserve all 14 direct and
+transitive remote dependency revisions used by host bridge generation and the
+Android app. Their dependency pins match; their root-manifest hashes differ.
+Fresh runners use normal SwiftPM lockfile resolution with the pinned compiler,
+so they retain the tested graph instead of starting from current branch tips.
+
 Reusable installation paths are:
 
 - `~/Library/Developer/Toolchains/swift-6.3.2-RELEASE.xctoolchain`
