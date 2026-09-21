@@ -1,0 +1,7 @@
+{
+  "command": "bash: source scripts/androidswiftui-env.sh; \"$SWIFTKEY_SWIFT\" test --package-path SwiftKeyUI",
+  "result": "passed",
+  "tests": 27,
+  "suites": 2,
+  "logSHA256": "f329ce903da521874061f70a1bac3e8be5c8f66609aeb1492578f1b29925eecb"
+}

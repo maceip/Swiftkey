@@ -1,0 +1,17 @@
+{
+  "recordedAt": "2026-09-21T06:51:09Z",
+  "deviceModel": "Pixel 11 Pro XL",
+  "apkSHA256": "4ca2c9a859a0ebeb1facdf65f3329e2e049f956431f4902908bd9fdd0e346e47",
+  "apkBytes": 339678723,
+  "installResult": "Performing Streamed Install\nSuccess",
+  "clientFilesPreservedBeforeLaunch": true,
+  "beforeSHA256": {
+    "files/swiftkey-client.json": "60042750d4fdb58902979ac2c77db68ea627a0e5f67b083dbf262146bbe1b3fb",
+    "files/swiftkey-protocol-state.json": "449e23e85693971179bbbbcd2e87da31b304293b07be0690b03b635a48f1c623"
+  },
+  "afterSHA256": {
+    "files/swiftkey-client.json": "60042750d4fdb58902979ac2c77db68ea627a0e5f67b083dbf262146bbe1b3fb",
+    "files/swiftkey-protocol-state.json": "449e23e85693971179bbbbcd2e87da31b304293b07be0690b03b635a48f1c623"
+  },
+  "visualVerification": "pending; keyguard status checked separately"
+}

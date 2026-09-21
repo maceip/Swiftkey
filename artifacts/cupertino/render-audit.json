@@ -1,0 +1,2265 @@
+{
+  "generatedAtUTC": "2026-09-21T06:52:00.322057+00:00",
+  "upstreamCommit": "f66875aa6f3848b30c38e42a89fc99c9ac24a585",
+  "distinctSurfaces": 127,
+  "swiftFixtures": 254,
+  "renderCases": 338,
+  "baseCupertinoCases": 254,
+  "additionalAppearanceFontCases": 36,
+  "material3Cases": 48,
+  "images": 367,
+  "popupImages": 29,
+  "allCurrentFixtureHashesVerified": true,
+  "bridgeDiagnostics": 0,
+  "closedFixturePopupRoots": 0,
+  "obsoletePopupImagesRemoved": 14,
+  "quarantinePath": "/tmp/swiftkey-cupertino-stale-captures-20260920-235200",
+  "viewport": {
+    "width": 360,
+    "height": 720,
+    "fontScales": [
+      1.0,
+      1.4
+    ]
+  },
+  "nativeSuiteEvidence": "android-desktop-tests.json",
+  "focusedSearchCancelEvidence": {
+    "log": "search-cancel-focus-test.log",
+    "sha256": "af538ed939a9c2a9139526880af3122ae00121b8b0fcb1bf88b285d9f86048d1",
+    "tests": 2,
+    "result": "passed"
+  },
+  "manuallyInspectedImages": [
+    "CupertinoButton-open-dark-360px-font1.4.png",
+    "CupertinoScaffold-open-dark-360px-font1.4.png",
+    "CupertinoSection-open-dark-360px-font1.4.png",
+    "CupertinoBorderedTextField-open-dark-360px-font1.4.png",
+    "CupertinoSearchTextField-open-dark-360px-font1.4.png",
+    "CupertinoNavigationBar-open-dark-360px-font1.4.png",
+    "CupertinoSegmentedControl-open-dark-360px-font1.4.png",
+    "CupertinoDatePicker-open-dark-360px-font1.4.png",
+    "CupertinoWheelPicker-open-dark-360px-font1.4.png",
+    "CupertinoBottomSheetScaffold-open-light-360px-font1.0.png",
+    "CupertinoBottomSheetScaffold-open-dark-360px-font1.4.png",
+    "CupertinoAlertDialog-open-dark-360px-font1.4-popup1.png",
+    "CupertinoAlertDialog-open-light-360px-font1.0-popup1.png",
+    "CupertinoAlertDialog-closed-light-360px-font1.0.png",
+    "AdaptiveButton-open-light-360px-font1.0-material3.png",
+    "AdaptiveSlider-open-light-360px-font1.0-material3.png",
+    "AdaptiveSwitch-open-light-360px-font1.0-material3.png",
+    "AdaptiveAlertDialog-open-light-360px-font1.0-material3-popup1.png",
+    "CupertinoSearchTextFieldDefaults.cancelButton-open-light-360px-font1.0.png",
+    "CupertinoSectionDefaults.PickerButton-open-light-360px-font1.0.png",
+    "CupertinoNavigationBarDefaults.divider-open-light-360px-font1.0.png"
+  ],
+  "limits": [
+    "Host JVM/Skia rendering; Android device evidence is separate.",
+    "Lazy catalogue provider is an explicit Kotlin test double; real Swift lazy callbacks are separately tested.",
+    "338 cases render automatically; the listed representative images received manual visual review.",
+    "Android named painter/bitmap resources depend on app assets; the desktop asset resolver remains unavailable."
+  ],
+  "captures": [
+    {
+      "file": "AdaptiveAlertDialog-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "c28b07c20c64c2f9e7818858a8a1d33d4ae1a7c66281675675368529d683b7b8"
+    },
+    {
+      "file": "AdaptiveAlertDialog-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "c28b07c20c64c2f9e7818858a8a1d33d4ae1a7c66281675675368529d683b7b8"
+    },
+    {
+      "file": "AdaptiveAlertDialog-open-light-360px-font1.0-material3-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "3fecf78307020292c0d6f61c43db5450db87ab748d7036cda74e42467d1be6c2"
+    },
+    {
+      "file": "AdaptiveAlertDialog-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "3fecf78307020292c0d6f61c43db5450db87ab748d7036cda74e42467d1be6c2"
+    },
+    {
+      "file": "AdaptiveAlertDialog-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "663552d8a819326426c2b3b52d43be5cc08a6a4ec0288addf177ef3b89bd6eae"
+    },
+    {
+      "file": "AdaptiveAlertDialog-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "663552d8a819326426c2b3b52d43be5cc08a6a4ec0288addf177ef3b89bd6eae"
+    },
+    {
+      "file": "AdaptiveAlertDialogNative-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e1635c3ec64a19b50b0a7991508c72e535220600bee973e090e8297570ddcc76"
+    },
+    {
+      "file": "AdaptiveAlertDialogNative-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e1635c3ec64a19b50b0a7991508c72e535220600bee973e090e8297570ddcc76"
+    },
+    {
+      "file": "AdaptiveAlertDialogNative-open-light-360px-font1.0-material3-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d5068baf585d51e54f5c27e720bca70e4c97c3f94c6291cd046e48e8ecce41f8"
+    },
+    {
+      "file": "AdaptiveAlertDialogNative-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d5068baf585d51e54f5c27e720bca70e4c97c3f94c6291cd046e48e8ecce41f8"
+    },
+    {
+      "file": "AdaptiveAlertDialogNative-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "dc42c6ada6f955b9f85b9f59c924560316351f09c722f66920c753406f0cc37f"
+    },
+    {
+      "file": "AdaptiveAlertDialogNative-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "dc42c6ada6f955b9f85b9f59c924560316351f09c722f66920c753406f0cc37f"
+    },
+    {
+      "file": "AdaptiveButton-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "864362e0d98e193ffd5722a8e29627393879582091207baa3c59e3fb36962af7"
+    },
+    {
+      "file": "AdaptiveButton-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "2561a9ef3515bcd630f0098a1e1f55141719bbf951c16aed352413e594ec28e2"
+    },
+    {
+      "file": "AdaptiveButton-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "864362e0d98e193ffd5722a8e29627393879582091207baa3c59e3fb36962af7"
+    },
+    {
+      "file": "AdaptiveButton-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "2561a9ef3515bcd630f0098a1e1f55141719bbf951c16aed352413e594ec28e2"
+    },
+    {
+      "file": "AdaptiveCheckbox-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "7ed573d0664ac0eb45b79863b58efd19d685c812c4ad4417fd46168cce32bd0e"
+    },
+    {
+      "file": "AdaptiveCheckbox-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "2ce220ed42f54a85187670083c664375919173fea0209f2115b2e7af2fabb200"
+    },
+    {
+      "file": "AdaptiveCheckbox-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "7ed573d0664ac0eb45b79863b58efd19d685c812c4ad4417fd46168cce32bd0e"
+    },
+    {
+      "file": "AdaptiveCheckbox-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "2ce220ed42f54a85187670083c664375919173fea0209f2115b2e7af2fabb200"
+    },
+    {
+      "file": "AdaptiveCircularProgressIndicator-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "07ed65ef6ed641d70a6be6fdb631ec89aa90c117a5f4af178a8b95203cefdff9"
+    },
+    {
+      "file": "AdaptiveCircularProgressIndicator-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "b85a39c9926afb9721b70c45e31e9b0c1490b541afdc543dc56911bcbbacc4ca"
+    },
+    {
+      "file": "AdaptiveCircularProgressIndicator-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "07ed65ef6ed641d70a6be6fdb631ec89aa90c117a5f4af178a8b95203cefdff9"
+    },
+    {
+      "file": "AdaptiveCircularProgressIndicator-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "b85a39c9926afb9721b70c45e31e9b0c1490b541afdc543dc56911bcbbacc4ca"
+    },
+    {
+      "file": "AdaptiveDatePicker-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d6844a32c81f230a0995afbcee664430d717d74743343aff3c08459115e0b375"
+    },
+    {
+      "file": "AdaptiveDatePicker-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "0d513e5b35eb969237b63bd0b26d1b233178990fe1f04d1652dd2c26c7382cd0"
+    },
+    {
+      "file": "AdaptiveDatePicker-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d6844a32c81f230a0995afbcee664430d717d74743343aff3c08459115e0b375"
+    },
+    {
+      "file": "AdaptiveDatePicker-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "0d513e5b35eb969237b63bd0b26d1b233178990fe1f04d1652dd2c26c7382cd0"
+    },
+    {
+      "file": "AdaptiveDivider-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1d0f971104d4b27561288659cda95539ed16ef219945165d3bf8bae810f06938"
+    },
+    {
+      "file": "AdaptiveDivider-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "730803c2b566bb37fdd7cfe8b13f9b2d6f8c21d6644b7f6b61929685a90e3c89"
+    },
+    {
+      "file": "AdaptiveDivider-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1d0f971104d4b27561288659cda95539ed16ef219945165d3bf8bae810f06938"
+    },
+    {
+      "file": "AdaptiveDivider-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "730803c2b566bb37fdd7cfe8b13f9b2d6f8c21d6644b7f6b61929685a90e3c89"
+    },
+    {
+      "file": "AdaptiveFilledIconButton-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e72f23dcccf970480380e2bdcc41eb0ad2062b2892f1a1ab87bd929ba56cccff"
+    },
+    {
+      "file": "AdaptiveFilledIconButton-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1e8b4faff020884515f84cf4a3d5b6dff15cd7faa37fe44aa4954a1028a05d79"
+    },
+    {
+      "file": "AdaptiveFilledIconButton-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e72f23dcccf970480380e2bdcc41eb0ad2062b2892f1a1ab87bd929ba56cccff"
+    },
+    {
+      "file": "AdaptiveFilledIconButton-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1e8b4faff020884515f84cf4a3d5b6dff15cd7faa37fe44aa4954a1028a05d79"
+    },
+    {
+      "file": "AdaptiveHorizontalDivider-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "cd5466895d27648ea3aa28cab651adba63d93d23551362b276676e2b1ecee26d"
+    },
+    {
+      "file": "AdaptiveHorizontalDivider-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "4aa9851289ab52ad4d4cc730d8c04c57536186636d91abea4cb205e9f7811cdd"
+    },
+    {
+      "file": "AdaptiveHorizontalDivider-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "cd5466895d27648ea3aa28cab651adba63d93d23551362b276676e2b1ecee26d"
+    },
+    {
+      "file": "AdaptiveHorizontalDivider-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "4aa9851289ab52ad4d4cc730d8c04c57536186636d91abea4cb205e9f7811cdd"
+    },
+    {
+      "file": "AdaptiveIconButton-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9b3ddadb5d9d459774eb5dadcee37a36c14b21986b86ce68221225458c864ce2"
+    },
+    {
+      "file": "AdaptiveIconButton-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "812a07e4de07f5c8ac37a027feb932fdbd01ebf03b535c98d5aff4360e0c1830"
+    },
+    {
+      "file": "AdaptiveIconButton-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9b3ddadb5d9d459774eb5dadcee37a36c14b21986b86ce68221225458c864ce2"
+    },
+    {
+      "file": "AdaptiveIconButton-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "812a07e4de07f5c8ac37a027feb932fdbd01ebf03b535c98d5aff4360e0c1830"
+    },
+    {
+      "file": "AdaptiveNavigationBar-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "34103a8001561a8861521bc14ec549e3a8a06219ad12f73e5b12d4ed468c665f"
+    },
+    {
+      "file": "AdaptiveNavigationBar-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "6daa2edadf7f14350c5c01aafe4045d72c284144866f15ca5822eef8cab20e4d"
+    },
+    {
+      "file": "AdaptiveNavigationBar-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "34103a8001561a8861521bc14ec549e3a8a06219ad12f73e5b12d4ed468c665f"
+    },
+    {
+      "file": "AdaptiveNavigationBar-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "6daa2edadf7f14350c5c01aafe4045d72c284144866f15ca5822eef8cab20e4d"
+    },
+    {
+      "file": "AdaptiveRangeSlider-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9ed264602285ff00a79a6d2dded8c3ab8a3965b6dbd1f36a18ec67d063f01e89"
+    },
+    {
+      "file": "AdaptiveRangeSlider-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "30990f7fd63a85c452b92d98dd187bd5e524035431e752bbdb0d2aa28ecec76e"
+    },
+    {
+      "file": "AdaptiveRangeSlider-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9ed264602285ff00a79a6d2dded8c3ab8a3965b6dbd1f36a18ec67d063f01e89"
+    },
+    {
+      "file": "AdaptiveRangeSlider-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "30990f7fd63a85c452b92d98dd187bd5e524035431e752bbdb0d2aa28ecec76e"
+    },
+    {
+      "file": "AdaptiveScaffold-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "6070b541925b4f15c11156920fb1ef062890614b3aec690f4e265f259c75a53b"
+    },
+    {
+      "file": "AdaptiveScaffold-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "91e498cd40b6bba2d0408c191c9545e0039c30bb1e15081639c48015aace7acd"
+    },
+    {
+      "file": "AdaptiveScaffold-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "6070b541925b4f15c11156920fb1ef062890614b3aec690f4e265f259c75a53b"
+    },
+    {
+      "file": "AdaptiveScaffold-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "91e498cd40b6bba2d0408c191c9545e0039c30bb1e15081639c48015aace7acd"
+    },
+    {
+      "file": "AdaptiveSlider-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e9b3109f31edf28fd4d275762df63321704aad5283e33f19c130774a38bcbe16"
+    },
+    {
+      "file": "AdaptiveSlider-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "605018e493bb518ac0087cf57a80c97964e22eb793f2042f8524dabe50a2aebc"
+    },
+    {
+      "file": "AdaptiveSlider-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e9b3109f31edf28fd4d275762df63321704aad5283e33f19c130774a38bcbe16"
+    },
+    {
+      "file": "AdaptiveSlider-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "605018e493bb518ac0087cf57a80c97964e22eb793f2042f8524dabe50a2aebc"
+    },
+    {
+      "file": "AdaptiveSurface-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1f150da39ff5c533e35b23e3994ada1708f8e8e97bd364ce5404eaf679860397"
+    },
+    {
+      "file": "AdaptiveSurface-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "30a41534d8fe170742be87dc5fe8f554f2a11de3d22fee08f34a6633fc4c85f9"
+    },
+    {
+      "file": "AdaptiveSurface-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1f150da39ff5c533e35b23e3994ada1708f8e8e97bd364ce5404eaf679860397"
+    },
+    {
+      "file": "AdaptiveSurface-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "30a41534d8fe170742be87dc5fe8f554f2a11de3d22fee08f34a6633fc4c85f9"
+    },
+    {
+      "file": "AdaptiveSwitch-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "89008632ab416d3bf2be5cade888b1a0531c581eafb47314cd12435c693be4f3"
+    },
+    {
+      "file": "AdaptiveSwitch-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "5eb1e4b3309de368fa48361b551ec7dfa7fbd3b91f51bcc2bc37305775a0254f"
+    },
+    {
+      "file": "AdaptiveSwitch-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "89008632ab416d3bf2be5cade888b1a0531c581eafb47314cd12435c693be4f3"
+    },
+    {
+      "file": "AdaptiveSwitch-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "5eb1e4b3309de368fa48361b551ec7dfa7fbd3b91f51bcc2bc37305775a0254f"
+    },
+    {
+      "file": "AdaptiveTextButton-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "5ecc17055d41f70d1751c25e07c5e0543774db3f7b1c7f7e7dcc70273222bd44"
+    },
+    {
+      "file": "AdaptiveTextButton-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "4feb35044cb72848d6c68eedfc45ef282ef46ff5f8a437b102aeda884f249dcb"
+    },
+    {
+      "file": "AdaptiveTextButton-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "5ecc17055d41f70d1751c25e07c5e0543774db3f7b1c7f7e7dcc70273222bd44"
+    },
+    {
+      "file": "AdaptiveTextButton-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "4feb35044cb72848d6c68eedfc45ef282ef46ff5f8a437b102aeda884f249dcb"
+    },
+    {
+      "file": "AdaptiveTheme-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "004e963a5f993471015fe9f398055623d8d66bc6c73e5ff855a25311e000c6f9"
+    },
+    {
+      "file": "AdaptiveTheme-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "004e963a5f993471015fe9f398055623d8d66bc6c73e5ff855a25311e000c6f9"
+    },
+    {
+      "file": "AdaptiveTheme-open-dark-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "a80411e61c6cb00692c3fca86236b48e201d91a2a9996016cafb4a9693187368"
+    },
+    {
+      "file": "AdaptiveTheme-open-dark-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "c5d698553da4476103033f86b7b9befa4cc9de7b97d17c490dad56cb8955eb3d"
+    },
+    {
+      "file": "AdaptiveTheme-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "004e963a5f993471015fe9f398055623d8d66bc6c73e5ff855a25311e000c6f9"
+    },
+    {
+      "file": "AdaptiveTheme-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "004e963a5f993471015fe9f398055623d8d66bc6c73e5ff855a25311e000c6f9"
+    },
+    {
+      "file": "AdaptiveTheme-open-light-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "6150e675c25efffcf8c523301cdb1794cef3e70233e87515a8a60b8ae3731ea3"
+    },
+    {
+      "file": "AdaptiveTonalButton-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "3655535c6314f28a8abc30060e08f27749b8024f8a94e28288cc6c7fcfdc1ae7"
+    },
+    {
+      "file": "AdaptiveTonalButton-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "bcb41f4cb41fcfecb6e1b5857e16db516f10c65ae2224d078316d96c2e2d9ea7"
+    },
+    {
+      "file": "AdaptiveTonalButton-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "3655535c6314f28a8abc30060e08f27749b8024f8a94e28288cc6c7fcfdc1ae7"
+    },
+    {
+      "file": "AdaptiveTonalButton-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "bcb41f4cb41fcfecb6e1b5857e16db516f10c65ae2224d078316d96c2e2d9ea7"
+    },
+    {
+      "file": "AdaptiveTopAppBar-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "b830fa50454e519c8ce0e934ef1a0375f6bcabe20326d097e195f0844187e071"
+    },
+    {
+      "file": "AdaptiveTopAppBar-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "7214fd02607a33cf8ccffa1aa0030a4a97b988bc2343362dc20d5cdfc2c41cac"
+    },
+    {
+      "file": "AdaptiveTopAppBar-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "b830fa50454e519c8ce0e934ef1a0375f6bcabe20326d097e195f0844187e071"
+    },
+    {
+      "file": "AdaptiveTopAppBar-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "7214fd02607a33cf8ccffa1aa0030a4a97b988bc2343362dc20d5cdfc2c41cac"
+    },
+    {
+      "file": "AdaptiveTriStateCheckbox-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "07f05cc6bb95e54563f26eade87110d11eac3b3ce545c1358f0725f8aac88b42"
+    },
+    {
+      "file": "AdaptiveTriStateCheckbox-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "ad621a3f6caf47bcace5bbeb209879858e52c7ec977245cb44bff03c505c3dbc"
+    },
+    {
+      "file": "AdaptiveTriStateCheckbox-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "07f05cc6bb95e54563f26eade87110d11eac3b3ce545c1358f0725f8aac88b42"
+    },
+    {
+      "file": "AdaptiveTriStateCheckbox-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "ad621a3f6caf47bcace5bbeb209879858e52c7ec977245cb44bff03c505c3dbc"
+    },
+    {
+      "file": "AdaptiveVerticalDivider-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e908f5119bb807fea20093d68c84dbbfe2f25e12b3aa2f04f3de6602eea21a56"
+    },
+    {
+      "file": "AdaptiveVerticalDivider-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "bd31dacc31b3849e63ab79ae65157635f911a035756345266112fd9e708582f6"
+    },
+    {
+      "file": "AdaptiveVerticalDivider-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e908f5119bb807fea20093d68c84dbbfe2f25e12b3aa2f04f3de6602eea21a56"
+    },
+    {
+      "file": "AdaptiveVerticalDivider-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "bd31dacc31b3849e63ab79ae65157635f911a035756345266112fd9e708582f6"
+    },
+    {
+      "file": "AdaptiveWidget-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "2de30cd5db4e9ce132e193374e5f01b14cf2daf2832067470ea4489faaa8dc4d"
+    },
+    {
+      "file": "AdaptiveWidget-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "26af29de948c55b8d5df1974e8bd25d2c4549474ba0405eac1976d2e2819225b"
+    },
+    {
+      "file": "AdaptiveWidget-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "2de30cd5db4e9ce132e193374e5f01b14cf2daf2832067470ea4489faaa8dc4d"
+    },
+    {
+      "file": "AdaptiveWidget-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "26af29de948c55b8d5df1974e8bd25d2c4549474ba0405eac1976d2e2819225b"
+    },
+    {
+      "file": "AlertDialogActionsScope.action-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "7fe346803570e811b6a2fb04879c8848c3ebe8d60641426e518905413e8a6e9c"
+    },
+    {
+      "file": "AlertDialogActionsScope.action-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "50879b0cb9ac6d753dc1e39952a63dcd1ac607ee76a4ebe19dd0bb57a346f7d7"
+    },
+    {
+      "file": "AlertDialogActionsScope.action-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "50879b0cb9ac6d753dc1e39952a63dcd1ac607ee76a4ebe19dd0bb57a346f7d7"
+    },
+    {
+      "file": "AlertDialogActionsScope.cancel-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "ba7a584613e08c475d1d29649c06bd0d45e761405ba3f2b7f5511f986896c311"
+    },
+    {
+      "file": "AlertDialogActionsScope.cancel-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "974d52017f07a25b2e29c0d3d35bd74b3b9d37e115d26bc6b305600db9bc3931"
+    },
+    {
+      "file": "AlertDialogActionsScope.cancel-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "974d52017f07a25b2e29c0d3d35bd74b3b9d37e115d26bc6b305600db9bc3931"
+    },
+    {
+      "file": "AlertDialogActionsScope.default-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "3315da78cfe6fca4ccdfbe54b8de1ca9b822bb427a72064bd0cd2df328c618d3"
+    },
+    {
+      "file": "AlertDialogActionsScope.default-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e095cc48117cc04eac691aab13f3891cc9219102bb9a3b02ea18aab1c6df1df6"
+    },
+    {
+      "file": "AlertDialogActionsScope.default-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e095cc48117cc04eac691aab13f3891cc9219102bb9a3b02ea18aab1c6df1df6"
+    },
+    {
+      "file": "AlertDialogActionsScope.destructive-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "ed837b805c199c6fce565a0ecd363ae39793d58f601179649d5b8764af0c8af1"
+    },
+    {
+      "file": "AlertDialogActionsScope.destructive-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e1f06e761caa7595922fd97ab52ac302475120420eacdfe0daf472014202c30f"
+    },
+    {
+      "file": "AlertDialogActionsScope.destructive-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e1f06e761caa7595922fd97ab52ac302475120420eacdfe0daf472014202c30f"
+    },
+    {
+      "file": "CupertinoActionSheet-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "34d0f8963e56712b481d87075b274e52bd32c51c6018cf505b9fc1ba300e207c"
+    },
+    {
+      "file": "CupertinoActionSheet-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "49f3e1b8ba7b577f0dcae4714a5f2f91b25ceb13914d0055a6b469b88efdad98"
+    },
+    {
+      "file": "CupertinoActionSheet-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "49f3e1b8ba7b577f0dcae4714a5f2f91b25ceb13914d0055a6b469b88efdad98"
+    },
+    {
+      "file": "CupertinoActionSheetNative-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "0740cda6386efa5adf7cb82402196e7b567949225157088e0368374dd11d201b"
+    },
+    {
+      "file": "CupertinoActionSheetNative-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "a11083b21393617a06bf29cbdda978fee8a92a0f388de4d9f6194c46c2471a73"
+    },
+    {
+      "file": "CupertinoActionSheetNative-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "a11083b21393617a06bf29cbdda978fee8a92a0f388de4d9f6194c46c2471a73"
+    },
+    {
+      "file": "CupertinoActivityIndicator-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e737587c8a9351893eb9408eb164735b3a09d10f99405b881b2cf659c0145575"
+    },
+    {
+      "file": "CupertinoActivityIndicator-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e737587c8a9351893eb9408eb164735b3a09d10f99405b881b2cf659c0145575"
+    },
+    {
+      "file": "CupertinoAlertDialog-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "60a1a0da3dd4e1eb6df9544d77d839e960973a395208577522021d613441829b"
+    },
+    {
+      "file": "CupertinoAlertDialog-open-dark-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "a04099b1b326a63cdba4d8f998cb1357bf5d72916f9c87ad9e90e43a1e306db7"
+    },
+    {
+      "file": "CupertinoAlertDialog-open-dark-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "a04099b1b326a63cdba4d8f998cb1357bf5d72916f9c87ad9e90e43a1e306db7"
+    },
+    {
+      "file": "CupertinoAlertDialog-open-dark-360px-font1.4-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "932f3d98f450aaf2d36d72793a4df4089fe92aed19d8753a3b0daa68e18ad8d3"
+    },
+    {
+      "file": "CupertinoAlertDialog-open-dark-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "932f3d98f450aaf2d36d72793a4df4089fe92aed19d8753a3b0daa68e18ad8d3"
+    },
+    {
+      "file": "CupertinoAlertDialog-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e8600bc78f89d43b2504d5adcb48c0061bd8400ef0e451b7710c500dea5158fa"
+    },
+    {
+      "file": "CupertinoAlertDialog-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e8600bc78f89d43b2504d5adcb48c0061bd8400ef0e451b7710c500dea5158fa"
+    },
+    {
+      "file": "CupertinoAlertDialog-open-light-360px-font1.4-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e0e75b4dcf3fe7aca60b93ae1a5958a39551f160698cc9df6a3b3e6f613efb3d"
+    },
+    {
+      "file": "CupertinoAlertDialog-open-light-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e0e75b4dcf3fe7aca60b93ae1a5958a39551f160698cc9df6a3b3e6f613efb3d"
+    },
+    {
+      "file": "CupertinoAlertDialogNative-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "36c176dc7365b45e3930dfe5dc148ba9454c24a37d1889c2773bc1cec7bd150e"
+    },
+    {
+      "file": "CupertinoAlertDialogNative-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "69ea57e6a010ca84bc0d608bf9f63b9a01fb5bd48d96cc27715efa01ed0533ec"
+    },
+    {
+      "file": "CupertinoAlertDialogNative-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "69ea57e6a010ca84bc0d608bf9f63b9a01fb5bd48d96cc27715efa01ed0533ec"
+    },
+    {
+      "file": "CupertinoBorderedTextField-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e11aa000e6a1d691b08454875d1328f1990c27f896abcaf2e4a063a357196ff4"
+    },
+    {
+      "file": "CupertinoBorderedTextField-open-dark-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "b8f064ecbd439f0b62851ccb1d451180dd6655e95c7c13c19063464cfe4178f8"
+    },
+    {
+      "file": "CupertinoBorderedTextField-open-dark-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "759804491963e9743f43bda926d7a1b30e7e6ad0b7d1f39fe9314add2376f148"
+    },
+    {
+      "file": "CupertinoBorderedTextField-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e11aa000e6a1d691b08454875d1328f1990c27f896abcaf2e4a063a357196ff4"
+    },
+    {
+      "file": "CupertinoBorderedTextField-open-light-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "bcacf7c59ea15fbd4b87e52dfff9fc21d87f511f92bc8a10e02beda9f6e96cf3"
+    },
+    {
+      "file": "CupertinoBottomAppBar-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e06e305e7e16832e23bdd0fe25e0e2354289e89a02efcf54dcd72e7f0f895442"
+    },
+    {
+      "file": "CupertinoBottomAppBar-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e06e305e7e16832e23bdd0fe25e0e2354289e89a02efcf54dcd72e7f0f895442"
+    },
+    {
+      "file": "CupertinoBottomSheetContent-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "a550c7b54147ad1b5a311fb6d318d79ca4da238d9819739c587a02aa5b4050d2"
+    },
+    {
+      "file": "CupertinoBottomSheetContent-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "a3484b8cd69841c06a4e8b5e11c6cd16e4da28194b70b42cf2280cb49afc662e"
+    },
+    {
+      "file": "CupertinoBottomSheetDefaults.DragHandle-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "8ebf14d5669780f32364a2e920ad9e03bb93c82e85442427823cdced847bca39"
+    },
+    {
+      "file": "CupertinoBottomSheetDefaults.DragHandle-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "98cb59c807aecf1d065ca7e7ad09d31379fb24eb334cb81d85632d944670b17c"
+    },
+    {
+      "file": "CupertinoBottomSheetScaffold-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "b788b6489e08337206e8c923416f9a700374eae413f9187908222144b222c83e"
+    },
+    {
+      "file": "CupertinoBottomSheetScaffold-open-dark-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "c8816fa4fa0a60a4d86019db4d27bc4dc68fcda27ab05fb36433ed95f40cae14"
+    },
+    {
+      "file": "CupertinoBottomSheetScaffold-open-dark-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "fca7e45afbfb4444210ab4640064111e8a1287d7dd6d85f3040db07d413a8ceb"
+    },
+    {
+      "file": "CupertinoBottomSheetScaffold-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "60220440084170ae3f4f4f986e05cac4d4345ff3b5260428207d7a1a4a67d008"
+    },
+    {
+      "file": "CupertinoBottomSheetScaffold-open-light-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "36d45b8fbd4c6c6f89779877df884e7b2515073585a28c20064204b80040e5ef"
+    },
+    {
+      "file": "CupertinoButton-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "20d5314fd70a474bea5f86e0ed8f2d2b7a2614c5daba986bb1ef74fd02c10cc1"
+    },
+    {
+      "file": "CupertinoButton-open-dark-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1b3301100f78230f28a10754925de583bd34b91807ace21d7576e376fc8eaa64"
+    },
+    {
+      "file": "CupertinoButton-open-dark-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "67eb5f814af8b0847d5f8f185d07470ca81975e09b88908bdbe82daecfc0511f"
+    },
+    {
+      "file": "CupertinoButton-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "20d5314fd70a474bea5f86e0ed8f2d2b7a2614c5daba986bb1ef74fd02c10cc1"
+    },
+    {
+      "file": "CupertinoButton-open-light-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "077f03a1ff7a755ee7689aae9ba6ab8aaec2c833bcde9f52c3e82b0d2e3b3819"
+    },
+    {
+      "file": "CupertinoCheckBox-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "5d757e07477c372d533d4d14faec698950bca3b0cafba046c4cc1c85a5af6050"
+    },
+    {
+      "file": "CupertinoCheckBox-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "5d757e07477c372d533d4d14faec698950bca3b0cafba046c4cc1c85a5af6050"
+    },
+    {
+      "file": "CupertinoDatePicker-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "794690acb89d4982bb7eb3fc3adaf0b67c09af9e70866cea664cfddb2528301d"
+    },
+    {
+      "file": "CupertinoDatePicker-open-dark-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "81eefde4414f5e2f7610af27763f1ad4710ab4e293144d16a742814c372f0986"
+    },
+    {
+      "file": "CupertinoDatePicker-open-dark-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "c3d926a4dd4a2a113f9533cfaba0604b0750d3a94e4854cc638db21cbb107ca8"
+    },
+    {
+      "file": "CupertinoDatePicker-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "794690acb89d4982bb7eb3fc3adaf0b67c09af9e70866cea664cfddb2528301d"
+    },
+    {
+      "file": "CupertinoDatePicker-open-light-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "ba9a46746508f33a1f68ea4ad3bbd23f5d51781811fbc4f1fa014adda965cae9"
+    },
+    {
+      "file": "CupertinoDatePickerNative-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "749e0130384d75121c31436de5289312e2d2a42ca2c5dc20b33bd3c8d5c89da7"
+    },
+    {
+      "file": "CupertinoDatePickerNative-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "749e0130384d75121c31436de5289312e2d2a42ca2c5dc20b33bd3c8d5c89da7"
+    },
+    {
+      "file": "CupertinoDateTimePicker-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "068f31b27474a0c61f8dc0f3b64548d5482ad87fc64ccd357854a24fab04c6a3"
+    },
+    {
+      "file": "CupertinoDateTimePicker-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "068f31b27474a0c61f8dc0f3b64548d5482ad87fc64ccd357854a24fab04c6a3"
+    },
+    {
+      "file": "CupertinoDateTimePickerNative-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9dc1523b554cd1bc719c434530859978ca6bd9f6ee7e42e09cf272f2898b2d11"
+    },
+    {
+      "file": "CupertinoDateTimePickerNative-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9dc1523b554cd1bc719c434530859978ca6bd9f6ee7e42e09cf272f2898b2d11"
+    },
+    {
+      "file": "CupertinoDivider-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "4da29181dd95398ac36726601e54089b46d070aeb6679936e191ba945f94979b"
+    },
+    {
+      "file": "CupertinoDivider-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "4da29181dd95398ac36726601e54089b46d070aeb6679936e191ba945f94979b"
+    },
+    {
+      "file": "CupertinoDropdownMenu-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9ea5aacf9157cecaf3f13d3b39e1a5086c600baac5453d32fc5912319af56603"
+    },
+    {
+      "file": "CupertinoDropdownMenu-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "54ebabbe7af4e236a5cfc04d90239da7d34658b63d945f2eb1cd98a6d42167a9"
+    },
+    {
+      "file": "CupertinoDropdownMenu-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "54ebabbe7af4e236a5cfc04d90239da7d34658b63d945f2eb1cd98a6d42167a9"
+    },
+    {
+      "file": "CupertinoDropdownMenuDefaults.PickerLeadingIcon-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "ad25ed1c3023ac37b4a204527c17d452404415cfc720e378b4fac4744ba30609"
+    },
+    {
+      "file": "CupertinoDropdownMenuDefaults.PickerLeadingIcon-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "140ebb1d4caff73f5a97e3ffc1474ebb13a88fe2c54df5c21fc0a7a77b449ab4"
+    },
+    {
+      "file": "CupertinoDropdownMenuDefaults.PickerLeadingIcon-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "140ebb1d4caff73f5a97e3ffc1474ebb13a88fe2c54df5c21fc0a7a77b449ab4"
+    },
+    {
+      "file": "CupertinoHorizontalDivider-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "341a4ef42f00d3fed278880aaa40b2d248a6051cae1062f1bc85ff3d5e465ca6"
+    },
+    {
+      "file": "CupertinoHorizontalDivider-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "341a4ef42f00d3fed278880aaa40b2d248a6051cae1062f1bc85ff3d5e465ca6"
+    },
+    {
+      "file": "CupertinoIcon-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "754d9dc2a4d527420313418d7cae0289a21867e810ebe6833ddd489b68d02eed"
+    },
+    {
+      "file": "CupertinoIcon-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "754d9dc2a4d527420313418d7cae0289a21867e810ebe6833ddd489b68d02eed"
+    },
+    {
+      "file": "CupertinoIconButton-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "51ac2ede0e51a1c8fb1143d6aa0a936e37ca4b808487fc4e652dbd983fbe9c63"
+    },
+    {
+      "file": "CupertinoIconButton-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "51ac2ede0e51a1c8fb1143d6aa0a936e37ca4b808487fc4e652dbd983fbe9c63"
+    },
+    {
+      "file": "CupertinoLazyColumn-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "0b568abb5ad5a9ba4a83ef782520cf7d3165d8d416ec64993920cac8911033f9"
+    },
+    {
+      "file": "CupertinoLazyColumn-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "0b568abb5ad5a9ba4a83ef782520cf7d3165d8d416ec64993920cac8911033f9"
+    },
+    {
+      "file": "CupertinoLinkIcon-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "0382cd277abbe2c1cc1f01785640221e3ce49fd5c44f68cb710d57fa52b234b1"
+    },
+    {
+      "file": "CupertinoLinkIcon-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "0382cd277abbe2c1cc1f01785640221e3ce49fd5c44f68cb710d57fa52b234b1"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuAction-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1e0ef0e80bf80266d35281628308703513e74bbe219f9b5ea3c252fb5672b830"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuAction-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "54ebabbe7af4e236a5cfc04d90239da7d34658b63d945f2eb1cd98a6d42167a9"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuAction-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "54ebabbe7af4e236a5cfc04d90239da7d34658b63d945f2eb1cd98a6d42167a9"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuDivider-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "25b8ec3aa71b7ac915f845096ee2b85608c8958956d22efdfd4803c24e22c98a"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuDivider-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "fb1a34c766e3b5302aee0cddeb556d7eb85438e4b584500d1c2573380579a9bc"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuDivider-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "fb1a34c766e3b5302aee0cddeb556d7eb85438e4b584500d1c2573380579a9bc"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuItem-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "673491cb80320ea80587928d74b5aab767325df77eb642c46e2b9c5c320c9ad8"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuItem-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1d653bb2fff1b8aaaf63e14ca6340290a7068975e37c5210923f016be0a9958d"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuItem-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1d653bb2fff1b8aaaf63e14ca6340290a7068975e37c5210923f016be0a9958d"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuPickerAction-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "87ee047a158ef11231501ba11b3ce5f5ba5ace35080a5553072439dc3561a04f"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuPickerAction-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "8eceb0d882fca6b86e72f330c7d053805de9c664bf2ff509a812a7ad1fcb7312"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuPickerAction-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "8eceb0d882fca6b86e72f330c7d053805de9c664bf2ff509a812a7ad1fcb7312"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuSection-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9e7a597f6301fc03e4232212649fa1d850d47305127fba416a51e039eb263dbf"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuSection-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e10c3a158fec230aaa50f268bae83fa8d2616c29f1b406ad10800d988d38021b"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuSection-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e10c3a158fec230aaa50f268bae83fa8d2616c29f1b406ad10800d988d38021b"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuTitle-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "92eb3b1b0c51615dd6c58d916202a28df603e93f96830b6975be56d4d8c0b69f"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuTitle-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9ffbef9f7743ae5eaa6146bec2687a68b1944ba5791a96e15cd0f6d06ef6e9d9"
+    },
+    {
+      "file": "CupertinoMenuScope.MenuTitle-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9ffbef9f7743ae5eaa6146bec2687a68b1944ba5791a96e15cd0f6d06ef6e9d9"
+    },
+    {
+      "file": "CupertinoNavigateBackButton-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1f72a2e91c04a8214dd647dd3807a6923795019d8343309bbfdddf5aedb39620"
+    },
+    {
+      "file": "CupertinoNavigateBackButton-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1f72a2e91c04a8214dd647dd3807a6923795019d8343309bbfdddf5aedb39620"
+    },
+    {
+      "file": "CupertinoNavigationBar-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "8ed219625d70beaec3e25a62790ad7b7eab2de9c5e145102613aa9b79d9b1644"
+    },
+    {
+      "file": "CupertinoNavigationBar-open-dark-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "19939f1c7a8c4077307991691bec817e53247d2312efabf647a367396123694f"
+    },
+    {
+      "file": "CupertinoNavigationBar-open-dark-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "724eaaf719a202220baa283c63d90e009c3b0a66e32b71ef10d207ee8b562806"
+    },
+    {
+      "file": "CupertinoNavigationBar-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "8ed219625d70beaec3e25a62790ad7b7eab2de9c5e145102613aa9b79d9b1644"
+    },
+    {
+      "file": "CupertinoNavigationBar-open-light-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e81410421e145ccca5346756eb1852c7c0ba633b5239c5fe0a7996aecc2cc8f2"
+    },
+    {
+      "file": "CupertinoNavigationBarDefaults.divider-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d86030cacfffe50ba2c2f192e58f1a671e705e305e4f29a758826cf3b5030f22"
+    },
+    {
+      "file": "CupertinoNavigationBarDefaults.divider-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d86030cacfffe50ba2c2f192e58f1a671e705e305e4f29a758826cf3b5030f22"
+    },
+    {
+      "file": "CupertinoNavigationTitle-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9acaf88c881703d127820c0dbd3f6fec22a0e20697f7af2f587fbb2b9c972b3d"
+    },
+    {
+      "file": "CupertinoNavigationTitle-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9acaf88c881703d127820c0dbd3f6fec22a0e20697f7af2f587fbb2b9c972b3d"
+    },
+    {
+      "file": "CupertinoRangeSlider-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "a94fab8675702a98643a82c54fe7f1544839c6b821517766abc494ca893f9dad"
+    },
+    {
+      "file": "CupertinoRangeSlider-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "a94fab8675702a98643a82c54fe7f1544839c6b821517766abc494ca893f9dad"
+    },
+    {
+      "file": "CupertinoScaffold-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "94279f03b6bd41b67363d7c8aba47cafc9b5ba41a62aacb4cf0314d288ba1f22"
+    },
+    {
+      "file": "CupertinoScaffold-open-dark-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "6ec2db442265c27d96ce1f37a3253d3e5c81fd6b22c05a211131c8795015a05a"
+    },
+    {
+      "file": "CupertinoScaffold-open-dark-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "f97aa39f33648d933f80c1a15197ac4ce2acd5c14185a326797c191b875ea767"
+    },
+    {
+      "file": "CupertinoScaffold-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "94279f03b6bd41b67363d7c8aba47cafc9b5ba41a62aacb4cf0314d288ba1f22"
+    },
+    {
+      "file": "CupertinoScaffold-open-light-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "c28602d83777ee26eef47471bd172a116acada4d55b895d144f1fec230fd0dcf"
+    },
+    {
+      "file": "CupertinoScaffoldPadding-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "6ea6917a317db4383b6694152b023d3a8a03453a0d002b8a46eb34d2be483570"
+    },
+    {
+      "file": "CupertinoScaffoldPadding-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "6ea6917a317db4383b6694152b023d3a8a03453a0d002b8a46eb34d2be483570"
+    },
+    {
+      "file": "CupertinoSearchTextField-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "82eecf1793c1c06393f0bde63cb86cc9f03aa34c8a4cbfb34151ce2f837d178b"
+    },
+    {
+      "file": "CupertinoSearchTextField-open-dark-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "5a7ede0876da159a7930bb7caef3b791f2f4e7088303ec6cc9d76167d22ac0cd"
+    },
+    {
+      "file": "CupertinoSearchTextField-open-dark-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "00b93641200a98361cf9e9a1091401210c903709364c1178c25bfd9cfa457689"
+    },
+    {
+      "file": "CupertinoSearchTextField-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "82eecf1793c1c06393f0bde63cb86cc9f03aa34c8a4cbfb34151ce2f837d178b"
+    },
+    {
+      "file": "CupertinoSearchTextField-open-light-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d2ea72065f1032019189d4fee78a5203a3fb49ddea7b24047b3d0269092d112d"
+    },
+    {
+      "file": "CupertinoSearchTextFieldDefaults.cancelButton-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1475b875f93275565b7a670e7a399f055fad69e20e5c55f0a69488ff71f86d02"
+    },
+    {
+      "file": "CupertinoSearchTextFieldDefaults.cancelButton-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d5eb3f43ee034233a5a69d72a445b1d842fe80e2d1ed89369ed8c5f42534492f"
+    },
+    {
+      "file": "CupertinoSearchTextFieldDefaults.leadingIcon-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "802544b0139a03544a2176d91ed344ed18523b2fd0989f924a9cb4c332d99783"
+    },
+    {
+      "file": "CupertinoSearchTextFieldDefaults.leadingIcon-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "802544b0139a03544a2176d91ed344ed18523b2fd0989f924a9cb4c332d99783"
+    },
+    {
+      "file": "CupertinoSection-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "2a4e71d9d246d2762ce59ee30f0072d54f4e99838be6c50e05dab8af4ae6e045"
+    },
+    {
+      "file": "CupertinoSection-open-dark-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "6f3ff1034419e955843dd40409e1c49094b4e820aa60df1cb348073b079456ce"
+    },
+    {
+      "file": "CupertinoSection-open-dark-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "2768e071297b5c1f2a1eb37367ebc20f9b0ee54aaca3c0c316c2bd5133419c82"
+    },
+    {
+      "file": "CupertinoSection-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "2a4e71d9d246d2762ce59ee30f0072d54f4e99838be6c50e05dab8af4ae6e045"
+    },
+    {
+      "file": "CupertinoSection-open-light-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "80cd4cc9334216e0c0c56b50cfdd58906120d00582d8e5683ab9e54737c996c8"
+    },
+    {
+      "file": "CupertinoSectionDefaults.LabelChevron-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "735363a906aa029ad5396fb15d5bff18f2bfa40f52afa6344dc1b4d98f9fceff"
+    },
+    {
+      "file": "CupertinoSectionDefaults.LabelChevron-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "735363a906aa029ad5396fb15d5bff18f2bfa40f52afa6344dc1b4d98f9fceff"
+    },
+    {
+      "file": "CupertinoSectionDefaults.PickerButton-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "3b6531de095f51544e0ceff0883efcc91ead7689ed600125a4228dea4049b31a"
+    },
+    {
+      "file": "CupertinoSectionDefaults.PickerButton-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9a43d8c33b653c9bdb353964416b9cbe1629e4cfcdecff522576b7b09d8175b2"
+    },
+    {
+      "file": "CupertinoSectionDefaults.TextFieldClearButton-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "463c8e9c80c376dc3fdd6985d756eb5524a266bcab0b7ed2b0f84aa3cba0a4f2"
+    },
+    {
+      "file": "CupertinoSectionDefaults.TextFieldClearButton-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "463c8e9c80c376dc3fdd6985d756eb5524a266bcab0b7ed2b0f84aa3cba0a4f2"
+    },
+    {
+      "file": "CupertinoSegmentedControl-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "db5e5cd8d8f9dae13ed9bde19df28b5a10c5fb1331faf24d42707ada05291c5f"
+    },
+    {
+      "file": "CupertinoSegmentedControl-open-dark-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1470dc816d085de6452729047d1c8468ff60a3ae1394ee907d1882c33ccb8118"
+    },
+    {
+      "file": "CupertinoSegmentedControl-open-dark-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9d0c01de48a0e2fd93a53657d6b5b20234003fe943bcd7c9edf50284895f6a72"
+    },
+    {
+      "file": "CupertinoSegmentedControl-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "db5e5cd8d8f9dae13ed9bde19df28b5a10c5fb1331faf24d42707ada05291c5f"
+    },
+    {
+      "file": "CupertinoSegmentedControl-open-light-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "8be05fbf91bc4bbb2375aaeb8321887648d9aa89169f655123a972e9c125e348"
+    },
+    {
+      "file": "CupertinoSegmentedControlIndicator-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "2748a8acfc668b74173b92bf6c4cabf29173681572b6d48927a673b391128cec"
+    },
+    {
+      "file": "CupertinoSegmentedControlIndicator-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "2748a8acfc668b74173b92bf6c4cabf29173681572b6d48927a673b391128cec"
+    },
+    {
+      "file": "CupertinoSegmentedControlTab-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "63d08aec52fed59613caa0959aa3d5f14d22dee0660c10a98b0c1d59aa48756c"
+    },
+    {
+      "file": "CupertinoSegmentedControlTab-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "63d08aec52fed59613caa0959aa3d5f14d22dee0660c10a98b0c1d59aa48756c"
+    },
+    {
+      "file": "CupertinoSlider-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "ae85929289ad43d1a3f719d8bc69526be2b765d03e31d79fe8dadd0365a33b6a"
+    },
+    {
+      "file": "CupertinoSlider-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "ae85929289ad43d1a3f719d8bc69526be2b765d03e31d79fe8dadd0365a33b6a"
+    },
+    {
+      "file": "CupertinoSliderDefaults.Thumb-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "685c97ec23cf8e2efd0fcf03d9af3c4bc1ac5ebc62c9ed5306986a4202da051f"
+    },
+    {
+      "file": "CupertinoSliderDefaults.Thumb-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "685c97ec23cf8e2efd0fcf03d9af3c4bc1ac5ebc62c9ed5306986a4202da051f"
+    },
+    {
+      "file": "CupertinoSliderDefaults.Track-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "3aecdb69625b51af87817168a0388e53fd5cc48446ea785226fc673c62f6e3c7"
+    },
+    {
+      "file": "CupertinoSliderDefaults.Track-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "3aecdb69625b51af87817168a0388e53fd5cc48446ea785226fc673c62f6e3c7"
+    },
+    {
+      "file": "CupertinoSurface-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "c4e7f1f6af1d2690fb3046a3e1ae086bfe735e260093c2a8ff7f022bc5818dcb"
+    },
+    {
+      "file": "CupertinoSurface-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "c4e7f1f6af1d2690fb3046a3e1ae086bfe735e260093c2a8ff7f022bc5818dcb"
+    },
+    {
+      "file": "CupertinoSwipeBox-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "675df4f42a94f9b6ac8fd53b7ebf7f1934a6d71598a87922c44bca1582700b62"
+    },
+    {
+      "file": "CupertinoSwipeBox-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "675df4f42a94f9b6ac8fd53b7ebf7f1934a6d71598a87922c44bca1582700b62"
+    },
+    {
+      "file": "CupertinoSwipeBoxItem-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "7e616b2bfd9fd0304cde05e23e57703debb022b848c5da2228a1bcedfd441724"
+    },
+    {
+      "file": "CupertinoSwipeBoxItem-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "7e616b2bfd9fd0304cde05e23e57703debb022b848c5da2228a1bcedfd441724"
+    },
+    {
+      "file": "CupertinoSwitch-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "eb27f57c6a3858add559ee16937bdd816a4e8722d06866725f5b91d4f84d4703"
+    },
+    {
+      "file": "CupertinoSwitch-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "eb27f57c6a3858add559ee16937bdd816a4e8722d06866725f5b91d4f84d4703"
+    },
+    {
+      "file": "CupertinoText-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "4afda0f310e3a034d2b37550f03c6668e229a9d6e6556e7175f97ba4a31446d1"
+    },
+    {
+      "file": "CupertinoText-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "4afda0f310e3a034d2b37550f03c6668e229a9d6e6556e7175f97ba4a31446d1"
+    },
+    {
+      "file": "CupertinoTextField-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "c0e4b9f2983c0803bba5fc788c6e02a2ac7746e5481a81636398bf0d0eb13e22"
+    },
+    {
+      "file": "CupertinoTextField-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "c0e4b9f2983c0803bba5fc788c6e02a2ac7746e5481a81636398bf0d0eb13e22"
+    },
+    {
+      "file": "CupertinoTextFieldDefaults.DecorationBox-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1f3107697e362c71b9e7424af1f8d600dfe7df0b7c054389e720dfe319c1887d"
+    },
+    {
+      "file": "CupertinoTextFieldDefaults.DecorationBox-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1f3107697e362c71b9e7424af1f8d600dfe7df0b7c054389e720dfe319c1887d"
+    },
+    {
+      "file": "CupertinoTheme-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "a867754ba6464c68ecb8b08f27310d1cfc3192de57b9774dbd6457c77495805c"
+    },
+    {
+      "file": "CupertinoTheme-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "a867754ba6464c68ecb8b08f27310d1cfc3192de57b9774dbd6457c77495805c"
+    },
+    {
+      "file": "CupertinoTimePicker-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "5f94efc5e24e5bb6f38b2b9b5a081c6f13a95ee3e18db2eb87accfbcf0935466"
+    },
+    {
+      "file": "CupertinoTimePicker-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "5f94efc5e24e5bb6f38b2b9b5a081c6f13a95ee3e18db2eb87accfbcf0935466"
+    },
+    {
+      "file": "CupertinoTimePickerNative-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "0b5ae1c8c0b612d634e7d295d79336b4bb2d8a53df54156f091884edc7fcdd81"
+    },
+    {
+      "file": "CupertinoTimePickerNative-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "0b5ae1c8c0b612d634e7d295d79336b4bb2d8a53df54156f091884edc7fcdd81"
+    },
+    {
+      "file": "CupertinoTopAppBar-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d1459f2be6a0f70af5a2a1867559f6be84d073c279f5ba893052b6b78f6e4b66"
+    },
+    {
+      "file": "CupertinoTopAppBar-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d1459f2be6a0f70af5a2a1867559f6be84d073c279f5ba893052b6b78f6e4b66"
+    },
+    {
+      "file": "CupertinoTopAppBarDefaults.divider-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "08e209e92626138ae79fba408c0597e1f9d55b59c974b66c85e74de3f1a8d149"
+    },
+    {
+      "file": "CupertinoTopAppBarDefaults.divider-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "08e209e92626138ae79fba408c0597e1f9d55b59c974b66c85e74de3f1a8d149"
+    },
+    {
+      "file": "CupertinoTriStateCheckBox-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "55ee61938a84ac4ac5a026b4aa9303e7f0b9ec36ed52298b6c11a502d4067921"
+    },
+    {
+      "file": "CupertinoTriStateCheckBox-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "55ee61938a84ac4ac5a026b4aa9303e7f0b9ec36ed52298b6c11a502d4067921"
+    },
+    {
+      "file": "CupertinoVerticalDivider-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "034afe2ec9174953ee9999b0839e2195eacd4e312f5998c531377ee28757bf82"
+    },
+    {
+      "file": "CupertinoVerticalDivider-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "034afe2ec9174953ee9999b0839e2195eacd4e312f5998c531377ee28757bf82"
+    },
+    {
+      "file": "CupertinoWheelPicker-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "8e20ef2e97d4c2f5bb88848775f1c82091f5239cd6b3aa7a16ea11217ddee8f1"
+    },
+    {
+      "file": "CupertinoWheelPicker-open-dark-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "a3e43f9d3007f2e08dc69d258e1d41f98154f9efb017f9e4cc0f00a181aeeed4"
+    },
+    {
+      "file": "CupertinoWheelPicker-open-dark-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "da429b24e1699214786ccf0027526ff5c3f137620e56fe06a2300ae0ef69c61b"
+    },
+    {
+      "file": "CupertinoWheelPicker-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "8e20ef2e97d4c2f5bb88848775f1c82091f5239cd6b3aa7a16ea11217ddee8f1"
+    },
+    {
+      "file": "CupertinoWheelPicker-open-light-360px-font1.4.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "74e78ad0e1c0d4a12e71763310445685c6c39eb3d5aec9692664edcfbd4d2ce4"
+    },
+    {
+      "file": "LazyListScope.section-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "a6463795f97889d7e7a895516e52786e77844a341d96e004a168e76733de145e"
+    },
+    {
+      "file": "LazyListScope.section-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "a6463795f97889d7e7a895516e52786e77844a341d96e004a168e76733de145e"
+    },
+    {
+      "file": "LazyListScope.stickySection-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "b62a0562031d3ebf270f0ddba8f92f2ab60d1368b04fb763c65c391da8123ec4"
+    },
+    {
+      "file": "LazyListScope.stickySection-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "b62a0562031d3ebf270f0ddba8f92f2ab60d1368b04fb763c65c391da8123ec4"
+    },
+    {
+      "file": "LazySectionScope.datePicker-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "5112105300e7e267006df1927c07f109e5f1ea55b4f48d713303db037ce5ac4f"
+    },
+    {
+      "file": "LazySectionScope.datePicker-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "43b3257bae96caf989a8ddc98d2bd881b7179dcd3be0865fc0901a244f741ce4"
+    },
+    {
+      "file": "LazySectionScope.dropdownMenu-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "992050ac981bcd0f8f6b7cdf674b32228a8fe0cb52943ee16ec0713eaa536063"
+    },
+    {
+      "file": "LazySectionScope.dropdownMenu-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "24db48fec424d251d8be63562e5fd2e28bf53c7d5e3dee71900983759e4ca43a"
+    },
+    {
+      "file": "LazySectionScope.dropdownMenu-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "24db48fec424d251d8be63562e5fd2e28bf53c7d5e3dee71900983759e4ca43a"
+    },
+    {
+      "file": "LazySectionScope.item-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "2156f2bd632ed296e1d7c1ff96b4b2d090249aa2aa1f922204d1573db5209833"
+    },
+    {
+      "file": "LazySectionScope.item-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "2156f2bd632ed296e1d7c1ff96b4b2d090249aa2aa1f922204d1573db5209833"
+    },
+    {
+      "file": "LazySectionScope.items-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d8d53a690d79a9e595e408ed2b740e05f376925bc94979aea5ba742bd6b15469"
+    },
+    {
+      "file": "LazySectionScope.items-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d8d53a690d79a9e595e408ed2b740e05f376925bc94979aea5ba742bd6b15469"
+    },
+    {
+      "file": "LazySectionScope.link-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "eaf6342e0a826dcf79a6dbe1efd7e9e7e0e185933cabe59a18b6065bf9db66ba"
+    },
+    {
+      "file": "LazySectionScope.link-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "eaf6342e0a826dcf79a6dbe1efd7e9e7e0e185933cabe59a18b6065bf9db66ba"
+    },
+    {
+      "file": "LazySectionScope.switch-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d744cb3649089b21a1fcc79432c6cb92a7d4a8d842dcff7103c2db3da1bb8c8f"
+    },
+    {
+      "file": "LazySectionScope.switch-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d744cb3649089b21a1fcc79432c6cb92a7d4a8d842dcff7103c2db3da1bb8c8f"
+    },
+    {
+      "file": "LazySectionScope.textField-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "881d3e350f51829b542783bf7c5d56a7eac9058a81e8bf6b1f3332fc04bcac0c"
+    },
+    {
+      "file": "LazySectionScope.textField-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "881d3e350f51829b542783bf7c5d56a7eac9058a81e8bf6b1f3332fc04bcac0c"
+    },
+    {
+      "file": "LazySectionScope.timePicker-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1f437dbf676851ee8329226f3babfd4159e4a5cb97cd65a23ec0fbc9fc671bea"
+    },
+    {
+      "file": "LazySectionScope.timePicker-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "83fdfa6834a7e3f460eb4463bbb98f08795d9c457d8b719ae30f736cd23282d1"
+    },
+    {
+      "file": "Modifier.cupertinoPickerIndicator-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "4da28011ea3b63e18a45225110444cd5140956f63df1de6add5e3e58c48e71ce"
+    },
+    {
+      "file": "Modifier.cupertinoPickerIndicator-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "4da28011ea3b63e18a45225110444cd5140956f63df1de6add5e3e58c48e71ce"
+    },
+    {
+      "file": "Modifier.cupertinoPredictiveEnter-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9334e04df95cda562b64f2f82388d4049a0d2905843b226f0065635b934562dd"
+    },
+    {
+      "file": "Modifier.cupertinoPredictiveEnter-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "9334e04df95cda562b64f2f82388d4049a0d2905843b226f0065635b934562dd"
+    },
+    {
+      "file": "Modifier.cupertinoPredictiveExit-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "5621140dd59c4e02a8e9fc0492e33fc1f37575ebe1f692abbeb77aab8785deb4"
+    },
+    {
+      "file": "Modifier.cupertinoPredictiveExit-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "5621140dd59c4e02a8e9fc0492e33fc1f37575ebe1f692abbeb77aab8785deb4"
+    },
+    {
+      "file": "Modifier.haze-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d448aeaeab5ded3e37dff0bdad20fa817e3470dab133b7cf71b4a8fa211f10da"
+    },
+    {
+      "file": "Modifier.haze-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d448aeaeab5ded3e37dff0bdad20fa817e3470dab133b7cf71b4a8fa211f10da"
+    },
+    {
+      "file": "Modifier.sectionContainerBackground-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "2964ba046de3ad6a1efa5162618124677f8a8397c3b8cf8f3c00ef48af8dc4d4"
+    },
+    {
+      "file": "Modifier.sectionContainerBackground-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "2964ba046de3ad6a1efa5162618124677f8a8397c3b8cf8f3c00ef48af8dc4d4"
+    },
+    {
+      "file": "NativeAlertDialogActionsScope.action-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "47164fc92a806e1dd5ea1445193bc2f8774d54aeebe93e6c2b0c730f971d3402"
+    },
+    {
+      "file": "NativeAlertDialogActionsScope.action-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "ae6e95efae5b8c52aa4559fd2aa4b77eb29f85ee2d46bae1c438b71e86d3f8f3"
+    },
+    {
+      "file": "NativeAlertDialogActionsScope.action-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "ae6e95efae5b8c52aa4559fd2aa4b77eb29f85ee2d46bae1c438b71e86d3f8f3"
+    },
+    {
+      "file": "NativeAlertDialogActionsScope.cancel-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e1e267841aadfbf6c3f5ea899453dea7159c6f192724902bfe56ffecc7fd1747"
+    },
+    {
+      "file": "NativeAlertDialogActionsScope.cancel-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "b5622b515c7990109936685a170464a72d6c8fbe576163c18cf207d3b2909bbd"
+    },
+    {
+      "file": "NativeAlertDialogActionsScope.cancel-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "b5622b515c7990109936685a170464a72d6c8fbe576163c18cf207d3b2909bbd"
+    },
+    {
+      "file": "NativeAlertDialogActionsScope.default-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "d552cce2dc09d6da66ed15f9e314b39962ef5cdcc3bb7d07d30b5c5ac5faeaa7"
+    },
+    {
+      "file": "NativeAlertDialogActionsScope.default-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "62d392a515c2c5a8a6fc666ae1c2a6583f3eeb3cce4cace3db19862eab412751"
+    },
+    {
+      "file": "NativeAlertDialogActionsScope.default-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "62d392a515c2c5a8a6fc666ae1c2a6583f3eeb3cce4cace3db19862eab412751"
+    },
+    {
+      "file": "NativeAlertDialogActionsScope.destructive-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "737e8cc843a0c40d8d993e47fdcf6475bcaf2d38aaf07f792fad5c6f74219d3c"
+    },
+    {
+      "file": "NativeAlertDialogActionsScope.destructive-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "4cdc13738b18877dd05b32266866048f5a9912e2c9d0d71201e06505775b4c35"
+    },
+    {
+      "file": "NativeAlertDialogActionsScope.destructive-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "4cdc13738b18877dd05b32266866048f5a9912e2c9d0d71201e06505775b4c35"
+    },
+    {
+      "file": "NativeChildren-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "860602b056f240a9d09121bf7669292c1de8247c01efb85df31e05c8fd3d0d55"
+    },
+    {
+      "file": "NativeChildren-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "860602b056f240a9d09121bf7669292c1de8247c01efb85df31e05c8fd3d0d55"
+    },
+    {
+      "file": "ProvideSectionStyle-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "659004b8e0242264a13d65eabfdf96c50b8df2b38473bc3dd696e2545802c1df"
+    },
+    {
+      "file": "ProvideSectionStyle-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "659004b8e0242264a13d65eabfdf96c50b8df2b38473bc3dd696e2545802c1df"
+    },
+    {
+      "file": "ProvideTextStyle-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "095f560ca0c7cd8e8566ffd7b0f6ea0b611302d3df5d9e0a3bb017c81e02230c"
+    },
+    {
+      "file": "ProvideTextStyle-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "095f560ca0c7cd8e8566ffd7b0f6ea0b611302d3df5d9e0a3bb017c81e02230c"
+    },
+    {
+      "file": "RowScope.AdaptiveNavigationBarItem-closed-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "6609c8bf3606494fe1d93ea1af5e9bcb28c076794f7aa8773eaff65f447d273f"
+    },
+    {
+      "file": "RowScope.AdaptiveNavigationBarItem-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "40d4dd3ed670250f6df715d69a52723096e262fefca573a5427e134d535182ac"
+    },
+    {
+      "file": "RowScope.AdaptiveNavigationBarItem-open-light-360px-font1.0-material3.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "6609c8bf3606494fe1d93ea1af5e9bcb28c076794f7aa8773eaff65f447d273f"
+    },
+    {
+      "file": "RowScope.AdaptiveNavigationBarItem-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "40d4dd3ed670250f6df715d69a52723096e262fefca573a5427e134d535182ac"
+    },
+    {
+      "file": "RowScope.CupertinoNavigationBarItem-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "16c922f9820d67d0e0163b56ae16e5de77ee2dc126b75ac2595f71a6ad070dc6"
+    },
+    {
+      "file": "RowScope.CupertinoNavigationBarItem-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "16c922f9820d67d0e0163b56ae16e5de77ee2dc126b75ac2595f71a6ad070dc6"
+    },
+    {
+      "file": "SectionScope.SectionDatePicker-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "a14a0b4158e8b0b851760fe43ccd6ea00a599f56b07db7fd427e04c5fa7cd81e"
+    },
+    {
+      "file": "SectionScope.SectionDatePicker-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "7878e4a57615da8c9bfa5d2721847f6c4e28789a6b397b90db8968f401111834"
+    },
+    {
+      "file": "SectionScope.SectionDropdownMenu-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "f5e86bfe6a5620c10848c377a06771aab9267ecb56589396b9f113ec6791d921"
+    },
+    {
+      "file": "SectionScope.SectionDropdownMenu-open-light-360px-font1.0-popup1.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e428778edbcb220de7248294290bc951843d3ddaedaae689b1dcf6a7b3e2d566"
+    },
+    {
+      "file": "SectionScope.SectionDropdownMenu-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "e428778edbcb220de7248294290bc951843d3ddaedaae689b1dcf6a7b3e2d566"
+    },
+    {
+      "file": "SectionScope.SectionItem-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "942d560113b785a1f37726a42c82d631d5f1fa1091fcc600018651512bfd7db9"
+    },
+    {
+      "file": "SectionScope.SectionItem-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "942d560113b785a1f37726a42c82d631d5f1fa1091fcc600018651512bfd7db9"
+    },
+    {
+      "file": "SectionScope.SectionLink-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "bccb762284b9d3c705b63c4dff9889b5e8ac62e964c9a08c725039d2b2619393"
+    },
+    {
+      "file": "SectionScope.SectionLink-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "bccb762284b9d3c705b63c4dff9889b5e8ac62e964c9a08c725039d2b2619393"
+    },
+    {
+      "file": "SectionScope.SectionTextField-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1a780a3fd8ed493695d8121e7eeb1108e8a357f75664e15cea77af42a188b1b6"
+    },
+    {
+      "file": "SectionScope.SectionTextField-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "1a780a3fd8ed493695d8121e7eeb1108e8a357f75664e15cea77af42a188b1b6"
+    },
+    {
+      "file": "SectionScope.SectionTimePicker-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "6eb53b82d0d7a53ebbcfc540e5b73a37ea396c5968a5cbc37fbdfe93082ed680"
+    },
+    {
+      "file": "SectionScope.SectionTimePicker-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "f0abab1db1743f266e3e798562b2f6a61318bb64ea8bcc45a560191ce8b2e1f4"
+    },
+    {
+      "file": "SharedSwipeBoxController-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "42323a6500b51e7f088e2f9fb3b94dc6f6b4cff454dc387e998bf7c0ecc5999c"
+    },
+    {
+      "file": "SharedSwipeBoxController-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "42323a6500b51e7f088e2f9fb3b94dc6f6b4cff454dc387e998bf7c0ecc5999c"
+    },
+    {
+      "file": "Surface-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "48b676e9555c3e2baf976bb22bd0d20e2021895e2ec3a160cd7dd30eeeec30fc"
+    },
+    {
+      "file": "Surface-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "48b676e9555c3e2baf976bb22bd0d20e2021895e2ec3a160cd7dd30eeeec30fc"
+    },
+    {
+      "file": "SystemBarAppearance-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "5a040f5d8d9fd98913f6be8f780873de427c1229d8fcf464712fcfdfee8e9019"
+    },
+    {
+      "file": "SystemBarAppearance-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "5a040f5d8d9fd98913f6be8f780873de427c1229d8fcf464712fcfdfee8e9019"
+    },
+    {
+      "file": "TabRowDefaults.Modifier.tabIndicatorOffset-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "56a4cf5d58192a367425c39a610c6d07e678fc93e22c2c7e5b6773f394245e7b"
+    },
+    {
+      "file": "TabRowDefaults.Modifier.tabIndicatorOffset-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "56a4cf5d58192a367425c39a610c6d07e678fc93e22c2c7e5b6773f394245e7b"
+    },
+    {
+      "file": "rememberCupertinoHapticFeedback-closed-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "ad609d01757b800893fc0137f014105f42cb4ecc6b4165ee97d78513fb361837"
+    },
+    {
+      "file": "rememberCupertinoHapticFeedback-open-light-360px-font1.0.png",
+      "width": 360,
+      "height": 720,
+      "sha256": "ad609d01757b800893fc0137f014105f42cb4ecc6b4165ee97d78513fb361837"
+    }
+  ]
+}

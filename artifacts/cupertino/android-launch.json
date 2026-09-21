@@ -1,0 +1,17 @@
+{
+  "recordedAt": "2026-09-21T06:52:22Z",
+  "applicationID": "com.pureswift.swiftandroidui",
+  "forceStoppedBeforeLaunch": true,
+  "launchExitCode": 0,
+  "launchOutput": "Starting: Intent { cmp=com.pureswift.swiftandroidui/com.pureswift.swiftandroid.MainActivity }\nStatus: ok\nLaunchState: UNKNOWN (0)\nActivity: com.pureswift.swiftandroidui/com.pureswift.swiftandroid.MainActivity\nWaitTime: 3223\nComplete",
+  "processRunning": true,
+  "keyguardStatus": [
+    "showing=true",
+    "inputRestricted=true",
+    "screenState=SCREEN_STATE_OFF",
+    "interactiveState=INTERACTIVE_STATE_SLEEP"
+  ],
+  "startupFatalErrorCount": 0,
+  "visualInteractionVerified": false,
+  "scope": "Final APK installed without changing private client files. Cold process launch only; device remains locked. No Cupertino interaction, predictive-back gesture or two-phone v2 hardware acceptance is claimed."
+}

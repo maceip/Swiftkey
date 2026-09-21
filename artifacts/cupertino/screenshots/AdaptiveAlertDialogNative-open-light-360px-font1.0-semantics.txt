@@ -1,0 +1,7 @@
+Printing with useUnmergedTree = 'false'
+Node #170 at (l=129.0, t=272.0, r=231.0, b=292.0)px
+Text = '[Catalog title]'
+Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+ClearAndSetSemantics = 'true'
+root: Rect.fromLTRB(0.0, 0.0, 360.0, 720.0), window: Rect.fromLTRB(0.0, 0.0, 360.0, 720.0)
+root: Rect.fromLTRB(0.0, 0.0, 360.0, 720.0), window: Rect.fromLTRB(0.0, 0.0, 360.0, 720.0)

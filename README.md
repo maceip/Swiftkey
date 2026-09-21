@@ -16,6 +16,11 @@ and JetBrains Mono across the webpage and shared device views.
 TypeSafe/CatBoost feature-discovery method for labelled text evaluations.
 It is separate from the runtime UI and has not been trained on real UI ratings.
 
+The [Cupertino integration](AndroidSwiftUI/docs/cupertino/README.md) vendors all
+six Compose Cupertino modules, with a 127-surface Swift catalog and 879 shared
+icons. Controls use real Compose implementations, bindings, named content slots,
+and Decompose navigation. UIKit-only APIs have explicit capability boundaries.
+
 The [pairing-first protocol](docs/PAIRING-ACCOUNT-PROTOCOL.md) now has an opt-in
 v2 implementation: two Android hardware identities pair, approve account genesis
 and become equal owners. Adding or replacing an owner requires both the surviving

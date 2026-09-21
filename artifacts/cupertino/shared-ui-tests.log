@@ -1,0 +1,175 @@
+[0/1] Planning build
+Building for debugging...
+[0/3] Write sources
+[1/3] Write swift-version-43AF9A9ED32E53B.txt
+[3/9] Compiling SwiftUICore CupertinoSections.swift
+[4/9] Compiling SwiftUICore CupertinoDefaults.swift
+[5/9] Compiling SwiftUICore CupertinoPresentation.swift
+[6/62] Compiling SwiftUICore Map.swift
+[7/62] Compiling SwiftUICore Menu.swift
+[8/62] Compiling SwiftUICore Overlay.swift
+[9/65] Compiling SwiftUICore ForEach.swift
+[10/65] Compiling SwiftUICore Form.swift
+[11/65] Compiling SwiftUICore GeometryReader.swift
+[12/68] Compiling SwiftUICore AsyncImage.swift
+[13/68] Compiling SwiftUICore Button.swift
+[14/68] Compiling SwiftUICore ComposableView.swift
+[15/68] Compiling SwiftUICore ContextMenu.swift
+[16/71] Compiling SwiftUICore ControlStyles.swift
+[17/71] Compiling SwiftUICore InteractionModifiers.swift
+[18/71] Compiling SwiftUICore KeyboardModifiers.swift
+[19/71] Compiling SwiftUICore Modifiers.swift
+[20/71] Compiling SwiftUICore Environment.swift
+[21/71] Compiling SwiftUICore Evaluator.swift
+[22/71] Compiling SwiftUICore FocusState.swift
+[23/71] Compiling SwiftUICore Gesture.swift
+[24/71] Compiling SwiftUICore View.swift
+[25/71] Compiling SwiftUICore ViewBuilder.swift
+[26/71] Compiling SwiftUICore ViewHost.swift
+[27/71] Compiling SwiftUICore SubtreeAnchors.swift
+[28/71] Compiling SwiftUICore TabView.swift
+[29/71] Compiling SwiftUICore Toolbar.swift
+[30/71] Compiling SwiftUICore Shapes.swift
+[31/71] Compiling SwiftUICore Stacks.swift
+[32/71] Compiling SwiftUICore Stepper.swift
+[33/71] Compiling SwiftUICore TextModifiers.swift
+[34/71] Compiling SwiftUICore Navigation.swift
+[35/71] Compiling SwiftUICore Preferences.swift
+[36/71] Compiling SwiftUICore Presentation.swift
+[37/71] Compiling SwiftUICore Views.swift
+[38/71] Compiling SwiftUICore RenderNode.swift
+[39/71] Compiling SwiftUICore State.swift
+[40/71] Compiling SwiftUICore Animation.swift
+[41/71] Compiling SwiftUICore Color.swift
+[42/71] Compiling SwiftUICore CupertinoComponent.swift
+[43/71] Compiling SwiftUICore CupertinoControls.swift
+[44/71] Compiling SwiftUICore Grids.swift
+/Users/mac/SwiftKey/AndroidSwiftUI/SwiftUICore/Sources/SwiftUICore/List.swift:48:17: warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+46 |             let element = elements[index]
+47 |             let key = "#\(identityString(keyFor(element)))"
+48 |             var rowContext = ResolveContext(
+   |                 `- warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+49 |                 storage: storage,
+50 |                 callbacks: callbacks,
+[45/71] Compiling SwiftUICore List.swift
+/Users/mac/SwiftKey/AndroidSwiftUI/SwiftUICore/Sources/SwiftUICore/List.swift:48:17: warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+46 |             let element = elements[index]
+47 |             let key = "#\(identityString(keyFor(element)))"
+48 |             var rowContext = ResolveContext(
+   |                 `- warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+49 |                 storage: storage,
+50 |                 callbacks: callbacks,
+[46/71] Compiling SwiftUICore Accessibility.swift
+/Users/mac/SwiftKey/AndroidSwiftUI/SwiftUICore/Sources/SwiftUICore/List.swift:48:17: warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+46 |             let element = elements[index]
+47 |             let key = "#\(identityString(keyFor(element)))"
+48 |             var rowContext = ResolveContext(
+   |                 `- warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+49 |                 storage: storage,
+50 |                 callbacks: callbacks,
+[47/71] Compiling SwiftUICore AppearanceModifiers.swift
+/Users/mac/SwiftKey/AndroidSwiftUI/SwiftUICore/Sources/SwiftUICore/List.swift:48:17: warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+46 |             let element = elements[index]
+47 |             let key = "#\(identityString(keyFor(element)))"
+48 |             var rowContext = ResolveContext(
+   |                 `- warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+49 |                 storage: storage,
+50 |                 callbacks: callbacks,
+[48/71] Compiling SwiftUICore Gradient.swift
+[49/71] Compiling SwiftUICore Label.swift
+[50/71] Compiling SwiftUICore Link.swift
+[51/71] Compiling SwiftUICore Picker.swift
+[52/71] Compiling SwiftUICore Popover.swift
+[53/71] Compiling SwiftUICore ProgressView.swift
+[54/71] Compiling SwiftUICore Controls.swift
+[55/71] Compiling SwiftUICore DatePicker.swift
+[56/71] Compiling SwiftUICore DisclosureGroup.swift
+[57/71] Compiling SwiftUICore Text.swift
+[58/71] Compiling SwiftUICore Transition.swift
+[59/71] Compiling SwiftUICore VideoPlayer.swift
+[60/71] Compiling SwiftUICore CupertinoPickers.swift
+[61/71] Compiling SwiftUICore CupertinoRichText.swift
+[62/71] Compiling SwiftUICore CupertinoState.swift
+[63/71] Compiling SwiftUICore CupertinoTextEntry.swift
+[64/71] Compiling SwiftUICore LazyStacks.swift
+[65/71] Compiling SwiftUICore CupertinoCatalogView.swift
+[66/71] Emitting module SwiftUICore
+[67/71] Compiling SwiftUICore CupertinoHostEffects.swift
+[68/71] Compiling SwiftUICore CupertinoIcons.swift
+[69/71] Compiling SwiftUICore CupertinoLayout.swift
+[70/71] Compiling SwiftUICore CupertinoNavigation.swift
+[71/79] Compiling SwiftKeyUI WorkspaceView.swift
+[72/79] Compiling SwiftKeyUI SwiftKeyPublicKeyView.swift
+[73/79] Compiling SwiftKeyUI SwiftKeyAppearance.swift
+[74/79] Compiling SwiftKeyUI SwiftKeyComponents.swift
+[75/79] Compiling SwiftKeyUI PhoneProtocolView.swift
+[76/79] Emitting module SwiftKeyUI
+[77/79] Compiling SwiftKeyUI SwiftKeyIdentityView.swift
+[77/79] Write Objects.LinkFileList
+[78/79] Linking SwiftKeyUIPackageTests
+Build complete! (4.97s)
+Test Suite 'All tests' started at 2026-09-20 23:50:59.955.
+Test Suite 'All tests' passed at 2026-09-20 23:50:59.964.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.009) seconds
+􀟈  Test run started.
+􀄵  Testing Library Version: 6.3.2 (70eff261d7f462c)
+􀄵  Target Platform: arm64-apple-macosx
+􀟈  Suite WorkspaceTests started.
+􀟈  Test publicKeyPresentationIncludesEveryByte() started.
+􀟈  Suite PhoneProtocolViewTests started.
+􀟈  Test primaryActionsRemainReadableInBothAppearances() started.
+􀟈  Test ledgerActionsUseRealPageAndUnsupportedEffectsAreHidden() started.
+􀟈  Test credentialVerificationDispatchesExactCredentialAndChecksReceiptHash() started.
+􀟈  Test devicesUseCompleteSharedPublicKeyAndServerReissueCapability() started.
+􀟈  Test filteringIsSwiftOwnedAndHasNoSyntheticFallback() started.
+􀟈  Test accountFormAndSelectionDispatchTypedActions() started.
+􀟈  Test staleRecordsAreNotPresentedAsOnline() started.
+􀟈  Test comparisonDisplaysFullFingerprintsAndCodeThenDispatchesExactBinding() started.
+􀟈  Test fullFlowUsesOnlyPortablePrimitivesAndNeverPerformsAnActionOnRender() started.
+􀟈  Test failedAdmissionCannotRenewAnIdentityThatWasNeverAdmitted() started.
+􀟈  Test allSectionsStayWithinThePortableRendererContract() started.
+􀟈  Test pairingCutoverRemovesLegacyCreationControls() started.
+􀟈  Test receiptMismatchNeverClaimsVerifiedOrOffersSignIn() started.
+􀟈  Test decliningUnjoinedInvitationClearlyDescribesLocalEffect() started.
+􀟈  Test invitationEffectsAreExplicitAndDoNotExposeCapabilityInSnapshotOrTree() started.
+􀟈  Test ownerSurfacesShowCredentialStatusSeparatelyFromAccountReceipt() started.
+􀟈  Test unknownOutcomeOnlyRecoversOriginalRequestAndUnsupportedWorkStaysUnavailable() started.
+􀟈  Test importingBeforePreparationRequiresExplicitFinalRootBeforeJoin() started.
+􀟈  Test expiredLeaseCanExplicitlyRenewRetainedIdentityWithoutApprovingOwnership() started.
+􀟈  Test nameProposalAndReplacementBindBothLabelAndCurrentObject() started.
+􀟈  Test existingAccountInspectionShowsRosterPolicyAndExactLostRootBeforeJoin() started.
+􀟈  Test ownerCanRetrySignInAndCredentialWithoutRecreatingCommittedAccount() started.
+􀟈  Test expiredBusyAndBrowserApprovalsCannotDispatchEvenIfCallbackIsInvoked() started.
+􀟈  Test invitationSecretsAppearOnlyFromTransientResultAndExportIsExplicit() started.
+􀟈  Test ownerAndCandidateGetDistinctExplicitMembershipApprovals() started.
+􀟈  Test committedReceiptDeadlineDoesNotMarkOwnerAccessExpired() started.
+􁁛  Test publicKeyPresentationIncludesEveryByte() passed after 0.002 seconds.
+􁁛  Test primaryActionsRemainReadableInBothAppearances() passed after 0.002 seconds.
+􁁛  Test devicesUseCompleteSharedPublicKeyAndServerReissueCapability() passed after 0.107 seconds.
+􁁛  Test ledgerActionsUseRealPageAndUnsupportedEffectsAreHidden() passed after 0.107 seconds.
+􁁛  Test pairingCutoverRemovesLegacyCreationControls() passed after 0.107 seconds.
+􁁛  Test nameProposalAndReplacementBindBothLabelAndCurrentObject() passed after 0.107 seconds.
+􁁛  Test comparisonDisplaysFullFingerprintsAndCodeThenDispatchesExactBinding() passed after 0.107 seconds.
+􁁛  Test fullFlowUsesOnlyPortablePrimitivesAndNeverPerformsAnActionOnRender() passed after 0.107 seconds.
+􁁛  Test ownerSurfacesShowCredentialStatusSeparatelyFromAccountReceipt() passed after 0.107 seconds.
+􁁛  Test decliningUnjoinedInvitationClearlyDescribesLocalEffect() passed after 0.107 seconds.
+􁁛  Test ownerAndCandidateGetDistinctExplicitMembershipApprovals() passed after 0.107 seconds.
+􁁛  Test unknownOutcomeOnlyRecoversOriginalRequestAndUnsupportedWorkStaysUnavailable() passed after 0.107 seconds.
+􁁛  Test staleRecordsAreNotPresentedAsOnline() passed after 0.107 seconds.
+􁁛  Test existingAccountInspectionShowsRosterPolicyAndExactLostRootBeforeJoin() passed after 0.107 seconds.
+􁁛  Test importingBeforePreparationRequiresExplicitFinalRootBeforeJoin() passed after 0.107 seconds.
+􁁛  Test credentialVerificationDispatchesExactCredentialAndChecksReceiptHash() passed after 0.107 seconds.
+􁁛  Test committedReceiptDeadlineDoesNotMarkOwnerAccessExpired() passed after 0.107 seconds.
+􁁛  Test ownerCanRetrySignInAndCredentialWithoutRecreatingCommittedAccount() passed after 0.107 seconds.
+􁁛  Test failedAdmissionCannotRenewAnIdentityThatWasNeverAdmitted() passed after 0.107 seconds.
+􁁛  Test expiredBusyAndBrowserApprovalsCannotDispatchEvenIfCallbackIsInvoked() passed after 0.107 seconds.
+􁁛  Test filteringIsSwiftOwnedAndHasNoSyntheticFallback() passed after 0.107 seconds.
+􁁛  Test invitationEffectsAreExplicitAndDoNotExposeCapabilityInSnapshotOrTree() passed after 0.107 seconds.
+􁁛  Test accountFormAndSelectionDispatchTypedActions() passed after 0.107 seconds.
+􁁛  Test allSectionsStayWithinThePortableRendererContract() passed after 0.107 seconds.
+􁁛  Test invitationSecretsAppearOnlyFromTransientResultAndExportIsExplicit() passed after 0.107 seconds.
+􁁛  Test receiptMismatchNeverClaimsVerifiedOrOffersSignIn() passed after 0.107 seconds.
+􁁛  Test expiredLeaseCanExplicitlyRenewRetainedIdentityWithoutApprovingOwnership() passed after 0.107 seconds.
+􁁛  Suite WorkspaceTests passed after 0.107 seconds.
+􁁛  Suite PhoneProtocolViewTests passed after 0.107 seconds.
+􁁛  Test run with 27 tests in 2 suites passed after 0.107 seconds.

@@ -1,0 +1,579 @@
+Building for debugging...
+[0/4] Write sources
+[2/4] Write swift-version-43AF9A9ED32E53B.txt
+[4/8] Compiling SwiftUICore CupertinoCatalogView.swift
+[5/8] Compiling SwiftUICore LazyStacks.swift
+[6/8] Compiling SwiftUICore CupertinoDefaults.swift
+[7/69] Compiling SwiftUICore Text.swift
+[8/69] Compiling SwiftUICore Transition.swift
+[9/69] Compiling SwiftUICore VideoPlayer.swift
+[10/72] Compiling SwiftUICore SubtreeAnchors.swift
+[11/72] Compiling SwiftUICore TabView.swift
+[12/72] Compiling SwiftUICore Toolbar.swift
+[13/72] Compiling SwiftUICore Picker.swift
+[14/72] Compiling SwiftUICore Popover.swift
+[15/72] Compiling SwiftUICore ProgressView.swift
+[16/72] Compiling SwiftUICore View.swift
+[17/72] Compiling SwiftUICore ViewBuilder.swift
+[18/72] Compiling SwiftUICore ViewHost.swift
+[19/72] Compiling SwiftUICore Accessibility.swift
+[20/72] Compiling SwiftUICore AppearanceModifiers.swift
+[21/72] Compiling SwiftUICore ControlStyles.swift
+[22/72] Compiling SwiftUICore InteractionModifiers.swift
+[23/72] Compiling SwiftUICore FocusState.swift
+/Users/mac/SwiftKey/AndroidSwiftUI/SwiftUICore/Sources/SwiftUICore/List.swift:48:17: warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+46 |             let element = elements[index]
+47 |             let key = "#\(identityString(keyFor(element)))"
+48 |             var rowContext = ResolveContext(
+   |                 `- warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+49 |                 storage: storage,
+50 |                 callbacks: callbacks,
+[24/72] Compiling SwiftUICore Gesture.swift
+/Users/mac/SwiftKey/AndroidSwiftUI/SwiftUICore/Sources/SwiftUICore/List.swift:48:17: warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+46 |             let element = elements[index]
+47 |             let key = "#\(identityString(keyFor(element)))"
+48 |             var rowContext = ResolveContext(
+   |                 `- warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+49 |                 storage: storage,
+50 |                 callbacks: callbacks,
+[25/72] Compiling SwiftUICore Grids.swift
+/Users/mac/SwiftKey/AndroidSwiftUI/SwiftUICore/Sources/SwiftUICore/List.swift:48:17: warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+46 |             let element = elements[index]
+47 |             let key = "#\(identityString(keyFor(element)))"
+48 |             var rowContext = ResolveContext(
+   |                 `- warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+49 |                 storage: storage,
+50 |                 callbacks: callbacks,
+[26/72] Compiling SwiftUICore List.swift
+/Users/mac/SwiftKey/AndroidSwiftUI/SwiftUICore/Sources/SwiftUICore/List.swift:48:17: warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+46 |             let element = elements[index]
+47 |             let key = "#\(identityString(keyFor(element)))"
+48 |             var rowContext = ResolveContext(
+   |                 `- warning: variable 'rowContext' was never mutated; consider changing to 'let' constant
+49 |                 storage: storage,
+50 |                 callbacks: callbacks,
+[27/72] Compiling SwiftUICore Preferences.swift
+[28/72] Compiling SwiftUICore Presentation.swift
+[29/72] Compiling SwiftUICore AsyncImage.swift
+[30/72] Compiling SwiftUICore Button.swift
+[31/72] Compiling SwiftUICore ComposableView.swift
+[32/72] Compiling SwiftUICore ContextMenu.swift
+[33/72] Compiling SwiftUICore Controls.swift
+[34/72] Compiling SwiftUICore DatePicker.swift
+[35/72] Compiling SwiftUICore Gradient.swift
+[36/72] Compiling SwiftUICore Label.swift
+[37/72] Compiling SwiftUICore Link.swift
+[38/72] Compiling SwiftUICore KeyboardModifiers.swift
+[39/72] Compiling SwiftUICore Modifiers.swift
+[40/72] Compiling SwiftUICore TextModifiers.swift
+[41/72] Compiling SwiftUICore Navigation.swift
+[42/72] Compiling SwiftUICore CupertinoState.swift
+[43/72] Compiling SwiftUICore CupertinoTextEntry.swift
+[44/72] Compiling SwiftUICore Environment.swift
+[45/72] Compiling SwiftUICore Evaluator.swift
+[46/72] Compiling SwiftUICore Animation.swift
+[47/72] Compiling SwiftUICore Color.swift
+[48/72] Compiling SwiftUICore CupertinoComponent.swift
+[49/72] Compiling SwiftUICore CupertinoControls.swift
+[50/72] Compiling SwiftUICore Shapes.swift
+[51/72] Compiling SwiftUICore Stacks.swift
+[52/72] Compiling SwiftUICore Stepper.swift
+[53/72] Compiling SwiftUICore DisclosureGroup.swift
+[54/72] Compiling SwiftUICore ForEach.swift
+[55/72] Compiling SwiftUICore Form.swift
+[56/72] Compiling SwiftUICore GeometryReader.swift
+[57/72] Compiling SwiftUICore CupertinoPickers.swift
+[58/72] Compiling SwiftUICore CupertinoPresentation.swift
+[59/72] Compiling SwiftUICore CupertinoRichText.swift
+[60/72] Compiling SwiftUICore CupertinoSections.swift
+[61/72] Compiling SwiftUICore Views.swift
+[62/72] Compiling SwiftUICore RenderNode.swift
+[63/72] Compiling SwiftUICore State.swift
+[64/72] Compiling SwiftUICore Map.swift
+[65/72] Compiling SwiftUICore Menu.swift
+[66/72] Compiling SwiftUICore Overlay.swift
+[67/72] Emitting module SwiftUICore
+[68/72] Compiling SwiftUICore CupertinoHostEffects.swift
+[69/72] Compiling SwiftUICore CupertinoIcons.swift
+[70/72] Compiling SwiftUICore CupertinoLayout.swift
+[71/72] Compiling SwiftUICore CupertinoNavigation.swift
+[72/80] Compiling SwiftUICoreTests NavigationTests.swift
+[73/80] Compiling SwiftUICoreTests LazyTests.swift
+[74/80] Emitting module SwiftUICoreTests
+[75/80] Compiling SwiftUICoreTests CupertinoTests.swift
+[76/80] Compiling SwiftUICoreTests EvaluatorTests.swift
+[77/80] Compiling SwiftUICoreTests ControlTests.swift
+[78/80] Compiling SwiftUICoreTests IdentityTests.swift
+[78/80] Write Objects.LinkFileList
+[79/80] Linking SwiftUICorePackageTests
+Build complete! (4.20s)
+Test Suite 'All tests' started at 2026-09-20 23:45:51.647.
+Test Suite 'All tests' passed at 2026-09-20 23:45:51.652.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.005) seconds
+􀟈  Test run started.
+􀄵  Testing Library Version: 6.3.2 (70eff261d7f462c)
+􀄵  Target Platform: arm64-apple-macosx
+􀟈  Suite "Controls and environment" started.
+􀟈  Test "Slider emits value, bounds, and a working double callback" started.
+􁁛  Test "Slider emits value, bounds, and a working double callback" passed after 0.001 seconds.
+􀟈  Test "TextField round-trips its binding through the string callback" started.
+􁁛  Test "TextField round-trips its binding through the string callback" passed after 0.001 seconds.
+􀟈  Test "focused drives a field's focus and adopts focus the user gives it" started.
+􁁛  Test "focused drives a field's focus and adopts focus the user gives it" passed after 0.001 seconds.
+􀟈  Test "focused(equals:) arbitrates between fields and a sibling's blur can't steal focus" started.
+􁁛  Test "focused(equals:) arbitrates between fields and a sibling's blur can't steal focus" passed after 0.001 seconds.
+􀟈  Test "ProgressView keeps determinacy and shape independent" started.
+􁁛  Test "ProgressView keeps determinacy and shape independent" passed after 0.001 seconds.
+􀟈  Test "ProgressView carries a label when given one" started.
+􁁛  Test "ProgressView carries a label when given one" passed after 0.001 seconds.
+􀟈  Test "A control style is emitted on the view it is applied to" started.
+􁁛  Test "A control style is emitted on the view it is applied to" passed after 0.001 seconds.
+􀟈  Test "A style set on a container is inherited by the controls inside it" started.
+􁁛  Test "A style set on a container is inherited by the controls inside it" passed after 0.001 seconds.
+􀟈  Test "Every control style spelling reaches its own modifier kind" started.
+􁁛  Test "Every control style spelling reaches its own modifier kind" passed after 0.001 seconds.
+􀟈  Test "Keyboard type and submit label emit their spelling" started.
+􁁛  Test "Keyboard type and submit label emit their spelling" passed after 0.001 seconds.
+􀟈  Test "onSubmit registers a callback the field can fire" started.
+􁁛  Test "onSubmit registers a callback the field can fire" passed after 0.001 seconds.
+􀟈  Test "Picker emits tagged children and maps the selection string back" started.
+􁁛  Test "Picker emits tagged children and maps the selection string back" passed after 0.001 seconds.
+􀟈  Test "Stepper increments and decrements within bounds, updating its label" started.
+􁁛  Test "Stepper increments and decrements within bounds, updating its label" passed after 0.001 seconds.
+􀟈  Test "SecureField emits a secure TextField node" started.
+􁁛  Test "SecureField emits a secure TextField node" passed after 0.001 seconds.
+􀟈  Test "Menu emits its label and item children" started.
+􁁛  Test "Menu emits its label and item children" passed after 0.001 seconds.
+􀟈  Test "Form nests Sections with their header and rows" started.
+􁁛  Test "Form nests Sections with their header and rows" passed after 0.001 seconds.
+􀟈  Test "Environment objects reach @Environment properties in the subtree" started.
+􁁛  Test "Environment objects reach @Environment properties in the subtree" passed after 0.001 seconds.
+􀟈  Test "@Observable mutation triggers the state-change hook" started.
+􁁛  Test "@Observable mutation triggers the state-change hook" passed after 0.001 seconds.
+􀟈  Test "@Bindable projects a two-way binding into an observable model" started.
+􁁛  Test "@Bindable projects a two-way binding into an observable model" passed after 0.001 seconds.
+􀟈  Test "A TextField bound via @Bindable writes back to the model" started.
+􁁛  Test "A TextField bound via @Bindable writes back to the model" passed after 0.001 seconds.
+􀟈  Test "DatePicker emits its selection in milliseconds and round-trips a change" started.
+􁁛  Test "DatePicker emits its selection in milliseconds and round-trips a change" passed after 0.001 seconds.
+􁁛  Suite "Controls and environment" passed after 0.003 seconds.
+􀟈  Suite "AppStorage" started.
+􀟈  Test "A stored value survives a fresh wrapper, as it would a relaunch" started.
+􁁛  Test "A stored value survives a fresh wrapper, as it would a relaunch" passed after 0.001 seconds.
+􀟈  Test "Each supported type round-trips under its own key" started.
+􁁛  Test "Each supported type round-trips under its own key" passed after 0.001 seconds.
+􀟈  Test "The projected binding writes through to the store" started.
+􁁛  Test "The projected binding writes through to the store" passed after 0.001 seconds.
+􀟈  Test "A file-backed store reloads what a previous instance wrote" started.
+􁁛  Test "A file-backed store reloads what a previous instance wrote" passed after 0.001 seconds.
+􁁛  Suite "AppStorage" passed after 0.002 seconds.
+􀟈  Suite "Cupertino bridge contracts" started.
+􀟈  Test "All pinned symbols and unsupported UIKit capabilities are explicit" started.
+􁁛  Test "All pinned symbols and unsupported UIKit capabilities are explicit" passed after 0.001 seconds.
+􀟈  Test "Host effects stay idle until commanded and honor the Swift enabled gate" started.
+􁁛  Test "Host effects stay idle until commanded and honor the Swift enabled gate" passed after 0.001 seconds.
+􀟈  Test "Optional actions keep keyed IDs and refresh their captures" started.
+􀟈  Test case passing 1 argument cupertino → false to "Optional actions keep keyed IDs and refresh their captures" started.
+􀟈  Test case passing 1 argument cupertino → true to "Optional actions keep keyed IDs and refresh their captures" started.
+􁁛  Test "Optional actions keep keyed IDs and refresh their captures" with 2 test cases passed after 0.001 seconds.
+􀟈  Test "Optional named slots do not move surviving slot identities" started.
+􁁛  Test "Optional named slots do not move surviving slot identities" passed after 0.001 seconds.
+􀟈  Test "Typed range callbacks reject malformed and out-of-range state" started.
+􁁛  Test "Typed range callbacks reject malformed and out-of-range state" passed after 0.001 seconds.
+􀟈  Test "Editing callbacks retain UTF-16 selection and reject invalid composition" started.
+􁁛  Test "Editing callbacks retain UTF-16 selection and reject invalid composition" passed after 0.001 seconds.
+􀟈  Test "Dates cross the bridge as Int64 JSON and respect the configured years" started.
+􁁛  Test "Dates cross the bridge as Int64 JSON and respect the configured years" passed after 0.001 seconds.
+􀟈  Test "Sheet commands carry IDs and state consent restricts callback transitions" started.
+􁁛  Test "Sheet commands carry IDs and state consent restricts callback transitions" passed after 0.001 seconds.
+􀟈  Test "Alert builder order and individual callback identities are preserved" started.
+􁁛  Test "Alert builder order and individual callback identities are preserved" passed after 0.001 seconds.
+􀟈  Test "Lazy section items resolve only requested rows using stable keys" started.
+􁁛  Test "Lazy section items resolve only requested rows using stable keys" passed after 0.001 seconds.
+􀟈  Test "Section dropdown triggers its binding and keeps menu entries in a real menu scope" started.
+􀟈  Test case passing 1 argument lazy → false to "Section dropdown triggers its binding and keeps menu entries in a real menu scope" started.
+􀟈  Test case passing 1 argument lazy → true to "Section dropdown triggers its binding and keeps menu entries in a real menu scope" started.
+􁁛  Test "Section dropdown triggers its binding and keeps menu entries in a real menu scope" with 2 test cases passed after 0.001 seconds.
+􀟈  Test "Catalog alerts stack long actions and sheets provide a bounded full content surface" started.
+􁁛  Test "Catalog alerts stack long actions and sheets provide a bounded full content surface" passed after 0.002 seconds.
+􀟈  Test "Catalog alerts dismiss by leaving composition and can be presented again" started.
+􀟈  Test case passing 1 argument surface → .adaptiveAlertDialog to "Catalog alerts dismiss by leaving composition and can be presented again" started.
+􀟈  Test case passing 1 argument surface → .adaptiveAlertDialogNative to "Catalog alerts dismiss by leaving composition and can be presented again" started.
+􀟈  Test case passing 1 argument surface → .alertDialogActionsScope_action to "Catalog alerts dismiss by leaving composition and can be presented again" started.
+􀟈  Test case passing 1 argument surface → .alertDialogActionsScope_cancel to "Catalog alerts dismiss by leaving composition and can be presented again" started.
+􀟈  Test case passing 1 argument surface → .alertDialogActionsScope_default to "Catalog alerts dismiss by leaving composition and can be presented again" started.
+􀟈  Test case passing 1 argument surface → .alertDialogActionsScope_destructive to "Catalog alerts dismiss by leaving composition and can be presented again" started.
+􀟈  Test case passing 1 argument surface → .cupertinoAlertDialog to "Catalog alerts dismiss by leaving composition and can be presented again" started.
+􀟈  Test case passing 1 argument surface → .cupertinoAlertDialogNative to "Catalog alerts dismiss by leaving composition and can be presented again" started.
+􀟈  Test case passing 1 argument surface → .nativeAlertDialogActionsScope_action to "Catalog alerts dismiss by leaving composition and can be presented again" started.
+􀟈  Test case passing 1 argument surface → .nativeAlertDialogActionsScope_cancel to "Catalog alerts dismiss by leaving composition and can be presented again" started.
+􀟈  Test case passing 1 argument surface → .nativeAlertDialogActionsScope_default to "Catalog alerts dismiss by leaving composition and can be presented again" started.
+􀟈  Test case passing 1 argument surface → .nativeAlertDialogActionsScope_destructive to "Catalog alerts dismiss by leaving composition and can be presented again" started.
+􁁛  Test "Catalog alerts dismiss by leaving composition and can be presented again" with 12 test cases passed after 0.012 seconds.
+􀟈  Test "Typed alert visibility bindings control composition" started.
+􀟈  Test case passing 1 argument kind → 0 to "Typed alert visibility bindings control composition" started.
+􀟈  Test case passing 1 argument kind → 1 to "Typed alert visibility bindings control composition" started.
+􀟈  Test case passing 1 argument kind → 2 to "Typed alert visibility bindings control composition" started.
+􀟈  Test case passing 1 argument kind → 3 to "Typed alert visibility bindings control composition" started.
+􁁛  Test "Typed alert visibility bindings control composition" with 4 test cases passed after 0.001 seconds.
+􀟈  Test "Default search cancel and clear controls dispatch their actual native callback types" started.
+􁁛  Test "Default search cancel and clear controls dispatch their actual native callback types" passed after 0.001 seconds.
+􀟈  Test "Passive defaults expose only consumed native props and retain required slots" started.
+􁁛  Test "Passive defaults expose only consumed native props and retain required slots" passed after 0.001 seconds.
+􀟈  Test "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveAlertDialog to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveAlertDialogNative to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveButton to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveCheckbox to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveCircularProgressIndicator to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveDatePicker to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveDivider to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveFilledIconButton to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveHorizontalDivider to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveIconButton to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveNavigationBar to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveRangeSlider to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveScaffold to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveSlider to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveSurface to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveSwitch to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveTextButton to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveTheme to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveTonalButton to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveTopAppBar to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveTriStateCheckbox to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveVerticalDivider to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .adaptiveWidget to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .alertDialogActionsScope_action to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .alertDialogActionsScope_cancel to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .alertDialogActionsScope_default to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .alertDialogActionsScope_destructive to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoActionSheet to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoActionSheetNative to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoActivityIndicator to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoAlertDialog to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoAlertDialogNative to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoBorderedTextField to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoBottomAppBar to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoBottomSheetContent to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoBottomSheetDefaults_DragHandle to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoBottomSheetScaffold to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoButton to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoCheckBox to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoDatePicker to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoDatePickerNative to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoDateTimePicker to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoDateTimePickerNative to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoDivider to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoDropdownMenu to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoDropdownMenuDefaults_PickerLeadingIcon to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoHorizontalDivider to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoIcon to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoIconButton to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoLazyColumn to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoLinkIcon to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoMenuScope_MenuAction to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoMenuScope_MenuDivider to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoMenuScope_MenuItem to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoMenuScope_MenuPickerAction to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoMenuScope_MenuSection to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoMenuScope_MenuTitle to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoNavigateBackButton to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoNavigationBar to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoNavigationBarDefaults_divider to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoNavigationTitle to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoRangeSlider to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoScaffold to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoScaffoldPadding to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSearchTextField to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSearchTextFieldDefaults_cancelButton to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSearchTextFieldDefaults_leadingIcon to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSection to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSectionDefaults_LabelChevron to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSectionDefaults_PickerButton to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSectionDefaults_TextFieldClearButton to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSegmentedControl to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSegmentedControlIndicator to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSegmentedControlTab to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSlider to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSliderDefaults_Thumb to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSliderDefaults_Track to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSurface to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSwipeBox to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSwipeBoxItem to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoSwitch to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoText to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoTextField to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoTextFieldDefaults_DecorationBox to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoTheme to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoTimePicker to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoTimePickerNative to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoTopAppBar to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoTopAppBarDefaults_divider to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoTriStateCheckBox to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoVerticalDivider to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .cupertinoWheelPicker to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .lazyListScope_section to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .lazyListScope_stickySection to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .lazySectionScope_datePicker to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .lazySectionScope_dropdownMenu to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .lazySectionScope_item to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .lazySectionScope_items to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .lazySectionScope_link to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .lazySectionScope_switch to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .lazySectionScope_textField to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .lazySectionScope_timePicker to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .modifier_cupertinoPickerIndicator to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .modifier_cupertinoPredictiveEnter to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .modifier_cupertinoPredictiveExit to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .modifier_haze to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .modifier_sectionContainerBackground to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .nativeAlertDialogActionsScope_action to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .nativeAlertDialogActionsScope_cancel to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .nativeAlertDialogActionsScope_default to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .nativeAlertDialogActionsScope_destructive to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .nativeChildren to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .provideSectionStyle to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .provideTextStyle to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .rowScope_AdaptiveNavigationBarItem to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .rowScope_CupertinoNavigationBarItem to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .sectionScope_SectionDatePicker to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .sectionScope_SectionDropdownMenu to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .sectionScope_SectionItem to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .sectionScope_SectionLink to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .sectionScope_SectionTextField to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .sectionScope_SectionTimePicker to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .sharedSwipeBoxController to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .surface to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .systemBarAppearance to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .rememberCupertinoHapticFeedback to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􀟈  Test case passing 1 argument surface → .tabRowDefaults_Modifier_tabIndicatorOffset to "Every catalog case respects presentation state in a valid named-slot tree" started.
+􁁛  Test "Every catalog case respects presentation state in a valid named-slot tree" with 127 test cases passed after 0.125 seconds.
+􁁛  Suite "Cupertino bridge contracts" passed after 0.147 seconds.
+􀟈  Suite "Node emission" started.
+􀟈  Test "Text emits a Text node with its content" started.
+􁁛  Test "Text emits a Text node with its content" passed after 0.001 seconds.
+􀟈  Test "VStack resolves its children in order" started.
+􁁛  Test "VStack resolves its children in order" passed after 0.001 seconds.
+􀟈  Test "Parameter-pack ViewBuilder has no child-count ceiling" started.
+􁁛  Test "Parameter-pack ViewBuilder has no child-count ceiling" passed after 0.001 seconds.
+􀟈  Test "Composite views are unwrapped through their body" started.
+􁁛  Test "Composite views are unwrapped through their body" passed after 0.001 seconds.
+􀟈  Test "ForEach expands each element" started.
+􁁛  Test "ForEach expands each element" passed after 0.001 seconds.
+􁁛  Suite "Node emission" passed after 0.001 seconds.
+􀟈  Suite "Modifiers" started.
+􀟈  Test "Modifier chain is emitted outermost-first, matching Compose order" started.
+􁁛  Test "Modifier chain is emitted outermost-first, matching Compose order" passed after 0.001 seconds.
+􀟈  Test "Modifiers don't introduce structural identity" started.
+􁁛  Test "Modifiers don't introduce structural identity" passed after 0.001 seconds.
+􀟈  Test "Frame emits width and height args" started.
+􁁛  Test "Frame emits width and height args" passed after 0.001 seconds.
+􀟈  Test "A fixed frame with default center alignment emits no alignment" started.
+􁁛  Test "A fixed frame with default center alignment emits no alignment" passed after 0.001 seconds.
+􀟈  Test "maxWidth .infinity becomes a fill flag, not a number" started.
+􁁛  Test "maxWidth .infinity becomes a fill flag, not a number" passed after 0.001 seconds.
+􀟈  Test "Bounded frame emits its min and max" started.
+􁁛  Test "Bounded frame emits its min and max" passed after 0.001 seconds.
+􀟈  Test "Named font emits its style" started.
+􁁛  Test "Named font emits its style" passed after 0.001 seconds.
+􀟈  Test "System font emits size and weight" started.
+􁁛  Test "System font emits size and weight" passed after 0.001 seconds.
+􀟈  Test "foregroundColor emits an argb color" started.
+􁁛  Test "foregroundColor emits an argb color" passed after 0.001 seconds.
+􀟈  Test "Monospaced font design crosses the renderer boundary and default resets it" started.
+􁁛  Test "Monospaced font design crosses the renderer boundary and default resets it" passed after 0.001 seconds.
+􀟈  Test "bold and italic emit their kinds" started.
+􁁛  Test "bold and italic emit their kinds" passed after 0.001 seconds.
+􀟈  Test "lineLimit emits its count" started.
+􁁛  Test "lineLimit emits its count" passed after 0.001 seconds.
+􀟈  Test "onTapGesture registers a callback and emits its id" started.
+􁁛  Test "onTapGesture registers a callback and emits its id" passed after 0.001 seconds.
+􀟈  Test "onLongPressGesture registers its own callback distinct from a tap" started.
+􁁛  Test "onLongPressGesture registers its own callback distinct from a tap" passed after 0.001 seconds.
+􀟈  Test "A drag reports translation to onChanged, then a final value to onEnded" started.
+􁁛  Test "A drag reports translation to onChanged, then a final value to onEnded" passed after 0.001 seconds.
+􀟈  Test "A malformed drag payload is ignored rather than crashing" started.
+􁁛  Test "A malformed drag payload is ignored rather than crashing" passed after 0.001 seconds.
+􀟈  Test "Image distinguishes a system symbol from a named asset" started.
+􁁛  Test "Image distinguishes a system symbol from a named asset" passed after 0.001 seconds.
+􀟈  Test "resizable and a content mode travel together to the interpreter" started.
+􁁛  Test "resizable and a content mode travel together to the interpreter" passed after 0.001 seconds.
+􀟈  Test "AsyncImage carries its URL, and a nil URL carries none" started.
+􁁛  Test "AsyncImage carries its URL, and a nil URL carries none" passed after 0.001 seconds.
+􀟈  Test "Link carries its destination and its label" started.
+􁁛  Test "Link carries its destination and its label" passed after 0.001 seconds.
+􀟈  Test "Link accepts an arbitrary label" started.
+􁁛  Test "Link accepts an arbitrary label" passed after 0.001 seconds.
+􀟈  Test "Label emits its icon then its title" started.
+􁁛  Test "Label emits its icon then its title" passed after 0.001 seconds.
+􀟈  Test "Label takes an arbitrary title and icon" started.
+􁁛  Test "Label takes an arbitrary title and icon" passed after 0.001 seconds.
+􀟈  Test "labelStyle rides on the view, so it can be inherited" started.
+􁁛  Test "labelStyle rides on the view, so it can be inherited" passed after 0.001 seconds.
+􀟈  Test "contextMenu wraps content and carries its menu items" started.
+􁁛  Test "contextMenu wraps content and carries its menu items" passed after 0.001 seconds.
+􀟈  Test "onAppear and onDisappear emit distinct callback kinds" started.
+􁁛  Test "onAppear and onDisappear emit distinct callback kinds" passed after 0.001 seconds.
+􀟈  Test "task emits start and cancel callback ids that drive the same Task" started.
+􁁛  Test "task emits start and cancel callback ids that drive the same Task" passed after 0.001 seconds.
+􀟈  Test "onChange emits a token describing the observed value" started.
+􁁛  Test "onChange emits a token describing the observed value" passed after 0.001 seconds.
+􀟈  Test "disabled emits its flag" started.
+􁁛  Test "disabled emits its flag" passed after 0.001 seconds.
+􀟈  Test "Border emits its color and width" started.
+􁁛  Test "Border emits its color and width" passed after 0.001 seconds.
+􀟈  Test "clipShape emits the shape kind" started.
+􁁛  Test "clipShape emits the shape kind" passed after 0.001 seconds.
+􀟈  Test "shadow emits its radius" started.
+􁁛  Test "shadow emits its radius" passed after 0.001 seconds.
+􀟈  Test "tint emits its color" started.
+􁁛  Test "tint emits its color" passed after 0.001 seconds.
+􀟈  Test "transition emits its kind and edge" started.
+􁁛  Test "transition emits its kind and edge" passed after 0.001 seconds.
+􁁛  Suite "Modifiers" passed after 0.002 seconds.
+􀟈  Suite "Graphics" started.
+􀟈  Test "Shapes emit a Shape node with their kind and fill" started.
+􁁛  Test "Shapes emit a Shape node with their kind and fill" passed after 0.001 seconds.
+􀟈  Test "LinearGradient emits its colors and endpoints" started.
+􁁛  Test "LinearGradient emits its colors and endpoints" passed after 0.001 seconds.
+􀟈  Test "Image(systemName:) carries the symbol name" started.
+􁁛  Test "Image(systemName:) carries the symbol name" passed after 0.001 seconds.
+􀟈  Test "Map emits its region and marker children" started.
+􁁛  Test "Map emits its region and marker children" passed after 0.001 seconds.
+􀟈  Test "VideoPlayer emits its media URL" started.
+􁁛  Test "VideoPlayer emits its media URL" passed after 0.001 seconds.
+􀟈  Test "ComposableView emits a Composable node naming its factory with typed props" started.
+􁁛  Test "ComposableView emits a Composable node naming its factory with typed props" passed after 0.001 seconds.
+􀟈  Test "ComposableView forwards child content" started.
+􁁛  Test "ComposableView forwards child content" passed after 0.001 seconds.
+􀟈  Test "ComposableView actions register callbacks the factory can invoke" started.
+􁁛  Test "ComposableView actions register callbacks the factory can invoke" passed after 0.001 seconds.
+􀟈  Test "Overlay emits base and overlay children with alignment" started.
+􁁛  Test "Overlay emits base and overlay children with alignment" passed after 0.001 seconds.
+􁁛  Suite "Graphics" passed after 0.001 seconds.
+􀟈  Suite "Animation" started.
+􀟈  Test "A withAnimation write stamps the next tree's root, once" started.
+􁁛  Test "A withAnimation write stamps the next tree's root, once" passed after 0.001 seconds.
+􀟈  Test "withAnimation returns its body's value and restores the transaction" started.
+􁁛  Test "withAnimation returns its body's value and restores the transaction" passed after 0.001 seconds.
+􀟈  Test ".animation emits curve, duration, and value token" started.
+􁁛  Test ".animation emits curve, duration, and value token" passed after 0.001 seconds.
+􁁛  Suite "Animation" passed after 0.001 seconds.
+􀟈  Suite "Geometry" started.
+􀟈  Test "A GeometryReader resolves against zero until a size is reported" started.
+􁁛  Test "A GeometryReader resolves against zero until a size is reported" passed after 0.001 seconds.
+􀟈  Test "The size store re-evaluates on a change and ignores everything else" started.
+􁁛  Test "The size store re-evaluates on a change and ignores everything else" passed after 0.001 seconds.
+􁁛  Suite "Geometry" passed after 0.001 seconds.
+􀟈  Suite "Preferences" started.
+􀟈  Test "An ancestor sees its subtree's preferences reduced" started.
+􁁛  Test "An ancestor sees its subtree's preferences reduced" passed after 0.001 seconds.
+􀟈  Test "Reduce runs in tree order and starts from the default" started.
+􁁛  Test "Reduce runs in tree order and starts from the default" passed after 0.001 seconds.
+􀟈  Test "A subtree that publishes nothing delivers the default" started.
+􁁛  Test "A subtree that publishes nothing delivers the default" passed after 0.001 seconds.
+􀟈  Test "An unchanged reduction doesn't fire the callback again" started.
+􁁛  Test "An unchanged reduction doesn't fire the callback again" passed after 0.001 seconds.
+􀟈  Test "Chained observers watching different keys each get their own" started.
+􁁛  Test "Chained observers watching different keys each get their own" passed after 0.001 seconds.
+􀟈  Test "Chained observers settle instead of re-evaluating forever" started.
+􁁛  Test "Chained observers settle instead of re-evaluating forever" passed after 0.001 seconds.
+􀟈  Test "A nested observer consumes its subtree yet still publishes upward" started.
+􁁛  Test "A nested observer consumes its subtree yet still publishes upward" passed after 0.001 seconds.
+􁁛  Suite "Preferences" passed after 0.001 seconds.
+􀟈  Suite "Accessibility" started.
+􀟈  Test "Label, value, and identifier emit their text" started.
+􁁛  Test "Label, value, and identifier emit their text" passed after 0.001 seconds.
+􀟈  Test "Hiding is explicit in both directions" started.
+􁁛  Test "Hiding is explicit in both directions" passed after 0.001 seconds.
+􀟈  Test "Traits emit as a set of names" started.
+􁁛  Test "Traits emit as a set of names" passed after 0.001 seconds.
+􀟈  Test "Accessibility describes without disturbing the view" started.
+􁁛  Test "Accessibility describes without disturbing the view" passed after 0.001 seconds.
+􁁛  Suite "Accessibility" passed after 0.001 seconds.
+􀟈  Suite "DisclosureGroup" started.
+􀟈  Test "Emits its label then its content, marking the boundary" started.
+􁁛  Test "Emits its label then its content, marking the boundary" passed after 0.001 seconds.
+􀟈  Test "A bound group round-trips its expansion" started.
+􁁛  Test "A bound group round-trips its expansion" passed after 0.001 seconds.
+􀟈  Test "Accepts a view label, not only a title" started.
+􁁛  Test "Accepts a view label, not only a title" passed after 0.001 seconds.
+􁁛  Suite "DisclosureGroup" passed after 0.001 seconds.
+􀟈  Suite "Callback identity" started.
+􀟈  Test "A view's callback id is stable across re-evaluation" started.
+􁁛  Test "A view's callback id is stable across re-evaluation" passed after 0.001 seconds.
+􀟈  Test "Distinct callbacks at one view get distinct stable ids" started.
+􁁛  Test "Distinct callbacks at one view get distinct stable ids" passed after 0.001 seconds.
+􁁛  Suite "Callback identity" passed after 0.001 seconds.
+􀟈  Suite "Subtree updates" started.
+􀟈  Test "A single-view state change becomes a patch of just that subtree" started.
+􁁛  Test "A single-view state change becomes a patch of just that subtree" passed after 0.001 seconds.
+􀟈  Test "Writes to two different views fall back to a full pass" started.
+􁁛  Test "Writes to two different views fall back to a full pass" passed after 0.001 seconds.
+􀟈  Test "A patched subtree keeps parent-applied modifiers" started.
+􁁛  Test "A patched subtree keeps parent-applied modifiers" passed after 0.001 seconds.
+􀟈  Test "A changed navigationTitle forces a full pass" started.
+􁁛  Test "A changed navigationTitle forces a full pass" passed after 0.001 seconds.
+􁁛  Suite "Subtree updates" passed after 0.001 seconds.
+􀟈  Suite "Identity and state" started.
+􀟈  Test "State survives re-evaluation and reads back the written value" started.
+􁁛  Test "State survives re-evaluation and reads back the written value" passed after 0.001 seconds.
+􀟈  Test "State change fires the onChange hook" started.
+􁁛  Test "State change fires the onChange hook" passed after 0.001 seconds.
+􀟈  Test "ForEach state is keyed by identity, so inserts don't shift it" started.
+􁁛  Test "ForEach state is keyed by identity, so inserts don't shift it" passed after 0.001 seconds.
+􀟈  Test "Flipping a conditional gives the two branches distinct identity" started.
+􁁛  Test "Flipping a conditional gives the two branches distinct identity" passed after 0.001 seconds.
+􀟈  Test "Independent @State at sibling paths don't alias" started.
+􁁛  Test "Independent @State at sibling paths don't alias" passed after 0.001 seconds.
+􁁛  Suite "Identity and state" passed after 0.001 seconds.
+􀟈  Suite "Lazy containers" started.
+􀟈  Test "List emits count and a provider, not inline rows" started.
+􁁛  Test "List emits count and a provider, not inline rows" passed after 0.001 seconds.
+􀟈  Test "The item provider resolves a row subtree on demand" started.
+􁁛  Test "The item provider resolves a row subtree on demand" passed after 0.001 seconds.
+􀟈  Test "Row identity path is keyed by element id" started.
+􁁛  Test "Row identity path is keyed by element id" passed after 0.001 seconds.
+􀟈  Test "refreshable attaches a refresh callback to the list" started.
+􁁛  Test "refreshable attaches a refresh callback to the list" passed after 0.001 seconds.
+􀟈  Test "LazyVGrid carries its track spec and resolves cells" started.
+􁁛  Test "LazyVGrid carries its track spec and resolves cells" passed after 0.001 seconds.
+􀟈  Test "Adaptive grid carries a minimum column width" started.
+􁁛  Test "Adaptive grid carries a minimum column width" passed after 0.001 seconds.
+􁁛  Suite "Lazy containers" passed after 0.001 seconds.
+􀟈  Suite "Lazy stacks" started.
+􀟈  Test "LazyVStack over a ForEach resolves only the elements asked for" started.
+􁁛  Test "LazyVStack over a ForEach resolves only the elements asked for" passed after 0.001 seconds.
+􀟈  Test "A lazy stack keys its elements by identity, not position" started.
+􁁛  Test "A lazy stack keys its elements by identity, not position" passed after 0.001 seconds.
+􀟈  Test "Content that isn't a single ForEach still renders, eagerly" started.
+􁁛  Test "Content that isn't a single ForEach still renders, eagerly" passed after 0.001 seconds.
+􀟈  Test "LazyHStack carries the same provider shape" started.
+􁁛  Test "LazyHStack carries the same provider shape" passed after 0.001 seconds.
+􁁛  Suite "Lazy stacks" passed after 0.001 seconds.
+􀟈  Suite "Navigation, sheets, tabs" started.
+􀟈  Test "NavigationStack starts with only its root screen" started.
+􁁛  Test "NavigationStack starts with only its root screen" passed after 0.001 seconds.
+􀟈  Test "A NavigationLink push adds a screen and its title" started.
+􁁛  Test "A NavigationLink push adds a screen and its title" passed after 0.001 seconds.
+􀟈  Test "Value-based push resolves through navigationDestination" started.
+􁁛  Test "Value-based push resolves through navigationDestination" passed after 0.001 seconds.
+􀟈  Test "dismiss pops the pushed screen" started.
+􁁛  Test "dismiss pops the pushed screen" passed after 0.001 seconds.
+􀟈  Test "Sheet appears as a hidden child only while presented" started.
+􁁛  Test "Sheet appears as a hidden child only while presented" passed after 0.001 seconds.
+􀟈  Test "Confirmation dialog presents its buttons and a chosen action dismisses it" started.
+􁁛  Test "Confirmation dialog presents its buttons and a chosen action dismisses it" passed after 0.001 seconds.
+􀟈  Test "searchable surfaces a per-screen field whose input drives its binding" started.
+􁁛  Test "searchable surfaces a per-screen field whose input drives its binding" passed after 0.001 seconds.
+􀟈  Test "toolbar rides as placed hidden children whose buttons stay live" started.
+􁁛  Test "toolbar rides as placed hidden children whose buttons stay live" passed after 0.001 seconds.
+􀟈  Test "A sheet carries its detents, and none by default" started.
+􁁛  Test "A sheet carries its detents, and none by default" passed after 0.001 seconds.
+􀟈  Test "A popover shows its body only while presented, and a tap dismisses it" started.
+􁁛  Test "A popover shows its body only while presented, and a tap dismisses it" passed after 0.001 seconds.
+􀟈  Test "TabView emits tabs with their item labels and selection" started.
+􁁛  Test "TabView emits tabs with their item labels and selection" passed after 0.001 seconds.
+􁁛  Suite "Navigation, sheets, tabs" passed after 0.001 seconds.
+􁁛  Test run with 141 tests in 17 suites passed after 0.165 seconds.

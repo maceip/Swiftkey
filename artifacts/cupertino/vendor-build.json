@@ -1,0 +1,22 @@
+{
+  "upstreamCommit": "f66875aa6f3848b30c38e42a89fc99c9ac24a585",
+  "upstreamTrackedFilesChecked": 1911,
+  "upstreamFilesChanged": [],
+  "upstreamFilesMissing": [],
+  "targets": [
+    "desktop",
+    "androidDebug"
+  ],
+  "modules": [
+    "cupertino-core",
+    "cupertino",
+    "cupertino-native",
+    "cupertino-adaptive",
+    "cupertino-decompose",
+    "cupertino-icons-extended"
+  ],
+  "log": "vendor-build.log",
+  "logSHA256": "15f7fbc1c483736a21c4e99f3544a4eb36b2a2f40314ddc688adee00279562e3",
+  "result": "BUILD SUCCESSFUL; 57 actionable tasks executed",
+  "scope": "Vendored library compilation only; no adapter, packaged app, or physical-device acceptance implied."
+}

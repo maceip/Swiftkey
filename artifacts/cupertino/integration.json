@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/maceip/Swiftkey",
+  "rendererBranch": "androidswiftui",
+  "rendererCommit": "9aa9f6acddf342663abd7be2aca21d6e7c9570d8",
+  "upstreamCupertinoCommit": "f66875aa6f3848b30c38e42a89fc99c9ac24a585",
+  "surfaces": 127,
+  "sharedIcons": 879,
+  "swiftTests": 141,
+  "nativeTests": 389,
+  "sharedUITests": 27,
+  "renderCases": 338,
+  "apkSHA256": "4ca2c9a859a0ebeb1facdf65f3329e2e049f956431f4902908bd9fdd0e346e47",
+  "deviceStatePreserved": true,
+  "hardwareVisualAcceptance": "pending locked device",
+  "twoPhoneV2HardwareAcceptance": "pending"
+}

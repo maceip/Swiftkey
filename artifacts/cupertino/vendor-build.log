@@ -1,0 +1,411 @@
+
+> Configure project :composeui
+w: Kotlin Multiplatform <-> Android Gradle Plugin compatibility issue:
+The applied Android Gradle Plugin version (8.10.1) is higher 
+than the maximum known to the Kotlin Gradle Plugin.
+Tooling stability in such configuration isn't tested, please report encountered issues to https://kotl.in/issue
+
+Minimum supported Android Gradle Plugin version: 7.1
+Maximum tested Android Gradle Plugin version: 8.5
+
+To suppress this message add 'kotlin.mpp.androidGradlePluginCompatibility.nowarn=true' to your gradle.properties
+
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':composeui'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmShared]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Configure project :cupertino
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':cupertino'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmMain, nonIosMain, skikoMain]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Configure project :cupertino-adaptive
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':cupertino-adaptive'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmMain, nonIosMain, skikoMain]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Configure project :cupertino-core
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':cupertino-core'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmMain, nonIosMain, skikoMain]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Configure project :cupertino-decompose
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':cupertino-decompose'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmMain, nonIosMain, skikoMain]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Configure project :cupertino-icons-extended
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':cupertino-icons-extended'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmMain, nonIosMain, skikoMain]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Configure project :cupertino-native
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':cupertino-native'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmMain, nonIosMain, skikoMain]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+
+> Task :cupertino-core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :cupertino-core:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino-core:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino-core:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :cupertino-core:generateResourceAccessorsForCommonMain SKIPPED
+> Task :cupertino-core:convertXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :cupertino-core:copyNonXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :cupertino-core:prepareComposeResourcesTaskForDesktopMain NO-SOURCE
+> Task :cupertino-core:generateResourceAccessorsForDesktopMain SKIPPED
+> Task :cupertino-core:convertXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino-core:copyNonXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino-core:prepareComposeResourcesTaskForJvmMain NO-SOURCE
+> Task :cupertino-core:generateResourceAccessorsForJvmMain SKIPPED
+> Task :cupertino-core:convertXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino-core:copyNonXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino-core:prepareComposeResourcesTaskForNonIosMain NO-SOURCE
+> Task :cupertino-core:generateResourceAccessorsForNonIosMain SKIPPED
+> Task :cupertino-core:convertXmlValueResourcesForSkikoMain NO-SOURCE
+> Task :cupertino-core:copyNonXmlValueResourcesForSkikoMain NO-SOURCE
+> Task :cupertino-core:prepareComposeResourcesTaskForSkikoMain NO-SOURCE
+> Task :cupertino-core:generateResourceAccessorsForSkikoMain SKIPPED
+> Task :cupertino-core:generateActualResourceCollectorsForDesktopMain SKIPPED
+> Task :cupertino-core:generateComposeResClass SKIPPED
+> Task :cupertino-core:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :cupertino:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :cupertino:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :cupertino:generateResourceAccessorsForCommonMain SKIPPED
+> Task :cupertino:convertXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :cupertino:copyNonXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :cupertino:prepareComposeResourcesTaskForDesktopMain NO-SOURCE
+> Task :cupertino:generateResourceAccessorsForDesktopMain SKIPPED
+> Task :cupertino:convertXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino:copyNonXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino:prepareComposeResourcesTaskForJvmMain NO-SOURCE
+> Task :cupertino:generateResourceAccessorsForJvmMain SKIPPED
+> Task :cupertino:convertXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino:copyNonXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino:prepareComposeResourcesTaskForNonIosMain NO-SOURCE
+> Task :cupertino:generateResourceAccessorsForNonIosMain SKIPPED
+> Task :cupertino:convertXmlValueResourcesForSkikoMain NO-SOURCE
+> Task :cupertino:copyNonXmlValueResourcesForSkikoMain NO-SOURCE
+> Task :cupertino:prepareComposeResourcesTaskForSkikoMain NO-SOURCE
+> Task :cupertino:generateResourceAccessorsForSkikoMain SKIPPED
+> Task :cupertino:generateActualResourceCollectorsForDesktopMain SKIPPED
+> Task :cupertino:generateComposeResClass SKIPPED
+> Task :cupertino:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :cupertino-core:assembleDesktopMainResources
+> Task :cupertino-core:desktopProcessResources
+> Task :cupertino:assembleDesktopMainResources
+> Task :cupertino:desktopProcessResources
+> Task :cupertino-native:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :cupertino-native:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino-native:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino-native:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :cupertino-native:generateResourceAccessorsForCommonMain SKIPPED
+> Task :cupertino-native:convertXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :cupertino-native:copyNonXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :cupertino-native:prepareComposeResourcesTaskForDesktopMain NO-SOURCE
+> Task :cupertino-native:generateResourceAccessorsForDesktopMain SKIPPED
+> Task :cupertino-native:convertXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino-native:copyNonXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino-native:prepareComposeResourcesTaskForJvmMain NO-SOURCE
+> Task :cupertino-native:generateResourceAccessorsForJvmMain SKIPPED
+> Task :cupertino-native:convertXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino-native:copyNonXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino-native:prepareComposeResourcesTaskForNonIosMain NO-SOURCE
+> Task :cupertino-native:generateResourceAccessorsForNonIosMain SKIPPED
+> Task :cupertino-native:convertXmlValueResourcesForSkikoMain NO-SOURCE
+> Task :cupertino-native:copyNonXmlValueResourcesForSkikoMain NO-SOURCE
+> Task :cupertino-native:prepareComposeResourcesTaskForSkikoMain NO-SOURCE
+> Task :cupertino-native:generateResourceAccessorsForSkikoMain SKIPPED
+> Task :cupertino-native:generateActualResourceCollectorsForDesktopMain SKIPPED
+> Task :cupertino-native:generateComposeResClass SKIPPED
+> Task :cupertino-native:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :cupertino-adaptive:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :cupertino-adaptive:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino-adaptive:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino-adaptive:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :cupertino-adaptive:generateResourceAccessorsForCommonMain SKIPPED
+> Task :cupertino-adaptive:convertXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :cupertino-adaptive:copyNonXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :cupertino-adaptive:prepareComposeResourcesTaskForDesktopMain NO-SOURCE
+> Task :cupertino-adaptive:generateResourceAccessorsForDesktopMain SKIPPED
+> Task :cupertino-adaptive:convertXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino-adaptive:copyNonXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino-adaptive:prepareComposeResourcesTaskForJvmMain NO-SOURCE
+> Task :cupertino-adaptive:generateResourceAccessorsForJvmMain SKIPPED
+> Task :cupertino-adaptive:convertXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino-adaptive:copyNonXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino-adaptive:prepareComposeResourcesTaskForNonIosMain NO-SOURCE
+> Task :cupertino-adaptive:generateResourceAccessorsForNonIosMain SKIPPED
+> Task :cupertino-adaptive:convertXmlValueResourcesForSkikoMain NO-SOURCE
+> Task :cupertino-adaptive:copyNonXmlValueResourcesForSkikoMain NO-SOURCE
+> Task :cupertino-adaptive:prepareComposeResourcesTaskForSkikoMain NO-SOURCE
+> Task :cupertino-adaptive:generateResourceAccessorsForSkikoMain SKIPPED
+> Task :cupertino-adaptive:generateActualResourceCollectorsForDesktopMain SKIPPED
+> Task :cupertino-adaptive:generateComposeResClass SKIPPED
+> Task :cupertino-adaptive:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :cupertino-native:assembleDesktopMainResources
+> Task :cupertino-native:desktopProcessResources
+> Task :cupertino-decompose:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :cupertino-decompose:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino-decompose:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino-decompose:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :cupertino-decompose:generateResourceAccessorsForCommonMain SKIPPED
+> Task :cupertino-decompose:convertXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :cupertino-decompose:copyNonXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :cupertino-decompose:prepareComposeResourcesTaskForDesktopMain NO-SOURCE
+> Task :cupertino-decompose:generateResourceAccessorsForDesktopMain SKIPPED
+> Task :cupertino-decompose:convertXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino-decompose:copyNonXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino-decompose:prepareComposeResourcesTaskForJvmMain NO-SOURCE
+> Task :cupertino-decompose:generateResourceAccessorsForJvmMain SKIPPED
+> Task :cupertino-decompose:convertXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino-decompose:copyNonXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino-decompose:prepareComposeResourcesTaskForNonIosMain NO-SOURCE
+> Task :cupertino-decompose:generateResourceAccessorsForNonIosMain SKIPPED
+> Task :cupertino-decompose:convertXmlValueResourcesForSkikoMain NO-SOURCE
+> Task :cupertino-decompose:copyNonXmlValueResourcesForSkikoMain NO-SOURCE
+> Task :cupertino-decompose:prepareComposeResourcesTaskForSkikoMain NO-SOURCE
+> Task :cupertino-decompose:generateResourceAccessorsForSkikoMain SKIPPED
+> Task :cupertino-decompose:generateActualResourceCollectorsForDesktopMain SKIPPED
+> Task :cupertino-decompose:generateComposeResClass SKIPPED
+> Task :cupertino-decompose:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :cupertino-icons-extended:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :cupertino-icons-extended:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino-icons-extended:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :cupertino-icons-extended:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :cupertino-icons-extended:generateResourceAccessorsForCommonMain SKIPPED
+> Task :cupertino-icons-extended:convertXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :cupertino-icons-extended:copyNonXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :cupertino-icons-extended:prepareComposeResourcesTaskForDesktopMain NO-SOURCE
+> Task :cupertino-icons-extended:generateResourceAccessorsForDesktopMain SKIPPED
+> Task :cupertino-icons-extended:convertXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino-icons-extended:copyNonXmlValueResourcesForJvmMain NO-SOURCE
+> Task :cupertino-icons-extended:prepareComposeResourcesTaskForJvmMain NO-SOURCE
+> Task :cupertino-icons-extended:generateResourceAccessorsForJvmMain SKIPPED
+> Task :cupertino-icons-extended:convertXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino-icons-extended:copyNonXmlValueResourcesForNonIosMain NO-SOURCE
+> Task :cupertino-icons-extended:prepareComposeResourcesTaskForNonIosMain NO-SOURCE
+> Task :cupertino-icons-extended:generateResourceAccessorsForNonIosMain SKIPPED
+> Task :cupertino-icons-extended:convertXmlValueResourcesForSkikoMain NO-SOURCE
+> Task :cupertino-icons-extended:copyNonXmlValueResourcesForSkikoMain NO-SOURCE
+> Task :cupertino-icons-extended:prepareComposeResourcesTaskForSkikoMain NO-SOURCE
+> Task :cupertino-icons-extended:generateResourceAccessorsForSkikoMain SKIPPED
+> Task :cupertino-icons-extended:generateActualResourceCollectorsForDesktopMain SKIPPED
+> Task :cupertino-icons-extended:generateComposeResClass SKIPPED
+> Task :cupertino-icons-extended:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :cupertino-core:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino-core:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino-core:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :cupertino-core:generateResourceAccessorsForAndroidMain SKIPPED
+> Task :cupertino-core:generateActualResourceCollectorsForAndroidMain SKIPPED
+> Task :cupertino-core:preBuild UP-TO-DATE
+> Task :cupertino-core:preDebugBuild UP-TO-DATE
+> Task :cupertino-core:generateDebugResValues
+> Task :cupertino-core:generateDebugResources
+> Task :cupertino-core:packageDebugResources
+> Task :cupertino-core:convertXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino-core:copyNonXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino-core:prepareComposeResourcesTaskForAndroidDebug NO-SOURCE
+> Task :cupertino-core:generateResourceAccessorsForAndroidDebug SKIPPED
+> Task :cupertino:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :cupertino:generateResourceAccessorsForAndroidMain SKIPPED
+> Task :cupertino:generateActualResourceCollectorsForAndroidMain SKIPPED
+> Task :cupertino:preBuild UP-TO-DATE
+> Task :cupertino:preDebugBuild UP-TO-DATE
+> Task :cupertino:generateDebugResValues
+> Task :cupertino:generateDebugResources
+> Task :cupertino:packageDebugResources
+> Task :cupertino:convertXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino:copyNonXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino:prepareComposeResourcesTaskForAndroidDebug NO-SOURCE
+> Task :cupertino:generateResourceAccessorsForAndroidDebug SKIPPED
+> Task :cupertino-native:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino-native:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino:javaPreCompileDebug
+> Task :cupertino-native:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :cupertino-core:javaPreCompileDebug
+> Task :cupertino-native:generateResourceAccessorsForAndroidMain SKIPPED
+> Task :cupertino-native:generateActualResourceCollectorsForAndroidMain SKIPPED
+> Task :cupertino-native:preBuild UP-TO-DATE
+> Task :cupertino-native:preDebugBuild UP-TO-DATE
+> Task :cupertino-native:generateDebugResValues
+> Task :cupertino:parseDebugLocalResources
+> Task :cupertino-core:parseDebugLocalResources
+> Task :cupertino-native:generateDebugResources
+> Task :cupertino-native:packageDebugResources
+> Task :cupertino-native:convertXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino-native:copyNonXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino-native:prepareComposeResourcesTaskForAndroidDebug NO-SOURCE
+> Task :cupertino-native:generateResourceAccessorsForAndroidDebug SKIPPED
+> Task :cupertino-adaptive:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino-adaptive:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino-native:parseDebugLocalResources
+> Task :cupertino-adaptive:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :cupertino-adaptive:generateResourceAccessorsForAndroidMain SKIPPED
+> Task :cupertino-adaptive:generateActualResourceCollectorsForAndroidMain SKIPPED
+> Task :cupertino-adaptive:preBuild UP-TO-DATE
+> Task :cupertino-adaptive:preDebugBuild UP-TO-DATE
+> Task :cupertino-adaptive:generateDebugResValues
+> Task :cupertino:generateDebugRFile
+> Task :cupertino-core:generateDebugRFile
+> Task :cupertino-native:generateDebugRFile
+> Task :cupertino-adaptive:generateDebugResources
+> Task :cupertino-core:compileKotlinDesktop
+> Task :cupertino-core:desktopMainClasses
+> Task :cupertino-core:desktopJar
+> Task :cupertino-core:compileDebugKotlinAndroid
+> Task :cupertino-core:compileDebugJavaWithJavac NO-SOURCE
+> Task :cupertino-adaptive:packageDebugResources
+> Task :cupertino-adaptive:convertXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino-adaptive:copyNonXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino-adaptive:prepareComposeResourcesTaskForAndroidDebug NO-SOURCE
+> Task :cupertino-adaptive:generateResourceAccessorsForAndroidDebug SKIPPED
+> Task :cupertino-adaptive:parseDebugLocalResources
+> Task :cupertino-native:javaPreCompileDebug
+> Task :cupertino-decompose:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino-decompose:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino-decompose:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :cupertino-decompose:generateResourceAccessorsForAndroidMain SKIPPED
+> Task :cupertino-decompose:generateActualResourceCollectorsForAndroidMain SKIPPED
+> Task :cupertino-decompose:preBuild UP-TO-DATE
+> Task :cupertino-decompose:preDebugBuild UP-TO-DATE
+> Task :cupertino-core:bundleLibCompileToJarDebug
+> Task :cupertino-decompose:generateDebugResValues
+> Task :cupertino-adaptive:generateDebugRFile
+> Task :cupertino-decompose:generateDebugResources
+> Task :cupertino-decompose:packageDebugResources
+> Task :cupertino-decompose:convertXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino-decompose:copyNonXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino-decompose:prepareComposeResourcesTaskForAndroidDebug NO-SOURCE
+> Task :cupertino-decompose:generateResourceAccessorsForAndroidDebug SKIPPED
+> Task :cupertino-icons-extended:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino-icons-extended:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :cupertino-decompose:parseDebugLocalResources
+> Task :cupertino-icons-extended:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :cupertino-icons-extended:generateResourceAccessorsForAndroidMain SKIPPED
+> Task :cupertino-icons-extended:generateActualResourceCollectorsForAndroidMain SKIPPED
+> Task :cupertino-icons-extended:preBuild UP-TO-DATE
+> Task :cupertino-icons-extended:preDebugBuild UP-TO-DATE
+> Task :cupertino-icons-extended:generateDebugResValues
+> Task :cupertino-decompose:generateDebugRFile
+> Task :cupertino-icons-extended:generateDebugResources
+> Task :cupertino-decompose:compileKotlinDesktop
+> Task :cupertino-icons-extended:packageDebugResources
+> Task :cupertino-icons-extended:convertXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino-icons-extended:copyNonXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :cupertino-icons-extended:prepareComposeResourcesTaskForAndroidDebug NO-SOURCE
+> Task :cupertino-icons-extended:generateResourceAccessorsForAndroidDebug SKIPPED
+> Task :cupertino-icons-extended:parseDebugLocalResources
+> Task :cupertino-icons-extended:generateDebugRFile
+> Task :cupertino-decompose:compileDebugKotlinAndroid
+
+> Task :cupertino:compileKotlinDesktop
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/CalendarModel.kt:25:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/PlatformDateFormat.kt:21:10 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/HazePlatform.kt:120:10 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino/src/desktopMain/kotlin/io/github/alexzhirkevich/PlatformDateFormat.desktop.kt:22:1 Annotation `@ReadOnlyComposable` is missing on actual declaration.
+All annotations from expect `io.github.alexzhirkevich.defaultLocale` must be present with the same arguments on actual `io.github.alexzhirkevich.defaultLocale`, otherwise they might behave incorrectly.
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino/src/desktopMain/kotlin/io/github/alexzhirkevich/PlatformDateFormat.desktop.kt:27:10 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino/src/jvmMain/kotlin/io/github/alexzhirkevich/LegacyCalendarModelImpl.kt:33:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino/src/skikoMain/kotlin/io/github/alexzhirkevich/cupertino/HazePlatform.skiko.kt:79:10 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+
+> Task :cupertino:desktopMainClasses
+> Task :cupertino:desktopJar
+> Task :cupertino-native:compileKotlinDesktop
+> Task :cupertino-native:desktopMainClasses
+> Task :cupertino-native:desktopJar
+
+> Task :cupertino-adaptive:compileKotlinDesktop
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveIconButton.kt:64:13 This is an experimental API and is likely to change before becoming stable.
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveIconButton.kt:102:13 This is an experimental API and is likely to change before becoming stable.
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveNavigationBar.kt:202:5 This is an experimental API and is likely to change before becoming stable.
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveProgressIndicator.kt:138:52 'val circularTrackColor: Color' is deprecated. Renamed to circularDeterminateTrackColor or circularIndeterminateTrackColor.
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveSwitch.kt:109:5 This is an experimental API and is likely to change before becoming stable.
+
+> Task :cupertino:compileDebugKotlinAndroid
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino/src/androidMain/kotlin/io/github/alexzhirkevich/CalendarModelImpl.android.kt:44:39 'field locale: Locale!' is deprecated. Deprecated in Java.
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino/src/androidMain/kotlin/io/github/alexzhirkevich/PlatformDateFormat.android.kt:24:10 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino/src/androidMain/kotlin/io/github/alexzhirkevich/cupertino/HazePlatform.kt:33:10 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/CalendarModel.kt:25:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/PlatformDateFormat.kt:21:10 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/HazePlatform.kt:120:10 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino/src/jvmMain/kotlin/io/github/alexzhirkevich/LegacyCalendarModelImpl.kt:33:1 'expect'/'actual' classes (including interfaces, objects, annotations, enums, and 'actual' typealiases) are in Beta. You can use -Xexpect-actual-classes flag to suppress this warning. Also see: https://youtrack.jetbrains.com/issue/KT-61573
+
+> Task :cupertino:compileDebugJavaWithJavac NO-SOURCE
+> Task :cupertino:bundleLibCompileToJarDebug
+> Task :cupertino-native:compileDebugKotlinAndroid
+> Task :cupertino-native:compileDebugJavaWithJavac NO-SOURCE
+> Task :cupertino-native:bundleLibCompileToJarDebug
+
+> Task :cupertino-adaptive:compileDebugKotlinAndroid
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveIconButton.kt:64:13 This is an experimental API and is likely to change before becoming stable.
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveIconButton.kt:102:13 This is an experimental API and is likely to change before becoming stable.
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveNavigationBar.kt:202:5 This is an experimental API and is likely to change before becoming stable.
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveProgressIndicator.kt:138:52 'val circularTrackColor: Color' is deprecated. Renamed to circularDeterminateTrackColor or circularIndeterminateTrackColor.
+w: file:///Users/mac/SwiftKey/AndroidSwiftUI/vendor/compose-cupertino/cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveSwitch.kt:109:5 This is an experimental API and is likely to change before becoming stable.
+
+> Task :cupertino-icons-extended:compileKotlinDesktop
+> Task :cupertino-icons-extended:compileDebugKotlinAndroid
+[Incubating] Problems report is available at: file:///Users/mac/SwiftKey/AndroidSwiftUI/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 20s
+57 actionable tasks: 57 executed

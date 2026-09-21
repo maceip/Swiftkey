@@ -1,0 +1,7 @@
+Printing with useUnmergedTree = 'false'
+Node #91 at (l=120.0, t=272.0, r=241.0, b=292.0)px
+Text = '[Catalog dialog]'
+Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+ClearAndSetSemantics = 'true'
+root: Rect.fromLTRB(0.0, 0.0, 360.0, 720.0), window: Rect.fromLTRB(0.0, 0.0, 360.0, 720.0)
+root: Rect.fromLTRB(0.0, 0.0, 360.0, 720.0), window: Rect.fromLTRB(0.0, 0.0, 360.0, 720.0)

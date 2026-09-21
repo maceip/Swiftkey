@@ -1,0 +1,22 @@
+{
+  "command": "bash scripts/androidswiftui.sh android-build",
+  "result": "passed",
+  "applicationID": "com.pureswift.swiftandroidui",
+  "variant": "debug",
+  "apkPath": "AndroidSwiftUI/Demo/app/build/outputs/apk/debug/demo-app-debug.apk",
+  "apkSHA256": "4ca2c9a859a0ebeb1facdf65f3329e2e049f956431f4902908bd9fdd0e346e47",
+  "apkBytes": 339678723,
+  "versionCode": 1,
+  "versionName": "1.0",
+  "installedByThisBuild": false,
+  "log": "android-apk-build.log",
+  "logSHA256": "fb0b2876b2f9615ae28ab63d40ce230fa6c1ba9aec553f8029e69628aeca24c6",
+  "swiftUICoreHostTests": 141,
+  "kotlinDesktopTests": 389,
+  "catalogFixtureCount": 254,
+  "scope": "ARM64 Android Swift 6.3.2 cross compilation, JNI runtime staging, and debug APK assembly. Includes final alert dismissal, exact Defaults parameters, sheet bounds, button contrast, and predictive-back manifest fixes. No device state touched.",
+  "finalAssemblyCommand": "source ../scripts/androidswiftui-env.sh; ./gradlew :demo-app:assembleDebug --console=plain",
+  "finalAssemblyLog": "android-apk-final-assembly.log",
+  "finalAssemblyLogSHA256": "a3d05afba13d0e945dda075a4a028afab40c7e0f3cf892648c0e3f308ed30a6b",
+  "packagingNote": "The generated APK was removed and reassembled to eliminate unused incremental ZIP padding; no source changes or build outputs other than that APK were removed."
+}

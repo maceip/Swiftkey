@@ -1,5 +1,35 @@
 # SwiftKey build status — 2026-09-20
 
+## Full Compose Cupertino integration (2026-09-20)
+
+The complete pinned upstream source (1,911 files, six modules) is vendored in
+AndroidSwiftUI. All 127 distinct visual surfaces and 879 shared icons are
+available through Swift wrappers, named slots, bindings and the interactive
+catalog. The coverage inventory maps every pinned shared callable and identifies
+UIKit-only APIs explicitly. Eight bounded upstream fixes are recorded with
+original/modified hashes and a reproducible patch.
+
+Final verification passed: **141 serial SwiftUICore tests, 389 native Kotlin
+render/interaction/regression tests, and 27 shared UI tests**. The 254 Swift
+fixtures drive 338 real Compose render cases, including Material3 alternatives,
+dark appearance and enlarged type. All six vendored modules compile for Android
+and desktop; Android Kotlin and the complete ARM64 Swift/JNI APK build passed.
+See [bridge contract](AndroidSwiftUI/docs/cupertino/README.md),
+[coverage](AndroidSwiftUI/docs/cupertino/BRIDGE-COVERAGE.md) and
+[verification evidence](artifacts/cupertino/README.md).
+
+The final APK installed on the Pixel with both private client files byte-for-byte
+unchanged before launch. A cold process launch passed without a fatal startup
+error. The phone is locked and asleep: on-device visual checks, interactive
+Cupertino controls and predictive-back gestures remain unverified. Two-phone v2
+hardware pairing also remains pending. Earlier Vapor acceptance is recorded
+separately below; installation does not repeat that acceptance.
+
+The workspace is published at `maceip/Swiftkey`: `main` pins the AndroidSwiftUI
+history on `androidswiftui` through a recursive submodule. No live authority
+cutover or existing-account migration was performed.
+
+
 ## Supplied component-system update (2026-09-20)
 
 The current design now follows `prompt-prep-outputs/design-system-main.zip`.
@@ -244,9 +274,10 @@ claimed. Contracts are in [PROTOCOL.md](PROTOCOL.md) and
 The scripts select the matching compiler through its absolute path and
 `TOOLCHAINS`, with JDK/SDK/NDK checks. `SWIFTKEY_SWIFT` is the custom Gradle
 compiler override; SwiftPM's reserved `SWIFT_EXEC` is not repurposed.
-The existing `AndroidSwiftUI/` checkout started at
-`e12fb09a906921506a84287f53117ccbf4357102`; local changes remain uncommitted.
-The parent directory is not a Git repository. `fullplan.md` is preserved.
+The original `AndroidSwiftUI/` checkout started at
+`e12fb09a906921506a84287f53117ccbf4357102`. Its history is preserved on the
+public repository’s `androidswiftui` branch; the parent is now the `main` workspace
+repository. `fullplan.md` is preserved.
 
 ## Evidence and historical results
 
