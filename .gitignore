@@ -93,3 +93,9 @@ iOSInjectionProject/
 
 # Gradle
 .gradle/
+
+# Host SDK paths and private local state.
+local.properties
+**/.state/
+**/swiftkey-client.json
+**/swiftkey-protocol-state.json

@@ -17,15 +17,23 @@ public struct Font: Equatable, Sendable {
     internal var style: String?
     internal var size: Double?
     internal var weight: Weight?
+    internal var design: Design?
+    internal var family: String?
+    internal var weightValue: Double?
 
-    internal init(style: String? = nil, size: Double? = nil, weight: Weight? = nil) {
+    internal init(style: String? = nil, size: Double? = nil, weight: Weight? = nil, design: Design? = nil) {
         self.style = style
         self.size = size
         self.weight = weight
+        self.design = design
     }
 
     public enum Weight: String, Equatable, Sendable {
         case ultraLight, thin, light, regular, medium, semibold, bold, heavy, black
+    }
+
+    public enum Design: String, Equatable, Sendable {
+        case `default`, monospaced
     }
 
     public static let largeTitle = Font(style: "largeTitle")
@@ -40,13 +48,29 @@ public struct Font: Equatable, Sendable {
     public static let caption = Font(style: "caption")
     public static let caption2 = Font(style: "caption2")
 
-    public static func system(size: Double, weight: Weight? = nil) -> Font {
-        Font(size: size, weight: weight)
+    public static func system(size: Double, weight: Weight? = nil, design: Design = .default) -> Font {
+        Font(size: size, weight: weight, design: design)
+    }
+
+    /// A host-bundled named family. Renderers retain a readable system fallback
+    /// when a host does not supply this family.
+    public static func custom(_ name: String, size: Double) -> Font {
+        var font = Font(size: size)
+        font.family = name
+        return font
     }
 
     public func weight(_ weight: Weight) -> Font {
         var copy = self
         copy.weight = weight
+        copy.weightValue = nil
+        return copy
+    }
+
+    public func weight(_ value: Double) -> Font {
+        var copy = self
+        copy.weight = nil
+        copy.weightValue = value.isFinite ? min(1000, max(1, value)) : 400
         return copy
     }
 
@@ -60,6 +84,9 @@ public struct _FontModifier: RenderModifier {
         if let style = font.style { args["style"] = .string(style) }
         if let size = font.size { args["size"] = .double(size) }
         if let weight = font.weight { args["weight"] = .string(weight.rawValue) }
+        if let design = font.design { args["design"] = .string(design.rawValue) }
+        if let family = font.family { args["family"] = .string(family) }
+        if let value = font.weightValue { args["weightValue"] = .double(value) }
         return ModifierNode(kind: "font", args: args)
     }
 }
@@ -67,6 +94,29 @@ public struct _FontModifier: RenderModifier {
 public extension View {
     func font(_ font: Font) -> ModifiedContent<Self, _FontModifier> {
         modifier(_FontModifier(font: font))
+    }
+}
+
+// MARK: - Exact typography
+
+public struct _TrackingModifier: RenderModifier {
+    let value: Double
+    public var _modifierNode: ModifierNode { ModifierNode(kind: "tracking", args: ["value": .double(value)]) }
+}
+
+public struct _LineHeightModifier: RenderModifier {
+    let value: Double
+    public var _modifierNode: ModifierNode { ModifierNode(kind: "lineHeight", args: ["value": .double(value)]) }
+}
+
+public extension View {
+    /// Additional letter spacing in logical points.
+    func tracking(_ value: Double) -> ModifiedContent<Self, _TrackingModifier> {
+        modifier(_TrackingModifier(value: value.isFinite ? value : 0))
+    }
+    /// Baseline spacing in logical points, scaled with the user's text size.
+    func lineHeight(_ value: Double) -> ModifiedContent<Self, _LineHeightModifier> {
+        modifier(_LineHeightModifier(value: value.isFinite ? max(1, value) : 16))
     }
 }
 

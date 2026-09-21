@@ -8,6 +8,7 @@ import com.pureswift.swiftui.TreeStore
 class SwiftRuntime {
 
     external fun start(store: TreeStore)
+    external fun startIdentityPreview(store: TreeStore)
 
     companion object {
 

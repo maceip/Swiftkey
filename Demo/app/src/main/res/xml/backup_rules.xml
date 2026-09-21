@@ -6,6 +6,12 @@
    See https://developer.android.com/about/versions/12/backup-restore
 -->
 <full-backup-content>
+    <exclude domain="file" path="swiftkey-client.json" />
+    <exclude domain="file" path="swiftkey-client.json.bak" />
+    <exclude domain="file" path="swiftkey-client.json.new" />
+    <exclude domain="file" path="swiftkey-protocol-state.json" />
+    <exclude domain="file" path="swiftkey-protocol-state.json.bak" />
+    <exclude domain="file" path="swiftkey-protocol-state.json.new" />
     <!--
    <include domain="sharedpref" path="."/>
    <exclude domain="sharedpref" path="device.xml"/>

@@ -174,6 +174,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -205,6 +206,12 @@ internal val LocalAnimationSpec = compositionLocalOf<AnimSpec?> { null }
 // their own modifiers still override.
 internal val LocalInheritedFontSize = compositionLocalOf { TextUnit.Unspecified }
 internal val LocalInheritedFontWeight = compositionLocalOf<FontWeight?> { null }
+internal val LocalInheritedFontFamily = compositionLocalOf<FontFamily?> { null }
+internal val LocalInheritedLineHeight = compositionLocalOf { TextUnit.Unspecified }
+internal val LocalInheritedTracking = compositionLocalOf { TextUnit.Unspecified }
+internal val LocalAppearanceIsDark = compositionLocalOf { false }
+/// Named font resources belong to the host, not this generic interpreter.
+val LocalNamedFontFamilies = compositionLocalOf<Map<String, FontFamily>> { emptyMap() }
 internal val LocalInheritedColor = compositionLocalOf { Color.Unspecified }
 internal val LocalInheritedDisabled = compositionLocalOf { false }
 internal val LocalTint = compositionLocalOf<Color?> { null }
@@ -227,7 +234,11 @@ internal val LocalLabelStyle = compositionLocalOf { "automatic" }
 /// arriving does not change the composition's structure: a branch switch here
 /// would tear down every remembered Animatable and snap instead of easing.
 @Composable
-fun Render(node: ViewNode) = RenderChild(node)
+fun Render(node: ViewNode) {
+    CompositionLocalProvider(LocalAppearanceIsDark provides androidx.compose.foundation.isSystemInDarkTheme()) {
+        RenderChild(node)
+    }
+}
 
 /// The real entry point, shared by the public `Render` and the composable
 /// registry's child slot. The registry MUST call this directly rather than the
@@ -244,6 +255,9 @@ internal fun RenderChild(node: ViewNode) {
 
     var fontSize = LocalInheritedFontSize.current
     var fontWeight = LocalInheritedFontWeight.current
+    var fontFamily = LocalInheritedFontFamily.current
+    var lineHeight = LocalInheritedLineHeight.current
+    var tracking = LocalInheritedTracking.current
     var color = LocalInheritedColor.current
     var disabled = LocalInheritedDisabled.current
     var tint = LocalTint.current
@@ -261,11 +275,16 @@ internal fun RenderChild(node: ViewNode) {
                 }
                 m.args.double("size")?.let { fontSize = it.sp }
                 m.args.string("weight")?.let { fontWeight = fontWeightFor(it) }
+                m.args.double("weightValue")?.let { fontWeight = FontWeight(it.toInt().coerceIn(1, 1000)) }
+                m.args.string("design")?.let { fontFamily = fontFamilyFor(it) }
+                m.args.string("family")?.let { fontFamily = LocalNamedFontFamilies.current[it] ?: rememberNamedFontFamily(it) ?: FontFamily.Default }
             }
+            "lineHeight" -> m.args.double("value")?.let { lineHeight = it.sp }
+            "tracking" -> m.args.double("value")?.let { tracking = it.sp }
             "fontWeight" -> m.args.string("weight")?.let { fontWeight = fontWeightFor(it) }
-            "foregroundColor" -> m.args.long("color")?.let { color = Color(it.toInt()) }
+            "foregroundColor" -> resolveAppearanceColor(m.args["color"], LocalAppearanceIsDark.current)?.let { color = it }
             "disabled" -> if ((m.args["value"] as? kotlinx.serialization.json.JsonPrimitive)?.content == "true") disabled = true
-            "tint" -> m.args.long("color")?.let { tint = Color(it.toInt()) }
+            "tint" -> resolveAppearanceColor(m.args["color"], LocalAppearanceIsDark.current)?.let { tint = it }
             "buttonStyle" -> m.args.string("style")?.let { buttonStyle = it }
             "pickerStyle" -> m.args.string("style")?.let { pickerStyle = it }
             "toggleStyle" -> m.args.string("style")?.let { toggleStyle = it }
@@ -278,6 +297,9 @@ internal fun RenderChild(node: ViewNode) {
         LocalAnimationSpec provides spec,
         LocalInheritedFontSize provides fontSize,
         LocalInheritedFontWeight provides fontWeight,
+        LocalInheritedFontFamily provides fontFamily,
+        LocalInheritedLineHeight provides lineHeight,
+        LocalInheritedTracking provides tracking,
         LocalInheritedColor provides color,
         LocalInheritedDisabled provides disabled,
         LocalTint provides tint,
@@ -372,7 +394,7 @@ private fun RenderResolved(node: ViewNode) {
             "Color" -> Box(
                 modifier = node.composeModifiers()
                     .fillMaxWidth()
-                    .background(Color((node.long("color") ?: 0).toInt()))
+                    .background(resolveAppearanceColor(node.props["color"], LocalAppearanceIsDark.current) ?: Color.Transparent)
             )
 
             "Image" -> RenderImage(node)
@@ -517,14 +539,12 @@ private fun RenderButton(node: ViewNode) {
     val modifier = node.composeModifiers()
     val content: @Composable RowScope.() -> Unit = { RenderChildren(node) }
 
+    if (LocalButtonStyle.current == "plain" || LocalButtonStyle.current == "borderless") {
+        Row(modifier = modifier
+            .clickable(enabled = enabled, role = Role.Button, onClick = click), content = content)
+        return
+    }
     when (LocalButtonStyle.current) {
-        "plain", "borderless" -> TextButton(
-            onClick = click,
-            enabled = enabled,
-            colors = if (tint != null) ButtonDefaults.textButtonColors(contentColor = tint) else ButtonDefaults.textButtonColors(),
-            modifier = modifier,
-            content = content,
-        )
         "bordered" -> OutlinedButton(
             onClick = click,
             enabled = enabled,
@@ -760,12 +780,22 @@ private fun RenderTextField(node: ViewNode) {
         onNext = { onSubmit?.let { SwiftBridge.sink.invokeVoid(it) } },
     )
 
+    val inheritedTextStyle = androidx.compose.ui.text.TextStyle(
+        color = LocalInheritedColor.current,
+        fontSize = LocalInheritedFontSize.current,
+        fontWeight = LocalInheritedFontWeight.current,
+        fontFamily = LocalInheritedFontFamily.current,
+        lineHeight = LocalInheritedLineHeight.current,
+        letterSpacing = LocalInheritedTracking.current,
+    )
     // plain drops the box outline; roundedBorder and automatic keep it
     if (LocalTextFieldStyle.current == "plain") {
         TextField(
             value = local,
             onValueChange = change,
             label = label,
+            textStyle = inheritedTextStyle,
+            shape = RoundedCornerShape(8.dp),
             enabled = node.isEnabled(),
             visualTransformation = transformation,
             keyboardOptions = keyboardOptions,
@@ -784,6 +814,8 @@ private fun RenderTextField(node: ViewNode) {
             value = local,
             onValueChange = change,
             label = label,
+            textStyle = inheritedTextStyle,
+            shape = RoundedCornerShape(8.dp),
             enabled = node.isEnabled(),
             visualTransformation = transformation,
             keyboardOptions = keyboardOptions,
@@ -1261,7 +1293,7 @@ private fun ViewNode.isEnabled(): Boolean = !isDisabled() && !LocalInheritedDisa
 // it collapses to zero, matching this backend's no-layout-engine limitation.
 @Composable
 private fun RenderShape(node: ViewNode) {
-    val fill = node.long("fill")?.let { Color(it.toInt()) } ?: Color(0xFF000000)
+    val fill = resolveAppearanceColor(node.props["fill"], LocalAppearanceIsDark.current) ?: Color(0xFF000000)
     val shape = when (node.string("shape")) {
         "circle" -> CircleShape
         "capsule" -> RoundedCornerShape(percent = 50)
@@ -1345,7 +1377,7 @@ private fun RenderImage(node: ViewNode) {
     val icon = node.string("systemName")?.let { materialIcon(it) }
     if (icon != null) {
         val tint = node.modifiers.firstOrNull { it.kind == "foregroundColor" }
-            ?.args?.long("color")?.let { Color(it.toInt()) }
+            ?.args?.get("color")?.let { resolveAppearanceColor(it, LocalAppearanceIsDark.current) }
         Icon(
             imageVector = icon,
             contentDescription = node.string("systemName"),
@@ -1415,9 +1447,17 @@ private fun RenderAsyncImage(node: ViewNode) {
     }
 }
 
+internal fun resolveAppearanceColor(value: kotlinx.serialization.json.JsonElement?, dark: Boolean): Color? {
+    val selected = if (value is kotlinx.serialization.json.JsonArray && value.size == 2) value[if (dark) 1 else 0] else value
+    val argb = (selected as? kotlinx.serialization.json.JsonPrimitive)?.content?.toLongOrNull() ?: return null
+    return Color(argb.toInt())
+}
+
+@Composable
 private fun ViewNode.colorList(key: String): List<Color> {
     val arr = props[key] as? kotlinx.serialization.json.JsonArray ?: return emptyList()
-    return arr.mapNotNull { (it as? kotlinx.serialization.json.JsonPrimitive)?.content?.toLongOrNull()?.let { c -> Color(c.toInt()) } }
+    val dark = LocalAppearanceIsDark.current
+    return arr.mapNotNull { resolveAppearanceColor(it, dark) }
 }
 
 // A curated SF Symbol → Material icon map; unknown names fall back to the
@@ -1462,6 +1502,9 @@ private fun RenderText(node: ViewNode) {
     var color = LocalInheritedColor.current
     var fontSize: TextUnit = LocalInheritedFontSize.current
     var weight: FontWeight? = LocalInheritedFontWeight.current
+    var fontFamily: FontFamily? = LocalInheritedFontFamily.current
+    var lineHeight = LocalInheritedLineHeight.current
+    var tracking = LocalInheritedTracking.current
     var fontStyle: FontStyle? = null
     var maxLines = Int.MAX_VALUE
     var textAlign: TextAlign? = null
@@ -1474,10 +1517,15 @@ private fun RenderText(node: ViewNode) {
                 }
                 m.args.double("size")?.let { fontSize = it.sp }
                 m.args.string("weight")?.let { weight = fontWeightFor(it) }
+                m.args.double("weightValue")?.let { weight = FontWeight(it.toInt().coerceIn(1, 1000)) }
+                m.args.string("design")?.let { fontFamily = fontFamilyFor(it) }
+                m.args.string("family")?.let { fontFamily = LocalNamedFontFamilies.current[it] ?: rememberNamedFontFamily(it) ?: FontFamily.Default }
             }
+            "lineHeight" -> m.args.double("value")?.let { lineHeight = it.sp }
+            "tracking" -> m.args.double("value")?.let { tracking = it.sp }
             "fontWeight" -> m.args.string("weight")?.let { weight = fontWeightFor(it) }
             "italic" -> fontStyle = FontStyle.Italic
-            "foregroundColor" -> m.args.long("color")?.let { color = Color(it.toInt()) }
+            "foregroundColor" -> resolveAppearanceColor(m.args["color"], LocalAppearanceIsDark.current)?.let { color = it }
             "lineLimit" -> maxLines = m.args.long("count")?.toInt() ?: Int.MAX_VALUE
             "multilineTextAlignment" -> textAlign = when (m.args.string("value")) {
                 "leading" -> TextAlign.Start
@@ -1491,6 +1539,9 @@ private fun RenderText(node: ViewNode) {
         color = color,
         fontSize = fontSize,
         fontWeight = weight,
+        fontFamily = fontFamily,
+        lineHeight = lineHeight,
+        letterSpacing = tracking,
         fontStyle = fontStyle,
         maxLines = maxLines,
         textAlign = textAlign,
@@ -1517,6 +1568,11 @@ private fun fontSizeForStyle(style: String): Double = when (style) {
 // Only headline carries a non-regular default weight in SwiftUI.
 private fun defaultWeightForStyle(style: String): FontWeight? =
     if (style == "headline") FontWeight.SemiBold else null
+
+private fun fontFamilyFor(design: String): FontFamily = when (design) {
+    "monospaced" -> FontFamily.Monospace
+    else -> FontFamily.Default
+}
 
 private fun fontWeightFor(name: String): FontWeight = when (name) {
     "ultraLight" -> FontWeight.ExtraLight
@@ -1564,8 +1620,8 @@ internal fun ViewNode.composeModifiers(): Modifier {
             "frame" -> foldFrame(modifier, entry, spec)
 
             "background" -> {
-                val argb = entry.args.long("color") ?: 0
-                modifier.background(animatedColor(Color(argb.toInt()), spec))
+                val color = resolveAppearanceColor(entry.args["color"], LocalAppearanceIsDark.current) ?: Color.Transparent
+                modifier.background(animatedColor(color, spec))
             }
 
             "cornerRadius" -> {
@@ -1586,7 +1642,7 @@ internal fun ViewNode.composeModifiers(): Modifier {
             "opacity" -> modifier.alpha(animatedFloat((entry.args.double("opacity") ?: 1.0).toFloat(), spec))
 
             "border" -> {
-                val color = entry.args.long("color")?.let { Color(it.toInt()) } ?: Color.Black
+                val color = resolveAppearanceColor(entry.args["color"], LocalAppearanceIsDark.current) ?: Color.Black
                 modifier.border((entry.args.double("width") ?: 1.0).dp, color)
             }
 
@@ -1726,7 +1782,7 @@ internal fun ViewNode.composeModifiers(): Modifier {
 private val KNOWN_MODIFIER_KINDS = setOf(
     "padding", "frame", "background", "cornerRadius", "offset", "rotation",
     "scale", "opacity", "border", "shadow", "clipShape", "onTapGesture", "disabled",
-    "font", "fontWeight", "italic", "foregroundColor", "lineLimit", "multilineTextAlignment",
+    "font", "fontWeight", "italic", "foregroundColor", "lineLimit", "multilineTextAlignment", "tracking", "lineHeight",
     "tint", "onAppear", "onDisappear", "task", "onChange", "animation", "tag", "tabItem",
     "transition", "focused", "longPress", "drag", "contentMode", "progressViewStyle",
     "buttonStyle", "pickerStyle", "toggleStyle", "textFieldStyle",

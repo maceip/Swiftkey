@@ -5,11 +5,25 @@
 -->
 <data-extraction-rules>
     <cloud-backup>
+        <exclude domain="file" path="swiftkey-client.json" />
+        <exclude domain="file" path="swiftkey-client.json.bak" />
+        <exclude domain="file" path="swiftkey-client.json.new" />
+        <exclude domain="file" path="swiftkey-protocol-state.json" />
+        <exclude domain="file" path="swiftkey-protocol-state.json.bak" />
+        <exclude domain="file" path="swiftkey-protocol-state.json.new" />
         <!-- TODO: Use <include> and <exclude> to control what is backed up.
         <include .../>
         <exclude .../>
         -->
     </cloud-backup>
+    <device-transfer>
+        <exclude domain="file" path="swiftkey-client.json" />
+        <exclude domain="file" path="swiftkey-client.json.bak" />
+        <exclude domain="file" path="swiftkey-client.json.new" />
+        <exclude domain="file" path="swiftkey-protocol-state.json" />
+        <exclude domain="file" path="swiftkey-protocol-state.json.bak" />
+        <exclude domain="file" path="swiftkey-protocol-state.json.new" />
+    </device-transfer>
     <!--
     <device-transfer>
         <include .../>

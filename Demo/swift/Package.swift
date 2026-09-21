@@ -58,7 +58,11 @@ let package = Package(
     dependencies: [
         .package(
             path: "../../"
-        )
+        ),
+        .package(path: "../../../SwiftKeyCore"),
+        .package(path: "../../../SwiftKeyClient"),
+        .package(path: "../../../SwiftKeyUI"),
+        .package(path: "../../../SwiftKeyApplication")
     ],
     targets: [
         .target(
@@ -67,7 +71,11 @@ let package = Package(
                 .product(
                     name: "AndroidSwiftUI",
                     package: "AndroidSwiftUI"
-                )
+                ),
+                .product(name: "SwiftKeyCore", package: "SwiftKeyCore"),
+                .product(name: "SwiftKeyClient", package: "SwiftKeyClient"),
+                .product(name: "SwiftKeyUI", package: "SwiftKeyUI"),
+                .product(name: "SwiftKeyApplication", package: "SwiftKeyApplication")
             ],
             swiftSettings: [
               .swiftLanguageMode(.v5),

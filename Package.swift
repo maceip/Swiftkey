@@ -50,7 +50,8 @@ let package = Package(
             branch: "feature/pureswift",
             traits: ["CoreFoundation"]
         ),
-        .package(path: "SwiftUICore")
+        .package(path: "SwiftUICore"),
+        .package(path: "../SwiftKeyUI")
     ],
     targets: [
         // The Android umbrella: re-exports SwiftUICore + ComposeUI and adds the
@@ -115,6 +116,7 @@ let package = Package(
             dependencies: [
                 "ComposeUI",
                 "BridgeExport",
+                .product(name: "SwiftKeyUI", package: "SwiftKeyUI"),
                 .product(name: "SwiftUICore", package: "SwiftUICore")
             ],
             // `Playgrounds` symlinks the Android demo's shared sources; the rig

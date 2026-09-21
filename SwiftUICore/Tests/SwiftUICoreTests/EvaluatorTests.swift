@@ -159,6 +159,14 @@ struct ModifierTests {
         #expect(color?.args["color"] == Color.red.propValue)
     }
 
+    @Test("Monospaced font design crosses the renderer boundary and default resets it")
+    func systemFontDesign() {
+        let mono = ViewHost(Text("04 ab").font(.system(size: 16, design: .monospaced))).evaluate()
+        #expect(mono.modifiers.first { $0.kind == "font" }?.args["design"] == .string("monospaced"))
+        let reset = ViewHost(Text("SwiftKey").font(.system(size: 42))).evaluate()
+        #expect(reset.modifiers.first { $0.kind == "font" }?.args["design"] == .string("default"))
+    }
+
     @Test("bold and italic emit their kinds")
     func boldItalic() {
         let node = ViewHost(Text("x").bold().italic()).evaluate()

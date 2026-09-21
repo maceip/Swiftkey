@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.SwiftAndroid" parent="Theme.Material3.DayNight.NoActionBar" />
+    <style name="Theme.SwiftAndroid" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Shared colors resolve their own light/dark variants; disable forced recoloring. -->
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowBackground">#FFFFFF</item>
+        <item name="android:colorBackground">#FFFFFF</item>
+        <item name="android:colorAccent">#A02AB8</item>
+        <item name="android:textColorPrimary">#1E1E1E</item>
+        <item name="android:statusBarColor">#FFFFFF</item>
+        <item name="android:navigationBarColor">#FFFFFF</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
 </resources>

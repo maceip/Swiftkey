@@ -10,9 +10,17 @@ public struct Color: Equatable, Sendable {
     public let green: Double
     public let blue: Double
     public let opacity: Double
+    private var darkARGB: Int64? = nil
 
     public init(red: Double, green: Double, blue: Double, opacity: Double = 1) {
         self.red = red; self.green = green; self.blue = blue; self.opacity = opacity
+    }
+
+    /// A platform-resolved light/dark pair. Both variants stay in the render
+    /// tree so appearance changes never require a protocol or service request.
+    public init(light: Color, dark: Color) {
+        self.init(red: light.red, green: light.green, blue: light.blue, opacity: light.opacity)
+        self.darkARGB = dark.argb
     }
 
     public static let black = Color(red: 0, green: 0, blue: 0)
@@ -33,5 +41,8 @@ public struct Color: Equatable, Sendable {
         return (channel(opacity) << 24) | (channel(red) << 16) | (channel(green) << 8) | channel(blue)
     }
 
-    internal var propValue: PropValue { .int(Int(argb)) }
+    internal var propValue: PropValue {
+        if let darkARGB { return .array([.int(Int(argb)), .int(Int(darkARGB))]) }
+        return .int(Int(argb))
+    }
 }

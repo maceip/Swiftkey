@@ -40,7 +40,12 @@ val jextract by tasks.registering(Exec::class) {
     // plugins (no network) by default, which blocks that download — the
     // outer Gradle process here isn't sandboxed, so without this flag the
     // inner `swift build` fails where a bare Gradle invocation wouldn't.
-    commandLine("swift", "build", "--target", "BridgeExport", "--disable-sandbox")
+    // An absolute compiler path avoids a reused Gradle daemon resolving Swift
+    // through a different PATH/toolchain manager than the invoking shell.
+    commandLine(
+        providers.environmentVariable("SWIFTKEY_SWIFT").orElse("swift").get(),
+        "build", "--target", "BridgeExport", "--disable-sandbox"
+    )
     outputs.dir(jextractGenerated)
 }
 

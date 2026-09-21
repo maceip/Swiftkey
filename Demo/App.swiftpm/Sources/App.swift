@@ -12,7 +12,7 @@ import SwiftUI
 @_silgen_name("AndroidSwiftUIMain")
 func AndroidSwiftUIMain() {
     AndroidSwiftUILog("Starting SwiftUI App")
-    AndroidSwiftUIApp.run(ContentView())
+    AndroidSwiftUIApp.run(SwiftKeyPhoneEntryView())
 }
 
 #else
