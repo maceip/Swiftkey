@@ -53,6 +53,11 @@ upgrade and iOS remain unavailable. This is a development project, without a
 production authority cutover. [Build status](BUILD_STATUS.md) separates tested
 behavior from remaining work.
 
+<p><img src="docs/images/android-account.png" alt="SwiftKey account owners screen on a Pixel after pairing and sign-in" width="360"></p>
+
+SwiftKey account after pairing and sign-in on a real Pixel during
+[hardware verification](artifacts/phone-v2-hardware/README.md).
+
 ## Get the code and build
 
 Download the [latest Android APK](https://github.com/maceip/Swiftkey/releases/latest).
