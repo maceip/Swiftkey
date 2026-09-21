@@ -1,0 +1,7 @@
+
+# Preserve upstream font license bytes, including original whitespace.
+**/*OFL.txt -whitespace
+
+# Preserve the complete pinned Cupertino source and original notices.
+vendor/compose-cupertino/** -whitespace
+docs/cupertino/vendor.patch -whitespace

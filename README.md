@@ -1,88 +1,128 @@
-# SwiftKey
+# How this replaces a security key
 
-Clone the workspace with its pinned Android renderer:
+**SwiftKey creates a non-exportable ECDSA P-256 signing key inside each compatible Android
+phone's StrongBox secure hardware.** That key proves the phone's identity without
+sending its private key to the server. It authorizes a separate P-256 software
+signing key for a **four-hour epoch**, so routine requests can use a short-lived
+credential while the long-lived identity remains in hardware.
+
+Two phones become independent owners of one account. Each keeps its own hardware
+key; they never copy or share a private key. You compare the phones, confirm the
+pairing on both, and approve the same account and owner list on both. Only then
+does the Swift/Vapor authority create the account. Each phone signs in separately
+and receives its own epoch credential.
+
+This provides hardware-backed proof of possession for applications that integrate
+SwiftKey. **It is a custom authentication protocol, not a FIDO2/WebAuthn security
+key or a drop-in passkey for existing websites.** The current implementation uses
+Android StrongBox; an iPhone Secure Enclave implementation is not available yet.
+
+## The protocol
+
+1. **Prepare each phone.** The phone creates its hardware root and supplies
+   attestation evidence plus proof that it holds the key. The authority checks
+   the hardware/verified-boot policy, app identity, certificate chain and current
+   revocation data before admitting it. The app pins the authority's public key
+   through a trusted configuration channel, independently of any invitation.
+2. **Pair the phones.** A short-lived QR code or link opens an invitation. Both
+   phones show the authority, identities, full root fingerprints and the same
+   transcript hash/comparison code. Each owner explicitly confirms those details.
+   Importing a link alone never grants ownership.
+3. **Create the account together.** Both phones review the same account name,
+   owner set and ownership policy. One approval leaves the account uncreated.
+   The second matching approval commits both owners atomically and produces a
+   signed receipt bound to the authority's hash-linked ledger.
+4. **Sign in and obtain a signing credential.** Each phone independently signs a
+   fresh account- and origin-bound challenge with its hardware root. The authority
+   checks current membership and trust, then verifies the root's authorization of
+   that phone's epoch public key and signs the resulting credential.
+5. **Verify requests online.** The authority checks the credential, signature,
+   intended audience, current ownership/trust, expiry and replay state. A valid
+   signature alone is insufficient if its owner has been removed or the request
+   has expired or already been used.
+
+### What rotates
+
+The hardware root remains stable. The delegated **software** key changes on the
+next use after a fixed four-hour UTC epoch boundary; there is no daily root-key
+replacement or background rotation timer. A credential issued just before a
+boundary has only the remainder of that epoch to live.
+
+The root uses ECDSA P-256 with SHA-256. Delegated signing keys also use P-256 and
+are stored in private app storage, outside StrongBox. This limits their credential
+lifetime; it does not make a compromised running phone trustworthy. The current
+signer does not require a fingerprint, PIN or physical touch for every signature.
+
+### Losing or adding a phone
+
+The implemented `two-owner-survivor-v1` policy keeps at least two owners. A current
+owner and a new phone must both approve the exact membership change. Replacement
+adds the new owner and revokes the lost owner's access in one atomic commit;
+keys are never restored onto another phone.
+
+Any current owner can start that replacement. This makes recovery possible with
+one surviving phone, but a compromised owner can also take over the account. If
+all owners are lost, there is no administrative recovery or password reset.
+
+See the [full pairing and ownership protocol](docs/PAIRING-ACCOUNT-PROTOCOL.md)
+and [cryptographic protocol](PROTOCOL.md) for the wire formats and trust model.
+
+## What works today
+
+The current Android build passed a real two-phone run against an isolated Vapor
+authority: **StrongBox admission, mutual pairing, two-owner account creation, and
+separate sign-ins producing two independently verified epoch credentials**. The
+Pixel and Xiaomi retained their original hardware roots. The first account
+approval created nothing; the second committed exactly one account with two owners.
+See the [hardware evidence](artifacts/phone-v2-hardware/README.md).
+
+That run used native Copy link and manual import. Optical QR scanning, interrupted
+v2 ceremonies and owner replacement still need physical acceptance. The older
+installed workload app separately passed Vapor signing, replay rejection and
+restart checks; the current v2 phone UI does not expose workload submission.
+Standalone owner revocation, arbitrary policy changes, browser-login grants,
+legacy-account upgrade and iOS remain unavailable. This is a development project,
+with no production authority cutover claimed.
+
+## Get the code and build
 
 ```sh
-git clone --recurse-submodules https://github.com/maceip/Swiftkey.git
+git clone https://github.com/maceip/Swiftkey.git
+cd Swiftkey
+bash scripts/androidswiftui.sh doctor
+bash scripts/swiftkey-protocol.sh test
+bash scripts/androidswiftui.sh android-build
 ```
 
-`main` contains the workspace. The `AndroidSwiftUI` submodule preserves the
-upstream history on this repository’s separate `androidswiftui` branch.
+Everything needed from the Android renderer is included as ordinary source in
+`AndroidSwiftUI/`. Use `main`; there are no submodules or extra branch checkouts.
+The doctor command checks the installed Swift/Android toolchain. It does not
+install prerequisites automatically.
 
-The current [design system](SwiftKeyDesign/README.md) uses the supplied
-`design-system-main.zip`: adaptive purple themes, rounded cards, Host Grotesk
-and JetBrains Mono across the webpage and shared device views.
-[Optional autoresearch tooling](tools/DesignResearch/README.md) implements the
-TypeSafe/CatBoost feature-discovery method for labelled text evaluations.
-It is separate from the runtime UI and has not been trained on real UI ratings.
+Follow [phone setup](docs/PHONE-V2-BUILD.md) to enable v2 on a separate authority
+and configure both phones. The [server guide](SwiftKeyServer/README.md) covers
+Vapor configuration and local operation. Existing legacy accounts are preserved;
+enabling v2 is an explicit state-format change, not an automatic account migration.
 
-The [Cupertino integration](AndroidSwiftUI/docs/cupertino/README.md) vendors all
-six Compose Cupertino modules, with a 127-surface Swift catalog and 879 shared
-icons. Controls use real Compose implementations, bindings, named content slots,
-and Decompose navigation. UIKit-only APIs have explicit capability boundaries.
+## Code map
 
-The [pairing-first protocol](docs/PAIRING-ACCOUNT-PROTOCOL.md) now has an opt-in
-v2 implementation: two Android hardware identities pair, approve account genesis
-and become equal owners. Adding or replacing an owner requires both the surviving
-owner and candidate to approve the exact membership proposal.
-
-The authority, durable client, shared UI and Android native host are connected.
-See [setup and verification](docs/PHONE-V2-BUILD.md) and the
-[UI surface contract](docs/PHONE-UI-SURFACES.md). Existing installations retain
-their legacy records; no live deployment or account migration was performed.
-Build the synthetic component catalog with `bash scripts/phone-ui-preview.sh`.
-
-An attested-device identity protocol and shared Swift application. A hardware
-root authorizes four-hour software signing keys; the online authority checks
-membership, attestation policy, signatures and replay state.
-
-The application is split into portable Swift layers:
-
-| Package | Role |
+| Directory | Responsibility |
 | --- | --- |
-| [SwiftKeyCore](SwiftKeyCore/README.md) | Canonical protocol values, cryptography and public DTOs |
-| [SwiftKeyClient](SwiftKeyClient/Sources/SwiftKeyClient/ProtocolClient.swift) | Hardware-backed enrollment, epoch credentials and device operations |
-| [SwiftKeyApplication](SwiftKeyApplication/README.md) | Shared workspace state, typed actions and service contracts |
-| [SwiftKeyUI](SwiftKeyUI/README.md) | Shared identity/public-key components and workspace views |
-| [SwiftKeyServer](SwiftKeyServer/README.md) | Vapor/Swift HTTP authority, SQLite ledger, isolated Swift browser-view sessions and USB operator |
+| [SwiftKeyCore](SwiftKeyCore/README.md) | Canonical records, cryptography and epoch credentials |
+| [SwiftKeyClient](SwiftKeyClient/Sources/SwiftKeyClient/ProtocolClient.swift) | Durable protocol client and hardware-root operations |
+| [SwiftKeyApplication](SwiftKeyApplication/README.md) | Shared state, actions and service adapters |
+| [SwiftKeyUI](SwiftKeyUI/README.md) | Shared account, identity and phone protocol views |
+| [SwiftKeyServer](SwiftKeyServer/README.md) | Vapor authority, SQLite ledger and browser sessions |
+| [AndroidSwiftUI](AndroidSwiftUI/README.md) | Swift-to-Compose renderer, Android host and component catalog |
 
-Android renders the shared identity components through ComposeUI. The website
-evaluates shared Swift views on the server and uses generic JavaScript only for
-DOM rendering, event transport and browser effects. It does not run Swift
-WebAssembly. `WorkspaceView` compiles for Android, but the phone does not yet
-have a native administrative service/session. iOS remains postponed.
+The webpage and devices share Swift views and the same
+[design tokens and fonts](SwiftKeyDesign/README.md). Android uses Compose; the
+website renders server-evaluated Swift view trees through a small browser adapter.
+The [Compose Cupertino integration](AndroidSwiftUI/docs/cupertino/README.md)
+includes all six pinned upstream modules, 127 catalog surfaces and 879 icons.
+Upstream licenses and [source provenance](AndroidSwiftUI/UPSTREAM.md) are retained.
 
-```sh
-scripts/androidswiftui.sh doctor
-scripts/swiftkey-protocol.sh test
-scripts/swiftkey-protocol.sh server
-```
-
-The backend uses Vapor 4. Existing launch commands, JSON routes, authority pins
-and SQLite state remain compatible. See the
-[migration verification](artifacts/vapor-migration/README.md) and the
-[installed Android app acceptance](artifacts/vapor-hardware/README.md).
-
-Open `http://127.0.0.1:18088/` using the private
-`SwiftKeyServer/.state/admin-token`. This is a local operator credential. Create
-an account and export its private enrollment bundle, then provision a fresh
-debug app installation on an authorized USB Android device:
-
-```sh
-ANDROID_SERIAL=DEVICE_SERIAL scripts/swiftkey-protocol.sh configure-android /absolute/private/enrollment.json
-```
-
-The wrapper calls the Swift operator, validates the account/expiry and separate
-authority pin, and refuses existing configuration or protocol state. It never
-silently resets a hardware identity. Refresh the workspace to confirm real
-enrollment and credential issuance; a successful build or process launch is
-insufficient. The bundle is a secret, not an evidence artifact.
-
-[BUILD_STATUS.md](BUILD_STATUS.md) distinguishes current work, host checks and
-historical physical-device proof. [PROTOCOL.md](PROTOCOL.md) describes trust and
-local operation; [buildplan.md](buildplan.md) retains the acceptance contract.
-The shared-UI account action, exported bundle, Swift operator handoff and real
-Pixel StrongBox enrollment/epoch issuance now pass end to end. Current-policy
-verification and app-restart credential reuse also passed. Native admin sessions,
-physical pairing/recovery, wall-clock rollover, attestation renewal and iOS remain
-unfinished; no public deployment or pixel-identical native/web styling is claimed.
+[Build status](BUILD_STATUS.md) separates local tests from hardware proof and
+remaining acceptance work. [Optional design research](tools/DesignResearch/README.md)
+contains the TypeSafe/CatBoost evaluation tooling; it is separate from runtime
+authentication and has not been trained on real UI ratings.

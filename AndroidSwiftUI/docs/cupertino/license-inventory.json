@@ -1,0 +1,15 @@
+{
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "sha256": "f9a85c61ba4fe8bacc300053b3384b5fc7d9f585a08dc7b9a465b7c0716c4f50",
+      "firstLine": "                                 Apache License"
+    }
+  ],
+  "observations": [
+    "Root LICENSE.txt contains Apache License 2.0. Source files retain project Apache-2.0 headers.",
+    "README.md and docs/Overview.md separately describe icons as copyrighted Apple SF Symbols and request reading their license agreement. No separate SF Symbols license text was found in this checkout.",
+    "HazePlatform.skiko.kt retains Christopher Banes/Haze attribution and SPDX-License-Identifier Apache-2.0.",
+    "This inventory records files and upstream statements; it is not a legal opinion."
+  ]
+}

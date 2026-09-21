@@ -1,0 +1,391 @@
+--- a/cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveAlertDialog.kt
++++ b/cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveAlertDialog.kt
+@@ -18,6 +18,7 @@
+ package io.github.alexzhirkevich.cupertino.adaptive
+ 
+ import androidx.compose.foundation.gestures.Orientation
++import androidx.compose.foundation.layout.Column
+ import androidx.compose.material3.AlertDialog
+ import androidx.compose.material3.AlertDialogDefaults
+ import androidx.compose.material3.Button
+@@ -75,30 +76,17 @@
+ 
+             AlertDialog(
+                 onDismissRequest = onDismissRequest,
++                // SwiftKey patch: keep every action in builder order. Material's
++                // two named slots otherwise discarded all but two callbacks.
+                 confirmButton = {
+-                    val btn = scope.buttons
+-                        .fastFirstOrNull { it.style != AlertActionStyle.Cancel }
+-                        ?: return@AlertDialog
+-
+-                    m.confirmButton.invoke(
+-                        btn.style,
+-                        btn.enabled,
+-                        btn.onClick,
+-                        btn.title
+-                    )
++                    Column {
++                        scope.buttons.forEach { button ->
++                            val content = if (button.style == AlertActionStyle.Cancel)
++                                m.dismissButton else m.confirmButton
++                            content(button.style, button.enabled, button.onClick, button.title)
++                        }
++                    }
+                 },
+-                dismissButton = scope.buttons
+-                    .fastFirstOrNull { it.style == AlertActionStyle.Cancel }
+-                    ?.let {
+-                        {
+-                            m.dismissButton.invoke(
+-                                it.style,
+-                                it.enabled,
+-                                it.onClick,
+-                                it.title
+-                            )
+-                        }
+-                    },
+                 shape = m.shape,
+                 title = title,
+                 text = message,
+--- a/cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveAlertDialogNative.kt
++++ b/cupertino-adaptive/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/adaptive/AdaptiveAlertDialogNative.kt
+@@ -18,6 +18,7 @@
+ package io.github.alexzhirkevich.cupertino.adaptive
+ 
+ import androidx.compose.foundation.gestures.Orientation
++import androidx.compose.foundation.layout.Column
+ import androidx.compose.material3.AlertDialog
+ import androidx.compose.material3.AlertDialogDefaults
+ import androidx.compose.material3.Button
+@@ -73,30 +74,17 @@
+ 
+             AlertDialog(
+                 onDismissRequest = onDismissRequest,
++                // SwiftKey patch: keep every action in builder order. Material's
++                // two named slots otherwise discarded all but two callbacks.
+                 confirmButton = {
+-                    val btn = scope.buttons
+-                        .fastFirstOrNull { it.style != AlertActionStyle.Cancel }
+-                        ?: return@AlertDialog
+-
+-                    m.confirmButton.invoke(
+-                        btn.style,
+-                        btn.enabled,
+-                        btn.onClick,
+-                        btn.title
+-                    )
++                    Column {
++                        scope.buttons.forEach { button ->
++                            val content = if (button.style == AlertActionStyle.Cancel)
++                                m.dismissButton else m.confirmButton
++                            content(button.style, button.enabled, button.onClick, button.title)
++                        }
++                    }
+                 },
+-                dismissButton = scope.buttons
+-                    .fastFirstOrNull { it.style == AlertActionStyle.Cancel }
+-                    ?.let {
+-                        {
+-                            m.confirmButton.invoke(
+-                                it.style,
+-                                it.enabled,
+-                                it.onClick,
+-                                it.title
+-                            )
+-                        }
+-                    },
+                 shape = m.shape,
+                 title = m.title.let { { it(title) } },
+                 text = m.text.let { { it(message) } },
+--- a/cupertino/src/androidMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoDialogs.android.kt
++++ b/cupertino/src/androidMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoDialogs.android.kt
+@@ -31,6 +31,8 @@
+     dismissOnClickOutside: Boolean,
+     usePlatformDefaultWidth: Boolean,
+ ) : PopupProperties = PopupProperties(
++    // A modal window must own focus for Back/key events and active-window accessibility.
++    focusable = true,
+     dismissOnBackPress = dismissOnBackPress,
+     dismissOnClickOutside = dismissOnClickOutside,
+     usePlatformDefaultWidth = usePlatformDefaultWidth
+--- a/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoBottomSheet.kt
++++ b/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoBottomSheet.kt
+@@ -220,7 +220,7 @@
+         }
+ 
+         override fun calculate(density: Density, height: Float): Float {
+-            return (density.run { this@Height.height.toPx() } * height).coerceAtMost(height)
++            return density.run { this@Height.height.toPx() }.coerceAtMost(height)
+         }
+ 
+         override fun toString(): String {
+--- a/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoDatePicker.kt
++++ b/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoDatePicker.kt
+@@ -243,17 +243,22 @@
+      * range this state was created with.
+      */
+     fun setSelection(@Suppress("AutoBoxing") dateMillis: Long) {
+-        if (isManual) {
+-            mSelectedDateMillis = dateMillis
+-        } else {
+-            stateData.setSelection(startDateMillis = dateMillis, endDateMillis = null)
+-        }
++        stateData.setSelection(startDateMillis = dateMillis, endDateMillis = null)
++        if (isManual) mSelectedDateMillis = stateData.calendarModel.getCanonicalDate(dateMillis).utcTimeMillis
+ 
+         stateData.displayedMonth = stateData.calendarModel.getMonth(dateMillis)
+     }
+ 
++    private var _isManual by mutableStateOf(false)
+     @InternalCupertinoApi
+-    var isManual by mutableStateOf(false)
++    var isManual: Boolean
++        get() = _isManual
++        set(value) {
++            if (value == _isManual) return
++            if (value) mSelectedDateMillis = selectedDateMillis
++            else stateData.setSelection(mSelectedDateMillis, null)
++            _isManual = value
++        }
+ 
+     private var mSelectedDateMillis: Long by mutableStateOf(0)
+ 
+@@ -1195,7 +1200,7 @@
+             month = selectedMonthIndex + 1
+         )
+ 
+-        val dayIndex = dayState.selectedItemIndex % 31
++        val dayIndex = dayState.selectedItemIndex.modSign(31)
+ 
+         val day = (dayIndex + 1).coerceIn(1, months.numberOfDays)
+ 
+@@ -1339,6 +1344,9 @@
+             }
+         }
+         selectedEndDate.value = endDate
++        yearState.requestScrollToItem(startDate.year - yearRange.first)
++        monthState.requestScrollToItem(startDate.month - 1)
++        dayState.requestScrollToItem(startDate.dayOfMonth - 1)
+     }
+ 
+     companion object {
+--- a/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoDateTimePicker.kt
++++ b/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoDateTimePicker.kt
+@@ -449,7 +449,7 @@
+ 
+     val selectedHour : Int by derivedStateOf(structuralEqualityPolicy()) {
+         if (!is24Hour && isEvening)
+-            12 + hourState.selectedItemIndex else hourState.selectedItemIndex
++            12 + hourState.selectedItemIndex.modSign(12) else hourState.selectedItemIndex.modSign(if (is24Hour) 24 else 12)
+     }
+ 
+     private val isEvening get() =
+@@ -484,7 +484,7 @@
+     }
+ 
+     internal val amPmState by lazy {
+-        CupertinoPickerState()
++        CupertinoPickerState(initiallySelectedItemIndex = if (initialDisplayedHour >= 12) 1 else 0)
+     }
+ 
+     /**
+@@ -688,7 +688,7 @@
+     val selectedMinute: Int by derivedStateOf(structuralEqualityPolicy()) {
+         if (isManual) {
+             val start = stateData.calendarModel.getCanonicalDate(mSelectedDateTimeMillis)
+-            ((mSelectedDateTimeMillis - start.utcTimeMillis) % 60).toInt()
++            (((mSelectedDateTimeMillis - start.utcTimeMillis) / 60_000L) % 60L).toInt()
+         } else {
+             stateData.selectedMinute.modSign(Minutes.size)
+         }
+@@ -697,16 +697,41 @@
+     val selectedHour: Int by derivedStateOf(structuralEqualityPolicy()) {
+         if (isManual) {
+             val start = stateData.calendarModel.getCanonicalDate(mSelectedDateTimeMillis)
+-            ((mSelectedDateTimeMillis - start.utcTimeMillis) / 60).toInt()
++            ((mSelectedDateTimeMillis - start.utcTimeMillis) / 3_600_000L).toInt()
+         } else {
+-            stateData.selectedHour.modSign(if (stateData.is24Hour) Hours24.size else Hours12.size)
++            stateData.selectedHour.modSign(Hours24.size)
+         }
+     }
+ 
+     private var mSelectedDateTimeMillis: Long by mutableStateOf(stateData.initialSelectedStartDateMillis)
+ 
++    private var _isManual by mutableStateOf(false)
++
+     @InternalCupertinoApi
+-    var isManual: Boolean by mutableStateOf(false)
++    var isManual: Boolean
++        get() = _isManual
++        set(value) {
++            if (value == _isManual) return
++            if (value) {
++                // Preserve the currently selected date AND time on entering a native picker.
++                mSelectedDateTimeMillis = selectedDateTimeMillis
++            } else {
++                synchronizeWheels(mSelectedDateTimeMillis)
++            }
++            _isManual = value
++        }
++
++    private fun synchronizeWheels(dateMillis: Long) {
++        val date = stateData.calendarModel.getCanonicalDate(dateMillis)
++        stateData.setSelection(startDateMillis = dateMillis, endDateMillis = null)
++        val first = stateData.calendarModel.getDate(stateData.yearRange.first, 1, 1).utcTimeMillis
++        val hour = ((dateMillis - date.utcTimeMillis) / 3_600_000L).toInt()
++        val minute = (((dateMillis - date.utcTimeMillis) / 60_000L) % 60L).toInt()
++        stateData.dateState.requestScrollToItem(((date.utcTimeMillis - first) / MillisecondsIn24Hours).toInt())
++        stateData.hourState.requestScrollToItem(if (stateData.is24Hour) hour else hour % 12)
++        stateData.minuteState.requestScrollToItem(minute)
++        stateData.amPmState.requestScrollToItem(if (hour >= 12) 1 else 0)
++    }
+ 
+     /**
+      * Sets the selected date.
+@@ -718,10 +743,12 @@
+      * range this state was created with.
+      */
+     fun setSelection(@Suppress("AutoBoxing") dateMillis: Long) {
++        // Manual/native input must obey the same range validation as wheel input.
++        stateData.setSelection(startDateMillis = dateMillis, endDateMillis = null)
+         if (isManual) {
+             mSelectedDateTimeMillis = dateMillis
+         } else {
+-            stateData.setSelection(startDateMillis = dateMillis, endDateMillis = null)
++            synchronizeWheels(dateMillis)
+         }
+     }
+ 
+--- a/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoPicker.kt
++++ b/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoPicker.kt
+@@ -123,7 +123,7 @@
+     val selectedItemIndex : Int by derivedStateOf {
+         (if (infinite) {
+             selectedItem?.index?.minus(INFINITE_OFFSET)
+-        } else selectedItem?.index) ?: initiallySelectedItemIndex
++        } else selectedItem?.index) ?: (lazyListState.firstVisibleItemIndex - if (infinite) INFINITE_OFFSET else 0)
+     }
+ 
+     /**
+@@ -206,11 +206,17 @@
+         lazyListState.scrollToItem(if (infinite) INFINITE_OFFSET + index else index)
+     }
+ 
++    // SwiftKey: synchronize native/manual input without a coroutine that could
++    // remain suspended after the picker leaves composition.
++    internal fun requestScrollToItem(index: Int) {
++        lazyListState.requestScrollToItem(if (infinite) INFINITE_OFFSET + index else index)
++    }
++
+     /**
+      * Animate (smooth scroll) to the item with given [index].
+      */
+     suspend fun animateScrollToItem(index: Int) =
+-        lazyListState.animateScrollToItem(index)
++        lazyListState.animateScrollToItem(if (infinite) INFINITE_OFFSET + index else index)
+ 
+     companion object {
+         fun Saver(): Saver<CupertinoPickerState, *> = Saver(
+@@ -346,7 +352,14 @@
+                     count = if (state.infinite)
+                         Int.MAX_VALUE
+                     else items.size,
+-                    key = key?.run { { invoke(items[index(it)]) } }
++                    key = key?.run { {
++                        val logical = index(it)
++                        val identity = invoke(items[logical])
++                        // The same logical item is visible in multiple cycles of a
++                        // short infinite wheel. A key must identify the cycle too.
++                        if (state.infinite) identity to ((it - INFINITE_OFFSET - logical) / items.size)
++                        else identity
++                    } }
+                 ) { index ->
+                     Box(
+                         modifier = Modifier
+@@ -366,7 +379,7 @@
+                             .pointerInput(0) {
+                                 detectTapGestures {
+                                     scope.launch {
+-                                        state.animateScrollToItem(index)
++                                        state.animateScrollToItem(if (state.infinite) index - INFINITE_OFFSET else index)
+                                     }
+                                 }
+                             },
+@@ -510,4 +523,4 @@
+ 
+ internal val PickerMaxWidth = 500.dp
+ private val MinItemHeight = 32.dp
+-private const val INFINITE_OFFSET = Int.MAX_VALUE/2+private const val INFINITE_OFFSET = Int.MAX_VALUE/2
+--- a/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoSwipeBox.kt
++++ b/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoSwipeBox.kt
+@@ -148,7 +148,11 @@
+ class SharedSwipeBoxController {
+ 
+     @OptIn(ExperimentalCupertinoApi::class)
+-    internal val expanded: MutableSharedFlow<CupertinoSwipeBoxState> = MutableSharedFlow()
++    // A synchronous collapse command must be deliverable while collectors are active.
++    // With an unbuffered SharedFlow, tryEmit silently drops every such command.
++    internal val expanded: MutableSharedFlow<CupertinoSwipeBoxState> = MutableSharedFlow(
++        extraBufferCapacity = 1, onBufferOverflow = kotlinx.coroutines.channels.BufferOverflow.DROP_OLDEST
++    )
+ 
+     /**
+      * Collapse the expanded state managed by this controller if any
+@@ -212,7 +216,11 @@
+                 sharedController.expanded
+                     .filter { it !== state }
+                     .collectLatest {
+-                        state.animateTo(CupertinoSwipeBoxValue.Collapsed)
++                        // SwiftKey patch: shared-controller commands obey the same
++                        // synchronous veto as gestures and foreground restore.
++                        if (state.confirmValueChange(CupertinoSwipeBoxValue.Collapsed)) {
++                            state.animateTo(CupertinoSwipeBoxValue.Collapsed)
++                        }
+                     }
+             }
+             launch {
+@@ -708,6 +716,15 @@
+      */
+     val targetValue: CupertinoSwipeBoxValue get() = anchoredDraggableState.targetValue
+ 
++    /** Whether layout has supplied a usable destination for a programmatic command.
++     * Expanded/dismissed anchors start at zero before action content is measured.
++     * Waiting for a nonzero destination prevents that provisional layout from
++     * immediately resetting an accepted command to Collapsed. */
++    fun hasMeasuredAnchor(value: CupertinoSwipeBoxValue): Boolean {
++        val offset = anchoredDraggableState.anchors.positionOf(value)
++        return offset.isFinite() && (value == CupertinoSwipeBoxValue.Collapsed || offset != 0f)
++    }
++
+     /**
+      * The fraction of the progress going from currentValue to targetValue, within [0f..1f] bounds.
+      */
+--- a/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoTimePicker.kt
++++ b/cupertino/src/commonMain/kotlin/io/github/alexzhirkevich/cupertino/CupertinoTimePicker.kt
+@@ -360,7 +360,7 @@
+         initiallySelectedItemIndex = initialMinute
+     )
+ 
+-    internal val amPmState = CupertinoPickerState()
++    internal val amPmState = CupertinoPickerState(initiallySelectedItemIndex = if (initialHour >= 12) 1 else 0)
+ 
+     @InternalCupertinoApi
+     var manualHour : Int by mutableStateOf(initialHour)
+@@ -376,12 +376,13 @@
+         set(value) {
+             if (_isManual != value) {
+                 if (value) {
+-                    manualHour = hourState.currentSelectedItem(hoursList.size)
++                    manualHour = hour
+                     manualMinute = minuteState.currentSelectedItem(60)
+                 } else {
+                     CoroutineScope(Dispatchers.Unconfined).launch {
+-                        hourState.scrollToItem(manualHour)
++                        hourState.scrollToItem(if (is24Hour) manualHour else manualHour % 12)
+                         minuteState.scrollToItem(manualMinute)
++                        amPmState.scrollToItem(if (manualHour >= 12) 1 else 0)
+                     }
+                 }
+                 _isManual = value

@@ -91,13 +91,23 @@ Cryptographic integration tests exercise real signing and the actual client,
 application adapter and authority, with explicitly test-only software roots and
 an injected attestation verifier. They do not establish physical StrongBox proof.
 
-No Android devices were attached during the v2 build. Phones are now connected,
-and the older installed Xiaomi app passed the separate
-[Vapor hardware check](../artifacts/vapor-hardware/README.md). The v2 APK has not
-been installed or exercised on two phones. Camera permission, physical layout,
-StrongBox admission, app/process restart, response loss, replacement and
-independent sign-in still require that physical acceptance run. No live account
-was created, migrated or revoked.
+Final APK `2a1a736512343cdf617bed94af2711d83f54f3035f5bcff3ce6559524a514667`
+was installed on Pixel and Xiaomi with all four existing legacy/v2 files preserved
+before launch. Against an isolated Vapor authority on port 18191, both phones
+completed StrongBox admission, mutual pairing, joint account genesis and independent
+sign-in/epoch issuance. The first genesis approval left zero accounts; the second
+committed one account with two owners. Independent checks verified ledger links,
+signed heads, root/authority credential signatures and delegation bindings. See
+[hardware acceptance](../artifacts/phone-v2-hardware/README.md) and
+[current build/UI evidence](../artifacts/cupertino/README.md).
+
+This run used native Copy link and manual import. Optical camera scanning, v2
+workload submission, process restart/response-loss recovery and replacement remain
+outside that completed hardware scope. Selected control/layout checks do not
+establish all 127 catalog surfaces on hardware. The existing legacy authority and
+accounts remained separate; no existing account was migrated or revoked. The
+older installed Xiaomi app's workload/replay proof remains a separate
+[Vapor hardware check](../artifacts/vapor-hardware/README.md).
 
 Standalone revocation, arbitrary policy changes, browser-login grants, fresh
 attestation/root rotation, legacy account upgrade and iOS remain unavailable.

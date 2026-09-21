@@ -1,0 +1,37 @@
+[versions]
+agp = "8.6.1"
+kotlin = "2.0.20"
+compose = "1.7.0"
+androidx-appcompat = "1.7.0"
+activity-compose = "1.9.2"
+datetime = "0.6.0"
+material-kolor = "1.4.4"
+decompose = "3.1.0"
+essenty = "2.1.0"
+serialization="1.6.3"
+atomicfu="0.23.2"
+#maven-publish="0.25.3"li
+
+[libraries]
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "datetime" }
+material-kolor = { module = "com.materialkolor:material-kolor", version.ref = "material-kolor" }
+decompose-core = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
+decompose-compose = { module = "com.arkivanov.decompose:extensions-compose", version.ref = "decompose" }
+essenty = { module = "com.arkivanov.essenty:lifecycle", version.ref = "essenty" }
+serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+atomicfuPlugin= { module = "org.jetbrains.kotlinx:atomicfu-gradle-plugin", version.ref = "atomicfu" }
+atomicfu= { module = "org.jetbrains.kotlinx:atomicfu", version.ref = "atomicfu" }
+
+[plugins]
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+cocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
+composeJB = { id = "org.jetbrains.compose", version.ref = "compose" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+#maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }

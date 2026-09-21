@@ -1,4 +1,0 @@
-[submodule "AndroidSwiftUI"]
-	path = AndroidSwiftUI
-	url = https://github.com/maceip/Swiftkey.git
-	branch = androidswiftui

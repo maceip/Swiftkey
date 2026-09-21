@@ -59,9 +59,11 @@ Copy link/manual import; optical scanning and v2 workload submission are not
 claimed. The existing legacy authority and accounts were separate from this run;
 earlier Vapor acceptance is below.
 
-The workspace is published at `maceip/Swiftkey`: `main` pins the AndroidSwiftUI
-history on `androidswiftui` through a recursive submodule. No live authority
-cutover or existing-account migration was performed.
+The workspace is published at `maceip/Swiftkey`. `main` contains AndroidSwiftUI
+as an ordinary source directory, so one clone includes the application, renderer
+and vendored Cupertino sources. The `androidswiftui` branch retains the earlier
+upstream/integration history for reference; it is not needed to build the workspace.
+No live authority cutover or existing-account migration was performed.
 
 
 ## Supplied component-system update (2026-09-20)
@@ -321,8 +323,8 @@ The scripts select the matching compiler through its absolute path and
 compiler override; SwiftPM's reserved `SWIFT_EXEC` is not repurposed.
 The original `AndroidSwiftUI/` checkout started at
 `e12fb09a906921506a84287f53117ccbf4357102`. Its history is preserved on the
-public repository’s `androidswiftui` branch; the parent is now the `main` workspace
-repository. `fullplan.md` is preserved.
+public repository’s historical `androidswiftui` branch. The integrated sources
+now live directly under `AndroidSwiftUI/` on `main`. `fullplan.md` is preserved.
 
 ## Evidence and historical results
 
