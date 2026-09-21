@@ -49,7 +49,7 @@ internal fun RenderCupertinoNavigation(node: ViewNode): Boolean {
             val entries = cupertinoArray(node, "entries")?.mapNotNull { it as? JsonObject } ?: emptyList()
             val ids = entries.mapNotNull { it["id"]?.jsonPrimitive?.contentOrNull }
             if (ids.isEmpty() || ids.size != entries.size || ids.distinct().size != ids.size || ids.any { '/' in it }) {
-                CupertinoText("$name requires nonempty entries with unique IDs without '/'.")
+                CupertinoText("Navigation is unavailable.")
                 return true
             }
             val holder = remember(node.id) { CupertinoNavigationState(ids) }

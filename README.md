@@ -89,7 +89,5 @@ authority state-format change; existing legacy accounts are not migrated automat
 | [AndroidSwiftUI](AndroidSwiftUI/README.md) | Compose renderer and Android host |
 
 Web and native views share [design tokens](SwiftKeyDesign/README.md).
-The [Cupertino integration](AndroidSwiftUI/docs/cupertino/README.md) includes six
-upstream modules, 127 surfaces and 879 icons; [provenance](AndroidSwiftUI/UPSTREAM.md)
-is retained. [Optional design research](tools/DesignResearch/README.md) is separate
+[Optional design research](tools/DesignResearch/README.md) is separate
 from authentication and has not been trained on real UI ratings.

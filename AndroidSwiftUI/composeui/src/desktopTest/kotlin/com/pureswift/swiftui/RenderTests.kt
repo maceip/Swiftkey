@@ -208,7 +208,7 @@ class RenderTests {
         compose.setContent {
             Render(node("""{"type":"Mystery","id":"root"}"""))
         }
-        compose.onNodeWithText("⟨unknown node: Mystery⟩").assertIsDisplayed()
+        compose.onNodeWithText("This content is unavailable.").assertIsDisplayed()
     }
 
     @Test

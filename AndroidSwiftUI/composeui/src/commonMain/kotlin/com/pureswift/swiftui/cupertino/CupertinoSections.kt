@@ -81,12 +81,12 @@ internal fun RenderCupertinoSections(node: ViewNode): Boolean {
             title = { sectionTitle(node) })
         else -> {
             if (name?.startsWith("LazySectionScope.") == true) {
-                CupertinoText("$name requires LazyListScope.section content inside CupertinoLazyColumn.")
+                CupertinoText("This section is unavailable.")
                 return true
             }
             if (name?.startsWith("SectionScope.") != true) return false
             val scope = LocalCupertinoSectionScope.current
-            if (scope == null) CupertinoText("$name requires CupertinoSection content.") else with(scope) { SectionRow(node) }
+            if (scope == null) CupertinoText("This row is unavailable.") else with(scope) { SectionRow(node) }
         }
     }
     return true
@@ -154,7 +154,7 @@ private fun SectionScope.SectionRow(node: ViewNode) {
                 }
             })
         }
-        else -> CupertinoText("Unknown section row: ${node.string("name")}")
+        else -> CupertinoText("This row is unavailable.")
     }
 }
 

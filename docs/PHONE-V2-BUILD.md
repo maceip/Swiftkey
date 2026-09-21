@@ -98,13 +98,12 @@ completed StrongBox admission, mutual pairing, joint account genesis and indepen
 sign-in/epoch issuance. The first genesis approval left zero accounts; the second
 committed one account with two owners. Independent checks verified ledger links,
 signed heads, root/authority credential signatures and delegation bindings. See
-[hardware acceptance](../artifacts/phone-v2-hardware/README.md) and
-[current build/UI evidence](../artifacts/cupertino/README.md).
+[hardware acceptance and app screenshots](../artifacts/phone-v2-hardware/README.md).
 
 This run used native Copy link and manual import. Optical camera scanning, v2
 workload submission, process restart/response-loss recovery and replacement remain
 outside that completed hardware scope. Selected control/layout checks do not
-establish all 127 catalog surfaces on hardware. The existing legacy authority and
+establish every product state on hardware. The existing legacy authority and
 accounts remained separate; no existing account was migrated or revoked. The
 older installed Xiaomi app's workload/replay proof remains a separate
 [Vapor hardware check](../artifacts/vapor-hardware/README.md).

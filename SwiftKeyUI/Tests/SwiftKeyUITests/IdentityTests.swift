@@ -17,9 +17,24 @@ import SwiftUICore
     #expect(texts.contains("SwiftKey"))
     #expect(texts.contains(formatted))
     #expect(texts.contains("Your hardware identity"))
+    assertProductPresentation(tree)
 }
 
 func allNodes(_ node: RenderNode) -> [RenderNode] { [node] + node.children.flatMap(allNodes) }
+
+/// Check rendered product copy, not third-party API/type names in the renderer.
+func assertProductPresentation(_ tree: RenderNode) {
+    let visibleProperties: Set<String> = ["text", "title", "label", "placeholder", "contentDescription", "accessibilityLabel"]
+    let forbidden = ["cupertino", "cupertio", "showcase", "component catalog"]
+    for node in allNodes(tree) {
+        let values = node.props.filter { visibleProperties.contains($0.key) }.map(\.value)
+            + node.modifiers.filter { $0.kind == "accessibilityLabel" }.flatMap { $0.args.values }
+        for value in values {
+            guard case .string(let text) = value else { continue }
+            #expect(!forbidden.contains { text.lowercased().contains($0) }, "Developer gallery copy in product UI: \(text)")
+        }
+    }
+}
 
 @Test @MainActor func primaryActionsRemainReadableInBothAppearances() throws {
     let tree = ViewHost(SwiftKeyActionLabel(title: "Approve this exact proposal")).evaluate()

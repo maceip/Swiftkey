@@ -164,6 +164,6 @@ class CupertinoBasicTests {
     @Test fun unknownIconsProduceNamedDiagnostic() {
         val tree = node("""{"type":"Composable","id":"unknown","props":{"name":"CupertinoIcon","imageVector":"CupertinoIcons.Filled.Missing"}}""")
         compose.setContent { Render(tree) }
-        compose.onNodeWithText("Unknown Cupertino icon: CupertinoIcons.Filled.Missing").assertIsDisplayed()
+        compose.onNodeWithText("Icon unavailable.").assertIsDisplayed()
     }
 }

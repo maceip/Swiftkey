@@ -52,11 +52,13 @@ Repository configuration:
 - Actions variable: `ANDROID_SIGNING_CERT_SHA256`, the expected public signing
   certificate fingerprint. The restored keystore and final APK must both match.
 
-The build checks Swift application/core tests, Android popup tests, full Cupertino
+The build checks Swift application, product UI and core tests, Android popup tests, full Cupertino
 vendor hashes, and release-publisher regressions. Packaging independently reads
 the APK manifest, verifies its Android signature and version, requires ARM64 Swift
 runtime libraries, and rejects bundled test runtimes. `build.json` records the
 commit, run, version, variant, ABI, APK SHA-256, and public certificate fingerprint.
+The packaged manifest must expose only the SwiftKey launcher; development preview
+activities and extra exported activities fail release verification.
 
 The release job receives no private signing keystore. It verifies the packaged
 checksums, creates a draft, attaches all three assets, then publishes it. A failed

@@ -1,4 +1,10 @@
-# Android Cupertino hardware evidence
+# Historical Android renderer evidence
+
+These captures preserve earlier component-showcase and renderer checks. They are
+not current SwiftKey product screenshots; the build labels and results below
+refer to those historical checkpoints. Original capture bytes remain unchanged.
+For actual pairing and account use, see the
+[SwiftKey protocol evidence](../../phone-v2-hardware/README.md).
 
 These files record selected physical-device UI checks on September 21, 2026.
 They do not establish all-surface coverage. Final two-phone pairing and joint

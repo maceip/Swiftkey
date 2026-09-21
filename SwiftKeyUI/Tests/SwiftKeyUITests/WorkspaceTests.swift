@@ -6,6 +6,18 @@ import SwiftKeyApplication
 @testable import SwiftKeyUI
 
 @Suite @MainActor struct WorkspaceTests {
+    @Test func everyWorkspaceSectionAndStatusUsesProductPresentation() throws {
+        let fixture = try Fixture()
+        for phase in [WorkspacePhase.idle, .loading, .ready, .stale, .failed] {
+            let snapshot = WorkspaceSnapshot(phase: phase, workspace: fixture.snapshot().workspace,
+                error: phase == .failed ? WorkspaceFailure(code: "unavailable", message: "Reconnect to the authority.") : nil)
+            for section in ["accounts", "devices", "epochs", "ledger", "authority"] {
+                let harness = Harness(snapshot: snapshot)
+                harness.drafts.selectedSection = section
+                assertProductPresentation(harness.host().evaluate())
+            }
+        }
+    }
     @Test func pairingCutoverRemovesLegacyCreationControls() throws {
         for allowed in [nil, true, false] as [Bool?] {
             let fixture = try Fixture(legacyProvisioningAllowed: allowed)

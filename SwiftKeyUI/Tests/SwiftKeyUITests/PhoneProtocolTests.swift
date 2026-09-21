@@ -24,6 +24,7 @@ private func viewSnapshot(_ phase: PhoneProtocolPhase) -> PhoneProtocolSnapshot 
         for phase in PhoneProtocolPhase.allCases {
             let harness = PhoneHarness(viewSnapshot(phase))
             let tree = harness.host().evaluate()
+            assertProductPresentation(tree)
             #expect(Set(allNodes(tree).map(\.type)).isSubset(of: allowed))
             #expect(harness.actions.isEmpty && harness.effects.isEmpty)
             #expect(allNodes(tree).contains { phoneSemanticID($0) == "phone.protocol.\(phase.rawValue)" })

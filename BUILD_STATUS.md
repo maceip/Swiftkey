@@ -1,5 +1,16 @@
 # SwiftKey build status — 2026-09-21
 
+## Current product UI correction
+
+The Android product no longer exposes a component gallery, and its debug APK
+exports only the SwiftKey launcher. The narrowed product build and three emulator
+navigation tests passed, including attempted gallery deep links. All 28 shared UI
+tests passed; rendered phone phases and workspace sections reject developer
+showcase copy. Public README images show only actual SwiftKey pairing and account
+use. See [current product UI verification](artifacts/product-ui/README.md).
+Renderer galleries below are historical development evidence; their original
+captures and recorded results remain unchanged.
+
 ## Full Compose Cupertino integration (2026-09-20)
 
 The complete pinned upstream source (1,911 files, six modules) is vendored in

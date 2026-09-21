@@ -474,7 +474,7 @@ private fun RenderResolved(node: ViewNode) {
             "Composable" -> ComposableRegistry.Render(node)
 
             else -> Text(
-                text = "⟨unknown node: ${node.type}⟩",
+                text = "This content is unavailable.",
                 color = Color.Red,
                 modifier = node.composeModifiers(),
             )

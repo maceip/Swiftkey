@@ -59,12 +59,13 @@ jobs:
         run: |
           python3 AndroidSwiftUI/scripts/verify-cupertino-vendor.py
           python3 -m unittest discover -s scripts/ci -p 'test_*.py' -v
-      - name: Test shared application and Swift UI core
+      - name: Test shared application and product UI
         run: |
           "$SWIFTKEY_SWIFT" test --package-path SwiftKeyApplication --disable-sandbox
+          "$SWIFTKEY_SWIFT" test --package-path SwiftKeyUI --disable-sandbox
           "$SWIFTKEY_SWIFT" test --package-path AndroidSwiftUI/SwiftUICore --disable-sandbox --no-parallel
       - name: Free completed host-test build products
-        run: rm -rf SwiftKeyApplication/.build AndroidSwiftUI/SwiftUICore/.build
+        run: rm -rf SwiftKeyApplication/.build SwiftKeyUI/.build AndroidSwiftUI/SwiftUICore/.build
       - name: Test native Android popup properties
         working-directory: AndroidSwiftUI
         run: ./gradlew :cupertino:testDebugUnitTest --stacktrace

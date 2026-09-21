@@ -258,7 +258,7 @@ internal fun RenderCupertinoBasic(node: ViewNode): Boolean {
                     }
                 }
             } else null
-            if (resource != null && painter == null) CupertinoText("Unknown Cupertino image resource: $resource", color = Color.Red, modifier = node.composeModifiers())
+            if (resource != null && painter == null) CupertinoText("Image unavailable.", color = Color.Red, modifier = node.composeModifiers())
             else if (painter != null) {
                 if (name == "CupertinoLinkIcon") {
                     val container = cupertinoColor(node, "containerColor") ?: io.github.alexzhirkevich.cupertino.section.CupertinoLabelIconDefaults.ContainerColor
@@ -269,7 +269,7 @@ internal fun RenderCupertinoBasic(node: ViewNode): Boolean {
                 } else if (bitmap != null) CupertinoIcon(bitmap, node.string("contentDescription"), node.composeModifiers(), tint)
                 else CupertinoIcon(painter, node.string("contentDescription"), node.composeModifiers(), tint)
             }
-            else if (vector == null) CupertinoText("Unknown Cupertino icon: ${iconName ?: "<missing>"}", color = Color.Red, modifier = node.composeModifiers())
+            else if (vector == null) CupertinoText("Icon unavailable.", color = Color.Red, modifier = node.composeModifiers())
             else if (name == "CupertinoLinkIcon") io.github.alexzhirkevich.cupertino.section.CupertinoLinkIcon(
                 imageVector = vector, contentDescription = node.string("contentDescription"), modifier = node.composeModifiers(),
                 containerColor = cupertinoColor(node, "containerColor") ?: io.github.alexzhirkevich.cupertino.section.CupertinoLabelIconDefaults.ContainerColor,
@@ -363,7 +363,7 @@ internal fun RenderCupertinoBasic(node: ViewNode): Boolean {
         "CupertinoSlider", "CupertinoRangeSlider", "AdaptiveSlider", "AdaptiveRangeSlider" -> RenderCupertinoSlider(node)
         "CupertinoSliderDefaults.Thumb", "CupertinoSliderDefaults.Track" -> {
             val context = LocalCupertinoSlider.current
-            if (context == null) CupertinoText("$name requires a slider thumb/track slot", color = Color.Red)
+            if (context == null) CupertinoText("This slider is unavailable.", color = Color.Red)
             else if (name.endsWith("Thumb")) CupertinoSliderDefaults.Thumb(context.interaction, node.composeModifiers(), context.colors,
                 context.enabled && cupertinoEnabled(node), DpSize((node.double("thumbWidth") ?: 28.0).toFloat().dp, (node.double("thumbHeight") ?: 28.0).toFloat().dp))
             else CupertinoSliderDefaults.Track(context.positions, node.composeModifiers(), context.colors, context.enabled && cupertinoEnabled(node))

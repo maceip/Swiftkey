@@ -77,6 +77,16 @@ let package = Package(
                 .product(name: "SwiftKeyUI", package: "SwiftKeyUI"),
                 .product(name: "SwiftKeyApplication", package: "SwiftKeyApplication")
             ],
+            // This is the installed SwiftKey product, including its debug APK.
+            // The source directory is shared with developer playgrounds; only
+            // product entry, identity, and pairing code belongs in this target.
+            sources: [
+                "App.swift",
+                "HardwareKeyView.swift",
+                "AndroidProtocolBridge.swift",
+                "AndroidPhoneProtocolBridge.swift",
+                "AndroidPhoneProtocolView.swift"
+            ],
             swiftSettings: [
               .swiftLanguageMode(.v5),
               .unsafeFlags(["-I\(javaIncludePath)", "-I\(javaPlatformIncludePath)"])

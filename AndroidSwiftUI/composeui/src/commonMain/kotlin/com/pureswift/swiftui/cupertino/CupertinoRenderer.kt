@@ -29,7 +29,7 @@ internal fun RenderCupertino(node: ViewNode): Boolean {
             RenderCupertinoPresentation(node) || RenderCupertinoSections(node) ||
             RenderCupertinoNavigation(node)
         if (!handled && name in setOf("CupertinoColorPickerNative", "CupertinoPickerNative", "UIKitChildren", "CupertinoIcons.named")) {
-            CupertinoText("$name requires iOS; this target has no UIKit implementation.")
+            CupertinoText("This control is unavailable on this device.")
             handled = true
         }
     }

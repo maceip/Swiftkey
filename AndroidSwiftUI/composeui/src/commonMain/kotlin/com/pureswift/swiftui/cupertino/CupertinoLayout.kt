@@ -126,7 +126,7 @@ internal fun RenderCupertinoLayout(node: ViewNode): Boolean {
         }
         "RowScope.CupertinoNavigationBarItem", "CupertinoNavigationBarItem", "RowScope.AdaptiveNavigationBarItem", "AdaptiveNavigationBarItem" -> {
             val scope = LocalCupertinoRowScope.current
-            if (scope == null) CupertinoText("$name requires a navigation bar RowScope", color = Color.Red)
+            if (scope == null) CupertinoText("This navigation control is unavailable.", color = Color.Red)
             else with(scope) {
                 val enabled = cupertinoEnabled(node)
                 val click = props.voidAction("onClick")
@@ -176,7 +176,7 @@ internal fun RenderCupertinoLayout(node: ViewNode): Boolean {
         }
         "CupertinoSegmentedControlIndicator" -> {
             val context = LocalCupertinoSegment.current
-            if (context == null) CupertinoText("CupertinoSegmentedControlIndicator requires an indicator slot", color = Color.Red)
+            if (context == null) CupertinoText("This selection indicator is unavailable.", color = Color.Red)
             else if (context.positions.isNotEmpty()) CupertinoSegmentedControlIndicator(
                 (props.int("selectedTabIndex") ?: context.selected).coerceIn(context.positions.indices), context.positions,
                 node.composeModifiers(), cupertinoShape(node, default = CupertinoTheme.shapes.small),
@@ -202,12 +202,12 @@ internal fun RenderCupertinoLayout(node: ViewNode): Boolean {
         "TabRowDefaults.Modifier.tabIndicatorOffset" -> {
             val context = LocalCupertinoSegment.current
             val position = context?.positions?.getOrNull(props.int("selectedTabIndex") ?: context.selected)
-            if (position == null) CupertinoText("tabIndicatorOffset requires a segmented-control indicator slot", color = Color.Red)
+            if (position == null) CupertinoText("This selection indicator is unavailable.", color = Color.Red)
             else with(TabRowDefaults) { Box(node.composeModifiers().tabIndicatorOffset(position)) { cupertinoSlot(node, "content") } }
         }
         "Modifier.cupertinoPickerIndicator" -> {
             val state = LocalCupertinoPickerState.current
-            if (state == null) CupertinoText("cupertinoPickerIndicator requires the measured picker state scope", color = Color.Red)
+            if (state == null) CupertinoText("This selection indicator is unavailable.", color = Color.Red)
             else {
                 val indicatorNode = node.copy(props = JsonObject(node.props + buildMap {
                     node.props["shape"]?.let { put("indicatorShape", it) }

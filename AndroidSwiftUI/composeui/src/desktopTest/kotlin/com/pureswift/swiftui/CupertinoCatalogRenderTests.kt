@@ -85,7 +85,7 @@ class CupertinoCatalogRenderTests(private val fixture: File, private val dark: B
             }
             val text = compose.onAllNodes(SemanticsMatcher.keyIsDefined(SemanticsProperties.Text), useUnmergedTree = true)
                 .fetchSemanticsNodes().flatMap { it.config[SemanticsProperties.Text] }.map { it.text }
-            val diagnostics = text.filter { it.contains("unregistered composable:") || it.startsWith("Unknown Cupertino icon:") ||
+            val diagnostics = text.filter { it.endsWith("unavailable.") ||
                 (it.contains(" requires ") && !it.contains("requires iOS")) }
             if (fixture.name.startsWith("LazySectionScope.items-")) {
                 assertTrue(requestedRows.isNotEmpty(), "The fixture must request visible rows from its provider")

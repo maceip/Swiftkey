@@ -12,6 +12,7 @@ import re
 import shutil
 import subprocess
 import zipfile
+import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[2]
 PACKAGE = "com.pureswift.swiftandroidui"
@@ -83,6 +84,25 @@ def digest(path: Path) -> str:
         return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
+def verify_product_manifest(xml: str) -> None:
+    """Debug dependencies must not add exported preview/gallery entry points."""
+    manifest = ET.fromstring(xml)
+    application = manifest.find("application")
+    if application is None:
+        raise ValueError("APK has no application manifest")
+    android = "{http://schemas.android.com/apk/res/android}"
+    exported = []
+    for activity in [*application.findall("activity"), *application.findall("activity-alias")]:
+        name = activity.get(android + "name", "")
+        if name in ("androidx.compose.ui.tooling.PreviewActivity", "androidx.activity.ComponentActivity"):
+            raise ValueError("APK contains a development preview activity")
+        enabled = activity.get(android + "exported")
+        if enabled == "true" or (enabled is None and activity.find("intent-filter") is not None):
+            exported.append(name)
+    if exported != ["com.pureswift.swiftandroid.MainActivity"]:
+        raise ValueError("APK must expose only the SwiftKey product activity")
+
+
 def package(destination: Path) -> None:
     code, name, tag = version()
     commit = os.environ.get("GITHUB_SHA", "")
@@ -115,6 +135,8 @@ def package(destination: Path) -> None:
     native = re.search(r"^native-code: (.+)$", badging, re.M)
     if not native or re.findall(r"'([^']+)'", native[1]) != ["arm64-v8a"]:
         raise ValueError("APK must contain exactly the supported ARM64 ABI")
+    analyzer = Path(os.environ["ANDROID_HOME"]) / "cmdline-tools/latest/bin/apkanalyzer"
+    verify_product_manifest(subprocess.check_output([str(analyzer), "manifest", "print", str(apk)], text=True))
     with zipfile.ZipFile(apk) as archive:
         names = set(archive.namelist())
         for library in ("libSwiftAndroidApp.so", "libSwiftJava.so", "libswiftCore.so"):

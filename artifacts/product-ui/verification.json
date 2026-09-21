@@ -1,0 +1,24 @@
+{
+  "verifiedAtUTC": "2026-09-21T21:28:42.536640+00:00",
+  "apkSha256": "de6a3148e68d77a16e92d5c467bd3805ef157faaf613d19d65cf679a959961d7",
+  "apkBytes": 337008055,
+  "device": "temporary Android 15 API35 ARM64 emulator-5580",
+  "existingAVDsModified": false,
+  "strongBoxAvailable": false,
+  "authorityConfigured": false,
+  "instrumentationTestsPassed": 3,
+  "renderTestsPassed": 10,
+  "screenshotsVisuallyInspected": [
+    "identity.png",
+    "pairing.png"
+  ],
+  "noGalleryInCapturedHierarchies": true,
+  "onlyExportedActivity": "com.pureswift.swiftandroid.MainActivity",
+  "proofBoundary": "Product navigation and screenshot verification only; no hardware attestation or account ceremony.",
+  "captures": {
+    "identity.png": "b9354f45eba27c757c36a1e4c4fc91b15625c75d02b49f6d9142d7b3ab000adf",
+    "identity.xml": "b093c876151279309336471026a4d51c1939053d7ae8b3025c51ea679d5f3dad",
+    "pairing.png": "eee6c6a3d093fba23378449efe78cce83aa3717fe58933627ebbfe0aeb228c69",
+    "pairing.xml": "00423e9f3d35794f19ad8509c6dbaf76030497b4218e822fa6930e298bdb598e"
+  }
+}

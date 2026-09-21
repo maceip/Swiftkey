@@ -147,7 +147,7 @@ internal fun RenderCupertinoTextEntry(node: ViewNode): Boolean {
         }
         "CupertinoSearchTextFieldDefaults.leadingIcon" -> {
             val vector = cupertinoIcon(node.string("imageVector"))
-            if (node.string("imageVector") != null && vector == null) CupertinoText("Unknown Cupertino icon: ${node.string("imageVector")}", color = Color.Red)
+            if (node.string("imageVector") != null && vector == null) CupertinoText("Icon unavailable.", color = Color.Red)
             else if (vector != null) CupertinoSearchTextFieldDefaults.leadingIcon(vector, node.bool("rotateWithLayoutDirection") ?: true)
             else CupertinoSearchTextFieldDefaults.leadingIcon(rotateWithLayoutDirection = node.bool("rotateWithLayoutDirection") ?: true)
         }
@@ -216,9 +216,9 @@ private fun RenderCupertinoInput(node: ViewNode) {
     val name = node.string("name")
     val editingObject = cupertinoObject(node, "valueJson") ?: if (node.props["value"] is JsonObject || node.string("valueKind") == "editing") cupertinoObject(node, "value") else null
     val editingMode = editingObject != null || node.string("valueKind") == "editing"
-    if (editingMode && editingObject == null) { CupertinoText("$name requires an editing value with text and selection", color = Color.Red); return }
+    if (editingMode && editingObject == null) { CupertinoText("This text field is unavailable.", color = Color.Red); return }
     if (name == "CupertinoSearchTextField" && editingMode) {
-        CupertinoText("CupertinoSearchTextField accepts String values upstream; use CupertinoTextField for selection/composition control", color = Color.Red)
+        CupertinoText("Search is unavailable.", color = Color.Red)
         return
     }
     val external = editingObject?.let(::cupertinoEditingValue) ?: TextFieldValue(node.string("value") ?: "")

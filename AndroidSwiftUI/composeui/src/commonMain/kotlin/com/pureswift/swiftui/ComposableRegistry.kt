@@ -67,7 +67,7 @@ object ComposableRegistry {
                 }
             }
         } else if (!RenderCupertino(node)) {
-            Text("⟨unregistered composable: $name⟩", color = Color.Red)
+            Text("This control is unavailable.", color = Color.Red)
         }
     }
 }

@@ -7,20 +7,9 @@ import SwiftKeyUI
 /// Explicit entry preserves the original v1 identity view and never migrates it.
 struct SwiftKeyPhoneEntryView: View {
     @State private var showsPairing = false
-    @State private var showsCupertinoCatalog = false
     var body: some View {
         VStack(spacing: 0) {
-            if showsCupertinoCatalog {
-                VStack(spacing: 0) {
-                    Button { showsCupertinoCatalog = false } label: {
-                        SwiftKeyHostActionLabel("Back to SwiftKey", secondary: true)
-                    }
-                        .buttonStyle(.plain)
-                        .accessibilityIdentifier("swiftkey.close-cupertino-catalog")
-                        .padding(SwiftKeyAppearance.pageInset)
-                    CupertinoCatalogView()
-                }
-            } else if showsPairing {
+            if showsPairing {
                 AndroidPhoneProtocolView(onClose: { showsPairing = false })
             } else {
                 HStack {
@@ -33,13 +22,6 @@ struct SwiftKeyPhoneEntryView: View {
                         .buttonStyle(.plain)
                         .accessibilityIdentifier("swiftkey.open-phone-protocol")
                 }.padding(16).background(SwiftKeyAppearance.canvas)
-                Button { showsCupertinoCatalog = true } label: {
-                    SwiftKeyHostActionLabel("Cupertino component catalog", secondary: true)
-                }
-                    .buttonStyle(.plain)
-                    .accessibilityIdentifier("swiftkey.open-cupertino-catalog")
-                    .padding(EdgeInsets(top: 0, leading: SwiftKeyAppearance.pageInset,
-                                       bottom: 12, trailing: SwiftKeyAppearance.pageInset))
                 HardwareKeyView()
             }
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -102,8 +84,7 @@ struct AndroidPhoneProtocolView: View {
     }
 }
 
-/// Host navigation follows the shared product controls; catalog content keeps
-/// the native Cupertino appearance of the component being demonstrated.
+/// Host navigation follows the shared product controls.
 private struct SwiftKeyHostActionLabel: View {
     let title: String
     let secondary: Bool

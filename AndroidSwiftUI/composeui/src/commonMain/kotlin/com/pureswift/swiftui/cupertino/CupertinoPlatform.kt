@@ -22,7 +22,7 @@ internal fun RenderCupertinoPlatform(node: ViewNode): Boolean {
                 "TextHandleMove" -> HapticFeedbackType.TextHandleMove
                 else -> null
             }
-            if (type == null) CupertinoText("${node.string("type")} is a UIKit-only haptic type on this target.")
+            if (type == null) CupertinoText("Haptic feedback is unavailable on this device.")
             LaunchedEffect(node.id, node.string("commandID")) {
                 if (enabled && type != null && node.string("commandID") != null) {
                     feedback.performHapticFeedback(type)

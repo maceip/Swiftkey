@@ -258,7 +258,7 @@
         }
         break;
       }
-      default: throw new Error(`Unsupported Swift view primitive: ${tree.type}.`);
+      default: throw new Error("This content is unavailable. Reconnect to reload the view.");
     }
     node.classList.add("swift-node");
     node.dataset.swiftId = tree.id; node.dataset.swiftType = tree.type;
@@ -322,7 +322,7 @@
           }
           break;
         case "tag": break;
-        default: throw new Error(`Unsupported Swift view modifier: ${modifier.kind}.`);
+        default: throw new Error("This content is unavailable. Reconnect to reload the view.");
       }
       if (wrap) {
         if (modifier.kind !== "frame") {
@@ -397,7 +397,7 @@
         const link = element("a"); link.href = url; link.download = filename || "download.txt";
         document.body.append(link); link.click(); link.remove();
         window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-      } else throw new Error(`Unsupported UI effect: ${effect.kind}.`);
+      } else throw new Error("This action is unavailable. Reconnect to reload the view.");
     }
   }
 

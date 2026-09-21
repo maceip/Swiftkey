@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <application android:networkSecurityConfig="@xml/swiftkey_debug_network_security" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <application android:networkSecurityConfig="@xml/swiftkey_debug_network_security">
+        <!-- The distributed debug APK is a product build. Tooling must not
+             expose arbitrary packaged composables through external intents. -->
+        <activity android:name="androidx.compose.ui.tooling.PreviewActivity" tools:node="remove" />
+        <activity android:name="androidx.activity.ComponentActivity" tools:node="remove" />
+    </application>
 </manifest>

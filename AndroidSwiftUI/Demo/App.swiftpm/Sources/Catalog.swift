@@ -52,9 +52,6 @@ struct CatalogEntry: Identifiable {
             CatalogEntry(id: "graphics", title: "Graphics", screen: AnyCatalogScreen(GraphicsPlayground())),
             CatalogEntry(id: "link", title: "Link", screen: AnyCatalogScreen(LinkPlayground())),
         ]
-        #if canImport(AndroidSwiftUI) || canImport(ComposeUI)
-        entries.insert(CatalogEntry(id: "cupertino", title: "Cupertino Components", screen: AnyCatalogScreen(CupertinoCatalogView())), at: 0)
-        #endif
         // Android-only: Map (schematic tiles), Video (Media3 ExoPlayer).
         // Gated on the desktop rig's own flag, not `canImport(AndroidSwiftUI)`:
         // a sibling module's build artifact makes `canImport` true even on the

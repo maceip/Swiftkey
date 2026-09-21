@@ -1,4 +1,10 @@
-# Compose Cupertino verification
+# Historical renderer verification
+
+This directory preserves component-showcase development evidence, not SwiftKey
+product screenshots. Build hashes, captures and results below describe their
+recorded checkpoints, not the latest app. Original evidence is retained unchanged.
+See [SwiftKey hardware acceptance](../phone-v2-hardware/README.md) for actual
+pairing and account use, and [build status](../../BUILD_STATUS.md) for current work.
 
 The complete upstream source at `f66875aa6f3848b30c38e42a89fc99c9ac24a585`
 is vendored into AndroidSwiftUI: 1,911 original files and nine declared source
@@ -8,7 +14,7 @@ patches. All six modules build for Android and desktop. The
 describe the 127 distinct Swift surfaces, 879 shared icons, serializable options,
 state ownership and platform limitations.
 
-[Browse the screenshot gallery](screenshots/index.html),
+[Browse the historical renderer gallery](screenshots/index.html),
 [visual review](render-review.md) and [render audit](render-audit.json):
 338 cases, 367 current images, including 29 popup roots.
 
