@@ -4,6 +4,15 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+// CI increments the installable APK version without committing a version bump.
+// Local builds retain the existing development version.
+val swiftkeyVersionCode = providers.gradleProperty("swiftkeyVersionCode")
+    .map { value ->
+        require(value.matches(Regex("[1-9][0-9]*"))) { "Invalid SwiftKey version code" }
+        value.toInt().also { require(it <= 2_100_000_000) { "SwiftKey version code is too large" } }
+    }.orElse(1)
+val swiftkeyVersionName = providers.gradleProperty("swiftkeyVersionName").orElse("1.0")
+
 android {
     namespace = "com.pureswift.swiftandroid"
     compileSdk = 35
@@ -12,8 +21,8 @@ android {
         applicationId = "com.pureswift.swiftandroidui"
         minSdk = 24
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = swiftkeyVersionCode.get()
+        versionName = swiftkeyVersionName.get()
         ndk {
             //noinspection ChromeOsAbiSupport
             abiFilters += listOf("arm64-v8a")

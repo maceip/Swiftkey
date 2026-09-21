@@ -164,6 +164,11 @@ with no production authority cutover claimed.
 
 ## Get the code and build
 
+Download the [latest Android APK](https://github.com/maceip/Swiftkey/releases/latest)
+from GitHub Releases. Every branch push builds a versioned ARM64 development APK
+and publishes it with checksums after verification. See
+[automatic releases](docs/ANDROID-RELEASES.md) for signing and versioning details.
+
 ```sh
 git clone https://github.com/maceip/Swiftkey.git
 cd Swiftkey

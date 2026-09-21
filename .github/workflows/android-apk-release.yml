@@ -1,0 +1,114 @@
+name: Android APK Release
+
+on:
+  push:
+    branches: ["**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Each push keeps its own build. There is intentionally no shared build
+# concurrency group or path filter that could discard a queued push.
+jobs:
+  build:
+    name: Build and verify the ARM64 APK
+    runs-on: macos-15
+    timeout-minutes: 120
+    outputs:
+      artifact-id: ${{ steps.release-payload.outputs.artifact-id }}
+    env:
+      GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2
+    steps:
+      - uses: actions/checkout@v4
+      - name: Report available build space
+        run: df -h "$HOME" "$GITHUB_WORKSPACE"
+
+      # Same Java/Android setup pattern as maceip/triplex; Swift cross-compilation
+      # is also required here, so we build all native libraries before the APK.
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: android-actions/setup-android@v3
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/Library/Developer/Toolchains/swift-6.3.2-RELEASE.xctoolchain
+            ~/Library/org.swift.swiftpm/swift-sdks/swift-6.3.2-RELEASE_android.artifactbundle
+          key: swift-android-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('scripts/ci/setup-android-toolchain.sh') }}
+      - name: Install and verify the pinned Swift and Android toolchains
+        run: bash scripts/ci/setup-android-toolchain.sh
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          build-root-directory: AndroidSwiftUI
+
+      - name: Set APK version and restore the existing signing identity
+        env:
+          ANDROID_DEBUG_KEYSTORE_BASE64: ${{ secrets.ANDROID_DEBUG_KEYSTORE_BASE64 }}
+          ANDROID_SIGNING_CERT_SHA256: ${{ vars.ANDROID_SIGNING_CERT_SHA256 }}
+        run: python3 scripts/ci/prepare-apk-release.py configure
+
+      - name: Verify vendored source and release automation
+        run: |
+          python3 AndroidSwiftUI/scripts/verify-cupertino-vendor.py
+          python3 -m unittest discover -s scripts/ci -p 'test_*.py' -v
+      - name: Test shared application and Swift UI core
+        run: |
+          "$SWIFTKEY_SWIFT" test --package-path SwiftKeyApplication --disable-sandbox
+          "$SWIFTKEY_SWIFT" test --package-path AndroidSwiftUI/SwiftUICore --disable-sandbox --no-parallel
+      - name: Free completed host-test build products
+        run: rm -rf SwiftKeyApplication/.build AndroidSwiftUI/SwiftUICore/.build
+      - name: Test native Android popup properties
+        working-directory: AndroidSwiftUI
+        run: ./gradlew :cupertino:testDebugUnitTest --stacktrace
+      - name: Cross-compile Swift, stage runtimes, and assemble APK
+        run: bash scripts/androidswiftui.sh android-build
+      - name: Verify APK version, signature, and native payload
+        env:
+          ANDROID_SIGNING_CERT_SHA256: ${{ vars.ANDROID_SIGNING_CERT_SHA256 }}
+        run: python3 scripts/ci/prepare-apk-release.py package
+      - name: Store the verified release payload
+        id: release-payload
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-release-${{ github.run_number }}-${{ github.run_attempt }}
+          path: dist/android-release/
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14
+      - name: Remove the restored private signing keystore
+        if: always()
+        run: rm -f "$HOME/.android/debug.keystore"
+
+  publish:
+    name: Publish APK on GitHub Releases
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    # Queue every completed build rather than replacing the one pending run.
+    # Publication is serialized so an older build cannot race Latest selection.
+    concurrency:
+      group: swiftkey-android-release-publication
+      queue: max
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          artifact-ids: ${{ needs.build.outputs.artifact-id }}
+          path: dist/android-release
+          merge-multiple: true
+      - name: Create version tag and publish the APK release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: python3 scripts/ci/publish-apk-release.py dist/android-release
