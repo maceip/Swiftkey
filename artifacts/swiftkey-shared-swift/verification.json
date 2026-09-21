@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-09-20T12:32:06.106475+00:00",
+  "swiftTests": {
+    "Core": 16,
+    "Client": 33,
+    "Application": 9,
+    "UI": 9,
+    "Server": 50
+  },
+  "browser": {
+    "environment": "isolated SQLite snapshot; temporary server and credentials removed",
+    "widths": [
+      320,
+      390,
+      1280
+    ],
+    "checked": [
+      "account validation",
+      "account creation",
+      "account-bound enrollment bundle download",
+      "expired credential rejected",
+      "current Pixel credential verified",
+      "complete root key copied",
+      "credential download matched live credential",
+      "ledger disclosure",
+      "disconnect",
+      "no horizontal overflow",
+      "no console errors"
+    ]
+  },
+  "android": {
+    "serial": "67080DLDV009AD",
+    "apkSHA256": "f09e3591eb2cdedd4d6659950c1e8eed2a3e37e5a3d9663198fd63a6d17c8e69",
+    "apkBytes": 498624795,
+    "installed": true,
+    "displayMatchesEnrolledRoot": true,
+    "coldRestartReusedEpochCredential": true,
+    "palette": "Dark appearance remains despite app Force Dark opt-out; visual parity not claimed"
+  },
+  "liveAuthority": {
+    "url": "http://127.0.0.1:18088",
+    "ledgerHead": 10,
+    "preservedPriorRecordsAndAuthorityPin": true,
+    "verificationDidNotAppendLedger": true,
+    "tamperedCredentialRejectedHTTP": 403
+  },
+  "boundaries": [
+    "Swift UI executes on server for web, not browser Wasm",
+    "Native phone opens shared identity screen; administrative session not connected",
+    "iOS and physical pairing postponed",
+    "Physical four-hour rollover and attestation renewal remain open"
+  ]
+}

@@ -1,0 +1,189 @@
+@font-face {
+  font-family: 'Host Grotesk';
+  src: url('/fonts/host-grotesk.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/jetbrains-mono.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+/* Semantic tokens from the supplied component system. Swift owns the content
+   and component composition; this adapter supplies native browser primitives. */
+:root {
+  color-scheme: light dark;
+  --canvas: #fff;
+  --surface: #fff;
+  --subtle: #faf8fa;
+  --ink: #1e1e1e;
+  --muted: #6b6b6b;
+  --line: #e5e5e5;
+  --input: #fff;
+  --input-line: #dedede;
+  --accent: #a02ab8;
+  --accent-hover: #852398;
+  --on-accent: #fff;
+  --emphasis: rgb(160 42 184 / 7%);
+  --danger: #d33c33;
+  --danger-surface: rgb(211 60 51 / 10%);
+  --focus: #a02ab8;
+  --header: rgb(255 255 255 / 90%);
+  --shadow: 0 2px 4px rgb(41 22 41 / 3%), 0 12px 36px rgb(41 22 41 / 5%);
+  --radius-small: 4px;
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --radius-panel: 16px;
+  --sans: 'Host Grotesk', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  font: 16px/1.5 var(--sans);
+  color: var(--ink);
+  background: var(--canvas);
+  font-synthesis: none;
+  scroll-padding-top: 96px;
+  -webkit-font-smoothing: antialiased;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #1e1e1e;
+    --surface: #252326;
+    --subtle: #252326;
+    --ink: #fcfcfc;
+    --muted: #abbab9;
+    --line: #2f2d30;
+    --input: #19171a;
+    --input-line: #3d3a3e;
+    --accent: #d28fe2;
+    --accent-hover: #e0afea;
+    --on-accent: #1e1e1e;
+    --emphasis: rgb(210 143 226 / 12%);
+    --danger: #f9786a;
+    --danger-surface: rgb(249 120 106 / 15%);
+    --focus: #d28fe2;
+    --header: rgb(30 30 30 / 90%);
+    --shadow: 0 2px 4px rgb(0 0 0 / 12%), 0 12px 36px rgb(0 0 0 / 16%);
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+a { color: inherit; text-underline-offset: 3px; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button, summary { cursor: pointer; }
+button, input, select, textarea { border-radius: var(--radius-control); }
+button, a, summary { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+button:disabled, input:disabled, select:disabled { cursor: not-allowed; opacity: .5; }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible,
+summary:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+[hidden] { display: none !important; }
+::selection { background: var(--accent); color: var(--on-accent); }
+.skip-link { position: fixed; top: -80px; left: 16px; padding: 12px 20px; background: var(--accent); color: var(--on-accent); border-radius: var(--radius-control); z-index: 50; }
+.skip-link:focus { top: 12px; }
+
+.shell-header { position: sticky; top: 0; z-index: 20; min-height: 76px; padding: 16px max(24px, env(safe-area-inset-left)); display: flex; justify-content: space-between; align-items: center; gap: 20px; border-bottom: 1px solid var(--line); background: var(--header); backdrop-filter: blur(12px); }
+.brand { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; flex-shrink: 0; font-size: 22px; letter-spacing: -.6px; font-weight: 560; text-decoration: none; }
+.brand-mark { display: grid; place-items: center; width: 32px; height: 32px; border-radius: var(--radius-control); background: var(--accent); color: var(--on-accent); font-size: 21px; font-weight: 560; }
+.shell-controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+.shell-controls > span { font-size: 13px; color: var(--muted); }
+body[data-connection=connected] #connection-status { color: var(--accent); }
+body[data-connection=interrupted] #connection-status { color: var(--danger); }
+.workspace { width: 100%; max-width: 1280px; flex: 1; margin: 0 auto; padding: 40px max(24px, env(safe-area-inset-left)) 64px; }
+.connection-panel { max-width: 592px; margin: clamp(24px, 7vh, 80px) auto; padding: 36px; border: 1px solid var(--line); border-radius: var(--radius-panel); background: var(--surface); box-shadow: var(--shadow); }
+.eyebrow { display: flex; align-items: center; gap: 8px; margin: 0; font: 11px/1.5 var(--mono); letter-spacing: .6px; color: var(--accent); }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.connection-panel h1 { font-size: clamp(32px, 5vw, 44px); letter-spacing: -1.3px; font-weight: 560; line-height: 1.12; margin: 20px 0 14px; }
+.connection-description { font-size: 16px; color: var(--muted); margin: 0 0 32px; }
+#connect-form > label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px; }
+.connect-controls { display: flex; gap: 10px; }
+.connect-controls input { min-width: 0; flex: 1; min-height: 44px; border: 1px solid var(--input-line); background: var(--input); padding: 10px 12px; font-size: 16px; }
+input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
+.shell-button { min-height: 44px; min-width: 44px; border: 1px solid var(--line); background: var(--surface); padding: 10px 16px; font-weight: 500; font-size: 14px; line-height: 1.4; transition: background .18s, box-shadow .18s; }
+.shell-button:hover:not(:disabled) { background: var(--emphasis); border-color: var(--accent); }
+.shell-button.primary { background: var(--accent); color: var(--on-accent); border-color: transparent; box-shadow: inset 0 1px 1px rgb(255 255 255 / 20%), inset 0 -1px 2px rgb(0 0 0 / 15%); }
+.shell-button.primary:hover:not(:disabled) { background: var(--accent-hover); }
+.connection-help, .token-help { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.connection-help { margin: 12px 0 20px; }
+.token-help { padding-top: 4px; border-top: 1px solid var(--line); }
+.token-help summary { min-height: 44px; display: flex; align-items: center; gap: 8px; color: var(--ink); list-style: none; }
+.token-help summary::-webkit-details-marker { display: none; }
+.token-help summary::after { content: '+'; margin-left: auto; color: var(--muted); font: 18px var(--mono); }
+.token-help[open] summary::after { content: '−'; }
+.token-help p { margin: 4px 0 16px; }
+.token-help code { font: 11px/1.7 var(--mono); overflow-wrap: anywhere; }
+.server-origin { font: 11px/1.7 var(--mono); color: var(--muted); margin: 20px 0 0; overflow-wrap: anywhere; }
+.notice { padding: 16px 20px; margin: 0 0 24px; border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--emphasis); color: var(--ink); font-size: 14px; overflow-wrap: anywhere; }
+.notice.error { color: var(--danger); background: var(--danger-surface); }
+.shell-footer { display: flex; justify-content: space-between; gap: 20px; padding: 22px max(24px, env(safe-area-inset-left)) calc(22px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+
+/* Renderer primitives: no application-specific component or action logic. */
+.swift-root { min-width: 0; overflow-wrap: anywhere; }
+.swift-node, .swift-modifier { min-width: 0; max-width: 100%; box-sizing: border-box; }
+.swift-modifier { display: flex; flex-direction: column; align-items: stretch; }
+.swift-text { white-space: pre-wrap; overflow-wrap: anywhere; line-height: inherit; }
+.swift-stack { display: flex; gap: 8px; }
+.swift-vstack { flex-direction: column; }
+.swift-hstack { flex-direction: row; flex-wrap: wrap; }
+.swift-hstack > .swift-node, .swift-hstack > .swift-modifier { flex-shrink: 1; }
+.swift-zstack { display: grid; }
+.swift-zstack > * { grid-area: 1/1; }
+.swift-group { display: contents; }
+.swift-scroll { overflow: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
+.swift-scroll[data-axis=vertical] { width: 100%; overflow-x: hidden; }
+.swift-scroll[data-axis=horizontal] { max-width: 100%; overflow-x: auto; }
+.swift-spacer { flex: 1 1 0; min-width: 8px; min-height: 8px; }
+.swift-divider { height: 1px; width: 100%; border: 0; background: var(--line); margin: 0; }
+.swift-shape, .swift-color { align-self: stretch; flex: 1 1 auto; min-height: 1px; min-width: 1px; }
+.swift-button { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; min-width: 44px; max-width: 100%; padding: 10px 16px; border: 1px solid var(--line); background: var(--surface); font-size: 14px; font-weight: 500; line-height: 1.4; white-space: normal; text-align: center; transition: background .18s; }
+.swift-button:hover:not(:disabled) { background: var(--emphasis); border-color: var(--accent); }
+.swift-button[data-style=borderedProminent] { color: var(--on-accent); background: var(--accent); border-color: transparent; }
+.swift-button[data-style=plain], .swift-button[data-style=borderless] { border-color: transparent; background: transparent; }
+.swift-textfield, .swift-picker { display: block; width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid var(--input-line); background: var(--input); font-size: 16px; line-height: 1.5; }
+.swift-disclosure { width: 100%; border: 1px solid var(--line); border-radius: var(--radius-control); background: var(--surface); }
+.swift-disclosure > summary { min-height: 48px; padding: 12px 16px; display: flex; gap: 12px; align-items: center; list-style: none; }
+.swift-disclosure > summary::-webkit-details-marker { display: none; }
+.swift-disclosure > summary::after { content: '+'; font: 18px var(--mono); margin-left: auto; color: var(--muted); }
+.swift-disclosure[open] > summary::after { content: '−'; }
+.swift-disclosure-content { padding: 4px 16px 16px; min-width: 0; }
+.swift-unsupported { padding: 16px; border: 1px solid var(--danger); border-radius: var(--radius-control); color: var(--danger); font: 12px var(--mono); }
+[data-disabled=true] { opacity: .55; }
+.swift-root[aria-busy=true] { cursor: progress; }
+.effect-fallback { max-width: 760px; padding: 24px; margin: 24px auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-card); box-shadow: var(--shadow); }
+.effect-fallback h2 { font-size: 24px; margin: 0 0 8px; font-weight: 560; }
+.effect-fallback p { color: var(--muted); font-size: 14px; }
+.effect-fallback textarea { display: block; width: 100%; min-height: 130px; padding: 12px; margin: 16px 0; font: 13px/1.7 var(--mono); border: 1px solid var(--input-line); resize: vertical; overflow-wrap: anywhere; background: var(--input); }
+/* Only an explicit Swift plain style removes native button chrome. A custom
+   label must still honor bordered and prominent styles, including inheritance. */
+.swift-button[data-style=plain], .swift-button[data-style=borderless] { padding: 0; border: 0; background: transparent; align-items: stretch; text-align: inherit; font: inherit; }
+.swift-button[data-style=plain]:hover:not(:disabled), .swift-button[data-style=borderless]:hover:not(:disabled) { background: transparent; filter: brightness(.97); }
+
+@media (max-width: 600px) {
+  .shell-header { padding: 12px max(16px, env(safe-area-inset-left)); gap: 12px; }
+  .brand { font-size: 20px; }
+  .shell-controls { gap: 8px; }
+  .shell-controls > span { font-size: 12px; flex-basis: 100%; text-align: right; }
+  .shell-controls .shell-button { font-size: 12px; padding: 9px 11px; }
+  .workspace { padding: 24px max(16px, env(safe-area-inset-left)) 40px; }
+  .connection-panel { margin: 24px auto; padding: 24px; }
+  .connect-controls { flex-wrap: wrap; }
+  .connect-controls input { flex-basis: 100%; }
+  .connect-controls .shell-button { width: 100%; }
+  .shell-footer { padding-left: 16px; padding-right: 16px; }
+  .notice, .effect-fallback { padding: 16px; }
+}
+@media (max-width: 359px) {
+  .shell-header { align-items: flex-start; flex-wrap: wrap; }
+  .shell-controls { margin-left: auto; }
+  .connection-panel { padding: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+@media (forced-colors: active) {
+  button, .swift-button, .swift-disclosure, .effect-fallback, .notice, .connection-panel { border: 1px solid CanvasText; }
+  .swift-shape, .swift-divider { background: CanvasText; }
+  .brand-mark { color: ButtonText; background: ButtonFace; border: 1px solid ButtonText; }
+}

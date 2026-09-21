@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-20",
+  "surface": "http://127.0.0.1:8765",
+  "fixtures": "synthetic public records rendered by actual shared Swift components",
+  "engine": "Chrome",
+  "catalog_surfaces": 43,
+  "surfaces_checked": 43,
+  "viewport_width": 320,
+  "layout_scale": 1.4,
+  "document_overflow": false,
+  "console_errors_or_warnings": [],
+  "visually_inspected": [
+    "inspectBeforePreparation",
+    "admissionUnavailable"
+  ],
+  "callback_result": "Fixture only; no request sent",
+  "viewport_reset": true,
+  "physical_android_ui_checked": false,
+  "callbacks_checked": [
+    "renewIdentity",
+    "signIn"
+  ]
+}

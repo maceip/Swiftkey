@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "device": {
+    "model": "2506BPN68G",
+    "sdk": "36",
+    "serialSHA256": "8caca507324d9e2f8c425d78718ee88192dae01d30fa5e35343342241b13c5a7",
+    "installedAPK_SHA256": "6819a7f47d8d5e5a3c7f887c2484249f67fcdad0f75a64238347599e028dd9e1"
+  },
+  "server": "Vapor 4.122.2",
+  "installed_app_profile": "workload-demonstration",
+  "first_run_pid": 10433,
+  "restart_pid": 25798,
+  "resumed_first_run": true,
+  "first_run_log_preserved": true,
+  "existing_installed_app": true,
+  "apk_reinstalled": false,
+  "root_replaced": false,
+  "fresh_strongbox_sign_verify": true,
+  "fresh_vapor_epoch_issuance": true,
+  "credential_verified_by_app_and_authority": true,
+  "tampered_credential_rejected": true,
+  "restart_reuses_same_credential": true,
+  "restart_issued_another_epoch": false,
+  "restart_reuses_same_credential_without_ledger_mutation": false,
+  "restart_accepted_workloads": 1,
+  "fresh_boot_attestation": false,
+  "workload_and_replay_exercised": true,
+  "two_phone_v2_pairing_exercised": false
+}

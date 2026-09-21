@@ -1,0 +1,9 @@
+{
+  "capturedAt": "2026-09-19T21:37:29.226379+00:00",
+  "sameRootKey": true,
+  "sameEpochDelegation": true,
+  "sameCredential": true,
+  "authorityDeviceCount": 1,
+  "authorityCredentialCount": 1,
+  "acceptedWorkloadNonces": 2
+}

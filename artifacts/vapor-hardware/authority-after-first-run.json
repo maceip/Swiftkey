@@ -1,0 +1,19 @@
+{
+  "storage": "sqlite",
+  "serverPublicKey": "BKaFIarmG3of3ux1X8loe8M47ULe2vvauOEhRdykVy/tVqHpQtLkAGAHdy7sAJa/onbv8yphMaMeeYdQDQ/FZKY=",
+  "legacyProvisioningAllowed": true,
+  "activeDeviceCount": 2,
+  "revokedDeviceCount": 0,
+  "epochStart": 1789934400,
+  "schemaVersion": 2,
+  "accountCount": 3,
+  "epoch": 124301,
+  "unixTime": 1789947664,
+  "credentialCount": 3,
+  "ledgerHead": {
+    "hash": "v8iYKlyuwyyHxHQYcYHnDcslX7Tf6TKUZgenGnf3j2w=",
+    "signature": "MEUCIDtmgXbyls4O4hsoGFS7G6ZnBya6fMZA9MmZhFhL/KnnAiEA9tAGcVigLMFHSa2MS3y7VHDEgl4gTTH87MvmTCTxUv4=",
+    "sequence": 13
+  },
+  "epochEnd": 1789948800
+}

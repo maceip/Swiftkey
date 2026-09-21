@@ -1,0 +1,14 @@
+{
+  "deviceSerial": "67080DLDV009AD",
+  "package": "com.pureswift.swiftandroidui",
+  "freshInstall": true,
+  "processId": 10509,
+  "securityLevel": "STRONGBOX",
+  "signVerify": true,
+  "publicKeyHex": "041ef1b1b9013020276cab996a1343c8c09990e3dee70cf81cf10dd467735ac28680b23952d5347c0182f116c329b8a162c98b80972d3ee2f36fe40d8bd7b5072f",
+  "publicKeyBytes": 65,
+  "uiMatchesObservedLaunchLog": true,
+  "serverEnrollment": "Not configured on this device",
+  "screenshot": "android-device-20260920.png",
+  "observedLaunchLog": "09-20 04:40:22.165 I/SwiftKeyHardware(10509): securityLevel=STRONGBOX publicKeyHex=041ef1b1b9013020276cab996a1343c8c09990e3dee70cf81cf10dd467735ac28680b23952d5347c0182f116c329b8a162c98b80972d3ee2f36fe40d8bd7b5072f signVerify=true"
+}

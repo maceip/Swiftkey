@@ -1,0 +1,36 @@
+{
+  "recorded_at_utc": "2026-09-20T20:45:08.883894+00:00",
+  "android_build": "passed",
+  "apk": "AndroidSwiftUI/Demo/app/build/outputs/apk/debug/demo-app-debug.apk",
+  "apk_sha256": "175572bee26d57c767aa0c94846cb55e007afd56948145314344a94293092ac7",
+  "apk_size_bytes": 505049043,
+  "apk_installed": false,
+  "physical_strongbox_pairing_exercised": false,
+  "connected_android_devices": 0,
+  "native_phone_host_tests": 7,
+  "native_phone_host_test_failures": 0,
+  "shared_application_tests": 35,
+  "shared_swift_ui_tests": 26,
+  "catalog_surfaces": 43,
+  "catalog_browser_recheck": "passed in Chrome at 320px / 140 percent; see browser-verification.json",
+  "notes": "Final ARM64 Swift/JNI cross-compile and APK build passed with real native QR encode/decode and transport guards. No Android phone is connected; camera permission flow, secure sheets and StrongBox round trip remain unexercised on physical devices.",
+  "final_production_source_audit": {
+    "files_checked": 107,
+    "apk_after_all_sources": true,
+    "latest_source": "SwiftKeyApplication/Sources/SwiftKeyApplication/PhoneProtocolModels.swift",
+    "latest_source_modified_utc": "2026-09-20T20:36:30.376160+00:00",
+    "apk_modified_utc": "2026-09-20T20:38:05.904948+00:00",
+    "logs": {
+      "application-tests": {
+        "count": 35,
+        "passed": true,
+        "after_latest_production_source": true
+      },
+      "ui-tests": {
+        "count": 26,
+        "passed": true,
+        "after_latest_production_source": true
+      }
+    }
+  }
+}

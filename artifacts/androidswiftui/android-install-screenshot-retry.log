@@ -1,0 +1,8 @@
+2026-09-19T16:50:58.976754+00:00
+Performing Streamed Install
+adb: failed to install /Users/mac/SwiftKey/AndroidSwiftUI/Demo/app/build/outputs/apk/debug/demo-app-debug.apk: Failure [INSTALL_FAILED_USER_RESTRICTED: Install canceled by user]
+
+
+Package check: com.pureswift.swiftandroidui absent.
+Screenshot of running app: blocked; app has not launched.
+Developer options opened for phone-side Install via USB permission.

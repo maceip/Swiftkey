@@ -1,0 +1,168 @@
+{
+  "verifiedAt": 1789860768,
+  "checks": {
+    "serverSigningKeyPreserved": true,
+    "rootKeyAndMembershipPreserved": true,
+    "epochCredentialsPreserved": true,
+    "replayRecordsPreserved": true,
+    "legacyJSONUnchanged": true,
+    "adminBoundaryVerified": true,
+    "privateFileModesVerified": true,
+    "secondRestartPreservedLedger": true,
+    "temporaryAdminTokenRejectedAfterRotation": true,
+    "servedConsoleMatchesFinalSource": true,
+    "authenticatedBrowserCreateAndReissueVerified": true,
+    "browserDisconnectClearedSession": true
+  },
+  "responses": {
+    "status": {
+      "epochStart": 1789848000,
+      "epoch": 124295,
+      "activeDeviceCount": 1,
+      "unixTime": 1789860768,
+      "ledgerHead": {
+        "hash": "OJVBjKHSX9P2Raex9bFELtEAeMWM3AYiHx4mccQzdxw=",
+        "signature": "MEUCIQDnvOy0xXwaf84QduWNnQOMRmOZWuwZzQtEoF9bdxymYwIgHb4VXk9a2Qc/1iDLYzY1gggHR7NaWy1rrIkhU+QB5MA=",
+        "sequence": 4
+      },
+      "credentialCount": 1,
+      "serverPublicKey": "BKaFIarmG3of3ux1X8loe8M47ULe2vvauOEhRdykVy/tVqHpQtLkAGAHdy7sAJa/onbv8yphMaMeeYdQDQ/FZKY=",
+      "accountCount": 2,
+      "storage": "sqlite",
+      "epochEnd": 1789862400,
+      "revokedDeviceCount": 0,
+      "schemaVersion": 2
+    },
+    "accounts": {
+      "accounts": [
+        {
+          "status": "active",
+          "createdAt": 1789860190,
+          "label": "Imported account",
+          "imported": true,
+          "deviceCount": 1,
+          "accountID": "166a73e6-175b-4f84-a444-ddb672ef8ab8",
+          "activeDeviceCount": 1
+        },
+        {
+          "status": "pending",
+          "createdAt": 1789860371,
+          "label": "Development account",
+          "imported": false,
+          "deviceCount": 0,
+          "accountID": "55b31abb-ef92-4f34-ab7d-b89d88f1c4dd",
+          "activeDeviceCount": 0
+        }
+      ]
+    },
+    "devices": {
+      "devices": [
+        {
+          "deviceID": "2e2cdcfd-f907-4b59-8d8a-595653a09bbc",
+          "sequence": 2,
+          "status": "active",
+          "lastEpoch": 124295,
+          "accountID": "166a73e6-175b-4f84-a444-ddb672ef8ab8",
+          "publicKey": "BNiPSdv4wviTy5HFvtT33XBp4s42ihSOk+ZVvBvcvAuDLFDaLntKNKOEd/p4uF0a0CdVnDPO2eNLV4ePFORMCow="
+        }
+      ]
+    },
+    "epochs": {
+      "epochs": [
+        {
+          "publicKey": "BAVkyR/nuqVq/GX4DtNDVx19NBtg9RgNjzoBRGGCBgHJQZYSfrNtlmuUPK2V6PlpYCNtzG6y0vvtwUvtQnRaiNo=",
+          "epoch": 124295,
+          "credential": {
+            "authorization": {
+              "signature": "MEUCIG6GmcmgCXVExzddkSMdj2PlrW+yh2tcvLqHgwoD+NbsAiEAiFtOaHU4aBYCCjgMffat5/M15lTMuAkbpO9q6vtmh5s=",
+              "challenge": {
+                "sequence": 2,
+                "operation": "issueEpoch",
+                "accountID": "166a73e6-175b-4f84-a444-ddb672ef8ab8",
+                "deviceID": "2e2cdcfd-f907-4b59-8d8a-595653a09bbc",
+                "expiresAt": 1789854042,
+                "nonce": "ZIXStgJKDLa5rsTXhkL+/ydf2aEtIk+3T3vaw6J9H5I=",
+                "payloadHash": "5KciN67oCXY8abgUlhPOAVYF06A5meZgzuyMfeW4sl8="
+              },
+              "kind": "androidStrongBoxP256"
+            },
+            "delegation": {
+              "epoch": 124295,
+              "accountID": "166a73e6-175b-4f84-a444-ddb672ef8ab8",
+              "audience": "swiftkey.local",
+              "publicKey": "BAVkyR/nuqVq/GX4DtNDVx19NBtg9RgNjzoBRGGCBgHJQZYSfrNtlmuUPK2V6PlpYCNtzG6y0vvtwUvtQnRaiNo=",
+              "deviceID": "2e2cdcfd-f907-4b59-8d8a-595653a09bbc"
+            },
+            "serverSignature": "MEQCIES7s1ejN6wML/IGgafjHDKGJarrre97TxqXQnqTyibbAiBSCQTZzL2xTp1pA8MGwsmQZAZ2d6ejlbbClQhzoOUyuQ=="
+          },
+          "validFrom": 1789848000,
+          "accountID": "166a73e6-175b-4f84-a444-ddb672ef8ab8",
+          "validUntil": 1789862400,
+          "deviceID": "2e2cdcfd-f907-4b59-8d8a-595653a09bbc",
+          "status": "current"
+        }
+      ]
+    },
+    "ledger": {
+      "hasMore": false,
+      "head": {
+        "signature": "MEUCIQCnL1R+DrPKe76VQqKdj5sk4RPWQ3CU7XpPJnjfpUSrvwIgKY4U2yuds8tdYESBScR33wyljemQz4XaILY8NaBH21U=",
+        "hash": "OJVBjKHSX9P2Raex9bFELtEAeMWM3AYiHx4mccQzdxw=",
+        "sequence": 4
+      },
+      "nextAfter": 4,
+      "events": [
+        {
+          "previousHash": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+          "hash": "7SIaURV1V/K0tZ1NzSg54TwN+W6PIgaYla0u1KWGUZo=",
+          "details": {
+            "source": "authority.json.v1",
+            "epochCredentials": "1",
+            "accounts": "1",
+            "devices": "1"
+          },
+          "sequence": 1,
+          "timestamp": 1789860190,
+          "kind": "authority.imported"
+        },
+        {
+          "details": {
+            "label": "Development account",
+            "provisioning": "admin"
+          },
+          "sequence": 2,
+          "timestamp": 1789860371,
+          "kind": "account.created",
+          "hash": "H/OUI1atNxCzTjwpJJXpnvJ8zm6AGjrNNzYCfwY0LYo=",
+          "accountID": "55b31abb-ef92-4f34-ab7d-b89d88f1c4dd",
+          "previousHash": "7SIaURV1V/K0tZ1NzSg54TwN+W6PIgaYla0u1KWGUZo="
+        },
+        {
+          "details": {
+            "expiresAt": "1789861271"
+          },
+          "sequence": 3,
+          "timestamp": 1789860371,
+          "kind": "enrollment.invited",
+          "hash": "vCtkdVnREqRhUwopA4D6x//+6pdD4K87Yrpy48tlHew=",
+          "accountID": "55b31abb-ef92-4f34-ab7d-b89d88f1c4dd",
+          "previousHash": "H/OUI1atNxCzTjwpJJXpnvJ8zm6AGjrNNzYCfwY0LYo=",
+          "deviceID": "8690a3f0-bfba-431f-9af0-239626804eda"
+        },
+        {
+          "details": {
+            "reason": "reissued",
+            "expiresAt": "1789861592"
+          },
+          "sequence": 4,
+          "timestamp": 1789860692,
+          "kind": "enrollment.invited",
+          "hash": "OJVBjKHSX9P2Raex9bFELtEAeMWM3AYiHx4mccQzdxw=",
+          "accountID": "55b31abb-ef92-4f34-ab7d-b89d88f1c4dd",
+          "previousHash": "vCtkdVnREqRhUwopA4D6x//+6pdD4K87Yrpy48tlHew=",
+          "deviceID": "df50524e-700a-4b36-b03c-26d14893d5ad"
+        }
+      ]
+    }
+  }
+}

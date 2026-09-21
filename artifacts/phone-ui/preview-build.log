@@ -1,0 +1,14 @@
+Building for debugging...
+[0/3] Write swift-version-43AF9A9ED32E53B.txt
+[1/4] Write sources
+[3/6] Compiling SwiftKeyUI PhoneProtocolView.swift
+[4/6] Emitting module SwiftKeyUI
+[5/8] Compiling PhoneProtocolPreview main.swift
+[6/8] Emitting module PhoneProtocolPreview
+[6/9] Write Objects.LinkFileList
+[7/9] Linking PhoneProtocolPreview
+[8/9] Applying PhoneProtocolPreview
+Build of product 'PhoneProtocolPreview' complete! (1.77s)
+Exported shared Swift phone surfaces to /Users/mac/SwiftKey/artifacts/phone-ui/surfaces.json
+Built 38 Swift component surfaces in /Users/mac/SwiftKey/artifacts/phone-ui
+Preview: python3 -m http.server 8765 --bind 127.0.0.1 --directory artifacts/phone-ui

@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "checks": [
+    "production startup with real Google trust refresh",
+    "validated loopback binding ignores Vapor CLI overrides",
+    "bundled console scripts styles fonts and HEAD over real HTTP",
+    "admin authentication precedes body collection and unknown route lookup",
+    "v2 preparation uses real authority and configured origin",
+    "raw JSON size bound and no implicit request decompression",
+    "chunked HTTP bodies enforce exact v2 byte limit",
+    "v2 transport budget rejects before waiting for body",
+    "idle partial-header socket closes before request dispatch",
+    "authenticated shared Swift UI session through Vapor",
+    "SIGTERM and SIGINT shutdown restart with unchanged pin and ledger",
+    "credentials and request query marker absent from production logs"
+  ],
+  "real_attestation_trust_fetch": true,
+  "physical_phone_enrollment": false,
+  "live_authority_state_modified": false,
+  "binary_sha256": "740b8efb5666f004480446f9b2c24a2c68ae77b1f7907cf4af27de099b00079f"
+}

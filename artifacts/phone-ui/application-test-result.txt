@@ -1,0 +1,6 @@
+Independent review agent tool-result excerpt (not a full redirected log).
+Pinned Swift 6.3.2: swift test --package-path SwiftKeyApplication
+Exit code: 0
+Build complete! (1.85s)
+Test run with 26 tests in 0 suites passed after 0.002 seconds.
+Includes 17 phone-protocol tests.

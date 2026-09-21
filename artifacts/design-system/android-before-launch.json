@@ -1,0 +1,10 @@
+{
+  "swiftkey-client.json": {
+    "present": true,
+    "sha256": "60042750d4fdb58902979ac2c77db68ea627a0e5f67b083dbf262146bbe1b3fb"
+  },
+  "swiftkey-protocol-state.json": {
+    "present": true,
+    "sha256": "03a6cf43275e6ef280dcf53d670bd64006dfdf28853b41235113180764dddbc7"
+  }
+}

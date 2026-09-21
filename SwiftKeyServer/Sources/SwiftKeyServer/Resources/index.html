@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1E1E1E" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <title>SwiftKey — Workspace</title>
+  <link rel="icon" href="data:,">
+  <link rel="preload" href="/fonts/host-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body data-connection="disconnected">
+  <a class="skip-link" href="#workspace">Skip to workspace</a>
+  <header class="shell-header">
+    <a class="brand" href="#workspace" aria-label="SwiftKey workspace"><span class="brand-mark" aria-hidden="true">S</span>SwiftKey</a>
+    <div class="shell-controls">
+      <span id="connection-status" role="status">Disconnected</span>
+      <button id="reconnect-button" class="shell-button" type="button" hidden>Reconnect</button>
+      <button id="disconnect-button" class="shell-button" type="button" hidden>Disconnect</button>
+    </div>
+  </header>
+  <main id="workspace" class="workspace" tabindex="-1">
+    <section id="connection-panel" class="connection-panel" aria-labelledby="connection-title">
+      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> LOCAL AUTHORITY</p>
+      <h1 id="connection-title">Your workspace.</h1>
+      <p class="connection-description">Connect with this authority’s admin token.</p>
+      <form id="connect-form">
+        <label for="admin-token">Admin token</label>
+        <div class="connect-controls">
+          <input id="admin-token" type="password" placeholder="Enter your admin token" autocomplete="off" autocapitalize="none" spellcheck="false" required aria-describedby="connection-help">
+          <button id="connect-button" class="shell-button primary" type="submit">Connect</button>
+        </div>
+      </form>
+      <p id="connection-help" class="connection-help">Kept in this page’s memory. Cleared on disconnect.</p>
+      <details class="token-help"><summary>Find my token</summary><p>Use the private file on this server:<br><code>SwiftKeyServer/.state/admin-token</code></p></details>
+      <p id="server-origin" class="server-origin"></p>
+    </section>
+    <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+    <div id="swift-root" class="swift-root" aria-busy="false"></div>
+    <section id="effect-fallback" class="effect-fallback" aria-labelledby="effect-fallback-title" hidden>
+      <h2 id="effect-fallback-title">Copy manually</h2>
+      <p>Clipboard access was unavailable. Select and copy this text.</p>
+      <textarea id="effect-text" readonly autocomplete="off" spellcheck="false" aria-label="Text to copy"></textarea>
+      <button id="dismiss-effect-button" class="shell-button" type="button">Dismiss</button>
+    </section>
+    <noscript><p class="notice">Enable JavaScript to connect to this workspace.</p></noscript>
+  </main>
+  <footer class="shell-footer"><span>SwiftKey</span><span>Local authority</span></footer>
+</body>
+</html>

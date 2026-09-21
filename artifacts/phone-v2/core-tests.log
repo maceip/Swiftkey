@@ -1,0 +1,67 @@
+Building for debugging...
+[0/3] Write sources
+[1/3] Write swift-version-43AF9A9ED32E53B.txt
+[3/5] Emitting module SwiftKeyCoreTests
+[4/5] Compiling SwiftKeyCoreTests PairingV2Tests.swift
+[4/6] Write Objects.LinkFileList
+[5/6] Linking SwiftKeyCorePackageTests
+Build complete! (0.82s)
+Test Suite 'All tests' started at 2026-09-20 13:44:31.573.
+Test Suite 'All tests' passed at 2026-09-20 13:44:31.577.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.005) seconds
+􀟈  Test run started.
+􀄵  Testing Library Version: 6.3.2 (70eff261d7f462c)
+􀄵  Target Platform: arm64-apple-macosx
+􀟈  Test invalidLengthsAndKeysAreRejected() started.
+􀟈  Test v2DecimalU64AndBase64AreCanonicalAndLossless() started.
+􀟈  Test v2RejectsUnsupportedProfilesAmbiguousIDsAndContexts() started.
+􀟈  Test epochBoundsAreExactAndOverflowFailsClosed() started.
+􀟈  Test v2IndependentPythonRootSignaturesAndCompleteGenesisChainVerify() started.
+􀟈  Test lazyRotationRequiresFreshCredentialAndLinksPreviousKey() started.
+􀟈  Test rawMessageAndDigestSigningCannotAccidentallyAgreeAfterDoubleHash() started.
+􀟈  Test expiredSnapshotRotatesAndFutureOrChangedPinsFailClosed() started.
+􀟈  Test fieldFramingAndUnicodeNormalization() started.
+􀟈  Test credentialRejectsDelegationOrRootAuthorizationTampering() started.
+􀟈  Test v2LeaseRenewalPreservesMembershipIdentityButNotRootEpoch() started.
+􀟈  Test v2SignedProjectionRejectsNestedOriginMixingAndTamperedState() started.
+􀟈  Test v2IndependentPythonVectorsCoverEveryCanonicalRecord() started.
+􀟈  Test jsonIsTransportNotSignedRepresentation() started.
+􀟈  Test workloadTamperingAndAudienceSubstitutionFail() started.
+􀟈  Test challengeExpiryAndEveryFieldIsBoundByHardwareSignature() started.
+􀟈  Test independentOpenSSLSignatureFixture() started.
+􀟈  Test v2DetachedSignaturesRoundTripAcrossECDSAIntegerWidths() started.
+􀟈  Test v2StrictJSONRejectsDuplicateAndUnknownKeysIncludingEscapedNestedKeys() started.
+􀟈  Test membershipAndRecoveryBindTheExactCandidateAndLostRoot() started.
+􀟈  Test v2MembershipReceiptBindsTargetEpochFullDeltaAndBothRoots() started.
+􀟈  Test unsupportedAppleAssertionsNeverFallBackToGenericECDSA() started.
+􀟈  Test fixedCanonicalVectorsAndHashes() started.
+􀟈  Test snapshotRestoresSameUnexpiredKeyAndCredential() started.
+􀟈  Test credentialValidForEpochAfterConsumedChallengeExpires() started.
+􀟈  Test v2WireOperationBindsPayloadPurposeAndScopeWithoutSecretInPublicProjection() started.
+􁁛  Test epochBoundsAreExactAndOverflowFailsClosed() passed after 0.002 seconds.
+􁁛  Test fieldFramingAndUnicodeNormalization() passed after 0.002 seconds.
+􁁛  Test jsonIsTransportNotSignedRepresentation() passed after 0.002 seconds.
+􁁛  Test credentialRejectsDelegationOrRootAuthorizationTampering() passed after 0.002 seconds.
+􁁛  Test invalidLengthsAndKeysAreRejected() passed after 0.002 seconds.
+􁁛  Test membershipAndRecoveryBindTheExactCandidateAndLostRoot() passed after 0.002 seconds.
+􁁛  Test unsupportedAppleAssertionsNeverFallBackToGenericECDSA() passed after 0.002 seconds.
+􁁛  Test rawMessageAndDigestSigningCannotAccidentallyAgreeAfterDoubleHash() passed after 0.002 seconds.
+􁁛  Test lazyRotationRequiresFreshCredentialAndLinksPreviousKey() passed after 0.002 seconds.
+􁁛  Test challengeExpiryAndEveryFieldIsBoundByHardwareSignature() passed after 0.002 seconds.
+􁁛  Test expiredSnapshotRotatesAndFutureOrChangedPinsFailClosed() passed after 0.002 seconds.
+􁁛  Test credentialValidForEpochAfterConsumedChallengeExpires() passed after 0.002 seconds.
+􁁛  Test snapshotRestoresSameUnexpiredKeyAndCredential() passed after 0.003 seconds.
+􁁛  Test fixedCanonicalVectorsAndHashes() passed after 0.003 seconds.
+􁁛  Test independentOpenSSLSignatureFixture() passed after 0.004 seconds.
+􁁛  Test workloadTamperingAndAudienceSubstitutionFail() passed after 0.004 seconds.
+􁁛  Test v2StrictJSONRejectsDuplicateAndUnknownKeysIncludingEscapedNestedKeys() passed after 0.005 seconds.
+􁁛  Test v2LeaseRenewalPreservesMembershipIdentityButNotRootEpoch() passed after 0.006 seconds.
+􁁛  Test v2DecimalU64AndBase64AreCanonicalAndLossless() passed after 0.007 seconds.
+􁁛  Test v2SignedProjectionRejectsNestedOriginMixingAndTamperedState() passed after 0.009 seconds.
+􁁛  Test v2RejectsUnsupportedProfilesAmbiguousIDsAndContexts() passed after 0.010 seconds.
+􁁛  Test v2WireOperationBindsPayloadPurposeAndScopeWithoutSecretInPublicProjection() passed after 0.011 seconds.
+􁁛  Test v2IndependentPythonRootSignaturesAndCompleteGenesisChainVerify() passed after 0.013 seconds.
+􁁛  Test v2MembershipReceiptBindsTargetEpochFullDeltaAndBothRoots() passed after 0.016 seconds.
+􁁛  Test v2IndependentPythonVectorsCoverEveryCanonicalRecord() passed after 0.038 seconds.
+􁁛  Test v2DetachedSignaturesRoundTripAcrossECDSAIntegerWidths() passed after 0.659 seconds.
+􁁛  Test run with 26 tests in 0 suites passed after 0.659 seconds.

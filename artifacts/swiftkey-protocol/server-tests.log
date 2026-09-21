@@ -1,0 +1,192 @@
+[0/1] Planning build
+Building for debugging...
+[0/7] Write sources
+[1/7] Write swift-version-43AF9A9ED32E53B.txt
+[3/9] Emitting module _SwiftKeyCertificateInternals
+[4/9] Compiling _SwiftKeyCertificateInternals _TinyArray.swift
+[5/12] Compiling SwiftKeyX509 CertificateStore.swift
+[6/12] Compiling SwiftKeyX509 RelativeDistinguishedName.swift
+[7/97] Compiling SwiftKeyX509 RandomNumberGenerator+bytes.swift
+[8/97] Compiling SwiftKeyX509 SEC1PrivateKey.swift
+[9/97] Compiling SwiftKeyX509 SecKeyWrapper.swift
+[10/97] Compiling SwiftKeyX509 Signature.swift
+[11/97] Compiling SwiftKeyX509 SignatureAlgorithm.swift
+[12/97] Compiling SwiftKeyX509 AllOfPolicies.swift
+[13/97] Compiling SwiftKeyX509 AnyPolicy.swift
+[14/97] Compiling SwiftKeyX509 CustomCertificateStore.swift
+[15/97] Compiling SwiftKeyX509 OneOfPolicies.swift
+[16/97] Compiling SwiftKeyX509 PolicyBuilder.swift
+[17/97] Compiling SwiftKeyX509 BasicConstraintsPolicy.swift
+[18/97] Compiling SwiftKeyX509 DNSNames.swift
+[19/97] Compiling SwiftKeyX509 ExpiryPolicy.swift
+[20/97] Compiling SwiftKeyX509 IPConstraints.swift
+[21/97] Compiling SwiftKeyX509 NameConstraintsPolicy.swift
+[22/97] Compiling SwiftKeyX509 RFC5280Policy.swift
+[23/97] Compiling SwiftKeyX509 URIConstraints.swift
+[24/97] Compiling SwiftKeyX509 CSRAttribute.swift
+[25/97] Compiling SwiftKeyX509 CSRAttributes.swift
+[26/97] Compiling SwiftKeyX509 CSRVersion.swift
+[27/97] Compiling SwiftKeyX509 CertificateSigningRequest.swift
+[28/97] Compiling SwiftKeyX509 CertificationRequestInfo.swift
+[29/97] Compiling SwiftKeyX509 ExtensionRequest.swift
+[30/97] Compiling SwiftKeyX509 Certificate.swift
+[31/97] Compiling SwiftKeyX509 CertificatePrivateKey.swift
+[32/97] Compiling SwiftKeyX509 CertificatePublicKey.swift
+[33/97] Compiling SwiftKeyX509 CertificateSerialNumber.swift
+[34/97] Compiling SwiftKeyX509 CertificateVersion.swift
+[35/97] Compiling SwiftKeyX509 CMSAttribute.swift
+[36/97] Compiling SwiftKeyX509 CMSContentInfo.swift
+[37/97] Compiling SwiftKeyX509 CMSEncapsulatedContentInfo.swift
+[38/97] Compiling SwiftKeyX509 CMSIssuerAndSerialNumber.swift
+[39/97] Compiling SwiftKeyX509 CMSOperations.swift
+[40/97] Compiling SwiftKeyX509 CMSSignature.swift
+[41/113] Emitting module SwiftKeyX509
+[42/113] Compiling SwiftKeyX509 OCSPCertID.swift
+[43/113] Compiling SwiftKeyX509 OCSPCertStatus.swift
+[44/113] Compiling SwiftKeyX509 OCSPNonce.swift
+[45/113] Compiling SwiftKeyX509 OCSPPolicy.swift
+[46/113] Compiling SwiftKeyX509 OCSPRequest.swift
+[47/113] Compiling SwiftKeyX509 OCSPResponse.swift
+[48/113] Compiling SwiftKeyX509 OCSPResponseBytes.swift
+[49/113] Compiling SwiftKeyX509 OCSPResponseData.swift
+[50/113] Compiling SwiftKeyX509 OCSPResponseStatus.swift
+[51/113] Compiling SwiftKeyX509 OCSPSignature.swift
+[52/113] Compiling SwiftKeyX509 OCSPSingleRequest.swift
+[53/113] Compiling SwiftKeyX509 OCSPSingleResponse.swift
+[54/113] Compiling SwiftKeyX509 OCSPTBSRequest.swift
+[55/113] Compiling SwiftKeyX509 OCSPVersion.swift
+[56/113] Compiling SwiftKeyX509 PKCS8PrivateKey.swift
+[57/113] Compiling SwiftKeyX509 PromiseAndFuture.swift
+[58/113] Compiling SwiftKeyX509 RDNAttribute.swift
+[59/113] Compiling SwiftKeyX509 Error.swift
+[60/113] Compiling SwiftKeyX509 AuthorityInformationAccess.swift
+[61/113] Compiling SwiftKeyX509 AuthorityKeyIdentifier.swift
+[62/113] Compiling SwiftKeyX509 BasicConstraints.swift
+[63/113] Compiling SwiftKeyX509 ExtendedKeyUsage.swift
+[64/113] Compiling SwiftKeyX509 ExtensionIdentifiers.swift
+[65/113] Compiling SwiftKeyX509 KeyUsage.swift
+[66/113] Compiling SwiftKeyX509 NameConstraints.swift
+[67/113] Compiling SwiftKeyX509 SubjectAlternativeName.swift
+[68/113] Compiling SwiftKeyX509 SubjectKeyIdentifier.swift
+[69/113] Compiling SwiftKeyX509 Extension.swift
+[70/113] Compiling SwiftKeyX509 Extensions.swift
+[71/113] Compiling SwiftKeyX509 ExtensionsBuilder.swift
+[72/113] Compiling SwiftKeyX509 GeneralName.swift
+[73/113] Compiling SwiftKeyX509 Lock.swift
+[74/113] Compiling SwiftKeyX509 BasicOCSPResponse.swift
+[75/113] Compiling SwiftKeyX509 DirectoryString.swift
+[76/113] Compiling SwiftKeyX509 CMSSignedData.swift
+[77/113] Compiling SwiftKeyX509 CMSSignerIdentifier.swift
+[78/113] Compiling SwiftKeyX509 CMSSignerInfo.swift
+[79/113] Compiling SwiftKeyX509 CMSVersion.swift
+[80/113] Compiling SwiftKeyX509 Curve25519+DER.swift
+[81/113] Compiling SwiftKeyX509 Digests.swift
+[82/113] Compiling SwiftKeyX509 DistinguishedName.swift
+[83/113] Compiling SwiftKeyX509 CommonName.swift
+[84/113] Compiling SwiftKeyX509 CountryName.swift
+[85/113] Compiling SwiftKeyX509 DNBuilder.swift
+[86/113] Compiling SwiftKeyX509 DomainComponent.swift
+[87/113] Compiling SwiftKeyX509 EmailAddress.swift
+[88/113] Compiling SwiftKeyX509 LocalityName.swift
+[89/113] Compiling SwiftKeyX509 OrganizationName.swift
+[90/113] Compiling SwiftKeyX509 OrganizationalUnitName.swift
+[91/113] Compiling SwiftKeyX509 StateOrProvinceName.swift
+[92/113] Compiling SwiftKeyX509 StreetAddress.swift
+[93/113] Compiling SwiftKeyX509 VersionPolicy.swift
+[94/113] Compiling SwiftKeyX509 ServerIdentityPolicy.swift
+[95/113] Compiling SwiftKeyX509 TrustRootLoading.swift
+[96/113] Compiling SwiftKeyX509 UnverifiedChain.swift
+[97/113] Compiling SwiftKeyX509 ValidatedCertificateChain.swift
+[98/113] Compiling SwiftKeyX509 VerificationDiagnostic.swift
+[99/113] Compiling SwiftKeyX509 Verifier.swift
+[100/113] Compiling SwiftKeyX509 VerifierPolicy.swift
+[101/113] Compiling SwiftKeyX509 AlgorithmIdentifier.swift
+[102/113] Compiling SwiftKeyX509 ECDSASignature.swift
+[103/113] Compiling SwiftKeyX509 RSAPKCS1PublicKey.swift
+[104/113] Compiling SwiftKeyX509 SubjectPublicKeyInfo.swift
+[105/113] Compiling SwiftKeyX509 TBSCertificate.swift
+[106/113] Compiling SwiftKeyX509 Time.swift
+[107/113] Compiling SwiftKeyX509 TimeCalculations.swift
+[108/113] Compiling SwiftKeyX509 Validity.swift
+[109/118] Compiling SwiftKeyAuthority Authority.swift
+[110/118] Emitting module SwiftKeyAuthority
+[111/118] Compiling SwiftKeyAuthority Configuration.swift
+[112/118] Compiling SwiftKeyAuthority SecureStateFile.swift
+[113/118] Compiling SwiftKeyAuthority AndroidAttestation.swift
+[114/125] Compiling SwiftKeyAuthorityTests resource_bundle_accessor.swift
+[115/125] Compiling SwiftKeyServer main.swift
+[116/125] Emitting module SwiftKeyServer
+[116/125] Write Objects.LinkFileList
+[118/125] Compiling SwiftKeyAuthorityTests X509CompatibilityTests.swift
+[119/125] Compiling SwiftKeyAuthorityTests AndroidKeyDescriptionTests.swift
+[120/125] Compiling SwiftKeyAuthorityTests AuthorityTests.swift
+[121/125] Emitting module SwiftKeyAuthorityTests
+[121/125] Write Objects.LinkFileList
+[122/125] Linking SwiftKeyServerPackageTests
+[123/125] Linking swiftkey-server
+[124/125] Applying swiftkey-server
+Build complete! (6.87s)
+Test Suite 'All tests' started at 2026-09-19 14:37:44.200.
+Test Suite 'All tests' passed at 2026-09-19 14:37:44.206.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.005) seconds
+􀟈  Test run started.
+􀄵  Testing Library Version: 6.3.2 (70eff261d7f462c)
+􀄵  Target Platform: arm64-apple-macosx
+􀟈  Test invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test registeredDeviceTrustIsCheckedAgainForWorkloadsAndMutations() started.
+􀟈  Test malformedDERIsRejected() started.
+􀟈  Test recoveryAtomicallyAddsReplacementAndRevokesLostDevice() started.
+􀟈  Test pairingBindsExactKeyAndConfirmationRequiresApproval() started.
+􀟈  Test revocationImmediatelyRejectsPreviouslyValidEpochCredential() started.
+􀟈  Test originalSignedTBSBytesArePreserved() started.
+􀟈  Test concurrentWorkloadConsumesExactlyOnceAndInvalidSignatureDoesNotConsume() started.
+􀟈  Test validStrongBoxDescriptionMatchesExactPolicy() started.
+􀟈  Test case passing 1 argument fault → "package" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test privateStateAndExclusiveProcessLock() started.
+􀟈  Test securityPolicyCannotChangeOnRestart() started.
+􀟈  Test bootstrapRetryRequiresSameKeyAndFreshValidProof() started.
+􀟈  Test lostEpochResponseRetriesWithFreshAuthorizationAndSameLeaf() started.
+􀟈  Test keyUsageCriticalTrueCompatibility(_:) started.
+􀟈  Test case passing 1 argument fault → "unlocked" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test malformedOrDefaultCriticalEncodingIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "origin" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "signer" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test compatibilityDoesNotApplyToOtherExtensions() started.
+􀟈  Test case passing 1 argument fault → "duplicate" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "missingHardware" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "digest" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "curve" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "boot" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "attestationLevel" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test workloadLedgerAndEpochReceiptSurviveRestart() started.
+􀟈  Test case passing 1 argument fault → "purpose" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "keyLevel" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "challenge" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "nonstandardTrue" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "boolLength" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "boolTag" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "berTrue" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument value → 255 to keyUsageCriticalTrueCompatibility(_:) started.
+􀟈  Test case passing 1 argument value → 1 to keyUsageCriticalTrueCompatibility(_:) started.
+􀟈  Test case passing 1 argument bytes → [1, 1, 0] to malformedOrDefaultCriticalEncodingIsRejected(_:) started.
+􀟈  Test case passing 1 argument bytes → [1, 2, 0, 1] to malformedOrDefaultCriticalEncodingIsRejected(_:) started.
+􀟈  Test case passing 1 argument bytes → [1, 1, 2] to malformedOrDefaultCriticalEncodingIsRejected(_:) started.
+􀟈  Test case passing 1 argument bytes → [2, 1, 1] to malformedOrDefaultCriticalEncodingIsRejected(_:) started.
+􁁛  Test malformedDERIsRejected() passed after 0.002 seconds.
+􁁛  Test compatibilityDoesNotApplyToOtherExtensions() passed after 0.002 seconds.
+􁁛  Test validStrongBoxDescriptionMatchesExactPolicy() passed after 0.002 seconds.
+􁁛  Test keyUsageCriticalTrueCompatibility(_:) with 2 test cases passed after 0.002 seconds.
+􁁛  Test invalidAttestationPolicyIsRejected(_:) with 17 test cases passed after 0.002 seconds.
+􁁛  Test malformedOrDefaultCriticalEncodingIsRejected(_:) with 4 test cases passed after 0.002 seconds.
+􁁛  Test originalSignedTBSBytesArePreserved() passed after 0.006 seconds.
+􁁛  Test privateStateAndExclusiveProcessLock() passed after 0.008 seconds.
+􁁛  Test bootstrapRetryRequiresSameKeyAndFreshValidProof() passed after 0.009 seconds.
+􁁛  Test securityPolicyCannotChangeOnRestart() passed after 0.009 seconds.
+􁁛  Test registeredDeviceTrustIsCheckedAgainForWorkloadsAndMutations() passed after 0.010 seconds.
+􁁛  Test pairingBindsExactKeyAndConfirmationRequiresApproval() passed after 0.013 seconds.
+􁁛  Test revocationImmediatelyRejectsPreviouslyValidEpochCredential() passed after 0.014 seconds.
+􁁛  Test workloadLedgerAndEpochReceiptSurviveRestart() passed after 0.014 seconds.
+􁁛  Test lostEpochResponseRetriesWithFreshAuthorizationAndSameLeaf() passed after 0.015 seconds.
+􁁛  Test recoveryAtomicallyAddsReplacementAndRevokesLostDevice() passed after 0.016 seconds.
+􁁛  Test concurrentWorkloadConsumesExactlyOnceAndInvalidSignatureDoesNotConsume() passed after 0.022 seconds.
+􁁛  Test run with 17 tests in 0 suites passed after 0.022 seconds.

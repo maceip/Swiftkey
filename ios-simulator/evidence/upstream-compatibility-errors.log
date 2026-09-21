@@ -1,0 +1,492 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -scheme DemoApp -destination "platform=iOS Simulator,id=BE17EFB3-4CF9-4A09-91C1-21F7942871C8" -derivedDataPath /Users/mac/SwiftKey/ios-simulator/DerivedData CODE_SIGNING_ALLOWED=NO build
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Resolve Package Graph
+2026-09-19 09:14:21.348 xcodebuild[26795:33899918] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+
+
+Resolved source packages:
+  DemoApp: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'DemoApp' in project 'DemoApp' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/AppPlaygroundDefaultAssetCatalog.xcassets /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 04701d6d4414585f1a753f55413f6023
+Build description path: /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/XCBuildData/04701d6d4414585f1a753f55413f6023.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk /Users/mac/SwiftKey/ios-simulator/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-688ef53f1462e2c8f657fdc38a81448f686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -o /Users/mac/SwiftKey/ios-simulator/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-688ef53f1462e2c8f657fdc38a81448f686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+
+CreateBuildDirectory /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    builtin-create-build-directory /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex
+
+CreateBuildDirectory /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    builtin-create-build-directory /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products
+
+CreateBuildDirectory /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    builtin-create-build-directory /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator
+
+CreateBuildDirectory /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    builtin-create-build-directory /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    builtin-create-build-directory /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    builtin-create-build-directory /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+
+CreateBuildDirectory /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator/PackageFrameworks
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    builtin-create-build-directory /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator/PackageFrameworks
+
+MkDir /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator/DemoApp.app (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    /bin/mkdir -p /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator/DemoApp.app
+
+WriteAuxiliaryFile /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DemoApp.DependencyMetadataFileList (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    write-file /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DemoApp.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DemoApp.DependencyStaticMetadataFileList (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    write-file /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DemoApp.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DemoApp-DebugDylibPath-normal-arm64.txt (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    write-file /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DemoApp-DebugDylibPath-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/empty-DemoApp.plist (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    write-file /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/empty-DemoApp.plist
+
+WriteAuxiliaryFile /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DemoApp-DebugDylibInstallName-normal-arm64.txt (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    write-file /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DemoApp-DebugDylibInstallName-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp.SwiftFileList (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    write-file /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp.SwiftFileList
+
+WriteAuxiliaryFile /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp-OutputFileMap.json (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    write-file /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp.SwiftConstValuesFileList (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    write-file /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp_const_extract_protocols.json (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    write-file /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp.LinkFileList (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    write-file /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp.LinkFileList
+
+WriteAuxiliaryFile /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/resource_bundle_accessor.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    write-file /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/resource_bundle_accessor.swift
+
+GenerateAppPlaygroundAssetCatalog /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/AppPlaygroundDefaultAssetCatalog.xcassets (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    /Applications/Xcode.app/Contents/Developer/usr/bin/appleProductTypesTool -generatePlaceholderAppIconAsset -placeholderAppIconEnumName coffee -appIconAssetName __PlaceholderAppIcon -generateAccentColorAsset -accentColorPresetName blue -accentColorAssetName __PresetAccentColor -assetCatalogResourcePaths /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Assets.xcassets -output /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/AppPlaygroundDefaultAssetCatalog.xcassets
+
+MkDir /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/assetcatalog_output/unthinned (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    /bin/mkdir -p /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/assetcatalog_output/unthinned
+
+MkDir /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/assetcatalog_output/thinned (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    /bin/mkdir -p /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/assetcatalog_output/thinned
+
+Ld /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator/DemoApp.app/__preview.dylib normal (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios18.1-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -O0 -L/Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk/Developer/Library/Frameworks -install_name @rpath/DemoApp.debug.dylib -Xlinker -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp_dependency_info.dat -o /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator/DemoApp.app/__preview.dylib
+
+GenerateAssetSymbols /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Assets.xcassets (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Assets.xcassets --compile /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator/DemoApp.app --output-format human-readable-text --notices --warnings --export-dependency-info /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/assetcatalog_dependencies --output-partial-info-plist /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/assetcatalog_generated_info.plist --app-icon __PlaceholderAppIcon --accent-color __PresetAccentColor --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 18.1 --platform iphonesimulator --bundle-identifier app.swiftpm.DemoApp --generate-swift-asset-symbol-extensions NO --generate-swift-asset-symbols /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/GeneratedAssetSymbols.swift --generate-objc-asset-symbols /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/GeneratedAssetSymbols.h --generate-asset-symbol-index /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/* com.apple.actool.compilation-results */
+/Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/GeneratedAssetSymbols.h
+/Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/GeneratedAssetSymbols.swift
+
+
+CompileAssetCatalogVariant thinned /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator/DemoApp.app /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/AppPlaygroundDefaultAssetCatalog.xcassets /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Assets.xcassets (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/AppPlaygroundDefaultAssetCatalog.xcassets /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Assets.xcassets --compile /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/assetcatalog_generated_info.plist_thinned --app-icon __PlaceholderAppIcon --accent-color __PresetAccentColor --compress-pngs --enable-on-demand-resources YES --filter-for-thinning-device-configuration iPhone18,1 --filter-for-device-os-version 26.4.1 --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 18.1 --platform iphonesimulator
+
+SwiftDriver DemoApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name DemoApp -Onone @/Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -enable-upcoming-feature BareSlashRegexLiterals -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -target arm64-apple-ios18.1-simulator -g -module-cache-path /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/mac/SwiftKey/ios-simulator/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk/Developer/Library/Frameworks -c -j18 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/mac/SwiftKey/ios-simulator/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-688ef53f1462e2c8f657fdc38a81448f686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -output-file-map /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name app_swiftpm -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp_const_extract_protocols.json -Xcc -I/Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources-normal/arm64 -Xcc -I/Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/arm64 -Xcc -I/Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/ptrcheck-8QIKDQBNM4R74VBGG1OPFCEXM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/DeveloperToolsSupport-1WSBS8VVE5MY3XZHRJ0MND6Z4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/ptrauth-CIMZP8KMCUH7D6BMRPRMERIB4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_AvailabilityInternal-B5ZJ5IMQSH6SINMTKKOG7D3UY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_Builtin_stdbool-3HU1ACX1GE0TTQ434F80XH0G4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_Builtin_stdarg-6UBXR69FT20RHYQC8NUQI4IG7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_Builtin_float-AUDKVQRY60W2PECZMKYEH1STV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_Builtin_stddef-DJWXTLQBNB5ONXMP3B67M9ARH.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/SwiftShims-9JHJBQNTKQWKCTUPM614RHJ0D.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_SwiftConcurrencyShims-183TTV7NN73UUKG1TY2LTHPBW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_DarwinFoundation1-AD4M58EIJNLL389MKKF7FY4CT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_DarwinFoundation2-8M24TXIGXFMCU8646LP9FUWSW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_Builtin_limits-CUOY0XXJGI3LVCMHG9MAAIIFY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/sys_types-4BW93YI76VOLUP2JRAFABHBIR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_Builtin_tgmath-7M0EGEUQ26A61C5GOCVFJM3W6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_Builtin_stdint-77NFUVEWVBPB5CW2N25X1CZD8.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_Builtin_intrinsics-6SSKYAYH4X74S0JFD83GVJDMB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_DarwinFoundation3-GR4RWLXPNEPW4CP93EA094O3.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_Builtin_stdatomic-B9JO4YW2J9CL9B6L1BBR0LLL0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_Builtin_inttypes-2FYZ79QILKRTOLMXMVF2RIMXN.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/Darwin-2A7XNRGOBJZVYFXXDPF56UFWU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/simd-B9758ZQJS6AV1NFJ6G9MIMHXB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/ObjectiveC-OTCPYF7V89PMD9E79R6YDKRP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/MachO-455KK4IYAO1AN06ZDFGALZK8W.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/os_object-9539TFVBUGVLHNT49N9ST1RIY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/Spatial-EJ8MQUF9N289K9VR28HGF5N4O.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/os_workgroup-D0Z7FY57V8DOVOZ3C5HTQXGOU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/Dispatch-CK2KHNNTXT77WSBZS54AM0DCS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/dnssd-6CXCU0RL2P7NCGF0HUMYCMKA9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/CoreFoundation-472M48X6K6OG8R4EUH1LG0QTG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/XPC-AECIZPN23GI2RFW5SL2QATWEE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/os-APG7A6ZNY01VNNE9XLODNSVNG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/CoreAudioTypes-109Y494F246VZWOPRV4VCPW5O.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/Security-5IOUK5G48AQX9SBLRJGWMYX0R.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/CoreGraphics-3JVA0JMF5EF8ARIN3XJWOJIJE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/CFNetwork-5N1NN83162A3EBNXB1MXKQR58.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/CoreAudio-7CE1BKMDRTGY6Z8AF8OZNVSIE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/Foundation-DROR2OP3LL69L6VDIF7OWL80P.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/ImageIO-809R2U5R0NAW9H4OATZ5E18N3.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/CoreText-211ZOOHM5H9OVW3ER3NM3I4Y7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/IOSurface-PVNBNP8NUEVR2VLZCLHQDVDR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/Symbols-4VO5ET43ZRD9KDPFWB0Y0WCAS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/Accessibility-AUY6EYTMBAFN4R9HFB7E09VR2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/CoreData-49XMDF2LHN1MQ423QR4NZQMUF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/UniformTypeIdentifiers-EBM8W1F42HYB6XH9I70TNIC6B.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/Network-4NY0O24K3DSIPW7ZFKNBLVW82.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/CoreMIDI-DQI5UGGYDXW1NUMVZU4URK77F.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/UserNotifications-9AGYRPD3YRKB8JIWXZCMTXHBM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/DataDetection-3MKOGUV58AVA5068F592NR1E8.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/FileProvider-6US3N6MR4SFJN113FJY4ZDG72.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/CoreTransferable-DGGJO1LIXW5U3X0KAXWTS14PX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/OpenGLES-6EY06FAL9WY648824KEKNRXVA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/_LocationEssentials-EWVYYCIGKICF4N1TQQ2FDYZB6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/UIUtilities-BCGNIA4I2NDFHJ8LL6QDK93DP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/OSLog-2GFWKN76WZFQZS4IUWGS876T4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/MediaAccessibility-3BY0Z60A9LFYHQPXYS08L3CNM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/Metal-4OO6ZBNLSDX46VBSDPKKU7Q1D.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/CoreLocation-77TBHEFF1L8DPOWLETWW21EXR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/AVRouting-9ER2PW4F7852PCRPFESX7JEIM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/AudioToolbox-B4YSO8TZWVQ9SU2ETYKSD2L4V.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/CoreVideo-2OPUMKHBO9O45GBEH4LAT71G.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/QuartzCore-B88614WQ0EZGZOJTYTDXIMYWD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/CoreMedia-2NZAOYMVDP7UZIYWH0K0IJK5G.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/CoreImage-C48QXLL6341QM4OGVAHLNFA7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/SwiftUICore-7V0GCPS9U0RAEPW3MD0ZQ6OZI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/AVFAudio-43SNQR6ES6R2PVGC3IY2KNVZ7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/MediaToolbox-5XFNQYA1EKS9LL6JAW5O8IPKY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/UIKit-8VMMROWTYZYN1LLF25OFZ9IHY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/AVFoundation-3557H16QC7I4DJOV2Q84FO0ES.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/SwiftUI-FK7ETZ30WL0LRINJUPV2BBPJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/AVKit-B40RPH3L942M95Q90MEI1XY7M.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/MapKit-416BXASH9QAM55AJKNSV0DLIB.pcm
+
+SwiftCompile normal arm64 Compiling\ SearchablePlaygrounds.swift,\ StatePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/SearchablePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/StatePlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/SearchablePlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/StatePlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ DemoApp (in target 'DemoApp' from project 'DemoApp')
+Failed frontend command:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -emit-module -experimental-skip-non-inlinable-function-bodies-without-types /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/resource_bundle_accessor.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/AccessibilityPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/AnimationPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/App.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/AppStoragePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/AppearancePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/BindablePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/Catalog.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/CatalogSupport.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ContainerPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ContextMenuPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ControlPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ControlStylePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/DisclosurePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/FocusPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/FormInputPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/FormPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/FramePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/GeometryPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/GesturePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/GraphicsPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ImagePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/InteractionPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/LabelPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/LayoutPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/LazyStackPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/LinkPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/MapPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/MoreControlsPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/PopoverPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/PreferencePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/PresentationPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/RepresentablePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/SearchablePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/StatePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/StylePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ToolbarPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/VideoPlaygrounds.swift /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/GeneratedAssetSymbols.swift -target arm64-apple-ios18.1-simulator -module-can-import-version DeveloperToolsSupport 23.40.26 23.40.26 -disable-cross-import-overlay-search -swift-module-cross-import AVKit /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/AVKit.framework/Modules/AVKit.swiftcrossimport/SwiftUI.swiftoverlay -swift-module-cross-import AVKit /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk/System/Library/Frameworks/AVKit.framework/Modules/AVKit.swiftcrossimport/SwiftUI.swiftoverlay -swift-module-cross-import MapKit /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/MapKit.framework/Modules/MapKit.swiftcrossimport/SwiftUI.swiftoverlay -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libFoundationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#FoundationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libObservationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#ObservationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libPreviewsMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#PreviewsMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftUIMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftUIMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libTipKitMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#TipKitMacros -disable-implicit-swift-modules -Xcc -fno-implicit-modules -Xcc -fno-implicit-module-maps -explicit-swift-module-map-file /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp-dependencies-1.json -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -I /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk/Developer/Library/Frameworks -no-color-diagnostics -Xcc -fno-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=5 -module-cache-path /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -swift-version 5 -Onone -D SWIFT_PACKAGE -D DEBUG -D Xcode -serialize-debugging-options -const-gather-protocols-file /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp_const_extract_protocols.json -enable-upcoming-feature BareSlashRegexLiterals -enable-experimental-feature DebugDescriptionMacro -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/mac/SwiftKey/ios-simulator/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode -enable-anonymous-context-mangled-names -file-compilation-dir /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -Xcc -ivfsstatcache -Xcc /Users/mac/SwiftKey/ios-simulator/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-688ef53f1462e2c8f657fdc38a81448f686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -Xcc -I/Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources-normal/arm64 -Xcc -I/Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/arm64 -Xcc -I/Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -no-auto-bridging-header-chaining -module-name DemoApp -package-name app_swiftpm -frontend-parseable-output -disable-clang-spi -clang-target arm64-apple-ios26.4-simulator -target-sdk-version 26.4 -target-sdk-name iphonesimulator26.4 -in-process-plugin-server-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -emit-module-doc-path /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp.swiftdoc -emit-module-source-info-path /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp.swiftsourceinfo -serialize-diagnostics-path /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp-primary-emit-module.dia -emit-dependencies-path /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp-primary-emit-module.d -o /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp.swiftmodule -emit-abi-descriptor-path /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/Objects-normal/arm64/DemoApp.abi.json
+
+EmitSwiftModule normal arm64 (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+/Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/AppearancePlaygrounds.swift:62:24: error: cannot find type 'ModifierNode' in scope
+    var _modifierNode: ModifierNode { ModifierNode(kind: "notImplementedInInterpreter") }
+                       ^~~~~~~~~~~~
+/Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/AppearancePlaygrounds.swift:61:31: error: cannot find type 'RenderModifier' in scope
+struct _UnrecognizedModifier: RenderModifier {
+                              ^~~~~~~~~~~~~~
+
+SwiftCompile normal arm64 Compiling\ FormInputPlaygrounds.swift,\ FormPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/FormInputPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/FormPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/FormInputPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/FormPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ BindablePlaygrounds.swift,\ Catalog.swift,\ CatalogSupport.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/BindablePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/Catalog.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/CatalogSupport.swift (in target 'DemoApp' from project 'DemoApp')
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/BindablePlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/Catalog.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/CatalogSupport.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ FramePlaygrounds.swift,\ GeometryPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/FramePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/GeometryPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/FramePlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/GeometryPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ LabelPlaygrounds.swift,\ LayoutPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/LabelPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/LayoutPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/LabelPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/LayoutPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ DisclosurePlaygrounds.swift,\ FocusPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/DisclosurePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/FocusPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/DisclosurePlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/FocusPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ GesturePlaygrounds.swift,\ GraphicsPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/GesturePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/GraphicsPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/GesturePlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/GraphicsPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ MapPlaygrounds.swift,\ MoreControlsPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/MapPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/MoreControlsPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/MapPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/MoreControlsPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ LazyStackPlaygrounds.swift,\ LinkPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/LazyStackPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/LinkPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/LazyStackPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/LinkPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ ContainerPlaygrounds.swift,\ ContextMenuPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ContainerPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ContextMenuPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ContainerPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ContextMenuPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ PopoverPlaygrounds.swift,\ PreferencePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/PopoverPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/PreferencePlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/PopoverPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/PreferencePlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ resource_bundle_accessor.swift,\ AccessibilityPlaygrounds.swift,\ AnimationPlaygrounds.swift /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/resource_bundle_accessor.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/AccessibilityPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/AnimationPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/resource_bundle_accessor.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/AccessibilityPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/AnimationPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ ControlPlaygrounds.swift,\ ControlStylePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ControlPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ControlStylePlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ControlPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ControlStylePlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ VideoPlaygrounds.swift,\ GeneratedAssetSymbols.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/VideoPlaygrounds.swift /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'DemoApp' from project 'DemoApp')
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/VideoPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/ios-simulator/DerivedData/Build/Intermediates.noindex/DemoApp.build/Debug-iphonesimulator/DemoApp.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ PresentationPlaygrounds.swift,\ RepresentablePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/PresentationPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/RepresentablePlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/PresentationPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/RepresentablePlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ StylePlaygrounds.swift,\ ToolbarPlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/StylePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ToolbarPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/StylePlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/ToolbarPlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+    cd /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 Compiling\ App.swift,\ AppStoragePlaygrounds.swift,\ AppearancePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/App.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/AppStoragePlaygrounds.swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Sources/AppearancePlaygrounds.swift (in target 'DemoApp' from project 'DemoApp')
+
+note: Disabling hardened runtime with ad-hoc codesigning. (in target 'DemoApp' from project 'DemoApp')
+warning: Skipping duplicate build file in Compile Sources build phase: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/App.swiftpm/Assets.xcassets (in target 'DemoApp' from project 'DemoApp')
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftEmitModule normal arm64 Emitting\ module\ for\ DemoApp (in target 'DemoApp' from project 'DemoApp')
+	EmitSwiftModule normal arm64 (in target 'DemoApp' from project 'DemoApp')
+	Building workspace App with scheme DemoApp
+(3 failures)

@@ -1,0 +1,15 @@
+{
+  "devices": [
+    {
+      "model": "2506BPN68G",
+      "connection": "USB",
+      "serialSHA256": "8caca507324d9e2f8c425d78718ee88192dae01d30fa5e35343342241b13c5a7"
+    },
+    {
+      "model": "Pixel 11 Pro XL",
+      "connection": "wireless ADB using existing pairing",
+      "endpoint": "10.0.0.157:41817",
+      "serialSHA256": "4829a6837c2d24475ea0c03409c19c09991f54fb53a47b274e7e667954eec5fc"
+    }
+  ]
+}

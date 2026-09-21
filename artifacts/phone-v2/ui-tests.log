@@ -1,0 +1,69 @@
+Building for debugging...
+[0/2] Write swift-version-43AF9A9ED32E53B.txt
+[1/3] Write sources
+[3/5] Compiling SwiftKeyApplication PhoneProtocolModels.swift
+[4/5] Emitting module SwiftKeyApplication
+Build complete! (0.51s)
+Test Suite 'All tests' started at 2026-09-20 13:37:39.239.
+Test Suite 'All tests' passed at 2026-09-20 13:37:39.245.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.006) seconds
+􀟈  Test run started.
+􀄵  Testing Library Version: 6.3.2 (70eff261d7f462c)
+􀄵  Target Platform: arm64-apple-macosx
+􀟈  Suite WorkspaceTests started.
+􀟈  Test publicKeyPresentationIncludesEveryByte() started.
+􀟈  Suite PhoneProtocolViewTests started.
+􀟈  Test allSectionsStayWithinThePortableRendererContract() started.
+􀟈  Test pairingCutoverRemovesLegacyCreationControls() started.
+􀟈  Test ledgerActionsUseRealPageAndUnsupportedEffectsAreHidden() started.
+􀟈  Test staleRecordsAreNotPresentedAsOnline() started.
+􀟈  Test credentialVerificationDispatchesExactCredentialAndChecksReceiptHash() started.
+􀟈  Test invitationSecretsAppearOnlyFromTransientResultAndExportIsExplicit() started.
+􀟈  Test devicesUseCompleteSharedPublicKeyAndServerReissueCapability() started.
+􀟈  Test filteringIsSwiftOwnedAndHasNoSyntheticFallback() started.
+􀟈  Test accountFormAndSelectionDispatchTypedActions() started.
+􀟈  Test fullFlowUsesOnlyPortablePrimitivesAndNeverPerformsAnActionOnRender() started.
+􀟈  Test ownerSurfacesShowCredentialStatusSeparatelyFromAccountReceipt() started.
+􀟈  Test failedAdmissionCannotRenewAnIdentityThatWasNeverAdmitted() started.
+􀟈  Test ownerAndCandidateGetDistinctExplicitMembershipApprovals() started.
+􀟈  Test decliningUnjoinedInvitationClearlyDescribesLocalEffect() started.
+􀟈  Test ownerCanRetrySignInAndCredentialWithoutRecreatingCommittedAccount() started.
+􀟈  Test expiredBusyAndBrowserApprovalsCannotDispatchEvenIfCallbackIsInvoked() started.
+􀟈  Test existingAccountInspectionShowsRosterPolicyAndExactLostRootBeforeJoin() started.
+􀟈  Test comparisonDisplaysFullFingerprintsAndCodeThenDispatchesExactBinding() started.
+􀟈  Test importingBeforePreparationRequiresExplicitFinalRootBeforeJoin() started.
+􀟈  Test unknownOutcomeOnlyRecoversOriginalRequestAndUnsupportedWorkStaysUnavailable() started.
+􀟈  Test committedReceiptDeadlineDoesNotMarkOwnerAccessExpired() started.
+􀟈  Test receiptMismatchNeverClaimsVerifiedOrOffersSignIn() started.
+􀟈  Test invitationEffectsAreExplicitAndDoNotExposeCapabilityInSnapshotOrTree() started.
+􀟈  Test expiredLeaseCanExplicitlyRenewRetainedIdentityWithoutApprovingOwnership() started.
+􀟈  Test nameProposalAndReplacementBindBothLabelAndCurrentObject() started.
+􁁛  Test publicKeyPresentationIncludesEveryByte() passed after 0.001 seconds.
+􁁛  Test credentialVerificationDispatchesExactCredentialAndChecksReceiptHash() passed after 0.090 seconds.
+􁁛  Test allSectionsStayWithinThePortableRendererContract() passed after 0.090 seconds.
+􁁛  Test invitationSecretsAppearOnlyFromTransientResultAndExportIsExplicit() passed after 0.090 seconds.
+􁁛  Test ownerAndCandidateGetDistinctExplicitMembershipApprovals() passed after 0.090 seconds.
+􁁛  Test committedReceiptDeadlineDoesNotMarkOwnerAccessExpired() passed after 0.090 seconds.
+􁁛  Test filteringIsSwiftOwnedAndHasNoSyntheticFallback() passed after 0.090 seconds.
+􁁛  Test devicesUseCompleteSharedPublicKeyAndServerReissueCapability() passed after 0.090 seconds.
+􁁛  Test ledgerActionsUseRealPageAndUnsupportedEffectsAreHidden() passed after 0.090 seconds.
+􁁛  Test expiredBusyAndBrowserApprovalsCannotDispatchEvenIfCallbackIsInvoked() passed after 0.090 seconds.
+􁁛  Test accountFormAndSelectionDispatchTypedActions() passed after 0.090 seconds.
+􁁛  Test failedAdmissionCannotRenewAnIdentityThatWasNeverAdmitted() passed after 0.090 seconds.
+􁁛  Test ownerSurfacesShowCredentialStatusSeparatelyFromAccountReceipt() passed after 0.090 seconds.
+􁁛  Test receiptMismatchNeverClaimsVerifiedOrOffersSignIn() passed after 0.090 seconds.
+􁁛  Test comparisonDisplaysFullFingerprintsAndCodeThenDispatchesExactBinding() passed after 0.090 seconds.
+􁁛  Test unknownOutcomeOnlyRecoversOriginalRequestAndUnsupportedWorkStaysUnavailable() passed after 0.090 seconds.
+􁁛  Test fullFlowUsesOnlyPortablePrimitivesAndNeverPerformsAnActionOnRender() passed after 0.090 seconds.
+􁁛  Test expiredLeaseCanExplicitlyRenewRetainedIdentityWithoutApprovingOwnership() passed after 0.089 seconds.
+􁁛  Test pairingCutoverRemovesLegacyCreationControls() passed after 0.090 seconds.
+􁁛  Test existingAccountInspectionShowsRosterPolicyAndExactLostRootBeforeJoin() passed after 0.090 seconds.
+􁁛  Test invitationEffectsAreExplicitAndDoNotExposeCapabilityInSnapshotOrTree() passed after 0.090 seconds.
+􁁛  Test ownerCanRetrySignInAndCredentialWithoutRecreatingCommittedAccount() passed after 0.090 seconds.
+􁁛  Test nameProposalAndReplacementBindBothLabelAndCurrentObject() passed after 0.090 seconds.
+􁁛  Test staleRecordsAreNotPresentedAsOnline() passed after 0.090 seconds.
+􁁛  Test decliningUnjoinedInvitationClearlyDescribesLocalEffect() passed after 0.090 seconds.
+􁁛  Test importingBeforePreparationRequiresExplicitFinalRootBeforeJoin() passed after 0.090 seconds.
+􁁛  Suite WorkspaceTests passed after 0.090 seconds.
+􁁛  Suite PhoneProtocolViewTests passed after 0.090 seconds.
+􁁛  Test run with 26 tests in 2 suites passed after 0.090 seconds.

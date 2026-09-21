@@ -1,0 +1,61 @@
+{
+  "capturedAt": "2026-09-21T05:41:53.148122+00:00",
+  "designArchiveSHA256": "70a50c1df4a2b07487e8fb8aba1263a7f91c319174ba67935bb8c3d2fb9512aa",
+  "sharedSurfaceCount": 43,
+  "browser": {
+    "measuredViewportWidths": [
+      320,
+      1440
+    ],
+    "measuredSurfaceWidths": [
+      304,
+      800
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "layoutScales": [
+      1,
+      1.4
+    ],
+    "checkedCombinations": 344,
+    "horizontalOverflowFailures": 0,
+    "fontsLoaded": [
+      "Host Grotesk",
+      "JetBrains Mono"
+    ],
+    "expiredApprovalControlsDisabled": true,
+    "isolatedVaporWorkspace": {
+      "port": 18190,
+      "accountCreation": "passed",
+      "narrowAuthorityPageWidth": 320,
+      "consoleErrors": []
+    }
+  },
+  "tests": {
+    "SwiftKeyUI": 27,
+    "SwiftUICoreSerial": 124,
+    "ComposeDesktop": 10,
+    "SwiftKeyServer": 77,
+    "DesignResearchOffline": 27,
+    "AndroidPhoneHostPolicy": "Gradle testDebugUnitTest passed"
+  },
+  "android": {
+    "apkSHA256": "e219e77e15578ed8c67dcb19bd8000703e59f3f9528c662b1d808a42d26cb919",
+    "build": "passed",
+    "installation": "Final APK with bundled font licenses installed on Pixel via adb install -r",
+    "visualVerification": "pending: device keyguard remains locked",
+    "beforeLaunchStateHashArtifact": "android-before-launch.json"
+  },
+  "limitations": [
+    "The normal parallel SwiftUICore run hit the pre-existing Transaction._current test race; serial suite passed.",
+    "Fixtures do not establish physical two-phone v2 protocol success.",
+    "No live TypeSafe feature discovery or model quality claim."
+  ],
+  "liveAuthority": {
+    "port": 18088,
+    "restartedWithUpdatedUI": true,
+    "publicKeyPinUnchanged": true
+  }
+}

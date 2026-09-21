@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pureswift.swiftui.desktop.BridgeTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-09-19T21:38:47" hostname="macs-MacBook-Pro.local" time="1.555">
+  <properties/>
+  <testcase name="counterRoundTripAcrossTheBridge[jvm]" classname="com.pureswift.swiftui.desktop.BridgeTests" time="1.555"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

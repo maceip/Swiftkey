@@ -1,0 +1,4 @@
+09-19 14:43:44.170 26011 26011 I SwiftKeyHardware: securityLevel=STRONGBOX publicKeyHex=04d88f49dbf8c2f893cb91c5bed4f7dd7069e2ce368a148e93e655bc1bdcbc0b832c50da2e7b4a34a38477fa78b85d1ad027559c33ced9e34b57878f14e44c0a8c signVerify=true
+09-19 14:43:44.480 26011 27718 I SwiftKeyHardware: securityLevel=STRONGBOX publicKeyHex=04d88f49dbf8c2f893cb91c5bed4f7dd7069e2ce368a148e93e655bc1bdcbc0b832c50da2e7b4a34a38477fa78b85d1ad027559c33ced9e34b57878f14e44c0a8c signVerify=true
+09-19 14:43:44.484 26011 27718 V SwiftUI : SwiftKeyProtocol epochCredentialReused=true
+09-19 14:43:44.494 26011 27718 V SwiftUI : SwiftKeyProtocol failed clientError=serverRejected("loopback server request failed")

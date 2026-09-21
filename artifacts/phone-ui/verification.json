@@ -1,0 +1,42 @@
+{
+  "date": "2026-09-20",
+  "tests": {
+    "core": 26,
+    "client": 47,
+    "application": 35,
+    "ui": 26,
+    "server": 73,
+    "native_phone_host": 7
+  },
+  "catalog_surfaces": 43,
+  "android_build": "passed",
+  "apk_sha256": "175572bee26d57c767aa0c94846cb55e007afd56948145314344a94293092ac7",
+  "apk_installed": false,
+  "v2_live_pairing_exercised": false,
+  "v2_native_service_implemented": true,
+  "native_qr_implemented": true,
+  "browser": {
+    "date": "2026-09-20",
+    "surface": "http://127.0.0.1:8765",
+    "fixtures": "synthetic public records rendered by actual shared Swift components",
+    "engine": "Chrome",
+    "catalog_surfaces": 43,
+    "surfaces_checked": 43,
+    "viewport_width": 320,
+    "layout_scale": 1.4,
+    "document_overflow": false,
+    "console_errors_or_warnings": [],
+    "visually_inspected": [
+      "inspectBeforePreparation",
+      "admissionUnavailable"
+    ],
+    "callback_result": "Fixture only; no request sent",
+    "viewport_reset": true,
+    "physical_android_ui_checked": false,
+    "callbacks_checked": [
+      "renewIdentity",
+      "signIn"
+    ]
+  },
+  "notes": "Catalog records and callbacks are synthetic. Native hardware, QR and transport adapters are implemented and built. Physical two-phone StrongBox and camera flows are unexercised; no attached devices. Current test/build logs are in ../phone-v2; older logs in this directory describe the prior review-only checkpoint."
+}

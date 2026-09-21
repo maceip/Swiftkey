@@ -1,0 +1,57 @@
+{
+  "name": "@maximeheckel/design-system",
+  "version": "4.2.3",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "sideEffects": false,
+  "repository": "https://github.com/MaximeHeckel/design-system",
+  "license": "MIT",
+  "scripts": {
+    "build": "node ./esbuild.build.js",
+    "clean": "rimraf dist",
+    "dev": "pnpm run clean && node ./esbuild.dev.js & pnpm run ts-types --watch",
+    "format": "prettier --write \"./**/*.{ts,tsx}\"",
+    "lint": "eslint --ext=ts,tsx .",
+    "postbuild": "pnpm run ts-types",
+    "postversion": "git push origin v$npm_package_version",
+    "prebuild": "pnpm run clean",
+    "prepack": "pnpm run build && pnpm run postbuild",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "ts-types": "tsc --emitDeclarationOnly --outDir dist",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.0.0",
+    "@testing-library/jest-dom": "6.9.1 ",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/node": "^25.0.0",
+    "@types/react": "^19.2.1",
+    "@types/react-dom": "^19.2.1",
+    "esbuild": "^0.27.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "globals": "^16.5.0",
+    "jiti": "^2.6.1",
+    "jsdom": "^25.0.1",
+    "prettier": "^3.2.5",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "rimraf": "^6.1.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.50.0 ",
+    "vitest": "^4.0.15"
+  },
+  "peerDependencies": {
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.0.0",
+    "@stitches/react": "^1.2.8"
+  },
+  "packageManager": "pnpm@9.12.3"
+}

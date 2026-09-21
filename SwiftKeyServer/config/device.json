@@ -1,0 +1,10 @@
+{
+  "host": "127.0.0.1",
+  "port": 18088,
+  "stateDirectory": "./.state",
+  "androidPackage": "com.pureswift.swiftandroidui",
+  "androidSigningCertificateSHA256": "abdf2c3a584b9accbd1b51ae474aa840becc46aa5c5f669bccf422dc501acf39",
+  "androidMinimumVersion": 1,
+  "workloadAudience": "swiftkey.local",
+  "workloadDomain": "swiftkey.demo.echo.v1"
+}

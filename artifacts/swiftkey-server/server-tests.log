@@ -1,0 +1,140 @@
+Building for debugging...
+[0/6] Write sources
+[2/6] Write swift-version-43AF9A9ED32E53B.txt
+[4/8] Compiling SwiftKeyAuthority Authority.swift
+[5/8] Emitting module SwiftKeyAuthority
+[5/10] Write Objects.LinkFileList
+[6/12] Linking swiftkey-server
+[7/12] Applying swiftkey-server
+[9/12] Compiling SwiftKeyAuthorityTests AuthorityTests.swift
+[10/12] Emitting module SwiftKeyAuthorityTests
+[10/12] Write Objects.LinkFileList
+[11/12] Linking SwiftKeyServerPackageTests
+Build complete! (4.41s)
+Test Suite 'All tests' started at 2026-09-19 16:30:42.960.
+Test Suite 'All tests' passed at 2026-09-19 16:30:42.970.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.009) seconds
+􀟈  Test run started.
+􀄵  Testing Library Version: 6.3.2 (70eff261d7f462c)
+􀄵  Target Platform: arm64-apple-macosx
+􀟈  Test accountProvisioningWorksThroughExistingMobileRoutesWithoutLeakingSecrets() started.
+􀟈  Test pairingBindsExactKeyAndConfirmationRequiresApproval() started.
+􀟈  Test consoleAndErrorsAreNoncacheableWithScopedCSPAndNoCORSGrant() started.
+􀟈  Test privateTokenFileRejectsPublicPermissionsAndSymbolicLinks() started.
+􀟈  Test ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test ledgerRejectsDatabaseSymlink() started.
+􀟈  Test adminRoutesRejectMissingWrongAndBootstrapBearersBeforeBodyOrLookup() started.
+􀟈  Test originalSignedTBSBytesArePreserved() started.
+􀟈  Test privateTokenFileRejectsInvalidContents(_:) started.
+􀟈  Test expiredInvitationCannotGenerateOrEnrollAKey() started.
+􀟈  Test enrollmentInvitationCanBeReissuedOnlyBeforeFirstDeviceEnrollment() started.
+􀟈  Test revocationImmediatelyRejectsPreviouslyValidEpochCredential() started.
+􀟈  Test bootstrapRetryRequiresSameKeyAndFreshValidProof() started.
+􀟈  Test keyUsageCriticalTrueCompatibility(_:) started.
+􀟈  Test ledgerCommitRollsBackStateAndAllEventsOnWriteFailure() started.
+􀟈  Test concurrentWorkloadConsumesExactlyOnceAndInvalidSignatureDoesNotConsume() started.
+􀟈  Test originalBootstrapAndPairingRoutesRemainRegistered() started.
+􀟈  Test compatibilityDoesNotApplyToOtherExtensions() started.
+􀟈  Test validStrongBoxDescriptionMatchesExactPolicy() started.
+􀟈  Test ledgerCanonicalHashIsIndependentOfDictionaryInsertionOrder() started.
+􀟈  Test reissuedInvitationInvalidatesOldTokenAndChallengeWithoutChangingAccount() started.
+􀟈  Test revocationAndRecoveryAreAtomicVisibleLedgerEvents() started.
+􀟈  Test fullEpochHistoryAndSignedLedgerHeadSurviveRotation() started.
+􀟈  Test legacySnapshotIsReadWithoutModificationAndImportIsExplicit() started.
+􀟈  Test securityPolicyCannotChangeOnRestart() started.
+􀟈  Test adminPagingRejectsMalformedDuplicateAndOutOfRangeValues() started.
+􀟈  Test accountInvitationsAreIsolatedOneUseAndNeverListedAsSecrets() started.
+􀟈  Test recoveryAtomicallyAddsReplacementAndRevokesLostDevice() started.
+􀟈  Test ledgerDetectsLiveSnapshotDivergenceBeforeCommit() started.
+􀟈  Test invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test workloadLedgerAndEpochReceiptSurviveRestart() started.
+􀟈  Test legacyImportPreservesKeysCredentialsAndReplayWithoutInventingHistory() started.
+􀟈  Test lostEpochResponseRetriesWithFreshAuthorizationAndSameLeaf() started.
+􀟈  Test case passing 1 argument sql → "UPDATE authority_snapshot SET data=X'74616D7065726564' WHERE singleton=1" to ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test ledgerPermissionsAndExclusiveLock() started.
+􀟈  Test registeredDeviceTrustIsCheckedAgainForWorkloadsAndMutations() started.
+􀟈  Test privateStateAndExclusiveProcessLock() started.
+􀟈  Test reissueRejectsRevokedOnlyAndInitialBootstrapAccounts() started.
+􀟈  Test malformedOrDefaultCriticalEncodingIsRejected(_:) started.
+􀟈  Test case passing 1 argument sql → "UPDATE authority_snapshot SET data=X'74616D7065726564',state_hash=zeroblob(32) WHERE singleton=1" to ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test ledgerStateEventsAndCheckpointSurviveRestart() started.
+􀟈  Test case passing 1 argument sql → "DROP TRIGGER ledger_events_no_update; UPDATE ledger_events SET kind='tampered' WHERE sequence=1" to ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test expiredInvitationCanBeReissuedAndSurvivesRestart() started.
+􀟈  Test case passing 1 argument sql → "DROP TRIGGER ledger_events_no_update; UPDATE ledger_events SET sequence=99 WHERE sequence=1" to ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test reissueWinsAgainstAnEnrollmentAwaitingAttestation() started.
+􀟈  Test case passing 1 argument sql → "DROP TRIGGER ledger_commits_no_delete; DELETE FROM ledger_commits WHERE sequence=1" to ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test ledgerPaginationAndAccountFiltering() started.
+􀟈  Test case passing 1 argument sql → "DROP TRIGGER ledger_commits_no_update; UPDATE ledger_commits SET state_hash=zeroblob(32) WHERE sequence=1" to ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test malformedDERIsRejected() started.
+􀟈  Test case passing 1 argument sql → "DROP TRIGGER ledger_events_no_delete; DELETE FROM ledger_events WHERE sequence=1" to ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test case passing 1 argument value → 1 to keyUsageCriticalTrueCompatibility(_:) started.
+􀟈  Test case passing 1 argument value → 255 to keyUsageCriticalTrueCompatibility(_:) started.
+􀟈  Test case passing 1 argument contents → "too-short" to privateTokenFileRejectsInvalidContents(_:) started.
+􀟈  Test case passing 1 argument contents → "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" to privateTokenFileRejectsInvalidContents(_:) started.
+􀟈  Test case passing 1 argument contents → "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+embedded-line" to privateTokenFileRejectsInvalidContents(_:) started.
+􀟈  Test case passing 1 argument fault → "package" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "signer" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "unlocked" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "boot" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "purpose" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "digest" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "curve" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "origin" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "duplicate" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "missingHardware" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "attestationLevel" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "keyLevel" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "challenge" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "nonstandardTrue" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "boolLength" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "boolTag" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "berTrue" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument bytes → [1, 1, 0] to malformedOrDefaultCriticalEncodingIsRejected(_:) started.
+􀟈  Test case passing 1 argument bytes → [1, 1, 2] to malformedOrDefaultCriticalEncodingIsRejected(_:) started.
+􀟈  Test case passing 1 argument bytes → [1, 2, 0, 1] to malformedOrDefaultCriticalEncodingIsRejected(_:) started.
+􀟈  Test case passing 1 argument bytes → [2, 1, 1] to malformedOrDefaultCriticalEncodingIsRejected(_:) started.
+􁁛  Test originalSignedTBSBytesArePreserved() passed after 0.133 seconds.
+􁁛  Test keyUsageCriticalTrueCompatibility(_:) with 2 test cases passed after 0.133 seconds.
+􁁛  Test privateTokenFileRejectsPublicPermissionsAndSymbolicLinks() passed after 0.133 seconds.
+􁁛  Test ledgerRejectsDatabaseSymlink() passed after 0.133 seconds.
+􁁛  Test validStrongBoxDescriptionMatchesExactPolicy() passed after 0.134 seconds.
+􁁛  Test compatibilityDoesNotApplyToOtherExtensions() passed after 0.134 seconds.
+􁁛  Test ledgerCanonicalHashIsIndependentOfDictionaryInsertionOrder() passed after 0.134 seconds.
+􁁛  Test privateTokenFileRejectsInvalidContents(_:) with 3 test cases passed after 0.134 seconds.
+􁁛  Test expiredInvitationCannotGenerateOrEnrollAKey() passed after 0.139 seconds.
+􁁛  Test bootstrapRetryRequiresSameKeyAndFreshValidProof() passed after 0.140 seconds.
+􁁛  Test ledgerRejectsTamperingOrReorderingOnOpen(_:) with 7 test cases passed after 0.144 seconds.
+􁁛  Test invalidAttestationPolicyIsRejected(_:) with 17 test cases passed after 0.144 seconds.
+􁁛  Test pairingBindsExactKeyAndConfirmationRequiresApproval() passed after 0.145 seconds.
+􁁛  Test revocationImmediatelyRejectsPreviouslyValidEpochCredential() passed after 0.145 seconds.
+􁁛  Test malformedOrDefaultCriticalEncodingIsRejected(_:) with 4 test cases passed after 0.145 seconds.
+􁁛  Test ledgerCommitRollsBackStateAndAllEventsOnWriteFailure() passed after 0.145 seconds.
+􁁛  Test legacySnapshotIsReadWithoutModificationAndImportIsExplicit() passed after 0.145 seconds.
+􁁛  Test reissuedInvitationInvalidatesOldTokenAndChallengeWithoutChangingAccount() passed after 0.145 seconds.
+􁁛  Test malformedDERIsRejected() passed after 0.145 seconds.
+􁁛  Test fullEpochHistoryAndSignedLedgerHeadSurviveRotation() passed after 0.145 seconds.
+􁁛  Test ledgerPermissionsAndExclusiveLock() passed after 0.145 seconds.
+􁁛  Test accountInvitationsAreIsolatedOneUseAndNeverListedAsSecrets() passed after 0.152 seconds.
+􁁛  Test revocationAndRecoveryAreAtomicVisibleLedgerEvents() passed after 0.154 seconds.
+􁁛  Test ledgerDetectsLiveSnapshotDivergenceBeforeCommit() passed after 0.155 seconds.
+􁁛  Test privateStateAndExclusiveProcessLock() passed after 0.157 seconds.
+􁁛  Test consoleAndErrorsAreNoncacheableWithScopedCSPAndNoCORSGrant() passed after 0.158 seconds.
+􁁛  Test originalBootstrapAndPairingRoutesRemainRegistered() passed after 0.159 seconds.
+􁁛  Test adminPagingRejectsMalformedDuplicateAndOutOfRangeValues() passed after 0.160 seconds.
+􁁛  Test adminRoutesRejectMissingWrongAndBootstrapBearersBeforeBodyOrLookup() passed after 0.164 seconds.
+􁁛  Test enrollmentInvitationCanBeReissuedOnlyBeforeFirstDeviceEnrollment() passed after 0.167 seconds.
+􁁛  Test securityPolicyCannotChangeOnRestart() passed after 0.170 seconds.
+􁁛  Test ledgerPaginationAndAccountFiltering() passed after 0.172 seconds.
+􁁛  Test ledgerStateEventsAndCheckpointSurviveRestart() passed after 0.172 seconds.
+􁁛  Test recoveryAtomicallyAddsReplacementAndRevokesLostDevice() passed after 0.175 seconds.
+􁁛  Test concurrentWorkloadConsumesExactlyOnceAndInvalidSignatureDoesNotConsume() passed after 0.175 seconds.
+􁁛  Test accountProvisioningWorksThroughExistingMobileRoutesWithoutLeakingSecrets() passed after 0.177 seconds.
+􁁛  Test registeredDeviceTrustIsCheckedAgainForWorkloadsAndMutations() passed after 0.178 seconds.
+􁁛  Test lostEpochResponseRetriesWithFreshAuthorizationAndSameLeaf() passed after 0.184 seconds.
+􁁛  Test reissueWinsAgainstAnEnrollmentAwaitingAttestation() passed after 0.185 seconds.
+􁁛  Test legacyImportPreservesKeysCredentialsAndReplayWithoutInventingHistory() passed after 0.194 seconds.
+􁁛  Test expiredInvitationCanBeReissuedAndSurvivesRestart() passed after 0.195 seconds.
+􁁛  Test workloadLedgerAndEpochReceiptSurviveRestart() passed after 0.195 seconds.
+􁁛  Test reissueRejectsRevokedOnlyAndInitialBootstrapAccounts() passed after 0.197 seconds.
+􁁛  Test run with 43 tests in 0 suites passed after 0.198 seconds.

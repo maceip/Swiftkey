@@ -1,0 +1,213 @@
+[0/1] Planning build
+Building for debugging...
+[0/7] Write sources
+[1/7] Write swift-version-43AF9A9ED32E53B.txt
+[3/9] Emitting module SwiftKeyOperator
+[4/9] Emitting module SwiftKeyAuthorityTests
+[5/9] Emitting module SwiftKeyHTTP
+[6/9] Compiling SwiftKeyHTTP HTTPRouter.swift
+[6/10] Write Objects.LinkFileList
+[8/11] Linking swiftkey-server
+[9/11] Applying swiftkey-server
+[10/11] Linking SwiftKeyServerPackageTests
+Build complete! (5.27s)
+Test Suite 'All tests' started at 2026-09-20 15:52:29.308.
+Test Suite 'All tests' passed at 2026-09-20 15:52:29.315.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.007) seconds
+􀟈  Test run started.
+􀄵  Testing Library Version: 6.3.2 (70eff261d7f462c)
+􀄵  Target Platform: arm64-apple-macosx
+􀟈  Test privateTokenFileRejectsPublicPermissionsAndSymbolicLinks() started.
+􀟈  Test vaporAdminAuthenticationPrecedesBodyCollectionForEveryNamespaceRoute() started.
+􀟈  Test browserTreePreservesExplicitlyNonsecureTextAndRedactsLegacySecureNode() started.
+􀟈  Test v2HTTPRejectsAmbiguousOversizedAndUnsupportedInputsBeforeAdmission() started.
+􀟈  Test registeredDeviceTrustIsCheckedAgainForWorkloadsAndMutations() started.
+􀟈  Test reissuedInvitationInvalidatesOldTokenAndChallengeWithoutChangingAccount() started.
+􀟈  Test adminRoutesRejectMissingWrongAndBootstrapBearersBeforeBodyOrLookup() started.
+􀟈  Test swiftWorkspaceCallbacksCreateRealAccountsAndRejectStaleOrInventedActions() started.
+􀟈  Test vaporV2PrecollectedAndSocketBodiesKeepExactLimitAndSignedDispatch() started.
+􀟈  Test consoleAndErrorsAreNoncacheableWithScopedCSPAndNoCORSGrant() started.
+􀟈  Test expiredInvitationCannotGenerateOrEnrollAKey() started.
+􀟈  Test recoveryRechecksLostDeviceAfterCandidateTrustSuspends() started.
+􀟈  Test enrollmentInvitationCanBeReissuedOnlyBeforeFirstDeviceEnrollment() started.
+􀟈  Test malformedDERIsRejected() started.
+􀟈  Test browserTreeOmitsResolvedSecureFieldTextAndRetainsPublicControls() started.
+􀟈  Test accountProvisioningWorksThroughExistingMobileRoutesWithoutLeakingSecrets() started.
+􀟈  Test v2RootProofTamperingAndExpiredPairingCannotMutateState() started.
+􀟈  Test privateTokenFileRejectsInvalidContents(_:) started.
+􀟈  Test v2HTTPAdmissionReturnsPinnedSignedPublicContextAndNoAccount() started.
+􀟈  Test vaporPrecollectedBodiesKeepExactV1AdminAndWorkspaceLimits() started.
+􀟈  Test ledgerDetectsLiveSnapshotDivergenceBeforeCommit() started.
+􀟈  Test ledgerCommitRollsBackStateAndAllEventsOnWriteFailure() started.
+􀟈  Test unsentMutationRecoveryIsSignedAndPermanentlyInvalidatesOriginalProof() started.
+􀟈  Test securityPolicyCannotChangeOnRestart() started.
+􀟈  Test fullEpochHistoryAndSignedLedgerHeadSurviveRotation() started.
+􀟈  Test originalBootstrapAndPairingRoutesRemainRegistered() started.
+􀟈  Test concurrentV2MembershipCommitRechecksRevisionAfterTrustSuspends() started.
+􀟈  Test adminPagingRejectsMalformedDuplicateAndOutOfRangeValues() started.
+􀟈  Test originalSignedTBSBytesArePreserved() started.
+􀟈  Test compatibilityDoesNotApplyToOtherExtensions() started.
+􀟈  Test realV2ClientsRequireBothConsentsThenRestoreOwnerSessionAndIssueEpoch() started.
+􀟈  Test revocationImmediatelyRejectsPreviouslyValidEpochCredential() started.
+􀟈  Test concurrentWorkloadConsumesExactlyOnceAndInvalidSignatureDoesNotConsume() started.
+􀟈  Test concurrentPairingAttestationCannotReplaceTheCommittedCandidate() started.
+􀟈  Test selfHostedFontsUseExactWhitelistAndPreserveBinaryContent() started.
+􀟈  Test v2CutoverDurablyRetiresExportedLegacyEnrollmentWithoutDeletingHistory() started.
+􀟈  Test ledgerRejectsDatabaseSymlink() started.
+􀟈  Test recoveryAtomicallyAddsReplacementAndRevokesLostDevice() started.
+􀟈  Test nativePhoneStoreDrivesFullAccountAndOwnerChangeCeremony() started.
+􀟈  Test v2StateFormatRefusesMissingCutoverMarkersOrLegacyDowngrade(_:) started.
+􀟈  Test vaporV2AdmissionThrottleRunsBeforeMalformedBodyDecoding() started.
+􀟈  Test legacyImportPreservesKeysCredentialsAndReplayWithoutInventingHistory() started.
+􀟈  Test expiredCredentialCannotPassReadOnlyAuthorityVerification() started.
+􀟈  Test revocationAndRecoveryAreAtomicVisibleLedgerEvents() started.
+􀟈  Test readOnlyCredentialVerificationChecksTrustExpiryAndDoesNotConsumeWorkload() started.
+􀟈  Test expiredInvitationCanBeReissuedAndSurvivesRestart() started.
+􀟈  Test ledgerStateEventsAndCheckpointSurviveRestart() started.
+􀟈  Test ledgerCanonicalHashIsIndependentOfDictionaryInsertionOrder() started.
+􀟈  Test v2HTTPRequiresExplicitAuthorityOptIn() started.
+􀟈  Test ledgerPaginationAndAccountFiltering() started.
+􀟈  Test accountInvitationsAreIsolatedOneUseAndNeverListedAsSecrets() started.
+􀟈  Test ledgerPermissionsAndExclusiveLock() started.
+􀟈  Test ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test pairingCandidateRetryIsIdempotentAndCannotReplaceItsHardwareIdentity() started.
+􀟈  Test candidateTrustIsRevalidatedBeforePairingOrRecoveryChangesMembership() started.
+􀟈  Test expiredLostRenewalResponseRecoversHistoricalTrustBeforeExplicitRenewal() started.
+􀟈  Test privateStateAndExclusiveProcessLock() started.
+􀟈  Test validStrongBoxDescriptionMatchesExactPolicy() started.
+􀟈  Test realV2AddAndReplaceWithBothApprovalOrdersInvalidateRemovedRootAndAllowHistoricalReceipt() started.
+􀟈  Test lostFinalV2ApprovalSurvivesAuthorityRestartWithoutDuplicateAccount() started.
+􀟈  Test malformedOrDefaultCriticalEncodingIsRejected(_:) started.
+􀟈  Test pairingRechecksAuthorizerAfterCandidateTrustSuspends(revokeAuthorizer:) started.
+􀟈  Test lostAdmissionResponseRetriesPersistedHardwareEvidenceWithoutGeneratingAnotherRoot() started.
+􀟈  Test replacingGenesisDiscardsOldApprovalAndRotatingInvitationRetiresOldSecret() started.
+􀟈  Test reissueWinsAgainstAnEnrollmentAwaitingAttestation() started.
+􀟈  Test legacySnapshotIsReadWithoutModificationAndImportIsExplicit() started.
+􀟈  Test bootstrapRetryRequiresSameKeyAndFreshValidProof() started.
+􀟈  Test lostV2CreateAndJoinResponsesRecoverOriginalOperationWithoutRevealingSecretAgain() started.
+􀟈  Test invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test workspaceSnapshotHasAuthoritativeInvitationEligibility() started.
+􀟈  Test reissueRejectsRevokedOnlyAndInitialBootstrapAccounts() started.
+􀟈  Test lostOwnerSessionResponseRecoversPublicIdentityThenRequiresFreshSignIn() started.
+􀟈  Test keyUsageCriticalTrueCompatibility(_:) started.
+􀟈  Test v2HTTPAdmissionBudgetCannotBeResetByForwardedHeadersOrNewRequestIDs() started.
+􀟈  Test pairingBindsExactKeyAndConfirmationRequiresApproval() started.
+􀟈  Test workloadLedgerAndEpochReceiptSurviveRestart() started.
+􀟈  Test lostEpochResponseRetriesWithFreshAuthorizationAndSameLeaf() started.
+􀟈  Test case passing 1 argument contents → "too-short" to privateTokenFileRejectsInvalidContents(_:) started.
+􀟈  Test case passing 1 argument contents → "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" to privateTokenFileRejectsInvalidContents(_:) started.
+􀟈  Test case passing 1 argument contents → "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+embedded-line" to privateTokenFileRejectsInvalidContents(_:) started.
+􀟈  Test case passing 1 argument fault → "registry" to v2StateFormatRefusesMissingCutoverMarkersOrLegacyDowngrade(_:) started.
+􀟈  Test case passing 1 argument fault → "retirement" to v2StateFormatRefusesMissingCutoverMarkersOrLegacyDowngrade(_:) started.
+􀟈  Test case passing 1 argument fault → "legacyFormat" to v2StateFormatRefusesMissingCutoverMarkersOrLegacyDowngrade(_:) started.
+􀟈  Test case passing 1 argument sql → "UPDATE authority_snapshot SET data=X'74616D7065726564' WHERE singleton=1" to ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test case passing 1 argument sql → "UPDATE authority_snapshot SET data=X'74616D7065726564',state_hash=zeroblob(32) WHERE singleton=1" to ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test case passing 1 argument sql → "DROP TRIGGER ledger_events_no_update; UPDATE ledger_events SET kind='tampered' WHERE sequence=1" to ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test case passing 1 argument sql → "DROP TRIGGER ledger_events_no_delete; DELETE FROM ledger_events WHERE sequence=1" to ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test case passing 1 argument sql → "DROP TRIGGER ledger_events_no_update; UPDATE ledger_events SET sequence=99 WHERE sequence=1" to ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test case passing 1 argument sql → "DROP TRIGGER ledger_commits_no_update; UPDATE ledger_commits SET state_hash=zeroblob(32) WHERE sequence=1" to ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test case passing 1 argument sql → "DROP TRIGGER ledger_commits_no_delete; DELETE FROM ledger_commits WHERE sequence=1" to ledgerRejectsTamperingOrReorderingOnOpen(_:) started.
+􀟈  Test case passing 1 argument bytes → [1, 1, 2] to malformedOrDefaultCriticalEncodingIsRejected(_:) started.
+􀟈  Test case passing 1 argument bytes → [1, 1, 0] to malformedOrDefaultCriticalEncodingIsRejected(_:) started.
+􀟈  Test case passing 1 argument bytes → [1, 2, 0, 1] to malformedOrDefaultCriticalEncodingIsRejected(_:) started.
+􀟈  Test case passing 1 argument bytes → [2, 1, 1] to malformedOrDefaultCriticalEncodingIsRejected(_:) started.
+􀟈  Test case passing 1 argument revokeAuthorizer → false to pairingRechecksAuthorizerAfterCandidateTrustSuspends(revokeAuthorizer:) started.
+􀟈  Test case passing 1 argument revokeAuthorizer → true to pairingRechecksAuthorizerAfterCandidateTrustSuspends(revokeAuthorizer:) started.
+􀟈  Test case passing 1 argument fault → "package" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "signer" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "unlocked" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "boot" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "purpose" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "digest" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "curve" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "origin" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "duplicate" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "missingHardware" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "attestationLevel" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "keyLevel" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "challenge" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "nonstandardTrue" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "boolLength" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "boolTag" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument fault → "berTrue" to invalidAttestationPolicyIsRejected(_:) started.
+􀟈  Test case passing 1 argument value → 1 to keyUsageCriticalTrueCompatibility(_:) started.
+􀟈  Test case passing 1 argument value → 255 to keyUsageCriticalTrueCompatibility(_:) started.
+􁁛  Test browserTreePreservesExplicitlyNonsecureTextAndRedactsLegacySecureNode() passed after 0.241 seconds.
+􁁛  Test malformedDERIsRejected() passed after 0.261 seconds.
+􁁛  Test privateTokenFileRejectsInvalidContents(_:) with 3 test cases passed after 0.262 seconds.
+􁁛  Test privateTokenFileRejectsPublicPermissionsAndSymbolicLinks() passed after 0.262 seconds.
+􁁛  Test compatibilityDoesNotApplyToOtherExtensions() passed after 0.262 seconds.
+􁁛  Test originalSignedTBSBytesArePreserved() passed after 0.262 seconds.
+􁁛  Test expiredInvitationCannotGenerateOrEnrollAKey() passed after 0.262 seconds.
+􁁛  Test ledgerRejectsDatabaseSymlink() passed after 0.262 seconds.
+􁁛  Test ledgerDetectsLiveSnapshotDivergenceBeforeCommit() passed after 0.262 seconds.
+􁁛  Test registeredDeviceTrustIsCheckedAgainForWorkloadsAndMutations() passed after 0.262 seconds.
+􁁛  Test ledgerCommitRollsBackStateAndAllEventsOnWriteFailure() passed after 0.262 seconds.
+􁁛  Test reissuedInvitationInvalidatesOldTokenAndChallengeWithoutChangingAccount() passed after 0.262 seconds.
+􁁛  Test fullEpochHistoryAndSignedLedgerHeadSurviveRotation() passed after 0.266 seconds.
+􁁛  Test securityPolicyCannotChangeOnRestart() passed after 0.266 seconds.
+􁁛  Test ledgerCanonicalHashIsIndependentOfDictionaryInsertionOrder() passed after 0.266 seconds.
+􁁛  Test revocationImmediatelyRejectsPreviouslyValidEpochCredential() passed after 0.267 seconds.
+􁁛  Test expiredCredentialCannotPassReadOnlyAuthorityVerification() passed after 0.267 seconds.
+􁁛  Test readOnlyCredentialVerificationChecksTrustExpiryAndDoesNotConsumeWorkload() passed after 0.267 seconds.
+􁁛  Test v2CutoverDurablyRetiresExportedLegacyEnrollmentWithoutDeletingHistory() passed after 0.267 seconds.
+􁁛  Test ledgerStateEventsAndCheckpointSurviveRestart() passed after 0.267 seconds.
+􁁛  Test recoveryAtomicallyAddsReplacementAndRevokesLostDevice() passed after 0.267 seconds.
+􁁛  Test revocationAndRecoveryAreAtomicVisibleLedgerEvents() passed after 0.267 seconds.
+􁁛  Test ledgerPermissionsAndExclusiveLock() passed after 0.267 seconds.
+􁁛  Test ledgerPaginationAndAccountFiltering() passed after 0.267 seconds.
+􁁛  Test legacyImportPreservesKeysCredentialsAndReplayWithoutInventingHistory() passed after 0.267 seconds.
+􁁛  Test accountInvitationsAreIsolatedOneUseAndNeverListedAsSecrets() passed after 0.267 seconds.
+􁁛  Test expiredInvitationCanBeReissuedAndSurvivesRestart() passed after 0.267 seconds.
+􁁛  Test ledgerRejectsTamperingOrReorderingOnOpen(_:) with 7 test cases passed after 0.267 seconds.
+􁁛  Test validStrongBoxDescriptionMatchesExactPolicy() passed after 0.266 seconds.
+􁁛  Test pairingCandidateRetryIsIdempotentAndCannotReplaceItsHardwareIdentity() passed after 0.267 seconds.
+􁁛  Test candidateTrustIsRevalidatedBeforePairingOrRecoveryChangesMembership() passed after 0.267 seconds.
+􁁛  Test malformedOrDefaultCriticalEncodingIsRejected(_:) with 4 test cases passed after 0.267 seconds.
+􁁛  Test privateStateAndExclusiveProcessLock() passed after 0.267 seconds.
+􁁛  Test legacySnapshotIsReadWithoutModificationAndImportIsExplicit() passed after 0.267 seconds.
+􁁛  Test invalidAttestationPolicyIsRejected(_:) with 17 test cases passed after 0.267 seconds.
+􁁛  Test bootstrapRetryRequiresSameKeyAndFreshValidProof() passed after 0.267 seconds.
+􁁛  Test keyUsageCriticalTrueCompatibility(_:) with 2 test cases passed after 0.267 seconds.
+􁁛  Test workspaceSnapshotHasAuthoritativeInvitationEligibility() passed after 0.267 seconds.
+􁁛  Test pairingBindsExactKeyAndConfirmationRequiresApproval() passed after 0.267 seconds.
+􁁛  Test reissueRejectsRevokedOnlyAndInitialBootstrapAccounts() passed after 0.267 seconds.
+􁁛  Test browserTreeOmitsResolvedSecureFieldTextAndRetainsPublicControls() passed after 0.268 seconds.
+􁁛  Test workloadLedgerAndEpochReceiptSurviveRestart() passed after 0.273 seconds.
+􁁛  Test v2StateFormatRefusesMissingCutoverMarkersOrLegacyDowngrade(_:) with 3 test cases passed after 0.277 seconds.
+􁁛  Test lostEpochResponseRetriesWithFreshAuthorizationAndSameLeaf() passed after 0.277 seconds.
+􁁛  Test recoveryRechecksLostDeviceAfterCandidateTrustSuspends() passed after 0.286 seconds.
+􁁛  Test concurrentPairingAttestationCannotReplaceTheCommittedCandidate() passed after 0.287 seconds.
+􁁛  Test pairingRechecksAuthorizerAfterCandidateTrustSuspends(revokeAuthorizer:) with 2 test cases passed after 0.289 seconds.
+􁁛  Test reissueWinsAgainstAnEnrollmentAwaitingAttestation() passed after 0.291 seconds.
+􁁛  Test lostAdmissionResponseRetriesPersistedHardwareEvidenceWithoutGeneratingAnotherRoot() passed after 0.295 seconds.
+􁁛  Test v2RootProofTamperingAndExpiredPairingCannotMutateState() passed after 0.299 seconds.
+􁁛  Test unsentMutationRecoveryIsSignedAndPermanentlyInvalidatesOriginalProof() passed after 0.316 seconds.
+􁁛  Test expiredLostRenewalResponseRecoversHistoricalTrustBeforeExplicitRenewal() passed after 0.320 seconds.
+􁁛  Test concurrentWorkloadConsumesExactlyOnceAndInvalidSignatureDoesNotConsume() passed after 0.322 seconds.
+􁁛  Test v2HTTPAdmissionReturnsPinnedSignedPublicContextAndNoAccount() passed after 0.334 seconds.
+􁁛  Test consoleAndErrorsAreNoncacheableWithScopedCSPAndNoCORSGrant() passed after 0.334 seconds.
+􁁛  Test v2HTTPRequiresExplicitAuthorityOptIn() passed after 0.334 seconds.
+􁁛  Test selfHostedFontsUseExactWhitelistAndPreserveBinaryContent() passed after 0.338 seconds.
+􁁛  Test v2HTTPAdmissionBudgetCannotBeResetByForwardedHeadersOrNewRequestIDs() passed after 0.342 seconds.
+􁁛  Test v2HTTPRejectsAmbiguousOversizedAndUnsupportedInputsBeforeAdmission() passed after 0.343 seconds.
+􁁛  Test lostV2CreateAndJoinResponsesRecoverOriginalOperationWithoutRevealingSecretAgain() passed after 0.342 seconds.
+􁁛  Test enrollmentInvitationCanBeReissuedOnlyBeforeFirstDeviceEnrollment() passed after 0.343 seconds.
+􁁛  Test originalBootstrapAndPairingRoutesRemainRegistered() passed after 0.343 seconds.
+􁁛  Test vaporAdminAuthenticationPrecedesBodyCollectionForEveryNamespaceRoute() passed after 0.345 seconds.
+􁁛  Test vaporV2AdmissionThrottleRunsBeforeMalformedBodyDecoding() passed after 0.347 seconds.
+􁁛  Test swiftWorkspaceCallbacksCreateRealAccountsAndRejectStaleOrInventedActions() passed after 0.348 seconds.
+􁁛  Test adminPagingRejectsMalformedDuplicateAndOutOfRangeValues() passed after 0.348 seconds.
+􁁛  Test accountProvisioningWorksThroughExistingMobileRoutesWithoutLeakingSecrets() passed after 0.348 seconds.
+􁁛  Test vaporPrecollectedBodiesKeepExactV1AdminAndWorkspaceLimits() passed after 0.350 seconds.
+􁁛  Test adminRoutesRejectMissingWrongAndBootstrapBearersBeforeBodyOrLookup() passed after 0.353 seconds.
+􁁛  Test lostFinalV2ApprovalSurvivesAuthorityRestartWithoutDuplicateAccount() passed after 0.441 seconds.
+􁁛  Test replacingGenesisDiscardsOldApprovalAndRotatingInvitationRetiresOldSecret() passed after 0.479 seconds.
+􁁛  Test nativePhoneStoreDrivesFullAccountAndOwnerChangeCeremony() passed after 0.486 seconds.
+􁁛  Test lostOwnerSessionResponseRecoversPublicIdentityThenRequiresFreshSignIn() passed after 0.486 seconds.
+􁁛  Test realV2ClientsRequireBothConsentsThenRestoreOwnerSessionAndIssueEpoch() passed after 0.493 seconds.
+􁁛  Test vaporV2PrecollectedAndSocketBodiesKeepExactLimitAndSignedDispatch() passed after 0.797 seconds.
+􁁛  Test concurrentV2MembershipCommitRechecksRevisionAfterTrustSuspends() passed after 0.867 seconds.
+􁁛  Test realV2AddAndReplaceWithBothApprovalOrdersInvalidateRemovedRootAndAllowHistoricalReceipt() passed after 1.050 seconds.
+􁁛  Test run with 77 tests in 0 suites passed after 1.050 seconds.

@@ -1,0 +1,41 @@
+{
+  "capturedAt": "2026-09-20T23:43:32.438076+00:00",
+  "scope": "read-only diagnosis; not a successful app acceptance run",
+  "appUID": 10384,
+  "uidState": "12 (TOP_SLEEPING)",
+  "power": [
+    "mWakefulness=Dozing",
+    "mWakefulness=3"
+  ],
+  "deviceIdle": [
+    "mScreenOn=false",
+    "mCharging=false",
+    "mState=IDLE mLightState=OVERRIDE"
+  ],
+  "appPolicy": [
+    "UID=10384 policy=1 (REJECT_METERED_BACKGROUND)",
+    "UID=10384 state={procState=TPSL,seq=2581669,cap=-------TI} blocked_state={blocked=DOZE|APP_BACKGROUND|METERED_USER_RESTRICTED,allowed=NONE,effective=DOZE|APP_BACKGROUND|METERED_USER_RESTRICTED}",
+    "callback_info={uid=10384,proc_state=TPSL,seq=2581669,cap=-------TI,pending=false}",
+    "2026-09-20T16:33:37:846 - Firewall rule changed: 10384-background-default",
+    "2026-09-20T16:33:32:733 - Firewall rule changed: 10384-dozable-default",
+    "2026-09-20T16:33:32:733 - Firewall rule changed: 10384-standby-default",
+    "2026-09-20T16:33:32:733 - Firewall rule changed: 10384-metered_allow-default",
+    "2026-09-20T16:33:32:733 - Firewall rule changed: 10384-metered_deny_user-deny",
+    "2026-09-20T16:33:32:733 - Firewall rule changed: 10384-metered_deny_admin-default",
+    "2026-09-20T16:33:31:919 - Firewall rule changed: 10384-standby-default",
+    "2026-09-20T16:33:31:919 - App idle state of uid 10384: false",
+    "2026-09-20T16:33:31:918 - Firewall rule changed: 10384-metered_allow-allow",
+    "2026-09-20T16:33:31:918 - Firewall rule changed: 10384-metered_deny_user-default",
+    "2026-09-20T16:33:31:918 - Firewall rule changed: 10384-metered_deny_admin-default",
+    "2026-09-20T16:33:31:621 - Firewall rule changed: 10384-background-allow",
+    "2026-09-20T16:33:31:621 - Firewall rule changed: 10384-dozable-allow",
+    "2026-09-20T16:33:31:621 - Firewall rule changed: 10384-standby-default",
+    "2026-09-20T16:33:31:362 - Firewall rule changed: 10384-background-default",
+    "2026-09-20T16:33:31:362 - Firewall rule changed: 10384-dozable-default",
+    "2026-09-20T16:33:32:733 - 10384:TPSL:-------TI:2581669",
+    "2026-09-20T16:33:31:919 - 10384:TOP :LCMNFUATI:2581522",
+    "2026-09-20T16:33:31:918 - 10384:TOP :LCMNFUATI:2581521",
+    "2026-09-20T16:33:31:621 - 10384:CEM :LCMNFUATI:2581374"
+  ],
+  "nextStep": "Unlock the phone, keep SwiftKey foreground, then retry without changing network or battery policy."
+}

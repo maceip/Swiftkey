@@ -1,0 +1,4 @@
+catboost==1.2.10
+numpy==2.5.3
+typesafe-sdk==0.7.0
+anthropic==1.7.0

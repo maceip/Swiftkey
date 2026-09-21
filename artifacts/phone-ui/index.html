@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer"><title>SwiftKey · Phone protocol surfaces</title>
+<link rel="icon" href="data:,"><link rel="stylesheet" href="style.css"><script src="catalog.js" defer></script>
+<style>
+header{width:100%;min-width:0;max-width:1100px;margin:auto;padding:32px 24px 24px}h1{font-size:32px;font-weight:560;letter-spacing:-.3px;margin:8px 0}
+header p{color:var(--muted);max-width:760px}.tools{display:flex;flex-wrap:wrap;gap:12px;align-items:end}
+.tools label{min-width:0;display:flex;flex-direction:column;gap:6px;font-size:13px}.tools select{width:100%;padding:10px;max-width:100%;background:var(--surface);color:var(--ink);border-radius:8px;border:1px solid var(--line)}
+.tools button{min-height:44px;padding:10px 16px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px}
+.tools .check{flex-direction:row;align-items:center;min-height:44px}.tools input{width:20px;height:20px}
+.preview{border-top:1px solid var(--line);padding:28px 8px 64px;background:var(--subtle)}
+#device{max-width:440px;margin:auto;background:var(--canvas);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+#surface-title{max-width:800px;margin:0 auto 20px;text-align:center;font:12px var(--mono);color:var(--muted)}
+#event{max-width:800px;margin:20px auto 0;padding:16px;background:var(--canvas);font:12px/1.7 var(--mono);overflow-wrap:anywhere}
+@media(max-width:480px){header{padding:24px 16px}h1{font-size:30px}.tools label:first-child{width:100%}}
+</style></head><body><header><p class="eyebrow">SWIFTKEY / COMPONENT CATALOG</p>
+<h1>One ceremony. Every state.</h1><p>Shared Swift phone surfaces, rendered through the existing browser adapter.
+These are synthetic fixtures. Buttons expose typed callbacks; they do not sign, pair, or create accounts.</p>
+<div class="tools"><label>Protocol surface<select id="surface"></select></label>
+<button id="previous" type="button">Previous</button><button id="next" type="button">Next</button>
+<label>Viewport width<select id="width"><option value="440">440 px</option><option value="360">360 px</option><option value="320">320 px</option><option value="800">800 px</option></select></label>
+<label class="check"><input id="large" type="checkbox">140% text/layout scale</label></div></header>
+<main class="preview"><h2 id="surface-title"></h2><div id="device"><div id="swift-root" class="swift-root"></div></div>
+<p id="event" role="status" aria-live="polite">Loading Swift surfaces…</p></main></body></html>

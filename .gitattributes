@@ -1,0 +1,6 @@
+# Vendored source and license texts retain their original whitespace.
+vendor/** -whitespace
+SwiftKeyServer/Vendor/** -whitespace
+**/*OFL.txt -whitespace
+# Test/build evidence is retained byte-for-byte.
+*.log -whitespace

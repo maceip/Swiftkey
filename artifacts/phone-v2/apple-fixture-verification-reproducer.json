@@ -1,0 +1,21 @@
+{
+  "description": "Public reproducer of host signature verification disagreement. The signature is valid by independent affine P-256 arithmetic, Python cryptography/OpenSSL4, and Homebrew OpenSSL3. Apple CryptoKit, Security, and system LibreSSL3.3.6 reject it. No production verifier relaxation.",
+  "publicKeyHex": "04ea68d7b6fedf0b71878938d51d71f8729e0acb8c2c6df8b3d79e8a4b90949ee02a2744c972c9fce787014a964a8ea0c84d714feaa4de823fe85a224a4dd048fa",
+  "messageHex": "53776966744b6579000100000012617574686f726974792d73746174652d7632000000207710e28392251c0b70f8299fd465e9c200db6e7c415d18bae009e1ac75b17dc90000001868747470733a2f2f73776966746b65792e6578616d706c650000001573776966746b65792d617574686f726974792d76320000000f67656e6573697350726f706f73616c0000002430303030303030302d303030302d303030302d303030302d3030303030303030303031350000000000000005000000207b5d31906cadb184acfa3b8a1b8dd72b41786f9b23986eed96db6a09cb690dfc000000000000047400000000000004b0",
+  "messageSHA256": "880d6831a285e7309ef4b1a03c464ef66eb127cfe0d461e67e85599d2649c63d",
+  "signatureDERHex": "304502206e4c35ee46b85586a040cbc9b15f5b270aac7a5031db35596ac15f294094a955022100ed41411aaf1a47267017797428f3d9b7c1c0d48d86b715d9d5c888d26de2893b",
+  "pythonCryptographyVerified": true,
+  "testedProviders": [
+    "Apple CryptoKit P256 message and explicit SHA256 digest overloads",
+    "Apple Security SecKeyVerifySignature ecdsaSignatureMessageX962SHA256",
+    "Homebrew OpenSSL3.6.3: accepts",
+    "system LibreSSL3.3.6: rejects",
+    "Python cryptography48/OpenSSL4.0.0: accepts",
+    "independent Python affine P-256 ECDSA arithmetic: accepts"
+  ],
+  "toolchains": [
+    "default Xcode Testing1743",
+    "pinned Swift6.3.2"
+  ],
+  "scope": "Observed for intentionally tiny scalar9 test key. Replacement full-width deterministic and randomly generated keys each passed2048 roundtrips. Production verification fails closed. This artifact does not establish which other public keys or providers are affected, or the underlying cause."
+}

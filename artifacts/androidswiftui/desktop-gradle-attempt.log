@@ -1,0 +1,68 @@
+
+> Configure project :composeui
+w: Kotlin Multiplatform <-> Android Gradle Plugin compatibility issue:
+The applied Android Gradle Plugin version (8.10.1) is higher 
+than the maximum known to the Kotlin Gradle Plugin.
+Tooling stability in such configuration isn't tested, please report encountered issues to https://kotl.in/issue
+
+Minimum supported Android Gradle Plugin version: 7.1
+Maximum tested Android Gradle Plugin version: 8.5
+
+To suppress this message add 'kotlin.mpp.androidGradlePluginCompatibility.nowarn=true' to your gradle.properties
+
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':composeui'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmShared]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Task :composeui:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :composeui:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :composeui:generateResourceAccessorsForCommonMain SKIPPED
+> Task :composeui:convertXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForDesktopMain NO-SOURCE
+> Task :composeui:generateResourceAccessorsForDesktopMain SKIPPED
+> Task :composeui:convertXmlValueResourcesForJvmShared NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForJvmShared NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForJvmShared NO-SOURCE
+> Task :composeui:generateResourceAccessorsForJvmShared SKIPPED
+> Task :composeui:generateActualResourceCollectorsForDesktopMain SKIPPED
+> Task :composeui:generateComposeResClass SKIPPED
+> Task :composeui:generateExpectResourceCollectorsForCommonMain SKIPPED
+
+> Task :swiftbridge:jextract
+Another instance of SwiftPM (PID: 19146) is already running using '/Users/mac/SwiftKey/AndroidSwiftUI/.build', waiting until that process has finished execution...error: 'androidswiftui': Invalid manifest (compiled with: ["/Users/mac/Library/Developer/Toolchains/swift-6.4.0-RELEASE.xctoolchain/usr/bin/swift", "-vfsoverlay", "/var/folders/8j/5mwkcdz55xbcg1pg_54tlcf00000gn/T/TemporaryDirectory.nlGOr9/vfs.yaml", "-L", "/Users/mac/Library/Developer/Toolchains/swift-6.4.0-RELEASE.xctoolchain/usr/lib/swift/pm/ManifestAPI", "-lPackageDescription", "-Xlinker", "-rpath", "-Xlinker", "/Users/mac/Library/Developer/Toolchains/swift-6.4.0-RELEASE.xctoolchain/usr/lib/swift/pm/ManifestAPI", "-target", "arm64-apple-macosx14.0", "-I", "/Users/mac/Library/Developer/Toolchains/swift-6.4.0-RELEASE.xctoolchain/usr/lib/swift/macosx/testing", "-L", "/Users/mac/Library/Developer/Toolchains/swift-6.4.0-RELEASE.xctoolchain/usr/lib/swift/macosx/testing", "-plugin-path", "/Users/mac/Library/Developer/Toolchains/swift-6.4.0-RELEASE.xctoolchain/usr/lib/swift/host/plugins/testing", "-sdk", "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk", "-F", "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks", "-I", "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib", "-L", "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib", "-swift-version", "6", "-I", "/Users/mac/Library/Developer/Toolchains/swift-6.4.0-RELEASE.xctoolchain/usr/lib/swift/pm/ManifestAPI", "-sdk", "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk", "-package-description-version", "6.1.0", "/Users/mac/SwiftKey/AndroidSwiftUI/Package.swift", "-o", "/var/folders/8j/5mwkcdz55xbcg1pg_54tlcf00000gn/T/TemporaryDirectory.hfUPwy/androidswiftui-manifest"])
+JIT session error: Symbols not found: [ _$s18PackageDescription8PlatformVMa, _$s18PackageDescription0A0C10DependencyC7package3url6branch6traitsAESS_SSShyAE5TraitVGtFZ, _$s18PackageDescription7ProductC7LibraryC0D4TypeOMn, _$s18PackageDescription7ProductCMa, _$s18PackageDescription12SwiftSettingV6defineyACSS_AA05BuildD9ConditionVSgtFZ, _$s18PackageDescription17SupportedPlatformV5macOSyA2C12MacOSVersionVFZ, _$s18PackageDescription21BuildSettingConditionVMa, _$s18PackageDescription0A0C10DependencyC7package3url6branchAESS_SStFZ, _$s18PackageDescription21BuildSettingConditionVMn, _$s18PackageDescription6TargetC10DependencyOMa, _$s18PackageDescription17SwiftLanguageModeOMa, _$s18PackageDescription6TargetC6target4name12dependencies4path7exclude7sources9resources17publicHeadersPath13packageAccess9cSettings03cxxP005swiftP006linkerP07pluginsACSS_SayAC10DependencyOGSSSgSaySSGAVSgSayAA8ResourceVGSgAUSbSayAA8CSettingVGSgSayAA10CXXSettingVGSgSayAA12SwiftSettingVGSgSayAA06LinkerZ0VGSgSayAC11PluginUsageOGSgtFZ, _$s18PackageDescription0A0C10DependencyC7package4pathAESS_tFZ, _$s18PackageDescription19CXXLanguageStandardOMn, _$s18PackageDescription17CLanguageStandardOMn, _$s18PackageDescription19CXXLanguageStandardOMa, _$s18PackageDescription17SupportedPlatformV12MacOSVersionVMa, _$s18PackageDescription6TargetC11PluginUsageOMa, _$s18PackageDescription11LanguageTagVMa, _$s18PackageDescription8PlatformV7androidACvgZ, _$s18PackageDescription6TargetC10DependencyO7product4name7package13moduleAliases9conditionAESS_SSSDyS2SGSgAA0cD9ConditionVSgtFZ, _$s18PackageDescription17SupportedPlatformV12MacOSVersionV3v15AEvgZ, _$s18PackageDescription0A0C10DependencyC5TraitVMa, _$s18PackageDescription0A0C10DependencyC5TraitVSHAAMc, _$s18PackageDescription7ProductC7LibraryC0D4TypeOMa, _$s18PackageDescription12SwiftSettingVMa, _$s18PackageDescription0A0C10DependencyCMa, _$s18PackageDescription0A0C10DependencyC5TraitV13stringLiteralAGSS_tcfC, _$s18PackageDescription11LanguageTagVMn, _$s18PackageDescription0A0CMa, _$s18PackageDescription7ProductC7library4name4type7targetsACSS_AC7LibraryC0H4TypeOSgSaySSGtFZ, _$s18PackageDescription6TargetCMa, _$s18PackageDescription6TargetC10DependencyO13stringLiteralAESS_tcfC, _$s18PackageDescription25TargetDependencyConditionV4when9platformsACSgSayAA8PlatformVG_tFZ, _$s18PackageDescription0A0C4name19defaultLocalization9platforms9pkgConfig9providers8products12dependencies7targets18swiftLanguageModes01cN8Standard03cxxnP0ACSS_AA0N3TagVSgSayAA17SupportedPlatformVGSgSSSgSayAA06SystemA8ProviderOGSgSayAA7ProductCGSayAC10DependencyCGSayAA6TargetCGSayAA05SwiftN4ModeOGSgAA09CLanguageP0OSgAA011CXXLanguageP0OSgtcfC, _$s18PackageDescription7ProductC7LibraryC0D4TypeO7dynamicyA2GmFWC, _$s18PackageDescription25TargetDependencyConditionVMn, _$s18PackageDescription17SwiftLanguageModeO2v5yA2CmFWC, _$s18PackageDescription17SupportedPlatformVMa, _$s18PackageDescription17CLanguageStandardOMa, _$s18PackageDescription25TargetDependencyConditionVMa, _$s18PackageDescription12SwiftSettingV17swiftLanguageModeyAcA0cfG0O_AA05BuildD9ConditionVSgtFZ, _$s18PackageDescription6TargetC11PluginUsageO6pluginyAESS_SSSgtcAEmFWC ]
+Failed to materialize symbols: { (main, { _got.$s18PackageDescription11LanguageTagVMn, _symbolic _____Sg 18PackageDescription17CLanguageStandardO, _$s7Package7package0A11DescriptionAACvp, _got.$s18PackageDescription17CLanguageStandardOMn, ___swift_instantiateConcreteTypeFromMangledName, _$s18PackageDescription19CXXLanguageStandardOSgMD, _symbolic _____Sg 18PackageDescription7ProductC7LibraryC0D4TypeO, _$ss27_finalizeUninitializedArrayySayxGABnlF, __swift_FORCE_LOAD_$_swiftCoreFoundation_$_Package, __swift_FORCE_LOAD_$_swift_Builtin_float_$_Package, _$s18PackageDescription6TargetC6target4name12dependencies4path7exclude7sources9resources17publicHeadersPath13packageAccess9cSettings03cxxP005swiftP006linkerP07pluginsACSS_SayAC10DependencyOGSSSgSaySSGAVSgSayAA8ResourceVGSgAUSbSayAA8CSettingVGSgSayAA10CXXSettingVGSgSayAA12SwiftSettingVGSgSayAA06LinkerZ0VGSgSayAC11PluginUsageOGSgtFZfA2_, _$s18PackageDescription17CLanguageStandardOSgMD, _symbolic _____Sg 18PackageDescription25TargetDependencyConditionV, _symbolic _____Sg 18PackageDescription21BuildSettingConditionV, __swift_FORCE_LOAD_$_swiftDispatch_$_Package, _$s18PackageDescription21BuildSettingConditionVSgMD, __swift_FORCE_LOAD_$_swiftObjectiveC_$_Package, __swift_FORCE_LOAD_$_swiftXPC_$_Package, _got.$s18PackageDescription21BuildSettingConditionVMn, _$s18PackageDescription25TargetDependencyConditionVSgWOh, _$s18PackageDescription6TargetC6target4name12dependencies4path7exclude7sources9resources17publicHeadersPath13packageAccess9cSettings03cxxP005swiftP006linkerP07pluginsACSS_SayAC10DependencyOGSSSgSaySSGAVSgSayAA8ResourceVGSgAUSbSayAA8CSettingVGSgSayAA10CXXSettingVGSgSayAA12SwiftSettingVGSgSayAA06LinkerZ0VGSgSayAC11PluginUsageOGSgtFZfA6_, _got.$s18PackageDescription7ProductC7LibraryC0D4TypeOMn, _$s18PackageDescription11LanguageTagVSgMD, _main, _$s18PackageDescription7ProductC7LibraryC0D4TypeOSgWOh, _$s18PackageDescription25TargetDependencyConditionVSgMD, _$s18PackageDescription0A0C10DependencyC5TraitVAGSHAAWl, __swift_FORCE_LOAD_$_swiftIOKit_$_Package, _got.$s18PackageDescription25TargetDependencyConditionVMn, _got.$s18PackageDescription19CXXLanguageStandardOMn, _symbolic _____Sg 18PackageDescription19CXXLanguageStandardO, _$s18PackageDescription0A0C10DependencyC5TraitVAGSHAAWL, _$sSa12_endMutationyyF, _symbolic _____Sg 18PackageDescription11LanguageTagV, _$s18PackageDescription21BuildSettingConditionVSgWOh, _$s18PackageDescription7ProductC7LibraryC0D4TypeOSgMD, _$sSa22_allocateUninitializedySayxG_SpyxGtSiFZSS_Tt0gq5, __swift_FORCE_LOAD_$_swiftFoundation_$_Package }) }
+
+> Task :swiftbridge:jextract FAILED
+[Incubating] Problems report is available at: file:///Users/mac/SwiftKey/AndroidSwiftUI/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':swiftbridge:jextract'.
+> Process 'command '/Users/mac/Library/Developer/Toolchains/swift-6.4.0-RELEASE.xctoolchain/usr/bin/swift'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 4m 19s
+1 actionable task: 1 executed

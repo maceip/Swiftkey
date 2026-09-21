@@ -1,0 +1,15 @@
+{
+  "proposer_model": "claude-sonnet-5",
+  "answerer_model": "jev-1.12",
+  "rounds": 3,
+  "folds": 3,
+  "repeats": 2,
+  "max_actions": 6,
+  "max_features": 24,
+  "max_examples": 12,
+  "min_gain": 0.001,
+  "seed": 0,
+  "iterations": 200,
+  "depth": 4,
+  "learning_rate": 0.05
+}

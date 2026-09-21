@@ -1,0 +1,95 @@
+Building for debugging...
+[0/3] Write sources
+[1/3] Write swift-version-43AF9A9ED32E53B.txt
+[3/6] Compiling SwiftKeyApplication NativePhoneProtocolService.swift
+[4/6] Compiling SwiftKeyApplication PhoneProtocolModels.swift
+[5/6] Emitting module SwiftKeyApplication
+[5/7] Write Objects.LinkFileList
+[6/7] Linking SwiftKeyApplicationPackageTests
+Build complete! (0.77s)
+Test Suite 'All tests' started at 2026-09-20 13:37:39.528.
+Test Suite 'All tests' passed at 2026-09-20 13:37:39.533.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.005) seconds
+􀟈  Test run started.
+􀄵  Testing Library Version: 6.3.2 (70eff261d7f462c)
+􀄵  Target Platform: arm64-apple-macosx
+􀟈  Test phoneProtocolWithoutAdapterCannotStartOrPretendToRefresh() started.
+􀟈  Test knownSuccessfulAndRejectedResultsDoNotInventARecoverableRequest() started.
+􀟈  Test nativeProjectionKeepsAccountAfterCancelledAdditionIsRestarted() started.
+􀟈  Test committedReissueSurvivesFailedFollowupReadWithoutAutomaticRetry() started.
+􀟈  Test lostMutationResponseRetainsOriginalRequestAndOnlyRecoversThatOutcome() started.
+􀟈  Test trustFailureAndUnknownOutcomeNeverOfferAnotherApproval() started.
+􀟈  Test cutoverCapabilityRejectsStaleLegacyCreateActionBeforeCallingService() started.
+􀟈  Test serviceReportedUnknownOutcomeCannotEraseLocallyTrackedRequestID() started.
+􀟈  Test refreshedPhoneProjectionCannotRollBackVerifiedMembershipOrRebindSameRevision(fault:) started.
+􀟈  Test paginationDoesNotAdvanceCursorOnFailedRead() started.
+􀟈  Test invitationExportRejectsExpirationAtExactBoundary() started.
+􀟈  Test committedInvitationSurvivesFailedFollowupReadWithoutAutomaticRetry() started.
+􀟈  Test concurrentPhoneActionsAreRejectedUntilOriginalRequestCompletes() started.
+􀟈  Test nativeTrustRenewalRetainsIdentityReceiptAndAccountContext() started.
+􀟈  Test nativeSignInOrEpochFailureDoesNotReopenAccountCreation() started.
+􀟈  Test browserProjectionCanReadButCannotAuthorizeThroughSharedStore() started.
+􀟈  Test genesisConsentRejectsUnrelatedRevokedOrDuplicateHardwareOwners() started.
+􀟈  Test committedAccountOutlivesProposalDeadlineButRequiresVerifiedReceiptForSignIn() started.
+􀟈  Test realActionsUseServiceAndSecretsStayOutOfSnapshot() started.
+􀟈  Test serverEligibilityControlsReissueAndSelectionDismissesSecret() started.
+􀟈  Test sessionClearRejectsLateResponseAndBusyActionDoesNotStartMutation() started.
+􀟈  Test malformedCommitProjectionCannotReplaceLastVerifiedState(fault:) started.
+􀟈  Test membershipConsentRejectsSilentRootSubstitutionAndChangedCandidate() started.
+􀟈  Test nativeServiceKnownPreSubmitRejectionRemainsKnown() started.
+􀟈  Test nativeInspectionAndLocalDeclineDoNotInventAnIdentityOrCommit() started.
+􀟈  Test nativeUnknownResultOverridesTrustAndCommitButRetainsHistoricalEvidence() started.
+􀟈  Test accountLabelValidationRunsBeforeMutation() started.
+􀟈  Test membershipApprovalRequiresExactAuthorizerAndCandidatePairInEitherDirection() started.
+􀟈  Test invitationDescriptionsDoNotExposeTransientSecret() started.
+􀟈  Test ownerChangesProtectSelfAndTwoOwnerMinimum() started.
+􀟈  Test case passing 1 argument fault → "membership" to refreshedPhoneProjectionCannotRollBackVerifiedMembershipOrRebindSameRevision(fault:) started.
+􀟈  Test clearPhoneSessionDropsLateMutationResponseWithoutOverwritingNewSession() started.
+􀟈  Test case passing 1 argument fault → "bindingDigest" to refreshedPhoneProjectionCannotRollBackVerifiedMembershipOrRebindSameRevision(fault:) started.
+􀟈  Test case passing 1 argument fault → "bindingRevision" to refreshedPhoneProjectionCannotRollBackVerifiedMembershipOrRebindSameRevision(fault:) started.
+􀟈  Test nativeDefinitivelyFailedAdmissionIsUnavailableRatherThanUnknown() started.
+􀟈  Test consentRequiresExactDisplayedObjectRevisionDigestAndDeadline() started.
+􀟈  Test verificationRequiresServiceReceiptForExactCredentialAndClearsOnFailure() started.
+􀟈  Test accountActionsRequireMatchingActiveLocalRootAndProtectSelfDespiteDisplayFlags() started.
+􀟈  Test case passing 1 argument fault → "account" to malformedCommitProjectionCannotReplaceLastVerifiedState(fault:) started.
+􀟈  Test case passing 1 argument fault → "digest" to malformedCommitProjectionCannotReplaceLastVerifiedState(fault:) started.
+􀟈  Test case passing 1 argument fault → "operation" to malformedCommitProjectionCannotReplaceLastVerifiedState(fault:) started.
+􀟈  Test case passing 1 argument fault → "sequence" to malformedCommitProjectionCannotReplaceLastVerifiedState(fault:) started.
+􀟈  Test case passing 1 argument fault → "hash" to malformedCommitProjectionCannotReplaceLastVerifiedState(fault:) started.
+􀟈  Test case passing 1 argument fault → "unverified" to malformedCommitProjectionCannotReplaceLastVerifiedState(fault:) started.
+􁁛  Test phoneProtocolWithoutAdapterCannotStartOrPretendToRefresh() passed after 0.001 seconds.
+􁁛  Test refreshedPhoneProjectionCannotRollBackVerifiedMembershipOrRebindSameRevision(fault:) with 3 test cases passed after 0.001 seconds.
+􁁛  Test serviceReportedUnknownOutcomeCannotEraseLocallyTrackedRequestID() passed after 0.001 seconds.
+􁁛  Test knownSuccessfulAndRejectedResultsDoNotInventARecoverableRequest() passed after 0.001 seconds.
+􁁛  Test lostMutationResponseRetainsOriginalRequestAndOnlyRecoversThatOutcome() passed after 0.001 seconds.
+􁁛  Test browserProjectionCanReadButCannotAuthorizeThroughSharedStore() passed after 0.001 seconds.
+􁁛  Test committedAccountOutlivesProposalDeadlineButRequiresVerifiedReceiptForSignIn() passed after 0.001 seconds.
+􁁛  Test malformedCommitProjectionCannotReplaceLastVerifiedState(fault:) with 6 test cases passed after 0.001 seconds.
+􁁛  Test trustFailureAndUnknownOutcomeNeverOfferAnotherApproval() passed after 0.001 seconds.
+􁁛  Test membershipConsentRejectsSilentRootSubstitutionAndChangedCandidate() passed after 0.001 seconds.
+􁁛  Test membershipApprovalRequiresExactAuthorizerAndCandidatePairInEitherDirection() passed after 0.001 seconds.
+􁁛  Test genesisConsentRejectsUnrelatedRevokedOrDuplicateHardwareOwners() passed after 0.001 seconds.
+􁁛  Test ownerChangesProtectSelfAndTwoOwnerMinimum() passed after 0.001 seconds.
+􁁛  Test invitationDescriptionsDoNotExposeTransientSecret() passed after 0.001 seconds.
+􁁛  Test consentRequiresExactDisplayedObjectRevisionDigestAndDeadline() passed after 0.001 seconds.
+􁁛  Test accountActionsRequireMatchingActiveLocalRootAndProtectSelfDespiteDisplayFlags() passed after 0.001 seconds.
+􁁛  Test paginationDoesNotAdvanceCursorOnFailedRead() passed after 0.001 seconds.
+􁁛  Test cutoverCapabilityRejectsStaleLegacyCreateActionBeforeCallingService() passed after 0.001 seconds.
+􁁛  Test serverEligibilityControlsReissueAndSelectionDismissesSecret() passed after 0.001 seconds.
+􁁛  Test accountLabelValidationRunsBeforeMutation() passed after 0.001 seconds.
+􁁛  Test invitationExportRejectsExpirationAtExactBoundary() passed after 0.001 seconds.
+􁁛  Test committedReissueSurvivesFailedFollowupReadWithoutAutomaticRetry() passed after 0.001 seconds.
+􁁛  Test concurrentPhoneActionsAreRejectedUntilOriginalRequestCompletes() passed after 0.001 seconds.
+􁁛  Test clearPhoneSessionDropsLateMutationResponseWithoutOverwritingNewSession() passed after 0.001 seconds.
+􁁛  Test sessionClearRejectsLateResponseAndBusyActionDoesNotStartMutation() passed after 0.001 seconds.
+􁁛  Test committedInvitationSurvivesFailedFollowupReadWithoutAutomaticRetry() passed after 0.001 seconds.
+􁁛  Test nativeServiceKnownPreSubmitRejectionRemainsKnown() passed after 0.001 seconds.
+􁁛  Test realActionsUseServiceAndSecretsStayOutOfSnapshot() passed after 0.001 seconds.
+􁁛  Test nativeDefinitivelyFailedAdmissionIsUnavailableRatherThanUnknown() passed after 0.001 seconds.
+􁁛  Test nativeInspectionAndLocalDeclineDoNotInventAnIdentityOrCommit() passed after 0.003 seconds.
+􁁛  Test verificationRequiresServiceReceiptForExactCredentialAndClearsOnFailure() passed after 0.003 seconds.
+􁁛  Test nativeSignInOrEpochFailureDoesNotReopenAccountCreation() passed after 0.003 seconds.
+􁁛  Test nativeUnknownResultOverridesTrustAndCommitButRetainsHistoricalEvidence() passed after 0.003 seconds.
+􁁛  Test nativeProjectionKeepsAccountAfterCancelledAdditionIsRestarted() passed after 0.004 seconds.
+􁁛  Test nativeTrustRenewalRetainsIdentityReceiptAndAccountContext() passed after 0.004 seconds.
+􁁛  Test run with 35 tests in 0 suites passed after 0.004 seconds.

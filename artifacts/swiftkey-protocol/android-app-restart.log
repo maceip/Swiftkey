@@ -1,0 +1,5 @@
+09-19 14:36:42.687 23713 23713 I SwiftKeyHardware: securityLevel=STRONGBOX publicKeyHex=0411c1734aac5ca9b9cb2cb217698ddfccbcf5b612c715aab779b972176e76d21a9dc1880f54885829fb0623512564ebe7541059870c2ae2a9a311efe26800abf1 signVerify=true
+09-19 14:36:42.762 23713 25334 V SwiftUI : SwiftKeyProtocol epochCredentialReused=true
+09-19 14:36:42.772 23713 25334 V SwiftUI : SwiftKeyProtocol serverWorkloadAccepted=true
+09-19 14:36:42.780 23713 25334 V SwiftUI : SwiftKeyProtocol workloadReplayRejected=true
+09-19 14:36:42.781 23713 25334 V SwiftUI : SwiftKeyProtocol complete=true epoch=124295 epochPublicKey=040564c91fe7baa56afc65f80ed343571d7d341b60f5180d8f3a014461820601c94196127eb36d966b943cad95e8f96960236dcc6eb2d2fbedc14bed42745a88da workloadAccepted=true replayRejected=true

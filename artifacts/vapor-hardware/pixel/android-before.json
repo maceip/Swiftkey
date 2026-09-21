@@ -1,0 +1,37 @@
+{
+  "configuration": {
+    "serverURL": "http://127.0.0.1:18088",
+    "serverPublicKey": "BKaFIarmG3of3ux1X8loe8M47ULe2vvauOEhRdykVy/tVqHpQtLkAGAHdy7sAJa/onbv8yphMaMeeYdQDQ/FZKY=",
+    "expectedAccountID": "5ada6341-4338-433c-aae9-31a7e715ed1a",
+    "audience": "swiftkey.local"
+  },
+  "enrollment": {
+    "deviceID": "6788bc41-623f-4b5a-9184-fa5faf0ea337",
+    "publicKey": "BFjgujOTLF7a5KTiygDAYY2fm9Z//1P/GQtNy541HNuTwxzeZpQh4jvOmQBx8F4owYrj1fpy4MBJ4hEALm4CsrQ=",
+    "accountID": "5ada6341-4338-433c-aae9-31a7e715ed1a",
+    "serverPublicKey": "BKaFIarmG3of3ux1X8loe8M47ULe2vvauOEhRdykVy/tVqHpQtLkAGAHdy7sAJa/onbv8yphMaMeeYdQDQ/FZKY="
+  },
+  "credential": {
+    "delegation": {
+      "deviceID": "6788bc41-623f-4b5a-9184-fa5faf0ea337",
+      "accountID": "5ada6341-4338-433c-aae9-31a7e715ed1a",
+      "audience": "swiftkey.local",
+      "publicKey": "BBb0aaUDBT6bD0o/5DWfz5xIiEdK60i8kwS5Gc8dwUuMWunQ/sThSXBsWzRI9f2PKY5sTnBqM1DHu2Egs20BZV0=",
+      "epoch": 124299
+    },
+    "serverSignature": "MEUCIQCJCH9vi3K5YXRT8oVjQZdP/+xu/PIwD8yx+UMilcyg5wIgepPgOth0sVTjEJtO1tuNAOwAc8nG3NEXb0F78omq6Pg=",
+    "authorization": {
+      "kind": "androidStrongBoxP256",
+      "challenge": {
+        "sequence": 2,
+        "expiresAt": 1789907356,
+        "payloadHash": "R8jFRTjUGmgpQ9kVsuAaBtpwMSko3gMSWYZK3Foczv0=",
+        "accountID": "5ada6341-4338-433c-aae9-31a7e715ed1a",
+        "nonce": "ratkFqoYmLIrtWWa8CnJSUNXXrVAIqRKu660pOzewvk=",
+        "deviceID": "6788bc41-623f-4b5a-9184-fa5faf0ea337",
+        "operation": "issueEpoch"
+      },
+      "signature": "MEQCIFkGCqL2PQKe6El60yKd1TF/rqHawzsHI6nZ7+u0BeyVAiAJYa/KdOiWVWhTAvVqmb75g8URtVQmfTJjKut88VCRqg=="
+    }
+  }
+}

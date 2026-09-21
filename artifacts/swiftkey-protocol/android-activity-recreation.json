@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-09-19T21:43:08.182337+00:00",
+  "activityLaunches": [
+    "Starting: Intent { cmp=com.pureswift.swiftandroidui/com.pureswift.swiftandroid.MainActivity }",
+    "Starting: Intent { flg=0x4000000 cmp=com.pureswift.swiftandroidui/com.pureswift.swiftandroid.MainActivity }",
+    "Starting: Intent { flg=0x4000000 cmp=com.pureswift.swiftandroidui/com.pureswift.swiftandroid.MainActivity }"
+  ],
+  "processIDs": [
+    "25901",
+    "25901",
+    "25901"
+  ],
+  "sameProcess": true,
+  "serverPausedDuringRecreation": true,
+  "acceptedWorkloadsBefore": 3,
+  "acceptedWorkloadsAfter": 4,
+  "exactlyOneWorkloadAccepted": true,
+  "completedRuns": 1,
+  "failedRuns": 0
+}

@@ -1,0 +1,15 @@
+Android hardware-key demo checkpoint
+
+Installation: passed
+Physical device: D6OZUCKVEIQ4LVLV, model2506BPN68G, API36
+Cold launch: passed, PID24067, 1390ms
+Key: AndroidKeyStore alias swiftkey.device-root.v1, EC P-256
+Key securityLevel: STRONGBOX
+Generated origin and nonexportable private key checks: passed in adapter
+Fresh challenge sign/verify: passed
+Public key: 0411c1734aac5ca9b9cb2cb217698ddfccbcf5b612c715aab779b972176e76d21a9dc1880f54885829fb0623512564ebe7541059870c2ae2a9a311efe26800abf1
+UI: only SwiftKey and all65publickeybytes; matches key log
+Screenshot: hardware-key.png, visually inspected
+Process restart: PID22596, 767ms; same key; fresh sign/verify passed
+Remote key attestation: not implemented or verified
+iOS: postponed pending physicaldevice

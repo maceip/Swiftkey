@@ -1,0 +1,38 @@
+{
+  "configuration": {
+    "serverURL": "http://127.0.0.1:18088",
+    "serverPublicKey": "BKaFIarmG3of3ux1X8loe8M47ULe2vvauOEhRdykVy/tVqHpQtLkAGAHdy7sAJa/onbv8yphMaMeeYdQDQ/FZKY=",
+    "expectedAccountID": null,
+    "audience": "swiftkey.local"
+  },
+  "enrollment": {
+    "accountID": "166a73e6-175b-4f84-a444-ddb672ef8ab8",
+    "deviceID": "2e2cdcfd-f907-4b59-8d8a-595653a09bbc",
+    "publicKey": "BNiPSdv4wviTy5HFvtT33XBp4s42ihSOk+ZVvBvcvAuDLFDaLntKNKOEd/p4uF0a0CdVnDPO2eNLV4ePFORMCow=",
+    "serverPublicKey": "BKaFIarmG3of3ux1X8loe8M47ULe2vvauOEhRdykVy/tVqHpQtLkAGAHdy7sAJa/onbv8yphMaMeeYdQDQ/FZKY="
+  },
+  "credential": {
+    "delegation": {
+      "accountID": "166a73e6-175b-4f84-a444-ddb672ef8ab8",
+      "deviceID": "2e2cdcfd-f907-4b59-8d8a-595653a09bbc",
+      "epoch": 124301,
+      "publicKey": "BINurAQh8Eyidtgi9qv1cMusFAct6B2L+AUTEVFu8sk8IY62KpcaLIEvKMkES3/EwWxh7Pr+AUc6zTcoJvbrPfc=",
+      "previousPublicKeyHash": "FXRPL/EkagfAGLlcIwifxn/jsRzqv2S8Phd9iIx1Yj8=",
+      "audience": "swiftkey.local"
+    },
+    "authorization": {
+      "kind": "androidStrongBoxP256",
+      "signature": "MEUCIBg5pn89+5Z1rFBiUVE9WNgGv/gBZWEUze1wv2vSfXVRAiEAjCmlbaBoq8J1WEnjTlrhZJAdBSaWBOutMgRxXmJg+34=",
+      "challenge": {
+        "accountID": "166a73e6-175b-4f84-a444-ddb672ef8ab8",
+        "deviceID": "2e2cdcfd-f907-4b59-8d8a-595653a09bbc",
+        "operation": "issueEpoch",
+        "sequence": 3,
+        "nonce": "ODptEAk44yOtZhGpk9WNo0JhdcJEvvQkoRPRYr1aANw=",
+        "expiresAt": 1789947080,
+        "payloadHash": "waLzE/mRuPEyeYD/HVb6SHWsNpUyBefN1UN4utU8cVE="
+      }
+    },
+    "serverSignature": "MEQCIDdLrN0/qfHivJ/KPGzoWqlNXuBNgZ7H6VCfKbJ3WoiSAiBeHNzD0G+rk44W6hq18JuJKWz4xCMpnDOFJzWv2cNIxg=="
+  }
+}

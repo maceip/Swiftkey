@@ -1,0 +1,28 @@
+[0/1] Planning build
+Building for debugging...
+[0/3] Write swift-version-43AF9A9ED32E53B.txt
+[2/5] Emitting module SwiftKeyCore
+[3/5] Emitting module SwiftKeyX509
+[4/6] Emitting module SwiftKeyAuthority
+[5/7] Emitting module SwiftKeyHTTP
+[6/8] Emitting module SwiftKeyServer
+Build of product 'swiftkey-server' complete! (5.08s)
+2026-09-19T16:23:10-0700 info Hummingbird: [HummingbirdCore] Server started and listening on 127.0.0.1:18088
+SwiftKey authority: http://127.0.0.1:18088
+Public key pin file: /Users/mac/SwiftKey/SwiftKeyServer/.state/server-public-key.txt
+2026-09-19T16:31:10-0700 info Hummingbird: [HummingbirdCore] Server started and listening on 127.0.0.1:18088
+SwiftKey authority: http://127.0.0.1:18088
+Public key pin file: /Users/mac/SwiftKey/SwiftKeyServer/.state/server-public-key.txt
+[0/1] Planning build
+Building for debugging...
+[0/3] Write swift-version-43AF9A9ED32E53B.txt
+[2/5] Emitting module SwiftKeyCore
+[3/5] Emitting module SwiftKeyX509
+[4/6] Emitting module SwiftKeyAuthority
+[5/7] Emitting module SwiftKeyHTTP
+[5/8] Copying app.js
+[7/9] Emitting module SwiftKeyServer
+Build of product 'swiftkey-server' complete! (8.44s)
+2026-09-19T16:32:44-0700 info Hummingbird: [HummingbirdCore] Server started and listening on 127.0.0.1:18088
+SwiftKey authority: http://127.0.0.1:18088
+Public key pin file: /Users/mac/SwiftKey/SwiftKeyServer/.state/server-public-key.txt

@@ -1,0 +1,11 @@
+{
+  "eventCount": 4,
+  "canonicalSHA256ChainVerified": true,
+  "headECDSASignatureVerifiedWithOpenSSL": true,
+  "head": {
+    "signature": "MEUCIQCnL1R+DrPKe76VQqKdj5sk4RPWQ3CU7XpPJnjfpUSrvwIgKY4U2yuds8tdYESBScR33wyljemQz4XaILY8NaBH21U=",
+    "hash": "OJVBjKHSX9P2Raex9bFELtEAeMWM3AYiHx4mccQzdxw=",
+    "sequence": 4
+  },
+  "serverPublicKey": "BKaFIarmG3of3ux1X8loe8M47ULe2vvauOEhRdykVy/tVqHpQtLkAGAHdy7sAJa/onbv8yphMaMeeYdQDQ/FZKY="
+}

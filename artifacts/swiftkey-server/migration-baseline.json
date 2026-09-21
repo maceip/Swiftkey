@@ -1,0 +1,17 @@
+{
+  "legacySHA256": "9acde6bae55c2aa249cbfa287a3f86828f4d03b08ab3370cf0208960eaab4c13",
+  "serverPublicKey": "BKaFIarmG3of3ux1X8loe8M47ULe2vvauOEhRdykVy/tVqHpQtLkAGAHdy7sAJa/onbv8yphMaMeeYdQDQ/FZKY=",
+  "devices": [
+    {
+      "accountID": "166a73e6-175b-4f84-a444-ddb672ef8ab8",
+      "deviceID": "2e2cdcfd-f907-4b59-8d8a-595653a09bbc",
+      "publicKey": "BNiPSdv4wviTy5HFvtT33XBp4s42ihSOk+ZVvBvcvAuDLFDaLntKNKOEd/p4uF0a0CdVnDPO2eNLV4ePFORMCow=",
+      "sequence": 2,
+      "revoked": false
+    }
+  ],
+  "credentialCount": 1,
+  "credentialsSHA256": "4446f54a8332a2c9a59a89822dee2b4c8b6865b557acc1d521b38491dbab92bc",
+  "workloadNonceCount": 6,
+  "workloadNoncesSHA256": "593881e704e0d89f7f8e145071b656f88ee3337a476bf79b49051541969595c8"
+}

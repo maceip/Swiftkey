@@ -1,0 +1,78 @@
+Building for debugging...
+[0/3] Write sources
+[1/3] Write swift-version-43AF9A9ED32E53B.txt
+[3/5] Emitting module SwiftKeyClientTests
+[4/5] Compiling SwiftKeyClientTests MembershipClientTests.swift
+[4/6] Write Objects.LinkFileList
+[5/6] Linking SwiftKeyClientPackageTests
+Build complete! (1.28s)
+Test Suite 'All tests' started at 2026-09-19 14:30:27.614.
+Test Suite 'All tests' passed at 2026-09-19 14:30:27.619.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.005) seconds
+􀟈  Test run started.
+􀄵  Testing Library Version: 6.3.2 (70eff261d7f462c)
+􀄵  Target Platform: arm64-apple-macosx
+􀟈  Test pendingBootstrapCannotBeReplacedByPairingInvitation() started.
+􀟈  Test epochAuthorizationVerifiesRootProofLocallyBeforeIssuance() started.
+􀟈  Test replayNetworkFailureDoesNotCountAsRejection() started.
+􀟈  Test failedCredentialPersistenceIsRetriedBeforeAnyWorkloadLeavesClient() started.
+􀟈  Test mismatchedWorkloadReceiptIsNotReportedAsAcceptance() started.
+􀟈  Test signedWorkloadRoundTripAndExplicitReplayRejection() started.
+􀟈  Test pairingPersistenceFailuresRemainRetryable(_:) started.
+􀟈  Test revocationBindsExactTargetAndRevokedDeviceCannotAuthorizeAnotherOperation() started.
+􀟈  Test pairingRejectsWrongCandidateKeyAndWrongServerConfirmationPin() started.
+􀟈  Test enrollmentPersistsChallengeBeforeHardwareAndReusesPendingChallengeAfterRestart() started.
+􀟈  Test pairingRequiresApprovalAndPinnedConfirmationBeforeBecomingEnrolled() started.
+􀟈  Test wrongCredentialSignerIsRejectedBeforeAnyWorkloadSubmission() started.
+􀟈  Test restartReusesCredentialEvenAfterIssuanceChallengeExpires() started.
+􀟈  Test enrollmentVerifiesRootProofLocallyBeforeSendingIt() started.
+􀟈  Test expiredSnapshotRotatesAfterRestartAndLinksPreviousPublicKey() started.
+􀟈  Test savedStateCannotMoveToDifferentServerPin() started.
+􀟈  Test acceptedReplayFailsTheDemonstration() started.
+􀟈  Test failedCompletedEnrollmentPersistenceDoesNotCreateUnsavedSuccessCache() started.
+􀟈  Test failedPairingConfirmationPersistenceCannotCacheUnsavedEnrollment() started.
+􀟈  Test pairingRetryRestoresInvitationAndEvidenceWithoutGeneratingAgain() started.
+􀟈  Test enrollmentRejectsUnpinnedServerIdentity() started.
+􀟈  Test negativeMembershipAcknowledgementIsNotSuccess() started.
+􀟈  Test unrelatedServerRejectionDoesNotCountAsReplayProof() started.
+􀟈  Test case passing 1 argument stage → .evidence to pairingPersistenceFailuresRemainRetryable(_:) started.
+􀟈  Test rejectsNonLoopbackCleartextConfiguration() started.
+􀟈  Test case passing 1 argument stage → .candidate to pairingPersistenceFailuresRemainRetryable(_:) started.
+􀟈  Test invitationRejectsBootstrapPurposeAndExpiredChallengeBeforeHardware() started.
+􀟈  Test case passing 1 argument stage → .invitation to pairingPersistenceFailuresRemainRetryable(_:) started.
+􀟈  Test expiredPendingBootstrapDoesNotGenerateHardware() started.
+􀟈  Test failedPersistenceNeverAllowsHardwareGenerationIncludingSameActorRetry() started.
+􀟈  Test approvedPairingCanConfirmAfterCandidateExpiryAndLostConfirmationResponse() started.
+􀟈  Test membershipRejectsCrossAccountExpiredAndSelfRecoveryCandidates() started.
+􀟈  Test recoveryBindsLostAndReplacementRootsAndRequiresReplacementConfirmation() started.
+􁁛  Test pendingBootstrapCannotBeReplacedByPairingInvitation() passed after 0.005 seconds.
+􁁛  Test revocationBindsExactTargetAndRevokedDeviceCannotAuthorizeAnotherOperation() passed after 0.005 seconds.
+􁁛  Test enrollmentVerifiesRootProofLocallyBeforeSendingIt() passed after 0.005 seconds.
+􁁛  Test pairingPersistenceFailuresRemainRetryable(_:) with 3 test cases passed after 0.006 seconds.
+􁁛  Test savedStateCannotMoveToDifferentServerPin() passed after 0.005 seconds.
+􁁛  Test enrollmentPersistsChallengeBeforeHardwareAndReusesPendingChallengeAfterRestart() passed after 0.005 seconds.
+􁁛  Test epochAuthorizationVerifiesRootProofLocallyBeforeIssuance() passed after 0.006 seconds.
+􁁛  Test pairingRequiresApprovalAndPinnedConfirmationBeforeBecomingEnrolled() passed after 0.005 seconds.
+􁁛  Test wrongCredentialSignerIsRejectedBeforeAnyWorkloadSubmission() passed after 0.005 seconds.
+􁁛  Test rejectsNonLoopbackCleartextConfiguration() passed after 0.005 seconds.
+􁁛  Test enrollmentRejectsUnpinnedServerIdentity() passed after 0.005 seconds.
+􁁛  Test failedCompletedEnrollmentPersistenceDoesNotCreateUnsavedSuccessCache() passed after 0.006 seconds.
+􁁛  Test mismatchedWorkloadReceiptIsNotReportedAsAcceptance() passed after 0.006 seconds.
+􁁛  Test negativeMembershipAcknowledgementIsNotSuccess() passed after 0.005 seconds.
+􁁛  Test expiredPendingBootstrapDoesNotGenerateHardware() passed after 0.005 seconds.
+􁁛  Test pairingRejectsWrongCandidateKeyAndWrongServerConfirmationPin() passed after 0.006 seconds.
+􁁛  Test pairingRetryRestoresInvitationAndEvidenceWithoutGeneratingAgain() passed after 0.005 seconds.
+􁁛  Test failedCredentialPersistenceIsRetriedBeforeAnyWorkloadLeavesClient() passed after 0.006 seconds.
+􁁛  Test invitationRejectsBootstrapPurposeAndExpiredChallengeBeforeHardware() passed after 0.006 seconds.
+􁁛  Test replayNetworkFailureDoesNotCountAsRejection() passed after 0.006 seconds.
+􁁛  Test signedWorkloadRoundTripAndExplicitReplayRejection() passed after 0.007 seconds.
+􁁛  Test failedPairingConfirmationPersistenceCannotCacheUnsavedEnrollment() passed after 0.007 seconds.
+􁁛  Test membershipRejectsCrossAccountExpiredAndSelfRecoveryCandidates() passed after 0.006 seconds.
+􁁛  Test failedPersistenceNeverAllowsHardwareGenerationIncludingSameActorRetry() passed after 0.007 seconds.
+􁁛  Test acceptedReplayFailsTheDemonstration() passed after 0.007 seconds.
+􁁛  Test approvedPairingCanConfirmAfterCandidateExpiryAndLostConfirmationResponse() passed after 0.007 seconds.
+􁁛  Test unrelatedServerRejectionDoesNotCountAsReplayProof() passed after 0.008 seconds.
+􁁛  Test recoveryBindsLostAndReplacementRootsAndRequiresReplacementConfirmation() passed after 0.009 seconds.
+􁁛  Test restartReusesCredentialEvenAfterIssuanceChallengeExpires() passed after 0.009 seconds.
+􁁛  Test expiredSnapshotRotatesAfterRestartAndLinksPreviousPublicKey() passed after 0.009 seconds.
+􁁛  Test run with 30 tests in 0 suites passed after 0.009 seconds.

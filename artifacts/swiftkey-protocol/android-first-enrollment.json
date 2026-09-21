@@ -1,0 +1,42 @@
+{
+  "capturedAt": "2026-09-19T21:36:41.344136+00:00",
+  "deviceSerial": "D6OZUCKVEIQ4LVLV",
+  "platform": "androidStrongBox",
+  "accountID": "166a73e6-175b-4f84-a444-ddb672ef8ab8",
+  "deviceID": "2e2cdcfd-f907-4b59-8d8a-595653a09bbc",
+  "rootPublicKeyHex": "04d88f49dbf8c2f893cb91c5bed4f7dd7069e2ce368a148e93e655bc1bdcbc0b832c50da2e7b4a34a38477fa78b85d1ad027559c33ced9e34b57878f14e44c0a8c",
+  "epochDelegation": {
+    "publicKey": "BAVkyR/nuqVq/GX4DtNDVx19NBtg9RgNjzoBRGGCBgHJQZYSfrNtlmuUPK2V6PlpYCNtzG6y0vvtwUvtQnRaiNo=",
+    "accountID": "166a73e6-175b-4f84-a444-ddb672ef8ab8",
+    "epoch": 124295,
+    "audience": "swiftkey.local",
+    "deviceID": "2e2cdcfd-f907-4b59-8d8a-595653a09bbc"
+  },
+  "credential": {
+    "serverSignature": "MEQCIES7s1ejN6wML/IGgafjHDKGJarrre97TxqXQnqTyibbAiBSCQTZzL2xTp1pA8MGwsmQZAZ2d6ejlbbClQhzoOUyuQ==",
+    "delegation": {
+      "audience": "swiftkey.local",
+      "publicKey": "BAVkyR/nuqVq/GX4DtNDVx19NBtg9RgNjzoBRGGCBgHJQZYSfrNtlmuUPK2V6PlpYCNtzG6y0vvtwUvtQnRaiNo=",
+      "accountID": "166a73e6-175b-4f84-a444-ddb672ef8ab8",
+      "epoch": 124295,
+      "deviceID": "2e2cdcfd-f907-4b59-8d8a-595653a09bbc"
+    },
+    "authorization": {
+      "challenge": {
+        "payloadHash": "5KciN67oCXY8abgUlhPOAVYF06A5meZgzuyMfeW4sl8=",
+        "deviceID": "2e2cdcfd-f907-4b59-8d8a-595653a09bbc",
+        "sequence": 2,
+        "operation": "issueEpoch",
+        "expiresAt": 1789854042,
+        "accountID": "166a73e6-175b-4f84-a444-ddb672ef8ab8",
+        "nonce": "ZIXStgJKDLa5rsTXhkL+/ydf2aEtIk+3T3vaw6J9H5I="
+      },
+      "signature": "MEUCIG6GmcmgCXVExzddkSMdj2PlrW+yh2tcvLqHgwoD+NbsAiEAiFtOaHU4aBYCCjgMffat5/M15lTMuAkbpO9q6vtmh5s=",
+      "kind": "androidStrongBoxP256"
+    }
+  },
+  "authorityDeviceCount": 1,
+  "authorityCredentialCount": 1,
+  "acceptedWorkloadNonces": 1,
+  "scope": "Public values only; no private keys or bootstrap token."
+}

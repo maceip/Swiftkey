@@ -1,0 +1,102 @@
+
+> Configure project :composeui
+w: Kotlin Multiplatform <-> Android Gradle Plugin compatibility issue:
+The applied Android Gradle Plugin version (8.10.1) is higher 
+than the maximum known to the Kotlin Gradle Plugin.
+Tooling stability in such configuration isn't tested, please report encountered issues to https://kotl.in/issue
+
+Minimum supported Android Gradle Plugin version: 7.1
+Maximum tested Android Gradle Plugin version: 8.5
+
+To suppress this message add 'kotlin.mpp.androidGradlePluginCompatibility.nowarn=true' to your gradle.properties
+
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':composeui'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmShared]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Task :composeui:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :composeui:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :composeui:generateResourceAccessorsForCommonMain SKIPPED
+> Task :composeui:convertXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForDesktopMain NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForDesktopMain NO-SOURCE
+> Task :composeui:generateResourceAccessorsForDesktopMain SKIPPED
+> Task :composeui:convertXmlValueResourcesForJvmShared NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForJvmShared NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForJvmShared NO-SOURCE
+> Task :composeui:generateResourceAccessorsForJvmShared SKIPPED
+> Task :composeui:generateActualResourceCollectorsForDesktopMain SKIPPED
+> Task :composeui:generateComposeResClass SKIPPED
+> Task :composeui:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :swiftbridge:jextract UP-TO-DATE
+> Task :swiftbridge:compileJava UP-TO-DATE
+> Task :swiftbridge:processResources UP-TO-DATE
+> Task :swiftbridge:classes UP-TO-DATE
+> Task :swiftbridge:jar UP-TO-DATE
+> Task :composeui:compileKotlinDesktop UP-TO-DATE
+> Task :composeui:assembleDesktopMainResources UP-TO-DATE
+> Task :composeui:desktopProcessResources UP-TO-DATE
+> Task :composeui:desktopMainClasses UP-TO-DATE
+> Task :composeui:desktopJar UP-TO-DATE
+> Task :composeui:convertXmlValueResourcesForCommonTest NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForCommonTest NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForCommonTest NO-SOURCE
+> Task :composeui:generateResourceAccessorsForCommonTest SKIPPED
+> Task :composeui:convertXmlValueResourcesForDesktopTest NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForDesktopTest NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForDesktopTest NO-SOURCE
+> Task :composeui:generateResourceAccessorsForDesktopTest SKIPPED
+> Task :composeui:compileTestKotlinDesktop UP-TO-DATE
+> Task :composeui:assembleDesktopTestResources UP-TO-DATE
+> Task :composeui:desktopTestProcessResources UP-TO-DATE
+> Task :composeui:desktopTestClasses UP-TO-DATE
+> Task :composeui:desktopTest UP-TO-DATE
+> Task :demo-desktop:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :demo-desktop:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :demo-desktop:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :demo-desktop:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :demo-desktop:generateResourceAccessorsForCommonMain SKIPPED
+> Task :demo-desktop:convertXmlValueResourcesForJvmMain NO-SOURCE
+> Task :demo-desktop:copyNonXmlValueResourcesForJvmMain NO-SOURCE
+> Task :demo-desktop:prepareComposeResourcesTaskForJvmMain NO-SOURCE
+> Task :demo-desktop:generateResourceAccessorsForJvmMain SKIPPED
+> Task :demo-desktop:generateActualResourceCollectorsForJvmMain SKIPPED
+> Task :demo-desktop:generateComposeResClass SKIPPED
+> Task :demo-desktop:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :demo-desktop:compileKotlinJvm UP-TO-DATE
+> Task :demo-desktop:convertXmlValueResourcesForCommonTest NO-SOURCE
+> Task :demo-desktop:copyNonXmlValueResourcesForCommonTest NO-SOURCE
+> Task :demo-desktop:prepareComposeResourcesTaskForCommonTest NO-SOURCE
+> Task :demo-desktop:generateResourceAccessorsForCommonTest SKIPPED
+> Task :demo-desktop:convertXmlValueResourcesForJvmTest NO-SOURCE
+> Task :demo-desktop:copyNonXmlValueResourcesForJvmTest NO-SOURCE
+> Task :demo-desktop:prepareComposeResourcesTaskForJvmTest NO-SOURCE
+> Task :demo-desktop:generateResourceAccessorsForJvmTest SKIPPED
+> Task :demo-desktop:assembleJvmMainResources UP-TO-DATE
+> Task :demo-desktop:jvmProcessResources UP-TO-DATE
+> Task :demo-desktop:jvmMainClasses UP-TO-DATE
+> Task :demo-desktop:jvmJar UP-TO-DATE
+> Task :demo-desktop:assembleJvmTestResources UP-TO-DATE
+> Task :demo-desktop:jvmTestProcessResources UP-TO-DATE
+> Task :demo-desktop:compileTestKotlinJvm
+> Task :demo-desktop:jvmTestClasses
+> Task :demo-desktop:jvmTest
+[Incubating] Problems report is available at: file:///Users/mac/SwiftKey/AndroidSwiftUI/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 1s
+20 actionable tasks: 2 executed, 18 up-to-date

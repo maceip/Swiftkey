@@ -1,0 +1,10 @@
+{
+  "capturedAt": "2026-09-19T21:39:53.246831+00:00",
+  "sameRootKey": true,
+  "sameEpochDelegation": true,
+  "sameCredential": true,
+  "authorityDeviceCount": 1,
+  "authorityCredentialCount": 1,
+  "previousReplayLedgerRetained": true,
+  "acceptedWorkloadNonces": 3
+}

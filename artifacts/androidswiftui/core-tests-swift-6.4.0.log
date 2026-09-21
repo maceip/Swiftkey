@@ -1,0 +1,291 @@
+Building for debugging...
+[Computing dependencies]
+[Pre-planning 1 / 95]
+[Planning deferred tasks]
+[1 / 2] SwiftUICoreTests-product
+Build complete! (1,04 sec)
+Test Suite 'All tests' started at 2026-09-19 06:37:11.981.
+Test Suite 'All tests' passed at 2026-09-19 06:37:11.991.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.010) seconds
+􀟈  Test run started.
+􀄵  Testing Library Version: 1743
+􀄵  Target Platform: arm64e-apple-macos14.0
+􀟈  Suite "Lazy stacks" started.
+􀟈  Suite "Preferences" started.
+􀟈  Suite "Lazy containers" started.
+􀟈  Suite "AppStorage" started.
+􀟈  Suite "Subtree updates" started.
+􀟈  Suite "Modifiers" started.
+􀟈  Suite "Geometry" started.
+􀟈  Suite "Graphics" started.
+􀟈  Suite "Callback identity" started.
+􀟈  Suite "Navigation, sheets, tabs" started.
+􀟈  Suite "Node emission" started.
+􀟈  Suite "DisclosureGroup" started.
+􀟈  Suite "Identity and state" started.
+􀟈  Suite "Controls and environment" started.
+􀟈  Suite "Animation" started.
+􀟈  Test "A nested observer consumes its subtree yet still publishes upward" started.
+􀟈  Suite "Accessibility" started.
+􀟈  Test "Chained observers watching different keys each get their own" started.
+􀟈  Test "A subtree that publishes nothing delivers the default" started.
+􀟈  Test "Chained observers settle instead of re-evaluating forever" started.
+􀟈  Test "A changed navigationTitle forces a full pass" started.
+􀟈  Test "A patched subtree keeps parent-applied modifiers" started.
+􀟈  Test "onLongPressGesture registers its own callback distinct from a tap" started.
+􀟈  Test "An ancestor sees its subtree's preferences reduced" started.
+􀟈  Test "Writes to two different views fall back to a full pass" started.
+􀟈  Test "Reduce runs in tree order and starts from the default" started.
+􀟈  Test "lineLimit emits its count" started.
+􀟈  Test "The size store re-evaluates on a change and ignores everything else" started.
+􀟈  Test "Image(systemName:) carries the symbol name" started.
+􀟈  Test "Row identity path is keyed by element id" started.
+􀟈  Test "LazyVGrid carries its track spec and resolves cells" started.
+􀟈  Test "A single-view state change becomes a patch of just that subtree" started.
+􀟈  Test "A GeometryReader resolves against zero until a size is reported" started.
+􀟈  Test "An unchanged reduction doesn't fire the callback again" started.
+􀟈  Test "LinearGradient emits its colors and endpoints" started.
+􀟈  Test "A lazy stack keys its elements by identity, not position" started.
+􀟈  Test "foregroundColor emits an argb color" started.
+􀟈  Test "Modifier chain is emitted outermost-first, matching Compose order" started.
+􀟈  Test "tint emits its color" started.
+􀟈  Test "maxWidth .infinity becomes a fill flag, not a number" started.
+􀟈  Test "Shapes emit a Shape node with their kind and fill" started.
+􀟈  Test "LazyHStack carries the same provider shape" started.
+􀟈  Test "Distinct callbacks at one view get distinct stable ids" started.
+􀟈  Test "Overlay emits base and overlay children with alignment" started.
+􀟈  Test "Link carries its destination and its label" started.
+􀟈  Test "bold and italic emit their kinds" started.
+􀟈  Test "contextMenu wraps content and carries its menu items" started.
+􀟈  Test "Frame emits width and height args" started.
+􀟈  Test "Map emits its region and marker children" started.
+􀟈  Test "Link accepts an arbitrary label" started.
+􀟈  Test "Content that isn't a single ForEach still renders, eagerly" started.
+􀟈  Test "Border emits its color and width" started.
+􀟈  Test "resizable and a content mode travel together to the interpreter" started.
+􀟈  Test "Image distinguishes a system symbol from a named asset" started.
+􀟈  Test "shadow emits its radius" started.
+􀟈  Test "Adaptive grid carries a minimum column width" started.
+􀟈  Test "ComposableView actions register callbacks the factory can invoke" started.
+􀟈  Test "onTapGesture registers a callback and emits its id" started.
+􀟈  Test "Bounded frame emits its min and max" started.
+􀟈  Test "A malformed drag payload is ignored rather than crashing" started.
+􀟈  Test "Value-based push resolves through navigationDestination" started.
+􀟈  Test "Label takes an arbitrary title and icon" started.
+􀟈  Test "Sheet appears as a hidden child only while presented" started.
+􀟈  Test "refreshable attaches a refresh callback to the list" started.
+􀟈  Test "disabled emits its flag" started.
+􀟈  Test "TabView emits tabs with their item labels and selection" started.
+􀟈  Test "Label emits its icon then its title" started.
+􀟈  Test "AsyncImage carries its URL, and a nil URL carries none" started.
+􀟈  Test "Parameter-pack ViewBuilder has no child-count ceiling" started.
+􀟈  Test "A NavigationLink push adds a screen and its title" started.
+􀟈  Test "Confirmation dialog presents its buttons and a chosen action dismisses it" started.
+􀟈  Test "A stored value survives a fresh wrapper, as it would a relaunch" started.
+􀟈  Test "A sheet carries its detents, and none by default" started.
+􀟈  Test "Modifiers don't introduce structural identity" started.
+􀟈  Test "Composite views are unwrapped through their body" started.
+􀟈  Test "task emits start and cancel callback ids that drive the same Task" started.
+􀟈  Test "The item provider resolves a row subtree on demand" started.
+􀟈  Test "VStack resolves its children in order" started.
+􀟈  Test "onChange emits a token describing the observed value" started.
+􀟈  Test "clipShape emits the shape kind" started.
+􀟈  Test "NavigationStack starts with only its root screen" started.
+􀟈  Test "A view's callback id is stable across re-evaluation" started.
+􀟈  Test "dismiss pops the pushed screen" started.
+􀟈  Test "VideoPlayer emits its media URL" started.
+􀟈  Test "onAppear and onDisappear emit distinct callback kinds" started.
+􀟈  Test "A popover shows its body only while presented, and a tap dismisses it" started.
+􀟈  Test "transition emits its kind and edge" started.
+􀟈  Test "A drag reports translation to onChanged, then a final value to onEnded" started.
+􀟈  Test "labelStyle rides on the view, so it can be inherited" started.
+􀟈  Test "System font emits size and weight" started.
+􀟈  Test "Accepts a view label, not only a title" started.
+􀟈  Test "ComposableView emits a Composable node naming its factory with typed props" started.
+􀟈  Test "Independent @State at sibling paths don't alias" started.
+􀟈  Test "LazyVStack over a ForEach resolves only the elements asked for" started.
+􀟈  Test "State survives re-evaluation and reads back the written value" started.
+􀟈  Test "ComposableView forwards child content" started.
+􀟈  Test "Emits its label then its content, marking the boundary" started.
+􀟈  Test "State change fires the onChange hook" started.
+􀟈  Test "Flipping a conditional gives the two branches distinct identity" started.
+􀟈  Test "List emits count and a provider, not inline rows" started.
+􀟈  Test "A fixed frame with default center alignment emits no alignment" started.
+􀟈  Test "ForEach state is keyed by identity, so inserts don't shift it" started.
+􀟈  Test "A bound group round-trips its expansion" started.
+􀟈  Test "ForEach expands each element" started.
+􀟈  Test "toolbar rides as placed hidden children whose buttons stay live" started.
+􀟈  Test "Text emits a Text node with its content" started.
+􀟈  Test ".animation emits curve, duration, and value token" started.
+􀟈  Test "Named font emits its style" started.
+􀟈  Test "withAnimation returns its body's value and restores the transaction" started.
+􀟈  Test "searchable surfaces a per-screen field whose input drives its binding" started.
+􀟈  Test "A withAnimation write stamps the next tree's root, once" started.
+􀟈  Test "Environment objects reach @Environment properties in the subtree" started.
+􀟈  Test "Slider emits value, bounds, and a working double callback" started.
+􀟈  Test "@Observable mutation triggers the state-change hook" started.
+􀟈  Test "focused drives a field's focus and adopts focus the user gives it" started.
+􀟈  Test "TextField round-trips its binding through the string callback" started.
+􀟈  Test "Form nests Sections with their header and rows" started.
+􀟈  Test "Menu emits its label and item children" started.
+􀟈  Test "focused(equals:) arbitrates between fields and a sibling's blur can't steal focus" started.
+􀟈  Test "ProgressView carries a label when given one" started.
+􀟈  Test "Every control style spelling reaches its own modifier kind" started.
+􀟈  Test "Keyboard type and submit label emit their spelling" started.
+􀟈  Test "A TextField bound via @Bindable writes back to the model" started.
+􀟈  Test "A style set on a container is inherited by the controls inside it" started.
+􀟈  Test "onSubmit registers a callback the field can fire" started.
+􀟈  Test "DatePicker emits its selection in milliseconds and round-trips a change" started.
+􀟈  Test "Hiding is explicit in both directions" started.
+􀟈  Test "@Bindable projects a two-way binding into an observable model" started.
+􀟈  Test "A control style is emitted on the view it is applied to" started.
+􀟈  Test "Traits emit as a set of names" started.
+􀟈  Test "Picker emits tagged children and maps the selection string back" started.
+􀟈  Test "ProgressView keeps determinacy and shape independent" started.
+􀟈  Test "SecureField emits a secure TextField node" started.
+􀟈  Test "Label, value, and identifier emit their text" started.
+􀟈  Test "Stepper increments and decrements within bounds, updating its label" started.
+􁁛  Test "A subtree that publishes nothing delivers the default" passed after 0.006 seconds.
+􁁛  Test "lineLimit emits its count" passed after 0.006 seconds.
+􁁛  Test "An ancestor sees its subtree's preferences reduced" passed after 0.006 seconds.
+􁁛  Test "onLongPressGesture registers its own callback distinct from a tap" passed after 0.006 seconds.
+􁁛  Test "The size store re-evaluates on a change and ignores everything else" passed after 0.006 seconds.
+􁁛  Test "A changed navigationTitle forces a full pass" passed after 0.006 seconds.
+􁁛  Test "Chained observers watching different keys each get their own" passed after 0.007 seconds.
+􁁛  Test "Writes to two different views fall back to a full pass" passed after 0.006 seconds.
+􁁛  Test "LinearGradient emits its colors and endpoints" passed after 0.006 seconds.
+􁁛  Test "Modifier chain is emitted outermost-first, matching Compose order" passed after 0.006 seconds.
+􁁛  Test "tint emits its color" passed after 0.006 seconds.
+􁁛  Test "foregroundColor emits an argb color" passed after 0.006 seconds.
+􁁛  Test "Chained observers settle instead of re-evaluating forever" passed after 0.007 seconds.
+􁁛  Test "A lazy stack keys its elements by identity, not position" passed after 0.006 seconds.
+􁁛  Test "An unchanged reduction doesn't fire the callback again" passed after 0.007 seconds.
+􁁛  Test "maxWidth .infinity becomes a fill flag, not a number" passed after 0.006 seconds.
+􀟈  Test "Accessibility describes without disturbing the view" started.
+􁁛  Test "A single-view state change becomes a patch of just that subtree" passed after 0.006 seconds.
+􁁛  Test "Image(systemName:) carries the symbol name" passed after 0.006 seconds.
+􁁛  Test "LazyHStack carries the same provider shape" passed after 0.007 seconds.
+􁁛  Test "Row identity path is keyed by element id" passed after 0.006 seconds.
+􁁛  Test "Frame emits width and height args" passed after 0.006 seconds.
+􁁛  Test "A GeometryReader resolves against zero until a size is reported" passed after 0.006 seconds.
+􁁛  Test "Overlay emits base and overlay children with alignment" passed after 0.006 seconds.
+􁁛  Test "Image distinguishes a system symbol from a named asset" passed after 0.006 seconds.
+􁁛  Test "A patched subtree keeps parent-applied modifiers" passed after 0.006 seconds.
+􁁛  Test "contextMenu wraps content and carries its menu items" passed after 0.006 seconds.
+􁁛  Test "LazyVGrid carries its track spec and resolves cells" passed after 0.007 seconds.
+􁁛  Test "resizable and a content mode travel together to the interpreter" passed after 0.006 seconds.
+􁁛  Test "Reduce runs in tree order and starts from the default" passed after 0.007 seconds.
+􁁛  Test "onTapGesture registers a callback and emits its id" passed after 0.006 seconds.
+􁁛  Test "A malformed drag payload is ignored rather than crashing" passed after 0.006 seconds.
+􁁛  Test "Content that isn't a single ForEach still renders, eagerly" passed after 0.007 seconds.
+􁁛  Test "Link carries its destination and its label" passed after 0.007 seconds.
+􁁛  Test "Link accepts an arbitrary label" passed after 0.006 seconds.
+􁁛  Test "Adaptive grid carries a minimum column width" passed after 0.006 seconds.
+􁁛  Test "Distinct callbacks at one view get distinct stable ids" passed after 0.006 seconds.
+􁁛  Test "Map emits its region and marker children" passed after 0.007 seconds.
+􁁛  Test "refreshable attaches a refresh callback to the list" passed after 0.007 seconds.
+􁁛  Test "Shapes emit a Shape node with their kind and fill" passed after 0.007 seconds.
+􁁛  Test "Label emits its icon then its title" passed after 0.006 seconds.
+􁁛  Test "A stored value survives a fresh wrapper, as it would a relaunch" passed after 0.006 seconds.
+􁁛  Test "Label takes an arbitrary title and icon" passed after 0.007 seconds.
+􁁛  Test "AsyncImage carries its URL, and a nil URL carries none" passed after 0.006 seconds.
+􁁛  Test "Bounded frame emits its min and max" passed after 0.006 seconds.
+􁁛  Test "Border emits its color and width" passed after 0.006 seconds.
+􁁛  Test "ComposableView actions register callbacks the factory can invoke" passed after 0.007 seconds.
+􁁛  Test "Modifiers don't introduce structural identity" passed after 0.006 seconds.
+􁁛  Test "The item provider resolves a row subtree on demand" passed after 0.006 seconds.
+􁁛  Test "Sheet appears as a hidden child only while presented" passed after 0.007 seconds.
+􁁛  Test "Value-based push resolves through navigationDestination" passed after 0.007 seconds.
+􁁛  Test "task emits start and cancel callback ids that drive the same Task" passed after 0.006 seconds.
+􁁛  Test "NavigationStack starts with only its root screen" passed after 0.006 seconds.
+􁁛  Test "Parameter-pack ViewBuilder has no child-count ceiling" passed after 0.006 seconds.
+􁁛  Test "shadow emits its radius" passed after 0.007 seconds.
+􁁛  Test "A nested observer consumes its subtree yet still publishes upward" passed after 0.008 seconds.
+􁁛  Test "Composite views are unwrapped through their body" passed after 0.006 seconds.
+􁁛  Test "TabView emits tabs with their item labels and selection" passed after 0.007 seconds.
+􁁛  Test "VideoPlayer emits its media URL" passed after 0.007 seconds.
+􁁛  Test "transition emits its kind and edge" passed after 0.007 seconds.
+􁁛  Test "VStack resolves its children in order" passed after 0.007 seconds.
+􁁛  Test "onChange emits a token describing the observed value" passed after 0.007 seconds.
+􁁛  Test "onAppear and onDisappear emit distinct callback kinds" passed after 0.007 seconds.
+􁁛  Test "clipShape emits the shape kind" passed after 0.007 seconds.
+􁁛  Test "disabled emits its flag" passed after 0.008 seconds.
+􁁛  Test "dismiss pops the pushed screen" passed after 0.008 seconds.
+􁁛  Test "Confirmation dialog presents its buttons and a chosen action dismisses it" passed after 0.008 seconds.
+􁁛  Test "System font emits size and weight" passed after 0.008 seconds.
+􁁛  Test "A view's callback id is stable across re-evaluation" passed after 0.008 seconds.
+􁁛  Test "labelStyle rides on the view, so it can be inherited" passed after 0.008 seconds.
+􁁛  Test "A fixed frame with default center alignment emits no alignment" passed after 0.008 seconds.
+􁁛  Test "State change fires the onChange hook" passed after 0.007 seconds.
+􁁛  Test "State survives re-evaluation and reads back the written value" passed after 0.007 seconds.
+􁁛  Test "A NavigationLink push adds a screen and its title" passed after 0.008 seconds.
+􁁛  Test "Text emits a Text node with its content" passed after 0.004 seconds.
+􁁛  Test "A bound group round-trips its expansion" passed after 0.005 seconds.
+􁁛  Test "Named font emits its style" passed after 0.008 seconds.
+􁁛  Test "Emits its label then its content, marking the boundary" passed after 0.008 seconds.
+􁁛  Test "List emits count and a provider, not inline rows" passed after 0.008 seconds.
+􁁛  Test "ForEach expands each element" passed after 0.005 seconds.
+􁁛  Test "Flipping a conditional gives the two branches distinct identity" passed after 0.007 seconds.
+􁁛  Test "searchable surfaces a per-screen field whose input drives its binding" passed after 0.008 seconds.
+􁁛  Test "toolbar rides as placed hidden children whose buttons stay live" passed after 0.005 seconds.
+􁁛  Test "ForEach state is keyed by identity, so inserts don't shift it" passed after 0.005 seconds.
+􁁛  Test "TextField round-trips its binding through the string callback" passed after 0.003 seconds.
+􁁛  Test "A style set on a container is inherited by the controls inside it" passed after 0.003 seconds.
+􁁛  Test ".animation emits curve, duration, and value token" passed after 0.004 seconds.
+􁁛  Test "bold and italic emit their kinds" passed after 0.008 seconds.
+􁁛  Test "withAnimation returns its body's value and restores the transaction" passed after 0.004 seconds.
+􁁛  Test "Form nests Sections with their header and rows" passed after 0.003 seconds.
+􁁛  Test "Slider emits value, bounds, and a working double callback" passed after 0.004 seconds.
+􁁛  Test "Every control style spelling reaches its own modifier kind" passed after 0.003 seconds.
+􁁛  Test "A control style is emitted on the view it is applied to" passed after 0.003 seconds.
+􁁛  Test "DatePicker emits its selection in milliseconds and round-trips a change" passed after 0.003 seconds.
+􁁛  Test "Traits emit as a set of names" passed after 0.003 seconds.
+􁁛  Test "Keyboard type and submit label emit their spelling" passed after 0.004 seconds.
+􁁛  Test "A withAnimation write stamps the next tree's root, once" passed after 0.005 seconds.
+􁁛  Test "A TextField bound via @Bindable writes back to the model" passed after 0.003 seconds.
+􁁛  Test "@Observable mutation triggers the state-change hook" passed after 0.004 seconds.
+􁁛  Test "A sheet carries its detents, and none by default" passed after 0.008 seconds.
+􁁛  Test "Hiding is explicit in both directions" passed after 0.003 seconds.
+􁁛  Test "ProgressView keeps determinacy and shape independent" passed after 0.003 seconds.
+􁁛  Test "SecureField emits a secure TextField node" passed after 0.003 seconds.
+􁁛  Test "focused drives a field's focus and adopts focus the user gives it" passed after 0.004 seconds.
+􁁛  Test "onSubmit registers a callback the field can fire" passed after 0.003 seconds.
+􁁛  Test "@Bindable projects a two-way binding into an observable model" passed after 0.003 seconds.
+􁁛  Test "Picker emits tagged children and maps the selection string back" passed after 0.003 seconds.
+􁁛  Suite "Geometry" passed after 0.010 seconds.
+􁁛  Test "ProgressView carries a label when given one" passed after 0.004 seconds.
+􁁛  Test "Environment objects reach @Environment properties in the subtree" passed after 0.004 seconds.
+􁁛  Test "Accessibility describes without disturbing the view" passed after 0.003 seconds.
+􁁛  Suite "Callback identity" passed after 0.010 seconds.
+􁁛  Suite "Subtree updates" passed after 0.010 seconds.
+􁁛  Test "ComposableView forwards child content" passed after 0.008 seconds.
+􁁛  Test "Stepper increments and decrements within bounds, updating its label" passed after 0.003 seconds.
+􁁛  Test "Label, value, and identifier emit their text" passed after 0.003 seconds.
+􁁛  Test "Menu emits its label and item children" passed after 0.004 seconds.
+􁁛  Test "ComposableView emits a Composable node naming its factory with typed props" passed after 0.008 seconds.
+􁁛  Test "Independent @State at sibling paths don't alias" passed after 0.008 seconds.
+􁁛  Test "focused(equals:) arbitrates between fields and a sibling's blur can't steal focus" passed after 0.004 seconds.
+􁁛  Test "A drag reports translation to onChanged, then a final value to onEnded" passed after 0.009 seconds.
+􁁛  Suite "Preferences" passed after 0.010 seconds.
+􁁛  Suite "Animation" passed after 0.010 seconds.
+􁁛  Suite "Lazy containers" passed after 0.011 seconds.
+􁁛  Suite "Identity and state" passed after 0.010 seconds.
+􁁛  Suite "Graphics" passed after 0.011 seconds.
+􀟈  Test "Each supported type round-trips under its own key" started.
+􁁛  Suite "Node emission" passed after 0.010 seconds.
+􁁛  Test "A popover shows its body only while presented, and a tap dismisses it" passed after 0.009 seconds.
+􁁛  Suite "Accessibility" passed after 0.011 seconds.
+􁁛  Suite "Controls and environment" passed after 0.011 seconds.
+􁁛  Suite "Modifiers" passed after 0.011 seconds.
+􁁛  Test "Each supported type round-trips under its own key" passed after 0.001 seconds.
+􁁛  Suite "Navigation, sheets, tabs" passed after 0.011 seconds.
+􀟈  Test "The projected binding writes through to the store" started.
+􁁛  Test "Accepts a view label, not only a title" passed after 0.009 seconds.
+􁁛  Suite "DisclosureGroup" passed after 0.011 seconds.
+􁁛  Test "The projected binding writes through to the store" passed after 0.001 seconds.
+􀟈  Test "A file-backed store reloads what a previous instance wrote" started.
+􁁛  Test "LazyVStack over a ForEach resolves only the elements asked for" passed after 0.009 seconds.
+􁁛  Suite "Lazy stacks" passed after 0.012 seconds.
+􁁛  Test "A file-backed store reloads what a previous instance wrote" passed after 0.004 seconds.
+􁁛  Suite "AppStorage" passed after 0.016 seconds.
+􁁛  Test run with 123 tests in 16 suites passed after 0.016 seconds.

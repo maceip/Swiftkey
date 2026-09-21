@@ -1,0 +1,15 @@
+[0/1] Planning build
+Building for debugging...
+[0/3] Write swift-version-43AF9A9ED32E53B.txt
+[1/4] Copying style.css
+[2/5] Copying index.html
+Build of product 'swiftkey-server' complete! (2.14s)
+2026-09-19T18:18:16-0700 info Hummingbird: [HummingbirdCore] Server started and listening on 127.0.0.1:18089
+SwiftKey authority: http://127.0.0.1:18089
+Public key pin file: /var/folders/8j/5mwkcdz55xbcg1pg_54tlcf00000gn/T/swiftkey-design-preview-jc9_xp0i/server-public-key.txt
+2026-09-19T18:24:47-0700 info Hummingbird: [HummingbirdCore] Server started and listening on 127.0.0.1:18089
+SwiftKey authority: http://127.0.0.1:18089
+Public key pin file: /var/folders/8j/5mwkcdz55xbcg1pg_54tlcf00000gn/T/swiftkey-design-preview-jc9_xp0i/server-public-key.txt
+2026-09-19T18:30:08-0700 info Hummingbird: [HummingbirdCore] Server started and listening on 127.0.0.1:18089
+SwiftKey authority: http://127.0.0.1:18089
+Public key pin file: /var/folders/8j/5mwkcdz55xbcg1pg_54tlcf00000gn/T/swiftkey-design-preview-jc9_xp0i/server-public-key.txt

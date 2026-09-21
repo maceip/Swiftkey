@@ -1,0 +1,4 @@
+09-20 05:26:55.307 19809 19809 I SwiftKeyHardware: securityLevel=STRONGBOX publicKeyHex=0458e0ba33932c5edae4a4e2ca00c0618d9f9bd67fff53ff190b4dcb9e351cdb93c31cde669421e23bce990071f05e28c18ae3d5fa72e0c049e211002e6e02b2b4 signVerify=true
+09-20 05:26:55.485 19809 19888 I SwiftKeyHardware: securityLevel=STRONGBOX publicKeyHex=0458e0ba33932c5edae4a4e2ca00c0618d9f9bd67fff53ff190b4dcb9e351cdb93c31cde669421e23bce990071f05e28c18ae3d5fa72e0c049e211002e6e02b2b4 signVerify=true
+09-20 05:26:55.490 19809 19888 V SwiftUI : SwiftKeyProtocol epochCredentialReused=true
+09-20 05:26:55.490 19809 19888 V SwiftUI : SwiftKeyProtocol credentialIssued=true accountID=5ada6341-4338-433c-aae9-31a7e715ed1a deviceID=6788bc41-623f-4b5a-9184-fa5faf0ea337 epoch=124299 epochPublicKey=0416f469a503053e9b0f4a3fe4359fcf9c4888474aeb48bc9304b919cf1dc14b8c5ae9d0fec4e149706c5b3448f5fd8f298e6c4e706a3350c7bb6120b36d01655d

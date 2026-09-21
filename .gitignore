@@ -1,0 +1,19 @@
+# Local build products and tool state.
+**/.build/
+**/.swiftpm/
+**/.gradle/
+**/__pycache__/
+**/.venv/
+**/.pytest_cache/
+**/node_modules/
+**/DerivedData/
+**/build/
+**/local.properties
+**/.DS_Store
+*.apk
+
+# Live authority/client state and private provisioning material.
+**/.state/
+**/swiftkey-client.json
+**/swiftkey-protocol-state.json
+**/private-backup-location.txt

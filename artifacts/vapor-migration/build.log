@@ -1,0 +1,19 @@
+[0/1] Planning build
+Building for debugging...
+[0/3] Write swift-version-43AF9A9ED32E53B.txt
+[2/4] Emitting module _CertificateInternals
+[3/5] Emitting module X509
+[4/6] Emitting module SwiftKeyCore
+[5/7] Emitting module SwiftKeyClient
+[6/8] Emitting module SwiftKeyApplication
+[7/9] Emitting module SwiftKeyUI
+[8/10] Emitting module SwiftKeyX509
+[9/11] Emitting module SwiftKeyAuthority
+[10/12] Emitting module SwiftKeyHTTP
+[10/13] Write sources
+[12/15] Emitting module SwiftKeyServer
+[13/15] Compiling SwiftKeyServer SwiftKeyServerMain.swift
+[13/16] Write Objects.LinkFileList
+[14/16] Linking swiftkey-server
+[15/16] Applying swiftkey-server
+Build of product 'swiftkey-server' complete! (10.25s)

@@ -1,0 +1,120 @@
+[
+  {
+    "family": "Host Grotesk",
+    "sourceArchive": "typesafe-with-code.zip",
+    "sourceEntry": "public/fonts/typesafe/google/HostGrotesk-400.woff2",
+    "sha256": "5662dcd15d8c7dc5bf2168baa71072e509c5b97167554b861293f68e1aa6dde8",
+    "nativeWeights": [
+      400,
+      500,
+      560,
+      600,
+      700
+    ],
+    "conversion": "fonttools4.65.0 variable instances; original glyph outlines retained",
+    "sourceArchiveSHA256": "43d2205ac296d824261608b885d64c5fc37d761727bcf41f9e4d56e629ef2388",
+    "sourceZipEntry": "public/fonts/typesafe/google/HostGrotesk-400.woff2",
+    "variableWeightRange": [
+      300,
+      800
+    ],
+    "webFile": "SwiftKeyServer/Sources/SwiftKeyServer/Resources/host-grotesk.woff2",
+    "webBytesUnchanged": true,
+    "copyright": "Copyright 2023 The Host Grotesk Project Authors (https://github.com/Element-Type/HostGrotesk)",
+    "license": "SIL Open Font License 1.1",
+    "licenseFile": "SwiftKeyDesign/licenses/Host-Grotesk-OFL.txt",
+    "licenseSource": "https://raw.githubusercontent.com/Element-Type/HostGrotesk/main/OFL.txt",
+    "licenseSHA256": "386b93abff8765eeae26a8e4cf58421e724e15cd5317cec8101df84e4693687e",
+    "nativeFiles": [
+      {
+        "weight": 400,
+        "android": "AndroidSwiftUI/Demo/app/src/main/res/font/host_grotesk_400.ttf",
+        "desktop": "AndroidSwiftUI/composeui/src/desktopMain/resources/fonts/host_grotesk_400.ttf",
+        "sha256": "da09bf93af71eac4e9d9433444593ff629700b7608835f6edf4112c2bb7e0cb0"
+      },
+      {
+        "weight": 500,
+        "android": "AndroidSwiftUI/Demo/app/src/main/res/font/host_grotesk_500.ttf",
+        "desktop": "AndroidSwiftUI/composeui/src/desktopMain/resources/fonts/host_grotesk_500.ttf",
+        "sha256": "c70592703f5fca2b1de4eeaf3607c1b1bb79ad21c180bcef86c188938d03d1c2"
+      },
+      {
+        "weight": 560,
+        "android": "AndroidSwiftUI/Demo/app/src/main/res/font/host_grotesk_560.ttf",
+        "desktop": "AndroidSwiftUI/composeui/src/desktopMain/resources/fonts/host_grotesk_560.ttf",
+        "sha256": "bfccc75318cc03885d55af45a3702faa7fbc50dccafbe0d82aa8954a45b9c4f5"
+      },
+      {
+        "weight": 600,
+        "android": "AndroidSwiftUI/Demo/app/src/main/res/font/host_grotesk_600.ttf",
+        "desktop": "AndroidSwiftUI/composeui/src/desktopMain/resources/fonts/host_grotesk_600.ttf",
+        "sha256": "afe3380456811871be88f1e6bc4e32fd4798da460c49bb7bde28961d92e57ac9"
+      },
+      {
+        "weight": 700,
+        "android": "AndroidSwiftUI/Demo/app/src/main/res/font/host_grotesk_700.ttf",
+        "desktop": "AndroidSwiftUI/composeui/src/desktopMain/resources/fonts/host_grotesk_700.ttf",
+        "sha256": "9141aa0e726fd1fa4282addb18d70df9a3343f0f920ce45a9cf3f8d358b6f5d3"
+      }
+    ]
+  },
+  {
+    "family": "JetBrains Mono",
+    "sourceArchive": "typesafe-with-code.zip",
+    "sourceEntry": "public/fonts/typesafe/google/JetBrainsMono-400.woff2",
+    "sha256": "1e06740a02a443fb7f3eeda8fcaa685a0f6c620e3f01e6666e847295469ce3ad",
+    "nativeWeights": [
+      400,
+      500,
+      560,
+      600,
+      700
+    ],
+    "conversion": "fonttools4.65.0 variable instances; original glyph outlines retained",
+    "sourceArchiveSHA256": "43d2205ac296d824261608b885d64c5fc37d761727bcf41f9e4d56e629ef2388",
+    "sourceZipEntry": "public/fonts/typesafe/google/JetBrainsMono-400.woff2",
+    "variableWeightRange": [
+      100,
+      800
+    ],
+    "webFile": "SwiftKeyServer/Sources/SwiftKeyServer/Resources/jetbrains-mono.woff2",
+    "webBytesUnchanged": true,
+    "copyright": "Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)",
+    "license": "SIL Open Font License 1.1",
+    "licenseFile": "SwiftKeyDesign/licenses/JetBrains-Mono-OFL.txt",
+    "licenseSource": "https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/OFL.txt",
+    "licenseSHA256": "a76abf002c49097d146e86740a3105a5d00450b1592e820a1109a8c5680cd697",
+    "nativeFiles": [
+      {
+        "weight": 400,
+        "android": "AndroidSwiftUI/Demo/app/src/main/res/font/jetbrains_mono_400.ttf",
+        "desktop": "AndroidSwiftUI/composeui/src/desktopMain/resources/fonts/jetbrains_mono_400.ttf",
+        "sha256": "58311fc4e410d5d736a42a47dddcb81b525916e629c080e06ec8a088041cfa67"
+      },
+      {
+        "weight": 500,
+        "android": "AndroidSwiftUI/Demo/app/src/main/res/font/jetbrains_mono_500.ttf",
+        "desktop": "AndroidSwiftUI/composeui/src/desktopMain/resources/fonts/jetbrains_mono_500.ttf",
+        "sha256": "9ab3f7d52d0e25fa6530aacb52f1180ece382199cba67c31c43db5e8b5b909fa"
+      },
+      {
+        "weight": 560,
+        "android": "AndroidSwiftUI/Demo/app/src/main/res/font/jetbrains_mono_560.ttf",
+        "desktop": "AndroidSwiftUI/composeui/src/desktopMain/resources/fonts/jetbrains_mono_560.ttf",
+        "sha256": "8eea7b8595766ef813263888eafba0d4133edc28e277fe6e598c4aa89b00016b"
+      },
+      {
+        "weight": 600,
+        "android": "AndroidSwiftUI/Demo/app/src/main/res/font/jetbrains_mono_600.ttf",
+        "desktop": "AndroidSwiftUI/composeui/src/desktopMain/resources/fonts/jetbrains_mono_600.ttf",
+        "sha256": "3fae289826dc3c9fe737a1dd894995fefcff9d9e948c42cdcc9e871e904adabe"
+      },
+      {
+        "weight": 700,
+        "android": "AndroidSwiftUI/Demo/app/src/main/res/font/jetbrains_mono_700.ttf",
+        "desktop": "AndroidSwiftUI/composeui/src/desktopMain/resources/fonts/jetbrains_mono_700.ttf",
+        "sha256": "9d1b52a5cca6243b86e56014b2847fc02ce156a0613215473fa74cb52b4b7907"
+      }
+    ]
+  }
+]

@@ -1,0 +1,48 @@
+Building for debugging...
+[0/4] Write sources
+[1/4] Copying Fixtures
+[2/4] Write swift-version-43AF9A9ED32E53B.txt
+[4/6] Compiling SwiftKeyCore EpochManager.swift
+[5/6] Emitting module SwiftKeyCore
+[5/7] Write Objects.LinkFileList
+[6/7] Linking SwiftKeyCorePackageTests
+Build complete! (0.50s)
+Test Suite 'All tests' started at 2026-09-19 14:19:39.713.
+Test Suite 'All tests' passed at 2026-09-19 14:19:39.718.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.005) seconds
+􀟈  Test run started.
+􀄵  Testing Library Version: 6.3.2 (70eff261d7f462c)
+􀄵  Target Platform: arm64-apple-macosx
+􀟈  Test workloadTamperingAndAudienceSubstitutionFail() started.
+􀟈  Test unsupportedAppleAssertionsNeverFallBackToGenericECDSA() started.
+􀟈  Test independentOpenSSLSignatureFixture() started.
+􀟈  Test invalidLengthsAndKeysAreRejected() started.
+􀟈  Test membershipAndRecoveryBindTheExactCandidateAndLostRoot() started.
+􀟈  Test jsonIsTransportNotSignedRepresentation() started.
+􀟈  Test expiredSnapshotRotatesAndFutureOrChangedPinsFailClosed() started.
+􀟈  Test snapshotRestoresSameUnexpiredKeyAndCredential() started.
+􀟈  Test rawMessageAndDigestSigningCannotAccidentallyAgreeAfterDoubleHash() started.
+􀟈  Test challengeExpiryAndEveryFieldIsBoundByHardwareSignature() started.
+􀟈  Test credentialRejectsDelegationOrRootAuthorizationTampering() started.
+􀟈  Test credentialValidForEpochAfterConsumedChallengeExpires() started.
+􀟈  Test lazyRotationRequiresFreshCredentialAndLinksPreviousKey() started.
+􀟈  Test fieldFramingAndUnicodeNormalization() started.
+􀟈  Test epochBoundsAreExactAndOverflowFailsClosed() started.
+􀟈  Test fixedCanonicalVectorsAndHashes() started.
+􁁛  Test epochBoundsAreExactAndOverflowFailsClosed() passed after 0.001 seconds.
+􁁛  Test fieldFramingAndUnicodeNormalization() passed after 0.001 seconds.
+􁁛  Test membershipAndRecoveryBindTheExactCandidateAndLostRoot() passed after 0.001 seconds.
+􁁛  Test unsupportedAppleAssertionsNeverFallBackToGenericECDSA() passed after 0.001 seconds.
+􁁛  Test jsonIsTransportNotSignedRepresentation() passed after 0.001 seconds.
+􁁛  Test invalidLengthsAndKeysAreRejected() passed after 0.001 seconds.
+􁁛  Test credentialRejectsDelegationOrRootAuthorizationTampering() passed after 0.001 seconds.
+􁁛  Test rawMessageAndDigestSigningCannotAccidentallyAgreeAfterDoubleHash() passed after 0.001 seconds.
+􁁛  Test credentialValidForEpochAfterConsumedChallengeExpires() passed after 0.001 seconds.
+􁁛  Test lazyRotationRequiresFreshCredentialAndLinksPreviousKey() passed after 0.002 seconds.
+􁁛  Test expiredSnapshotRotatesAndFutureOrChangedPinsFailClosed() passed after 0.002 seconds.
+􁁛  Test challengeExpiryAndEveryFieldIsBoundByHardwareSignature() passed after 0.002 seconds.
+􁁛  Test snapshotRestoresSameUnexpiredKeyAndCredential() passed after 0.002 seconds.
+􁁛  Test fixedCanonicalVectorsAndHashes() passed after 0.003 seconds.
+􁁛  Test independentOpenSSLSignatureFixture() passed after 0.003 seconds.
+􁁛  Test workloadTamperingAndAudienceSubstitutionFail() passed after 0.004 seconds.
+􁁛  Test run with 16 tests in 0 suites passed after 0.004 seconds.

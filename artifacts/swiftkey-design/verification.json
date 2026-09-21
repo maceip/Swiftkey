@@ -1,0 +1,38 @@
+{
+  "authorityStateUnchanged": true,
+  "adminCredentialUnchanged": true,
+  "allFinalAssetsServedByteForByte": true,
+  "localFontRoutesVerified": true,
+  "ledgerHead": [
+    4,
+    "3895418CA1D25FD3F645A7B1F5B1442ED10078C58CDC06221F1E2671C433771C"
+  ],
+  "status": {
+    "accountCount": 2,
+    "ledgerHead": {
+      "sequence": 4,
+      "hash": "OJVBjKHSX9P2Raex9bFELtEAeMWM3AYiHx4mccQzdxw=",
+      "signature": "MEYCIQD/6IQC3kkoQTn6qXVvs/t7h4ZZIX03nnSL9a+7YXR5IgIhAJetorVllEMANrURcuTJT5esnjyrLZrq0ZosMRDTkK3K"
+    },
+    "serverPublicKey": "BKaFIarmG3of3ux1X8loe8M47ULe2vvauOEhRdykVy/tVqHpQtLkAGAHdy7sAJa/onbv8yphMaMeeYdQDQ/FZKY=",
+    "epoch": 124296,
+    "activeDeviceCount": 1,
+    "revokedDeviceCount": 0,
+    "storage": "sqlite",
+    "credentialCount": 1,
+    "schemaVersion": 2,
+    "epochStart": 1789862400,
+    "epochEnd": 1789876800,
+    "unixTime": 1789868066
+  },
+  "browserViewportWidths": [
+    320,
+    390,
+    768,
+    1280
+  ],
+  "noHorizontalOverflow": true,
+  "rootPublicKeyCopyFull65Bytes": true,
+  "mobileCreateValidationAndReissuePassedOnIsolatedCopy": true,
+  "offlineSnapshotAndDisconnectVerified": true
+}

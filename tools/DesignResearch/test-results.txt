@@ -1,0 +1,32 @@
+test_cache_only_miss_never_calls_transport (test_research.CacheTests.test_cache_only_miss_never_calls_transport) ... ok
+test_exact_cache_hit_costs_no_budget_and_validates (test_research.CacheTests.test_exact_cache_hit_costs_no_budget_and_validates) ... ok
+test_failed_call_consumes_budget_without_retry_or_cache (test_research.CacheTests.test_failed_call_consumes_budget_without_retry_or_cache) ... ok
+test_invalid_cached_payload_is_not_silently_used (test_research.CacheTests.test_invalid_cached_payload_is_not_silently_used) ... ok
+test_oversized_request_rejected_before_budget_or_transport (test_research.CacheTests.test_oversized_request_rejected_before_budget_or_transport) ... ok
+test_column_ownership_is_explicit_even_with_prefix_collisions (test_research.Contracts.test_column_ownership_is_explicit_even_with_prefix_collisions) ... ok
+test_content_identity_changes_with_rubric_but_not_display_name (test_research.Contracts.test_content_identity_changes_with_rubric_but_not_display_name) ... ok
+test_duplicate_keys_and_nonfinite_json_rejected (test_research.Contracts.test_duplicate_keys_and_nonfinite_json_rejected) ... ok
+test_error_feedback_uses_ids_not_global_array_positions (test_research.Contracts.test_error_feedback_uses_ids_not_global_array_positions) ... ok
+test_fingerprints_ignore_row_order_and_holdout_identity_ignores_dev_changes (test_research.Contracts.test_fingerprints_ignore_row_order_and_holdout_identity_ignores_dev_changes) ... ok
+test_group_component_and_duplicate_state_leakage_rejected (test_research.Contracts.test_group_component_and_duplicate_state_leakage_rejected) ... ok
+test_grouped_folds_never_split_families_and_cover_sparse_ids (test_research.Contracts.test_grouped_folds_never_split_families_and_cover_sparse_ids) ... ok
+test_probability_validation_and_mean_spread_arithmetic (test_research.Contracts.test_probability_validation_and_mean_spread_arithmetic) ... ok
+test_proposals_reject_conflicting_or_unknown_targets (test_research.Contracts.test_proposals_reject_conflicting_or_unknown_targets) ... ok
+test_synthetic_labels_cannot_enter_production_loader (test_research.Contracts.test_synthetic_labels_cannot_enter_production_loader) ... ok
+test_unknown_fields_missing_labels_and_bad_targets_rejected (test_research.Contracts.test_unknown_fields_missing_labels_and_bad_targets_rejected) ... ok
+test_valid_schema_has_stable_hash_and_no_labels_in_state (test_research.Contracts.test_valid_schema_has_stable_hash_and_no_labels_in_state) ... ok
+test_all_constant_training_fold_uses_mean (test_research.Integration.test_all_constant_training_fold_uses_mean) ... ok
+test_cached_discovery_and_once_only_frozen_holdout_with_real_catboost (test_research.Integration.test_cached_discovery_and_once_only_frozen_holdout_with_real_catboost) ... ok
+test_empty_proposal_freezes_evaluable_mean_baseline_without_answers (test_research.Integration.test_empty_proposal_freezes_evaluable_mean_baseline_without_answers) ... ok
+test_frozen_tampering_and_changed_dataset_rejected (test_research.Integration.test_frozen_tampering_and_changed_dataset_rejected) ... ok
+test_impossible_additions_rejected_before_answer_requests (test_research.Integration.test_impossible_additions_rejected_before_answer_requests) ... ok
+test_later_failure_preserves_complete_evaluable_best_checkpoint (test_research.Integration.test_later_failure_preserves_complete_evaluable_best_checkpoint) ... ok
+test_started_holdout_failure_consumes_marker (test_research.Integration.test_started_holdout_failure_consumes_marker) ... ok
+test_real_anthropic_sdk_structured_proposal_over_mock_transport (test_research.SDKIntegration.test_real_anthropic_sdk_structured_proposal_over_mock_transport) ... ok
+test_real_typesafe_sdk_500_does_not_retry (test_research.SDKIntegration.test_real_typesafe_sdk_500_does_not_retry) ... ok
+test_real_typesafe_sdk_score_noul_and_no_retry_over_mock_transport (test_research.SDKIntegration.test_real_typesafe_sdk_score_noul_and_no_retry_over_mock_transport) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.851s
+
+OK

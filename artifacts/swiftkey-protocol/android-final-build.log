@@ -1,0 +1,304 @@
+warning: 'android': Conflicting identity for swift-android-native: dependency 'github.com/swift-android-sdk/swift-android-native' and dependency 'github.com/millertechnologyperu/swift-android-native' both point to the same package identity 'swift-android-native'. The dependencies are introduced through the following chains: (A) /users/mac/swiftkey/androidswiftui/demo/swift->/users/mac/swiftkey/androidswiftui->github.com/pureswift/android->github.com/swift-android-sdk/swift-android-native (B) /users/mac/swiftkey/androidswiftui/demo/swift->/users/mac/swiftkey/androidswiftui->github.com/millertechnologyperu/swift-android-native. If there are multiple chains that lead to the same dependency, only the first chain is shown here. To see all chains use debug output option. To resolve the conflict, coordinate with the maintainer of the package that introduces the conflicting dependency. This will be escalated to an error in future versions of SwiftPM.
+[0/3] Write swift-version-43AF9A9ED32E53B.txt
+[1/4] Compiling CSwiftJavaJNI dummy.c
+[2/8] Compiling CSystem shims.c
+[3/8] Compiling _SwiftSyntaxCShims PlatformMutex.c
+[4/8] Compiling _SubprocessCShims process_shims.c
+[5/10] Write Objects.LinkFileList
+[6/10] Linking SwiftJavaMacros-tool
+[7/10] Write Objects.LinkFileList
+[8/10] Linking swift-java-tool
+[9/10] Applying swift-java-tool
+[10/14] Write swift-version-43AF9A9ED32E53B.txt
+[11/14] Write Objects.LinkFileList
+[12/14] Linking StaticBuildConfigPluginExecutable-tool
+[13/14] Applying StaticBuildConfigPluginExecutable-tool
+[0/1] Planning build
+Building for debugging...
+[0/4] Write swift-version-43AF9A9ED32E53B.txt
+[1/5] Compiling CSwiftJavaJNI dummy.c
+[2/12] Compiling CSystem shims.c
+[3/13] Compiling _SwiftSyntaxCShims PlatformMutex.c
+[4/13] Compiling _SubprocessCShims process_shims.c
+[5/13] Write Objects.LinkFileList
+[7/15] Linking StaticBuildConfigPluginExecutable-tool
+[8/15] Linking SwiftJavaMacros-tool
+[9/15] Run -print-static-build-config
+[10/15] Copying static-build-config.json
+[11/15] Write Objects.LinkFileList
+[12/15] Linking swift-java-tool
+2026-09-19T14:41:41-0700 info swift-java: [swift_java] Run JExtractCommand: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/arm64-apple-macosx/debug/swift-java-tool jextract --config /Users/mac/SwiftKey/AndroidSwiftUI/Sources/BridgeExport/swift-java.config --swift-module BridgeExport --input-swift /Users/mac/SwiftKey/AndroidSwiftUI/Sources/BridgeExport/ --output-java /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/src/generated/java --output-swift /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/Sources --write-empty-files --depends-on SwiftJava=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/ --depends-on SwiftJavaRuntimeSupport=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/ --depends-on SwiftJava=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/ --depends-on SwiftJavaRuntimeSupport=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/ --linker-export-list-output /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/swift-java-jni-exports.map --generated-java-sources-list-file-output jextract-generated-sources.txt
+2026-09-19T14:41:41-0700 info swift-java: [swift_java] Current work directory: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift
+[debug][swift-java] Load config from passed in path: file:///Users/mac/SwiftKey/AndroidSwiftUI/Sources/BridgeExport/swift-java.config
+[debug][swift-java] Running 'swift-java jextract' in mode: jni
+[debug][swift-java] Dependency configs: 4
+[info][JExtractSwiftLib/Swift2Java.swift:51](run()) Input swift = /Users/mac/SwiftKey/AndroidSwiftUI/Sources/BridgeExport/ 
+[info][JExtractSwiftLib/Swift2Java.swift:53](run()) Input paths = [/Users/mac/SwiftKey/AndroidSwiftUI/Sources/BridgeExport/] 
+[info][JExtractSwiftLib/JavaSourceDependencies.swift:78](loadSwiftSources(from:log:)) Loaded 78 source file(s) for dependency module 'SwiftJava' from ["/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava"] 
+[info][JExtractSwiftLib/JavaSourceDependencies.swift:78](loadSwiftSources(from:log:)) Loaded 11 source file(s) for dependency module 'SwiftJavaRuntimeSupport' from ["/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport"] 
+[info][JExtractSwiftLib/JavaSourceDependencies.swift:78](loadSwiftSources(from:log:)) Loaded 78 source file(s) for dependency module 'SwiftJava' from ["/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava"] 
+[info][JExtractSwiftLib/JavaSourceDependencies.swift:78](loadSwiftSources(from:log:)) Loaded 11 source file(s) for dependency module 'SwiftJavaRuntimeSupport' from ["/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport"] 
+[info][JExtractSwiftLib/JNISwift2JavaGenerator+SwiftThunkPrinting.swift:73](writeSwiftThunkSources(_:)) Generated: BridgeExportModule+SwiftJava.swift (at file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/Sources/BridgeExportModule+SwiftJava.swift) 
+[warning][JExtractSwiftLib/JNISwift2JavaGenerator+SwiftThunkPrinting.swift:93](writeSwiftThunkSources(_:)) Writing types in file group: /Users/mac/SwiftKey/AndroidSwiftUI/Sources/BridgeExport/BridgeExport.swift: ["BridgeHost", "SwiftTask"] 
+[info][JExtractSwiftLib/JNISwift2JavaGenerator+SwiftThunkPrinting.swift:103](writeSwiftThunkSources(_:)) Printing Swift thunks for type: BridgeHost 
+[info][JExtractSwiftLib/JNISwift2JavaGenerator+SwiftThunkPrinting.swift:103](writeSwiftThunkSources(_:)) Printing Swift thunks for type: SwiftTask 
+[warning][JExtractSwiftLib/JNISwift2JavaGenerator+SwiftThunkPrinting.swift:116](writeSwiftThunkSources(_:)) Write Swift thunks file: BridgeExport+SwiftJava.swift 
+[info][JExtractSwiftLib/JNISwift2JavaGenerator+SwiftThunkPrinting.swift:123](writeSwiftThunkSources(_:)) Done writing Swift thunks to: file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/Sources/BridgeExport+SwiftJava.swift 
+[info][JExtractSwiftLib/JNISwift2JavaGenerator+JavaBindingsPrinting.swift:104](writeGeneratedFile(_:filename:displayName:into:)) [swift-java] Generated: BridgeHost.java (at file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/src/generated/java/com/pureswift/bridge/BridgeHost.java) 
+[info][JExtractSwiftLib/JNISwift2JavaGenerator+JavaBindingsPrinting.swift:104](writeGeneratedFile(_:filename:displayName:into:)) [swift-java] Generated: SwiftTask.java (at file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/src/generated/java/com/pureswift/bridge/SwiftTask.java) 
+[info][JExtractSwiftLib/JNISwift2JavaGenerator+JavaBindingsPrinting.swift:104](writeGeneratedFile(_:filename:displayName:into:)) [swift-java] Generated: BridgeExport.java (at file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/src/generated/java/com/pureswift/bridge/BridgeExport.java) 
+[info][JExtractSwiftLib/JNISwift2JavaGenerator+JavaBindingsPrinting.swift:104](writeGeneratedFile(_:filename:displayName:into:)) [swift-java] Generated: BridgeHostBox.java (at file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/src/generated/java/com/pureswift/bridge/BridgeHostBox.java) 
+[info][JExtractSwiftLib/JNISwift2JavaGenerator+JavaBindingsPrinting.swift:85](writeExportedJavaSources(_:)) Generated file at file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/src/generated/java/jextract-generated-sources.txt 
+[info][JExtractSwiftLib/JNISwift2JavaGenerator+SwiftThunkPrinting.swift:177](writeLinkerExportList()) [swift-java] Generated linker export list (15 symbols): /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/swift-java-jni-exports.map 
+[swift-java] Write empty [1] 'expected' files in: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/Sources/
+[swift-java] Imported Swift module 'BridgeExport': done.
+[13/15] Generate Java wrappers for Swift types
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.4.0/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Configuration on demand is an incubating feature.
+[swift-java] JDK 21 detected — skipping: SwiftKitFFM, Samples:SwiftAndJavaJarFFMSampleLib, Samples:SwiftJavaExtractFFMSampleApp
+Type-safe project accessors is an incubating feature.
+> Task :BuildLogic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :BuildLogic:generateExternalPluginSpecBuilders UP-TO-DATE
+> Task :BuildLogic:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+> Task :BuildLogic:compilePluginsBlocks UP-TO-DATE
+> Task :BuildLogic:generatePrecompiledScriptPluginAccessors UP-TO-DATE
+> Task :BuildLogic:generateScriptPluginAdapters UP-TO-DATE
+> Task :BuildLogic:compileKotlin UP-TO-DATE
+> Task :BuildLogic:compileJava NO-SOURCE
+> Task :BuildLogic:pluginDescriptors UP-TO-DATE
+> Task :BuildLogic:processResources UP-TO-DATE
+> Task :BuildLogic:classes UP-TO-DATE
+> Task :BuildLogic:jar UP-TO-DATE
+> Task :SwiftKitCore:compileJava UP-TO-DATE
+> Task :SwiftKitCore:processResources UP-TO-DATE
+> Task :SwiftKitCore:classes UP-TO-DATE
+> Task :SwiftKitCore:jar UP-TO-DATE
+> Task :SwiftKitCore:startScripts UP-TO-DATE
+> Task :SwiftKitCore:distTar UP-TO-DATE
+> Task :SwiftKitCore:distZip UP-TO-DATE
+> Task :SwiftKitCore:assemble UP-TO-DATE
+> Task :SwiftKitCore:compileTestJava UP-TO-DATE
+> Task :SwiftKitCore:processTestResources NO-SOURCE
+> Task :SwiftKitCore:testClasses UP-TO-DATE
+> Task :SwiftKitCore:test UP-TO-DATE
+> Task :SwiftKitCore:check UP-TO-DATE
+> Task :SwiftKitCore:compileSwift UP-TO-DATE
+> Task :SwiftKitCore:build UP-TO-DATE
+
+BUILD SUCCESSFUL in 3s
+18 actionable tasks: 18 up-to-date
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Run ConfigureCommand: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/arm64-apple-macosx/debug/swift-java-tool configure --output-directory /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output --cp /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output --swift-module BridgeExport --swift-type-prefix Java
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Current work directory: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift
+2026-09-19T14:41:46-0700 warning swift-java: [swift_java] [swift-java] Failed to load initial configuration. Proceeding with empty configuration.
+[debug][swift-java] Load config from module base directory: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/Sources/BridgeExport
+Failed to read SwiftJava configuration at 'file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/Sources/BridgeExport/swift-java.config', error: Error Domain=NSCocoaErrorDomain Code=260 "The file “swift-java.config” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/Sources/BridgeExport/swift-java.config, NSURL=./Sources/BridgeExport/swift-java.config -- file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/, NSUnderlyingError=0x10738c0d0 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+[debug][swift-java] Searching for *.swift-java.classpath files in: file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/Sources/BridgeExport
+[warning][swift-java][JavaVirtualMachine] Missing classpath element: file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/%5B%22/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output%22%5D
+2026-09-19T14:41:46-0700 info swift-java:configure: [swift_java] Run: emit configuration...
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.BridgeHostBox' as 'JavaBridgeHostBox' Swift type.
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.BridgeHost' as 'JavaBridgeHost' Swift type.
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.BridgeExport$bridgeScheduleMain' as 'JavaBridgeExport.bridgeScheduleMain' Swift type.
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.BridgeExport' as 'JavaBridgeExport' Swift type.
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.SwiftTask' as 'JavaSwiftTask' Swift type.
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Configure Java type 'com.pureswift.bridge.BridgeExport$bridgeScheduleMain$block' as 'JavaBridgeExport.bridgeScheduleMain.block' Swift type.
+[debug][swift-java] Importing classpath entry: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output
+[debug][swift-java] Importing classpath as directory: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output
+[trace][swift-java] Writing swift-java configuration file to '/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output/swift-java.config'... done.
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Run WrapJavaCommand: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/arm64-apple-macosx/debug/swift-java-tool wrap-java --swift-module BridgeExport --output-directory /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/Sources --config /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output/swift-java.config --cp /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/SwiftKitCore/build/classes/java/main --single-swift-file-output WrapJavaGenerated.swift --depends-on SwiftJava=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/ --depends-on SwiftJavaRuntimeSupport=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/ --depends-on SwiftJava=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJava/ --depends-on SwiftJavaRuntimeSupport=/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/swift-java.config,/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/Sources/SwiftJavaRuntimeSupport/
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Current work directory: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift
+[debug][swift-java] Load config from passed in path: file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output/swift-java.config
+self.filterInclude = []
+[trace][swift-java] Cache directory: none
+[debug][swift-java] Searching for *.swift-java.classpath files in: file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/Sources/BridgeExport
+[debug][swift-java] Dependency configs: 4
+[trace][swift-java] Add dependency config (SwiftJava) classpath elements: 0
+[trace][swift-java] Add dependency config (SwiftJavaRuntimeSupport) classpath elements: 1
+[trace][swift-java] Add dependency config (SwiftJavaRuntimeSupport) classpath element: SwiftKitCore/build/classes/java/main
+[trace][swift-java] Add dependency config (SwiftJava) classpath elements: 0
+[trace][swift-java] Add dependency config (SwiftJavaRuntimeSupport) classpath elements: 1
+[trace][swift-java] Add dependency config (SwiftJavaRuntimeSupport) classpath element: SwiftKitCore/build/classes/java/main
+[warning][swift-java][JavaVirtualMachine] Missing classpath element: file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/%5B%22/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/compiled-java-output%22%5D
+[warning][swift-java][JavaVirtualMachine] Missing classpath element: file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/%5B%22/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/checkouts/swift-java/SwiftKitCore/build/classes/java/main%22%5D
+[warning][swift-java][JavaVirtualMachine] Missing classpath element: file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/SwiftKitCore/build/classes/java/main
+[warning][swift-java][JavaVirtualMachine] Missing classpath element: file:///Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/SwiftKitCore/build/classes/java/main
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Active include filters: []
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Active exclude filters: []
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Wrapping java type: com.pureswift.bridge.BridgeHost
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Wrapping java type: com.pureswift.bridge.SwiftTask
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Skip Java type: com.pureswift.bridge.BridgeHostBox (does not match minimum access level)
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Wrapping java type: com.pureswift.bridge.BridgeExport$bridgeScheduleMain$block
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Wrapping java type: com.pureswift.bridge.BridgeExport
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] Wrapping java type: com.pureswift.bridge.BridgeExport$bridgeScheduleMain
+2026-09-19T14:41:46-0700 info swift-java: [swift_java] OK now we go to nested classes
+[warning] Unable to translate 'com.pureswift.bridge.BridgeHost' interface 'org.swift.swiftkit.core.SwiftDowncastable': Java class 'org.swift.swiftkit.core.SwiftDowncastable' has not been translated into Swift
+[warning] Unable to translate 'com.pureswift.bridge.SwiftTask' method '$cleanup': Java class 'org.swift.swiftkit.core.SwiftInstanceCleanup' has not been translated into Swift
+[trace][swift-java] Writing Java class translation to '/Users/mac/SwiftKey/AndroidSwiftUI/Demo/swift/.build/plugins/outputs/androidswiftui/BridgeExport/destination/JExtractSwiftPlugin/Sources/WrapJavaGenerated.swift'... done.
+[14/17] Build SwiftKitCore, compile Java callbacks, and generate Swift wrappers
+[15/17] Write sources
+[17/22] Compiling BridgeExport BridgeExportModule+SwiftJava.swift
+[18/22] Compiling BridgeExport WrapJavaGenerated.swift
+[19/22] Emitting module BridgeExport
+[20/22] Compiling BridgeExport Foundation+SwiftJava.swift
+[21/22] Compiling BridgeExport BridgeExport+SwiftJava.swift
+[22/27] Wrapping AST for BridgeExport for debugging
+[24/32] Compiling AndroidSwiftUI AndroidSwiftUI.swift
+[25/32] Compiling AndroidSwiftUI AndroidApplication.swift
+[26/32] Emitting module AndroidSwiftUI
+[27/32] Compiling AndroidSwiftUI SwiftUIHostView.swift
+[28/32] Compiling AndroidSwiftUI SwiftUIActivity.swift
+[29/31] Write Objects.LinkFileList
+[30/31] Linking libSwiftAndroidApp.so
+Build of product 'SwiftAndroidApp' complete! (16.09s)
+
+> Configure project :composeui
+w: Kotlin Multiplatform <-> Android Gradle Plugin compatibility issue:
+The applied Android Gradle Plugin version (8.10.1) is higher 
+than the maximum known to the Kotlin Gradle Plugin.
+Tooling stability in such configuration isn't tested, please report encountered issues to https://kotl.in/issue
+
+Minimum supported Android Gradle Plugin version: 7.1
+Maximum tested Android Gradle Plugin version: 8.5
+
+To suppress this message add 'kotlin.mpp.androidGradlePluginCompatibility.nowarn=true' to your gradle.properties
+
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':composeui'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmShared]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Task :demo-app:preBuild UP-TO-DATE
+> Task :demo-app:preDebugBuild UP-TO-DATE
+> Task :demo-app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :swiftbridge:jextract UP-TO-DATE
+> Task :swiftbridge:compileJava UP-TO-DATE
+> Task :swiftbridge:processResources UP-TO-DATE
+> Task :swiftbridge:classes UP-TO-DATE
+> Task :swiftbridge:jar UP-TO-DATE
+> Task :androidbridge:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :androidbridge:preBuild UP-TO-DATE
+> Task :androidbridge:preDebugBuild UP-TO-DATE
+> Task :androidbridge:generateDebugResValues UP-TO-DATE
+> Task :androidbridge:generateDebugResources UP-TO-DATE
+> Task :androidbridge:packageDebugResources UP-TO-DATE
+> Task :androidbridge:parseDebugLocalResources UP-TO-DATE
+> Task :androidbridge:generateDebugRFile UP-TO-DATE
+> Task :androidbridge:compileDebugKotlin UP-TO-DATE
+> Task :androidbridge:javaPreCompileDebug UP-TO-DATE
+> Task :androidbridge:compileDebugJavaWithJavac NO-SOURCE
+> Task :androidbridge:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :composeui:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :composeui:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :composeui:generateResourceAccessorsForAndroidMain SKIPPED
+> Task :composeui:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :composeui:generateResourceAccessorsForCommonMain SKIPPED
+> Task :composeui:convertXmlValueResourcesForJvmShared NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForJvmShared NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForJvmShared NO-SOURCE
+> Task :composeui:generateResourceAccessorsForJvmShared SKIPPED
+> Task :composeui:generateActualResourceCollectorsForAndroidMain SKIPPED
+> Task :composeui:generateComposeResClass SKIPPED
+> Task :composeui:preBuild UP-TO-DATE
+> Task :composeui:preDebugBuild UP-TO-DATE
+> Task :composeui:generateDebugResValues UP-TO-DATE
+> Task :composeui:generateDebugResources UP-TO-DATE
+> Task :composeui:packageDebugResources UP-TO-DATE
+> Task :composeui:parseDebugLocalResources UP-TO-DATE
+> Task :composeui:generateDebugRFile UP-TO-DATE
+> Task :composeui:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :composeui:convertXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForAndroidDebug NO-SOURCE
+> Task :composeui:generateResourceAccessorsForAndroidDebug SKIPPED
+> Task :composeui:compileDebugKotlinAndroid UP-TO-DATE
+> Task :composeui:javaPreCompileDebug UP-TO-DATE
+> Task :composeui:compileDebugJavaWithJavac NO-SOURCE
+> Task :composeui:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :demo-app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :androidbridge:compileDebugLibraryResources UP-TO-DATE
+> Task :composeui:compileDebugLibraryResources UP-TO-DATE
+> Task :androidbridge:writeDebugAarMetadata UP-TO-DATE
+> Task :composeui:writeDebugAarMetadata UP-TO-DATE
+> Task :demo-app:checkDebugAarMetadata UP-TO-DATE
+> Task :demo-app:generateDebugResValues UP-TO-DATE
+> Task :demo-app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :demo-app:generateDebugResources UP-TO-DATE
+> Task :demo-app:mergeDebugResources UP-TO-DATE
+> Task :demo-app:packageDebugResources UP-TO-DATE
+> Task :demo-app:parseDebugLocalResources UP-TO-DATE
+> Task :demo-app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :androidbridge:extractDeepLinksDebug UP-TO-DATE
+> Task :androidbridge:processDebugManifest UP-TO-DATE
+> Task :composeui:extractDeepLinksDebug UP-TO-DATE
+> Task :composeui:processDebugManifest UP-TO-DATE
+> Task :demo-app:extractDeepLinksDebug UP-TO-DATE
+> Task :demo-app:processDebugMainManifest UP-TO-DATE
+> Task :demo-app:processDebugManifest UP-TO-DATE
+> Task :demo-app:processDebugManifestForPackage UP-TO-DATE
+> Task :demo-app:processDebugResources UP-TO-DATE
+> Task :demo-app:compileDebugKotlin UP-TO-DATE
+> Task :demo-app:javaPreCompileDebug UP-TO-DATE
+> Task :demo-app:compileDebugJavaWithJavac NO-SOURCE
+> Task :androidbridge:mergeDebugShaders UP-TO-DATE
+> Task :androidbridge:compileDebugShaders NO-SOURCE
+> Task :androidbridge:generateDebugAssets UP-TO-DATE
+> Task :androidbridge:mergeDebugAssets UP-TO-DATE
+> Task :composeui:mergeDebugShaders UP-TO-DATE
+> Task :composeui:compileDebugShaders NO-SOURCE
+> Task :composeui:copyDebugComposeResourcesToAndroidAssets UP-TO-DATE
+> Task :composeui:debugAssetsCopyForAGP NO-SOURCE
+> Task :composeui:generateDebugAssets UP-TO-DATE
+> Task :composeui:mergeDebugAssets UP-TO-DATE
+> Task :demo-app:mergeDebugShaders UP-TO-DATE
+> Task :demo-app:compileDebugShaders NO-SOURCE
+> Task :demo-app:generateDebugAssets UP-TO-DATE
+> Task :demo-app:mergeDebugAssets UP-TO-DATE
+> Task :demo-app:compressDebugAssets UP-TO-DATE
+> Task :androidbridge:processDebugJavaRes UP-TO-DATE
+> Task :composeui:processDebugJavaRes UP-TO-DATE
+> Task :demo-app:processDebugJavaRes UP-TO-DATE
+> Task :demo-app:mergeDebugJavaResource UP-TO-DATE
+> Task :demo-app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :demo-app:desugarDebugFileDependencies UP-TO-DATE
+> Task :demo-app:mergeExtDexDebug UP-TO-DATE
+> Task :composeui:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :androidbridge:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :demo-app:dexBuilderDebug
+> Task :demo-app:mergeLibDexDebug UP-TO-DATE
+> Task :androidbridge:mergeDebugJniLibFolders UP-TO-DATE
+> Task :androidbridge:mergeDebugNativeLibs NO-SOURCE
+> Task :androidbridge:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :composeui:mergeDebugJniLibFolders UP-TO-DATE
+> Task :composeui:mergeDebugNativeLibs NO-SOURCE
+> Task :composeui:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :demo-app:mergeProjectDexDebug
+> Task :demo-app:mergeDebugJniLibFolders
+> Task :demo-app:validateSigningDebug UP-TO-DATE
+> Task :demo-app:writeDebugAppMetadata UP-TO-DATE
+> Task :demo-app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :demo-app:mergeDebugNativeLibs
+> Task :demo-app:stripDebugDebugSymbols
+> Task :demo-app:packageDebug
+> Task :demo-app:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :demo-app:assembleDebug
+[Incubating] Problems report is available at: file:///Users/mac/SwiftKey/AndroidSwiftUI/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 3s
+75 actionable tasks: 6 executed, 69 up-to-date
+APK: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/app/build/outputs/apk/debug/demo-app-debug.apk

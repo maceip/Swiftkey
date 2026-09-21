@@ -1,0 +1,163 @@
+Building for debugging...
+warning: 'android': Conflicting identity for swift-android-native: dependency 'github.com/swift-android-sdk/swift-android-native' and dependency 'github.com/millertechnologyperu/swift-android-native' both point to the same package identity 'swift-android-native'. The dependencies are introduced through the following chains: (A) /users/mac/swiftkey/androidswiftui/demo/swift->/users/mac/swiftkey/androidswiftui->github.com/pureswift/android->github.com/swift-android-sdk/swift-android-native (B) /users/mac/swiftkey/androidswiftui/demo/swift->/users/mac/swiftkey/androidswiftui->github.com/millertechnologyperu/swift-android-native. If there are multiple chains that lead to the same dependency, only the first chain is shown here. To see all chains use debug output option. To resolve the conflict, coordinate with the maintainer of the package that introduces the conflicting dependency. This will be escalated to an error in future versions of SwiftPM.
+[0/2] Write swift-version-43AF9A9ED32E53B.txt
+[1/3] Write sources
+[3/5] Compiling SwiftKeyUI PhoneProtocolView.swift
+[4/5] Emitting module SwiftKeyUI
+[5/9] Wrapping AST for SwiftKeyUI for debugging
+[7/10] Emitting module SwiftAndroidApp
+[8/10] Write Objects.LinkFileList
+[9/10] Linking libSwiftAndroidApp.so
+Build of product 'SwiftAndroidApp' complete! (4.93s)
+
+> Configure project :composeui
+w: Kotlin Multiplatform <-> Android Gradle Plugin compatibility issue:
+The applied Android Gradle Plugin version (8.10.1) is higher 
+than the maximum known to the Kotlin Gradle Plugin.
+Tooling stability in such configuration isn't tested, please report encountered issues to https://kotl.in/issue
+
+Minimum supported Android Gradle Plugin version: 7.1
+Maximum tested Android Gradle Plugin version: 8.5
+
+To suppress this message add 'kotlin.mpp.androidGradlePluginCompatibility.nowarn=true' to your gradle.properties
+
+w: The Default Kotlin Hierarchy Template was not applied to 'project ':composeui'':
+Explicit .dependsOn() edges were configured for the following source sets:
+[androidMain, desktopMain, jvmShared]
+
+Consider removing dependsOn-calls or disabling the default template by adding
+    'kotlin.mpp.applyDefaultHierarchyTemplate=false'
+to your gradle.properties
+
+Learn more about hierarchy templates: https://kotl.in/hierarchy-template
+
+
+> Task :demo-app:preBuild UP-TO-DATE
+> Task :demo-app:preDebugBuild UP-TO-DATE
+> Task :demo-app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :swiftbridge:jextract UP-TO-DATE
+> Task :swiftbridge:compileJava UP-TO-DATE
+> Task :swiftbridge:processResources UP-TO-DATE
+> Task :swiftbridge:classes UP-TO-DATE
+> Task :swiftbridge:jar UP-TO-DATE
+> Task :androidbridge:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :androidbridge:preBuild UP-TO-DATE
+> Task :androidbridge:preDebugBuild UP-TO-DATE
+> Task :androidbridge:generateDebugResValues UP-TO-DATE
+> Task :androidbridge:generateDebugResources UP-TO-DATE
+> Task :androidbridge:packageDebugResources UP-TO-DATE
+> Task :androidbridge:parseDebugLocalResources UP-TO-DATE
+> Task :androidbridge:generateDebugRFile UP-TO-DATE
+> Task :androidbridge:compileDebugKotlin UP-TO-DATE
+> Task :androidbridge:javaPreCompileDebug UP-TO-DATE
+> Task :androidbridge:compileDebugJavaWithJavac NO-SOURCE
+> Task :androidbridge:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :composeui:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :composeui:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :composeui:generateResourceAccessorsForAndroidMain SKIPPED
+> Task :composeui:convertXmlValueResourcesForCommonMain NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForCommonMain NO-SOURCE
+> Task :composeui:generateResourceAccessorsForCommonMain SKIPPED
+> Task :composeui:convertXmlValueResourcesForJvmShared NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForJvmShared NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForJvmShared NO-SOURCE
+> Task :composeui:generateResourceAccessorsForJvmShared SKIPPED
+> Task :composeui:generateActualResourceCollectorsForAndroidMain SKIPPED
+> Task :composeui:generateComposeResClass SKIPPED
+> Task :composeui:preBuild UP-TO-DATE
+> Task :composeui:preDebugBuild UP-TO-DATE
+> Task :composeui:generateDebugResValues UP-TO-DATE
+> Task :composeui:generateDebugResources UP-TO-DATE
+> Task :composeui:packageDebugResources UP-TO-DATE
+> Task :composeui:parseDebugLocalResources UP-TO-DATE
+> Task :composeui:generateDebugRFile UP-TO-DATE
+> Task :composeui:generateExpectResourceCollectorsForCommonMain SKIPPED
+> Task :composeui:convertXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :composeui:copyNonXmlValueResourcesForAndroidDebug NO-SOURCE
+> Task :composeui:prepareComposeResourcesTaskForAndroidDebug NO-SOURCE
+> Task :composeui:generateResourceAccessorsForAndroidDebug SKIPPED
+> Task :composeui:compileDebugKotlinAndroid UP-TO-DATE
+> Task :composeui:javaPreCompileDebug UP-TO-DATE
+> Task :composeui:compileDebugJavaWithJavac NO-SOURCE
+> Task :composeui:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :demo-app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :androidbridge:compileDebugLibraryResources UP-TO-DATE
+> Task :composeui:compileDebugLibraryResources UP-TO-DATE
+> Task :androidbridge:writeDebugAarMetadata UP-TO-DATE
+> Task :composeui:writeDebugAarMetadata UP-TO-DATE
+> Task :demo-app:checkDebugAarMetadata UP-TO-DATE
+> Task :demo-app:generateDebugResValues UP-TO-DATE
+> Task :demo-app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :demo-app:generateDebugResources UP-TO-DATE
+> Task :demo-app:mergeDebugResources UP-TO-DATE
+> Task :demo-app:packageDebugResources UP-TO-DATE
+> Task :demo-app:parseDebugLocalResources UP-TO-DATE
+> Task :demo-app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :androidbridge:extractDeepLinksDebug UP-TO-DATE
+> Task :androidbridge:processDebugManifest UP-TO-DATE
+> Task :composeui:extractDeepLinksDebug UP-TO-DATE
+> Task :composeui:processDebugManifest UP-TO-DATE
+> Task :demo-app:extractDeepLinksDebug UP-TO-DATE
+> Task :demo-app:processDebugMainManifest UP-TO-DATE
+> Task :demo-app:processDebugManifest UP-TO-DATE
+> Task :demo-app:processDebugManifestForPackage UP-TO-DATE
+> Task :demo-app:processDebugResources UP-TO-DATE
+> Task :demo-app:compileDebugKotlin UP-TO-DATE
+> Task :demo-app:javaPreCompileDebug UP-TO-DATE
+> Task :demo-app:compileDebugJavaWithJavac NO-SOURCE
+> Task :androidbridge:mergeDebugShaders UP-TO-DATE
+> Task :androidbridge:compileDebugShaders NO-SOURCE
+> Task :androidbridge:generateDebugAssets UP-TO-DATE
+> Task :androidbridge:mergeDebugAssets UP-TO-DATE
+> Task :composeui:mergeDebugShaders UP-TO-DATE
+> Task :composeui:compileDebugShaders NO-SOURCE
+> Task :composeui:copyDebugComposeResourcesToAndroidAssets UP-TO-DATE
+> Task :composeui:debugAssetsCopyForAGP NO-SOURCE
+> Task :composeui:generateDebugAssets UP-TO-DATE
+> Task :composeui:mergeDebugAssets UP-TO-DATE
+> Task :demo-app:mergeDebugShaders UP-TO-DATE
+> Task :demo-app:compileDebugShaders NO-SOURCE
+> Task :demo-app:generateDebugAssets UP-TO-DATE
+> Task :demo-app:mergeDebugAssets UP-TO-DATE
+> Task :demo-app:compressDebugAssets UP-TO-DATE
+> Task :androidbridge:processDebugJavaRes UP-TO-DATE
+> Task :composeui:processDebugJavaRes UP-TO-DATE
+> Task :demo-app:processDebugJavaRes UP-TO-DATE
+> Task :demo-app:mergeDebugJavaResource UP-TO-DATE
+> Task :demo-app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :demo-app:desugarDebugFileDependencies UP-TO-DATE
+> Task :demo-app:mergeExtDexDebug UP-TO-DATE
+> Task :composeui:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :androidbridge:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :demo-app:dexBuilderDebug UP-TO-DATE
+> Task :demo-app:mergeLibDexDebug UP-TO-DATE
+> Task :demo-app:mergeProjectDexDebug UP-TO-DATE
+> Task :androidbridge:mergeDebugJniLibFolders UP-TO-DATE
+> Task :androidbridge:mergeDebugNativeLibs NO-SOURCE
+> Task :androidbridge:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :composeui:mergeDebugJniLibFolders UP-TO-DATE
+> Task :composeui:mergeDebugNativeLibs NO-SOURCE
+> Task :composeui:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :demo-app:mergeDebugJniLibFolders
+> Task :demo-app:validateSigningDebug UP-TO-DATE
+> Task :demo-app:writeDebugAppMetadata UP-TO-DATE
+> Task :demo-app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :demo-app:mergeDebugNativeLibs
+> Task :demo-app:stripDebugDebugSymbols
+> Task :demo-app:packageDebug
+> Task :demo-app:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :demo-app:assembleDebug
+[Incubating] Problems report is available at: file:///Users/mac/SwiftKey/AndroidSwiftUI/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 3s
+75 actionable tasks: 4 executed, 71 up-to-date
+APK: /Users/mac/SwiftKey/AndroidSwiftUI/Demo/app/build/outputs/apk/debug/demo-app-debug.apk

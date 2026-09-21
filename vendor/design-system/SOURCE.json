@@ -1,0 +1,12 @@
+{
+  "source": "user-provided design-system-main.zip",
+  "sha256": "70a50c1df4a2b07487e8fb8aba1263a7f91c319174ba67935bb8c3d2fb9512aa",
+  "upstream": "https://github.com/MaximeHeckel/design-system",
+  "package": "@maximeheckel/design-system",
+  "version": "4.2.3",
+  "note": "User archive contains customized themes and typography. Source is retained for token/component provenance; SwiftKey uses shared Swift implementations.",
+  "sourceArchivePath": "/Users/mac/Downloads/prompt-prep-outputs/design-system-main.zip",
+  "licenseDeclaration": "MIT (package.json)",
+  "licenseTextIncludedInArchive": false,
+  "upstreamRevision": "not recorded by supplied archive"
+}

@@ -1,0 +1,28 @@
+{
+  "nextAfter": 14,
+  "events": [
+    {
+      "timestamp": 1789947665,
+      "accountID": "166a73e6-175b-4f84-a444-ddb672ef8ab8",
+      "previousHash": "v8iYKlyuwyyHxHQYcYHnDcslX7Tf6TKUZgenGnf3j2w=",
+      "deviceID": "2e2cdcfd-f907-4b59-8d8a-595653a09bbc",
+      "sequence": 14,
+      "hash": "HC2+2wEp01zyMteKdTFK4XT2wjffCVIhSKi5sNl00yI=",
+      "details": {
+        "payloadHash": "99cc774ac70434a74592676b22d901287948e67cf9fcd16d8c864075b8a6ace1",
+        "audience": "swiftkey.local",
+        "nonceHash": "1a79d3c232eb2803c9431c081854c24e0dc4345aacb03900013c367a51e8fd4a",
+        "epoch": "124301",
+        "domain": "swiftkey.demo.echo.v1"
+      },
+      "kind": "workload.accepted",
+      "actorDeviceID": "2e2cdcfd-f907-4b59-8d8a-595653a09bbc"
+    }
+  ],
+  "head": {
+    "hash": "HC2+2wEp01zyMteKdTFK4XT2wjffCVIhSKi5sNl00yI=",
+    "signature": "MEUCIQDhBQwAAklcAWrBGnxrVX1mUupYb9fpJnIkCwrUDHklDwIgfkz5SCVUFp/z0q0n2082YNiS5VBuQlTo3J3iAjlgcOo=",
+    "sequence": 14
+  },
+  "hasMore": false
+}
