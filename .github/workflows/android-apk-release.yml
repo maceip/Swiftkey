@@ -64,11 +64,12 @@ jobs:
           "$SWIFTKEY_SWIFT" test --package-path SwiftKeyApplication --disable-sandbox
           "$SWIFTKEY_SWIFT" test --package-path SwiftKeyUI --disable-sandbox
           "$SWIFTKEY_SWIFT" test --package-path AndroidSwiftUI/SwiftUICore --disable-sandbox --no-parallel
+          "$SWIFTKEY_SWIFT" test --package-path SwiftKeyServer --disable-sandbox
       - name: Free completed host-test build products
-        run: rm -rf SwiftKeyApplication/.build SwiftKeyUI/.build AndroidSwiftUI/SwiftUICore/.build
-      - name: Test native Android popup properties
+        run: rm -rf SwiftKeyApplication/.build SwiftKeyUI/.build AndroidSwiftUI/SwiftUICore/.build SwiftKeyServer/.build
+      - name: Test Android UI, passkey cryptography, storage and request boundaries
         working-directory: AndroidSwiftUI
-        run: ./gradlew :cupertino:testDebugUnitTest --stacktrace
+        run: ./gradlew :cupertino:testDebugUnitTest :demo-app:testDebugUnitTest --stacktrace
       - name: Cross-compile Swift, stage runtimes, and assemble APK
         run: bash scripts/androidswiftui.sh android-build
       - name: Verify APK version, signature, and native payload

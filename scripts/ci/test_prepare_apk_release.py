@@ -16,6 +16,12 @@ def manifest(extra=""):
 
 
 class ProductManifestTests(unittest.TestCase):
+    def test_passkey_provider_requires_system_binding_permission(self):
+        name = "com.pureswift.swiftandroid.passkeys.SwiftKeyCredentialProviderService"
+        prepare.verify_product_manifest(manifest(f'<service android:name="{name}" android:exported="true" android:permission="android.permission.BIND_CREDENTIAL_PROVIDER_SERVICE"/>'))
+        with self.assertRaises(ValueError):
+            prepare.verify_product_manifest(manifest(f'<service android:name="{name}" android:exported="true"/>'))
+
     def test_product_and_private_scanner_are_allowed(self):
         prepare.verify_product_manifest(manifest())
 

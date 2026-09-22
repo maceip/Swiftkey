@@ -1,5 +1,44 @@
 # SwiftKey protocol overview
 
+## Website passkeys: Android Credential Manager
+
+Website passkeys are independent, persistent StrongBox P-256 credentials. They do
+not use the account authority, hardware identity roots or four-hour epoch keys
+described later in this document. Android 14+ provider support is implemented;
+physical browser acceptance is pending. See [support and limits](ANDROID-PASSKEYS.md).
+
+```mermaid
+sequenceDiagram
+    participant Site as Website / relying party
+    participant Browser
+    participant OS as Android Credential Manager
+    participant App as SwiftKey
+    participant Key as StrongBox + system verification
+    Site->>Browser: Registration challenge, RP and account
+    Browser->>OS: navigator.credentials.create
+    OS->>App: Trusted caller and client-data hash
+    App->>App: Validate and bind request; show website/account
+    App->>Key: Mint independent P-256 key after consent
+    Key->>Key: Fingerprint or screen-lock authorization
+    Key-->>App: Authenticated proof for pending key
+    App->>App: Persist credential metadata
+    App-->>OS: Standard WebAuthn registration, attestation none
+    OS-->>Browser: Registration response
+    Browser->>Site: Credential ID and public key
+    Site->>Site: Verify and store credential
+    Note over App,Key: Key stays stable; no scheduled rotation or synchronization
+    Site->>Browser: New sign-in challenge
+    Browser->>OS: navigator.credentials.get
+    OS->>App: Selected credential and bound request
+    App->>Key: Consent, verification, sign authenticator data + client-data hash
+    Key-->>App: ES256 signature
+    App-->>Browser: WebAuthn assertion via Android
+    Browser->>Site: Signed assertion
+    Site->>Site: Verify challenge, RP, origin, UV and signature
+```
+
+## Two-phone account protocol
+
 **SwiftKey creates a non-exportable ECDSA P-256 signing key inside each compatible Android
 phone's StrongBox secure hardware.** That key proves the phone's identity without
 sending its private key to the server. It authorizes a separate P-256 software
@@ -13,8 +52,8 @@ does the Swift/Vapor authority create the account. Each phone signs in separatel
 and receives its own epoch credential.
 
 This provides hardware-backed proof of possession for applications that integrate
-SwiftKey. **It is a custom authentication protocol, not a FIDO2/WebAuthn security
-key or a drop-in passkey for existing websites.** The current implementation uses
+SwiftKey. **The two-phone protocol is custom and separate from WebAuthn website
+passkeys.** The current implementation uses
 Android StrongBox; an iPhone Secure Enclave implementation is not available yet.
 
 ## From new phones to account owners

@@ -1,5 +1,27 @@
 # SwiftKey build status — 2026-09-21
 
+## Android website passkeys and independent Vapor verification
+
+Implemented Android 14+ Credential Manager registration/sign-in with persistent,
+per-credential StrongBox ES256 keys, per-use biometric/device-credential approval,
+trusted browser origin validation, request binding, and private management UI.
+Website credentials are separate from paired accounts and never use epoch keys.
+Android Settings lists SwiftKey as a provider on the isolated API 35 emulator.
+
+The ARM64 Swift/JNI APK build and **52 Android host tests** passed. Emulator
+instrumentation passed **7 product/provider boundary tests**; **1 StrongBox test
+was explicitly skipped** because the emulator lacks StrongBox. All **88 server
+tests** and **32 release-script tests** passed. The actual Kotlin engine's public
+registration/assertion fixture passed the independently pinned
+`brokenhandsio/swift-webauthn` verifier. The isolated Vapor browser test page was
+visually checked and runs without opening authority state.
+
+No physical Android device is currently visible to ADB. Real browser selection,
+hardware key generation, biometric approval, persistent sign-in and desktop hybrid
+use remain **unverified on hardware**. Automated software fixtures and emulator
+checks do not establish those outcomes. See [Android passkey limits and acceptance](docs/ANDROID-PASSKEYS.md)
+and [the Vapor test harness](docs/passkey-test-server.md).
+
 ## Current product UI correction
 
 The Android product no longer exposes a component gallery, and its debug APK

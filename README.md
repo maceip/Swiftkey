@@ -1,17 +1,24 @@
 # How this replaces a security key
 
-**SwiftKey is designed to let an Android or iPhone act as a hardware-backed account
-key. Android StrongBox works today; iPhone Secure Enclave support is not implemented
-yet.** Each compatible Android phone keeps a non-exportable ECDSA P-256 root in
-StrongBox. It authorizes a separate P-256 software signing key for a **four-hour
-epoch**, without sending either private key to the authority.
+**SwiftKey is designed to let an Android or iPhone replace a security key.** The
+Android credential provider creates a separate, non-exportable ECDSA P-256 key in
+StrongBox for each website registration. Your fingerprint or screen lock authorizes
+each use. Website passkeys stay stable and never rotate automatically; the website
+keeps the public key and verifies standard WebAuthn signatures. iPhone support is
+not implemented.
 
 Two phones independently own one account. Both compare identities and approve the
 same account proposal before the Swift/Vapor authority creates it. Each signs in
 separately and receives its own epoch credential; no private key is shared.
 
-SwiftKey is a custom authentication protocol for applications that integrate it,
-**not a FIDO2/WebAuthn security key or a drop-in passkey for existing websites**.
+For website passkeys, use **Website passkeys → Enable SwiftKey in Android Settings**
+on Android 14 or later, then choose SwiftKey in a website’s normal Add a passkey flow.
+The implementation has automated tests; physical browser registration and sign-in
+acceptance is still pending. See [passkey support and limits](docs/ANDROID-PASSKEYS.md)
+and the [isolated Vapor test page](docs/passkey-test-server.md).
+
+The two-phone account protocol below is a separate integration. It does not copy
+website passkeys or make the SwiftKey authority a requirement for website sign-in.
 
 ## Pairing and trust
 

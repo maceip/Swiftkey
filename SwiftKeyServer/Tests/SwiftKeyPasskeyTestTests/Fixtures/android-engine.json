@@ -1,0 +1,37 @@
+{
+  "userHandle": "AQIDBA",
+  "assertionChallenge": "ZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXp7fH1-f4CBgoM",
+  "origin": "https://example.com",
+  "registrationChallenge": "AQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyA",
+  "registration": {
+    "response": {
+      "clientDataJSON": "eyJvcmlnaW4iOiJodHRwczovL2V4YW1wbGUuY29tIiwiY2hhbGxlbmdlIjoiQVFJREJBVUdCd2dKQ2dzTURRNFBFQkVTRXhRVkZoY1lHUm9iSEIwZUh5QSIsImNyb3NzT3JpZ2luIjpmYWxzZSwidHlwZSI6IndlYmF1dGhuLmNyZWF0ZSJ9",
+      "transports": [
+        "internal",
+        "hybrid"
+      ],
+      "publicKeyAlgorithm": -7,
+      "publicKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEAcptCkcj22uBIzvdPZ40_zpn9GEtU3N9VgHCY2Zt3Tqy_IixofRgI-76zJmTZeUgmAz4FHVdHCmSyk6__eOOyA",
+      "attestationObject": "o2NmbXRkbm9uZWdhdHRTdG10oGhhdXRoRGF0YViko3mm9u6vuaVeN4wRgDTidR5oL6ufLTCrE9ISVYbOGUdFAAAAAAAAAAAAAAAAAAAAAAAAAAAAID9AQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVpbXF1epQECAyYgASFYIAHKbQpHI9trgSM73T2eNP86Z_RhLVNzfVYBwmNmbd06IlggsvyIsaH0YCPu-syZk2XlIJgM-BR1XRwpkspOv_3jjsg",
+      "authenticatorData": "o3mm9u6vuaVeN4wRgDTidR5oL6ufLTCrE9ISVYbOGUdFAAAAAAAAAAAAAAAAAAAAAAAAAAAAID9AQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVpbXF1epQECAyYgASFYIAHKbQpHI9trgSM73T2eNP86Z_RhLVNzfVYBwmNmbd06IlggsvyIsaH0YCPu-syZk2XlIJgM-BR1XRwpkspOv_3jjsg"
+    },
+    "rawId": "P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV4",
+    "id": "P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV4",
+    "type": "public-key",
+    "clientExtensionResults": {}
+  },
+  "assertion": {
+    "response": {
+      "userHandle": "AQIDBA",
+      "clientDataJSON": "eyJvcmlnaW4iOiJodHRwczovL2V4YW1wbGUuY29tIiwiY2hhbGxlbmdlIjoiWkdWbVoyaHBhbXRzYlc1dmNIRnljM1IxZG5kNGVYcDdmSDEtZjRDQmdvTSIsImNyb3NzT3JpZ2luIjpmYWxzZSwidHlwZSI6IndlYmF1dGhuLmdldCJ9",
+      "signature": "MEQCIED9kYmkYVj8Jq6DeHcad78Btaqg6Ewqr7BjUyjT2IitAiAIB7ZTpdYEg_lV6PCm-pn0QflkE7egQ8mjlp7FNIp60Q",
+      "authenticatorData": "o3mm9u6vuaVeN4wRgDTidR5oL6ufLTCrE9ISVYbOGUcFAAAAAA"
+    },
+    "rawId": "P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV4",
+    "id": "P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV4",
+    "type": "public-key",
+    "clientExtensionResults": {}
+  },
+  "source": "SwiftKey WebAuthn engine; ephemeral test-only software signer",
+  "rpId": "example.com"
+}

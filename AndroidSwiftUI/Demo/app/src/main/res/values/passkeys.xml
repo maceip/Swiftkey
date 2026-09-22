@@ -1,0 +1,5 @@
+<resources>
+    <bool name="passkey_provider_enabled">false</bool>
+    <string name="passkey_provider_name">SwiftKey</string>
+    <string name="passkey_provider_description">Device-bound website passkeys, protected by your phone</string>
+</resources>

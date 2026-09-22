@@ -88,6 +88,8 @@ dependencies {
     implementation(project(":composeui"))
     implementation(project(":androidbridge"))
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
+    implementation("androidx.credentials:credentials:1.6.0")
+    implementation("androidx.biometric:biometric:1.1.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -101,6 +103,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.foundation)
     testImplementation(libs.junit)
+    testImplementation("org.json:json:20250517")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))

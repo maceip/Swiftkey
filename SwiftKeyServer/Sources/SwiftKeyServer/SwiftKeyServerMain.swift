@@ -3,11 +3,13 @@ import Vapor
 import SwiftKeyAuthority
 import SwiftKeyCore
 import SwiftKeyHTTP
+import SwiftKeyPasskeyTest
 import Darwin
 
 @main struct SwiftKeyServerMain {
     static func main() async throws {
         let arguments = Array(CommandLine.arguments.dropFirst())
+        let passkeyTest = try PasskeyTestConfiguration.fromEnvironment()
         if arguments.contains("--help") {
             print("swiftkey-server --config config/device.json --bootstrap-token-file /private/bootstrap-token --admin-token-file /private/admin-token")
             print("Verify captured evidence without serving: --config config/device.json --verify-attestation-file evidence.json")
@@ -58,6 +60,10 @@ import Darwin
             app.http.server.configuration.port = configuration.port
             try SwiftKeyHTTP.configure(app, authority: authority, adminToken: adminToken,
                 bootstrapToken: token, console: console)
+            if let passkeyTest {
+                try SwiftKeyPasskeyTest.configure(app, configuration: passkeyTest)
+                print("Ephemeral passkey test: \(passkeyTest.origin)/passkeys/test")
+            }
             print("SwiftKey authority (Vapor): http://\(configuration.host):\(configuration.port)")
             print("Public key pin file: \(URL(fileURLWithPath: configuration.stateDirectory).appendingPathComponent("server-public-key.txt").path)")
             try await app.execute()

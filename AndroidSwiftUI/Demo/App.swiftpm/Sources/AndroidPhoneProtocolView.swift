@@ -12,6 +12,12 @@ struct SwiftKeyPhoneEntryView: View {
             if showsPairing {
                 AndroidPhoneProtocolView(onClose: { showsPairing = false })
             } else {
+                Button { openAndroidPasskeys() } label: {
+                    SwiftKeyHostActionLabel("Website passkeys")
+                }
+                    .buttonStyle(.plain)
+                    .padding(16)
+                    .accessibilityIdentifier("swiftkey.open-passkeys")
                 HStack {
                     Text("Existing identity · legacy v1").font(SwiftKeyAppearance.body(12)).lineHeight(18)
                         .foregroundColor(SwiftKeyAppearance.muted)

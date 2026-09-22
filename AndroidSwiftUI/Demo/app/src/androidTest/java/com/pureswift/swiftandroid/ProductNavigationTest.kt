@@ -10,6 +10,7 @@ import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onNodeWithTag
+import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
@@ -39,6 +40,18 @@ class ProductNavigationTest {
             .setAction(Intent.ACTION_MAIN)
             .addCategory(Intent.CATEGORY_LAUNCHER)
         assertProductNavigation(intent)
+    }
+
+    @Test fun websitePasskeysAreReachableFromTheProductLauncher() {
+        ActivityScenario.launch<MainActivity>(Intent(ApplicationProvider.getApplicationContext(), MainActivity::class.java)).use {
+            awaitControl("swiftkey.open-passkeys")
+            compose.onNodeWithTag("swiftkey.open-passkeys").performClick()
+            awaitControl("swiftkey.passkeys.enable")
+            compose.onNodeWithText("Website passkeys").assertIsDisplayed()
+            assertNoDeveloperGallery()
+            compose.onNodeWithText("Back").performClick()
+            awaitControl("swiftkey.open-passkeys")
+        }
     }
 
     @Test fun incomingGalleryDataAndExtrasCannotSelectADeveloperScreen() {

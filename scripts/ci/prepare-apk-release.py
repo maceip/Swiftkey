@@ -101,6 +101,10 @@ def verify_product_manifest(xml: str) -> None:
             exported.append(name)
     if exported != ["com.pureswift.swiftandroid.MainActivity"]:
         raise ValueError("APK must expose only the SwiftKey product activity")
+    for service in application.findall("service"):
+        if service.get(android + "name") == "com.pureswift.swiftandroid.passkeys.SwiftKeyCredentialProviderService":
+            if service.get(android + "permission") != "android.permission.BIND_CREDENTIAL_PROVIDER_SERVICE":
+                raise ValueError("Passkey provider must require the operating-system binding permission")
 
 
 def package(destination: Path) -> None:

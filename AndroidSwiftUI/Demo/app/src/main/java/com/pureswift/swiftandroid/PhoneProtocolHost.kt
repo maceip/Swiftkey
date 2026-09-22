@@ -61,6 +61,14 @@ object PhoneProtocolHost {
         if (activity.get() === host) { foreground.set(false); dismiss(); pendingEvent.set(null) }
     }
     @JvmStatic fun isForeground(): Boolean = foreground.get()
+    @JvmStatic fun openPasskeys() {
+        main.post {
+            activity.get()?.let { host ->
+                host.startActivity(Intent(host, com.pureswift.swiftandroid.passkeys.PasskeyActivity::class.java)
+                    .setAction(com.pureswift.swiftandroid.passkeys.PasskeyActivity.MANAGE))
+            }
+        }
+    }
     @JvmStatic fun readConfiguration(): String = applicationContext?.let(PhoneProtocolIO::readConfiguration) ?: failure("hostUnavailable")
     @JvmStatic fun readState(): String = applicationContext?.let(PhoneProtocolIO::readState) ?: failure("hostUnavailable")
     @JvmStatic fun writeState(json: String): String = applicationContext?.let { PhoneProtocolIO.writeState(it, json) } ?: failure("hostUnavailable")

@@ -1,0 +1,99 @@
+@font-face {
+  font-family: 'Host Grotesk';
+  src: url('/passkeys/test/host-grotesk.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/passkeys/test/jetbrains-mono.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+/* Semantic tokens from the supplied component system. Swift owns the content
+   and component composition; this adapter supplies native browser primitives. */
+:root {
+  color-scheme: light dark;
+  --canvas: #fff;
+  --surface: #fff;
+  --subtle: #faf8fa;
+  --ink: #1e1e1e;
+  --muted: #6b6b6b;
+  --line: #e5e5e5;
+  --input: #fff;
+  --input-line: #dedede;
+  --accent: #a02ab8;
+  --accent-hover: #852398;
+  --on-accent: #fff;
+  --emphasis: rgb(160 42 184 / 7%);
+  --danger: #d33c33;
+  --danger-surface: rgb(211 60 51 / 10%);
+  --focus: #a02ab8;
+  --header: rgb(255 255 255 / 90%);
+  --shadow: 0 2px 4px rgb(41 22 41 / 3%), 0 12px 36px rgb(41 22 41 / 5%);
+  --radius-small: 4px;
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --radius-panel: 16px;
+  --sans: 'Host Grotesk', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  font: 16px/1.5 var(--sans);
+  color: var(--ink);
+  background: var(--canvas);
+  font-synthesis: none;
+  scroll-padding-top: 96px;
+  -webkit-font-smoothing: antialiased;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #1e1e1e;
+    --surface: #252326;
+    --subtle: #252326;
+    --ink: #fcfcfc;
+    --muted: #abbab9;
+    --line: #2f2d30;
+    --input: #19171a;
+    --input-line: #3d3a3e;
+    --accent: #d28fe2;
+    --accent-hover: #e0afea;
+    --on-accent: #1e1e1e;
+    --emphasis: rgb(210 143 226 / 12%);
+    --danger: #f9786a;
+    --danger-surface: rgb(249 120 106 / 15%);
+    --focus: #d28fe2;
+    --header: rgb(30 30 30 / 90%);
+    --shadow: 0 2px 4px rgb(0 0 0 / 12%), 0 12px 36px rgb(0 0 0 / 16%);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; border-bottom: 1px solid var(--line); padding: 1.2rem max(1.2rem, calc((100vw - 1000px)/2)); }
+header a { text-decoration: none; color: var(--ink); font-weight: 700; font-size: 1.3rem; }
+header a span { color: var(--muted); font: .68rem var(--mono); margin-left: .8rem; }
+.badge { font-size: .75rem; color: var(--muted); border: 1px solid var(--line); border-radius: 99px; padding: .3rem .7rem; }
+main { max-width: 1000px; margin: auto; padding: 3.5rem 1.2rem; }
+.eyebrow,.step { font: .7rem var(--mono); letter-spacing: .08em; color: var(--muted); }
+h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); line-height: 1.1; letter-spacing: -.04em; margin: 1rem 0; }
+h2 { font-size: 1.25rem; line-height: 1.3; letter-spacing: -.02em; }
+p { color: var(--muted); }
+.intro { font-size: 1.13rem; max-width: 650px; }
+.notice { padding: 1rem 1.2rem; margin: 2rem 0; background: var(--emphasis); border: 1px solid var(--line); border-radius: var(--radius-card); font-size: .9rem; }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.card,.result { border: 1px solid var(--line); border-radius: var(--radius-panel); padding: 1.5rem; background: var(--surface); box-shadow: var(--shadow); }
+.card p { min-height: 4.5rem; }
+label { display: block; font-size: .85rem; margin-bottom: .5rem; }
+input { width: 100%; background: var(--input); color: var(--ink); border: 1px solid var(--input-line); border-radius: var(--radius-control); padding: .8rem; font: inherit; }
+button { background: var(--accent); color: var(--on-accent); border: 1px solid transparent; border-radius: var(--radius-control); padding: .8rem 1rem; font: 600 .9rem var(--sans); cursor: pointer; margin-top: 1rem; }
+button:hover { background: var(--accent-hover); }
+button:disabled { opacity: .5; cursor: default; }
+button.secondary { background: var(--subtle); color: var(--ink); border-color: var(--line); margin-left: .5rem; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.result { margin-top: 1.1rem; }
+dl { display: grid; grid-template-columns: 160px 1fr; gap: .5rem 1rem; font-size: .85rem; }
+dt { color: var(--muted); } dd { margin: 0; overflow-wrap: anywhere; font-family: var(--mono); }
+footer { font-size: .8rem; margin-top: 2rem; }
+[hidden] { display: none !important; }
+@media (max-width: 620px) { .cards { grid-template-columns: 1fr; } header a span { display: none; } main { padding-top: 2rem; } .card p { min-height: 0; } dl { grid-template-columns: 1fr; } dd { margin-bottom: .5rem; } }

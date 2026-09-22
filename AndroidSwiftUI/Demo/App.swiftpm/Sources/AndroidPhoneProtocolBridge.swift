@@ -18,9 +18,14 @@ extension JavaClass<AndroidPhoneProtocolHost> {
     @JavaStaticMethod func consumeEvent() -> String
     @JavaStaticMethod func requestImport(_ camera: Bool)
     @JavaStaticMethod func requestConfiguration()
+    @JavaStaticMethod func openPasskeys()
     @JavaStaticMethod func presentInvitation(_ link: String, _ binding: String, _ expiry: String)
     @JavaStaticMethod func updatePresentationContext(_ binding: String)
     @JavaStaticMethod func dismiss()
+}
+
+func openAndroidPasskeys() {
+    (try? JavaClass<AndroidPhoneProtocolHost>())?.openPasskeys()
 }
 extension JavaClass<AndroidHardwareKeyStore> {
     @JavaStaticMethod func enrollV2(_ challengeBase64: String) -> String
