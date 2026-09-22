@@ -299,3 +299,43 @@ private func headers(_ cookie: String, _ csrf: String) -> HTTPHeaders {
     // Android engine deliberately uses the WebAuthn zero-counter mode.
     #expect(registered.signCount == 0 && verified.newSignCount == 0)
 }
+
+@Test func actualIOSMockEngineFixtureVerifiesWithIndependentSwiftRP() async throws {
+    struct Fixture: Decodable {
+        let source: String
+        let rpId: String
+        let origin: String
+        let userHandle: String
+        let registrationChallenge: String
+        let assertionChallenge: String
+        let registration: RegistrationCredential
+        let assertion: AuthenticationCredential
+    }
+    let url = try #require(Bundle.module.url(forResource: "ios-mock-engine", withExtension: "json", subdirectory: "Fixtures"))
+    let fixture = try JSONDecoder().decode(Fixture.self, from: Data(contentsOf: url))
+    #expect(fixture.rpId == "swiftkey.mock" && fixture.origin == "https://swiftkey.mock")
+    #expect(fixture.source.contains("mock software authenticator") && fixture.source.contains("simulated user verification"))
+    let manager = WebAuthnManager(configuration: .init(relyingPartyID: fixture.rpId,
+        relyingPartyName: "Independent iOS mock test", relyingPartyOrigin: fixture.origin))
+    let id = try PasskeyValidation.registration(fixture.registration)
+    let registered = try await manager.finishRegistration(challenge: decode64(fixture.registrationChallenge),
+        credentialCreationData: fixture.registration, requireUserVerification: true,
+        supportedPublicKeyAlgorithms: [.init(alg: .algES256)], confirmCredentialIDNotRegisteredYet: { _ in true })
+    #expect(!registered.backupEligible && !registered.isBackedUp)
+    #expect(try PasskeyValidation.credentialID(fixture.assertion.id, raw: fixture.assertion.rawID) == id)
+    #expect(fixture.assertion.response.userHandle == (try decode64(fixture.userHandle)))
+    try PasskeyValidation.clientData(fixture.assertion.response.clientDataJSON)
+    let flags = try PasskeyValidation.flags(fixture.assertion.response.authenticatorData, registration: false)
+    #expect(!flags.eligible && !flags.backedUp)
+    #expect(throws: (any Error).self) {
+        try manager.finishAuthentication(credential: fixture.assertion,
+            expectedChallenge: [UInt8](repeating: 0, count: 32), credentialPublicKey: registered.publicKey,
+            credentialCurrentSignCount: registered.signCount, requireUserVerification: true)
+    }
+    let verified = try manager.finishAuthentication(credential: fixture.assertion,
+        expectedChallenge: decode64(fixture.assertionChallenge), credentialPublicKey: registered.publicKey,
+        credentialCurrentSignCount: registered.signCount, requireUserVerification: true)
+    // Real ES256/CBOR interoperability; the fixture's UP/UV are explicitly simulated.
+    // This is not evidence of a signed Apple extension or real user verification.
+    #expect(registered.signCount == 0 && verified.newSignCount == 0)
+}

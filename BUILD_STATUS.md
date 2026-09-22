@@ -1,5 +1,29 @@
 # SwiftKey build status — 2026-09-21
 
+## iOS native mock app and credential-provider extension
+
+The [native SwiftUI app](iOS/README.md) and embedded AuthenticationServices
+extension build and run on the dedicated iOS 26.4 simulator with Xcode 26.4.1.
+Both use the same app-group store and request coordinator. Mock registration
+creates persistent software P-256 keys; mock sign-in signs the exact challenge
+hash and verifies the result. Approval and user verification are explicitly
+simulated. Mock mode is visible throughout the app.
+
+**21 core tests, 9 simulator unit/adapter tests and 4 UI tests passed.** UI checks
+cover create, sign-in, delete, cancellation, failed verification and signing after
+relaunch. The real Apple request classes are exercised by the adapter tests.
+The focused **12-test Vapor suite** independently verifies public registration
+and assertion output from the actual iOS mock engine using pinned SwiftWebAuthn.
+
+Mock use is limited to Debug Simulator builds and `swiftkey.mock`/`localhost`;
+physical-device and Release builds refuse the mock backend. This is not Secure
+Enclave, Face ID, synchronization, a Safari-routed ceremony or production iPhone
+authentication. Existing Android and authority state remain separate.
+Run `bash scripts/ios.sh run`; [CI](.github/workflows/ios-mock.yml) builds/tests
+the simulator app and compiles an unsigned iPhone target on each branch push.
+The unsigned Release iPhone app and embedded extension also built successfully.
+See [test evidence and actual app screens](artifacts/ios-mock/README.md).
+
 ## Android website passkeys and independent Vapor verification
 
 Implemented Android 14+ Credential Manager registration/sign-in with persistent,
@@ -423,5 +447,6 @@ Earlier platform evidence: [artifacts/androidswiftui](artifacts/androidswiftui/)
 
 [The iOS catalog evidence](ios-simulator/evidence/) includes `build.log`,
 `launch.log` and inspected `catalog.png` for `com.swiftkey.catalog.demo`.
-The preserved Simulator wrapper is a catalog demo, not an App Attest client or
-minimal hardware-key app. No further iOS implementation is authorized yet.
+These preserved captures document the former catalog demo, not an App Attest client
+or hardware-key app. The current Simulator wrapper launches the
+[native iOS passkey mock](iOS/README.md); production iOS authentication is still unavailable.

@@ -1,0 +1,43 @@
+name: iOS mock app and credential provider
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 45
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.4.1.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show the Apple toolchain
+        run: |
+          xcodebuild -version
+          xcrun swift --version
+      - name: Test mock passkey cryptography
+        run: xcrun swift test --package-path SwiftKeyPasskeys
+      - name: Build the simulator app and embedded credential provider
+        run: bash scripts/ios.sh build
+      - name: Test registration, sign-in and cancellation in the iOS app
+        run: bash scripts/ios.sh test
+      - name: Compile the iPhone app with the mock backend disabled
+        run: bash scripts/ios.sh device-build
+      - name: Package the simulator app
+        run: ditto -c -k --sequesterRsrc --keepParent iOS/DerivedData/Build/Products/Debug-iphonesimulator/SwiftKeyMock.app iOS/DerivedData/SwiftKeyMock-simulator.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SwiftKeyMock-simulator
+          path: iOS/DerivedData/SwiftKeyMock-simulator.zip
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iOS-mock-test-results
+          path: iOS/DerivedData/Logs/SwiftKey/

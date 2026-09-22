@@ -71,4 +71,10 @@ The tests produce actual P-256 assertions and cover a successful HTTP registrati
 
 `SwiftKeyServer/Tests/SwiftKeyPasskeyTestTests/Fixtures/android-engine.json` is public test output from the actual Kotlin WebAuthn engine using an ephemeral software signing key. It contains no private key. Swift's separate RP library verifies that engine's registration and assertion, including the original browser client data reattached after Android's provider hash-only operation. This fixture is an engine interoperability check, not a hardware claim.
 
+`Fixtures/ios-mock-engine.json` provides the equivalent public output from the
+[iOS mock engine](../SwiftKeyPasskeys/README.md). The same independent verifier
+accepts its registration and ES256 assertion and rejects a changed challenge.
+It contains no private key. This establishes wire interoperability; it does not
+establish Safari routing, Secure Enclave storage or real biometric approval.
+
 The library's Apache-2.0 license/notice and the demo's MIT license are retained under `SwiftKeyServer/ThirdPartyNotices/`. The browser UI is a new implementation using the existing SwiftKey design tokens. Bundled font licenses remain with the test page's resources.

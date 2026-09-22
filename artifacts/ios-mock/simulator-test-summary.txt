@@ -1,0 +1,21 @@
+Test Case '-[SwiftKeyMockUITests.SwiftKeyMockUITests testCancelBeforeApprovalAndDuringVerificationNeverCreatesCredential]' passed (15.781 seconds).
+Test Case '-[SwiftKeyMockUITests.SwiftKeyMockUITests testCreateSignInAndDeleteUsesRealLocalMockResponse]' passed (27.707 seconds).
+Test Case '-[SwiftKeyMockUITests.SwiftKeyMockUITests testCredentialPersistsAcrossRestartAndCanSignIn]' passed (24.922 seconds).
+Test Case '-[SwiftKeyMockUITests.SwiftKeyMockUITests testSimulatedVerificationFailureIsVisibleAndDoesNotCreateCredential]' passed (12.436 seconds).
+	 Executed 4 tests, with 0 failures (0 unexpected) in 80.845 (80.849) seconds
+	 Executed 4 tests, with 0 failures (0 unexpected) in 80.845 (80.850) seconds
+	 Executed 4 tests, with 0 failures (0 unexpected) in 80.845 (80.851) seconds
+Test Case '-[SwiftKeyMockTests.MockPasskeyCoordinatorTests testCancelAndFailedVerificationCannotMintCredentials]' passed (0.008 seconds).
+Test Case '-[SwiftKeyMockTests.MockPasskeyCoordinatorTests testCorruptMockStoreDoesNotBecomeSuccessfulEmptyState]' passed (0.013 seconds).
+Test Case '-[SwiftKeyMockTests.MockPasskeyCoordinatorTests testExpiredRequestAndRealWebsiteCannotMintCredentials]' passed (0.002 seconds).
+Test Case '-[SwiftKeyMockTests.MockPasskeyCoordinatorTests testRegistrationPersistenceAndRealSignatureAcrossCoordinatorRestart]' passed (0.011 seconds).
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.034 (0.035) seconds
+Test Case '-[SwiftKeyMockTests.MockProviderAdapterTests testAssertionAdapterSignsExactOSHashWithSelectedMockKey]' passed (0.011 seconds).
+Test Case '-[SwiftKeyMockTests.MockProviderAdapterTests testCancelAndFailedSimulationLeaveNoCredential]' passed (0.006 seconds).
+Test Case '-[SwiftKeyMockTests.MockProviderAdapterTests testRealRPAndWrongIdentityFailBeforeReturningAnyCredential]' passed (0.005 seconds).
+Test Case '-[SwiftKeyMockTests.MockProviderAdapterTests testRegistrationAdapterReturnsExactOSHashAndPersistentCredentialOnlyAfterSimulation]' passed (0.011 seconds).
+Test Case '-[SwiftKeyMockTests.MockProviderAdapterTests testSilentAssertionRequiresInteractionAndDoesNotReturnCredential]' passed (0.003 seconds).
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.036 (0.038) seconds
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.070 (0.073) seconds
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.070 (0.074) seconds
+** TEST SUCCEEDED **

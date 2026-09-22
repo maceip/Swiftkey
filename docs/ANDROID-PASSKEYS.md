@@ -63,9 +63,11 @@ routed by Android, including system hybrid flows where supported; cross-device u
 has not been physically verified. Third-party websites do not need the custom
 SwiftKey authority. Two-phone pairing does not synchronize website passkeys.
 
-iOS remains unavailable. Apple's credential-provider extension currently does not
-allow device-bound passkeys, so an equivalent Secure Enclave policy needs a supported
-platform path; changing backup flags would misrepresent the credential.
+iOS has a [runnable simulator mock](../iOS/README.md), including a native app and
+credential-provider extension using isolated software test keys. Production iOS
+authentication remains unavailable. Apple's credential-provider extension currently
+does not allow device-bound passkeys, so an equivalent Secure Enclave policy needs a
+supported platform path; changing backup flags would misrepresent the credential.
 [Apple platform guidance](https://developer.apple.com/forums/thread/829541).
 
 ## Privileged caller trust snapshot

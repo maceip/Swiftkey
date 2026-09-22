@@ -4,8 +4,8 @@
 Android credential provider creates a separate, non-exportable ECDSA P-256 key in
 StrongBox for each website registration. Your fingerprint or screen lock authorizes
 each use. Website passkeys stay stable and never rotate automatically; the website
-keeps the public key and verifies standard WebAuthn signatures. iPhone support is
-not implemented.
+keeps the public key and verifies standard WebAuthn signatures. The [iPhone app](iOS/README.md)
+has a runnable simulator mock with software test keys and simulated approval.
 
 Two phones independently own one account. Both compare identities and approve the
 same account proposal before the Swift/Vapor authority creates it. Each signs in
@@ -56,7 +56,7 @@ import. Optical QR scanning, interrupted ceremonies and replacement still need
 physical acceptance. The v2 UI does not expose workload submission.
 
 Standalone revocation, arbitrary policy changes, browser-login grants, legacy
-upgrade and iOS remain unavailable. This is a development project, without a
+upgrade and production iOS authentication remain unavailable. This is a development project, without a
 production authority cutover. [Build status](BUILD_STATUS.md) separates tested
 behavior from remaining work.
 
@@ -77,6 +77,7 @@ cd Swiftkey
 bash scripts/androidswiftui.sh doctor
 bash scripts/swiftkey-protocol.sh test
 bash scripts/androidswiftui.sh android-build
+bash scripts/ios.sh run  # iOS mock app + credential-provider extension
 ```
 
 Use `main`; renderer sources are included, with no submodules. `doctor` checks
@@ -94,6 +95,8 @@ authority state-format change; existing legacy accounts are not migrated automat
 | [SwiftKeyUI](SwiftKeyUI/README.md) | Shared phone and webpage views |
 | [SwiftKeyServer](SwiftKeyServer/README.md) | Vapor authority and ledger |
 | [AndroidSwiftUI](AndroidSwiftUI/README.md) | Compose renderer and Android host |
+| [iOS](iOS/README.md) | Native iPhone mock app and credential-provider extension |
+| [SwiftKeyPasskeys](SwiftKeyPasskeys/README.md) | Mock WebAuthn engine and cryptographic tests |
 
 Web and native views share [design tokens](SwiftKeyDesign/README.md).
 [Optional design research](tools/DesignResearch/README.md) is separate

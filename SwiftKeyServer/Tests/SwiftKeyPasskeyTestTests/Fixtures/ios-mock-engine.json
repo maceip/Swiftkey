@@ -1,0 +1,40 @@
+{
+  "assertion" : {
+    "clientExtensionResults" : {
+
+    },
+    "id" : "w8ECLMJKHwbpV_LQYE1H6jTVQNWqd61qbYImpKHBLZI",
+    "rawId" : "w8ECLMJKHwbpV_LQYE1H6jTVQNWqd61qbYImpKHBLZI",
+    "response" : {
+      "authenticatorData" : "Wbp20o805yQDDWwCMpOeDivrM4l8GsP1lclD-I5DqRwFAAAAAA",
+      "clientDataJSON" : "eyJjaGFsbGVuZ2UiOiJZMlJsWm1kb2FXcHJiRzF1YjNCeGNuTjBkWFozZUhsNmUzeDlmbi1BZ1lJIiwiY3Jvc3NPcmlnaW4iOmZhbHNlLCJvcmlnaW4iOiJodHRwczpcL1wvc3dpZnRrZXkubW9jayIsInR5cGUiOiJ3ZWJhdXRobi5nZXQifQ",
+      "signature" : "MEUCIQDLvGLlV_13l8vkw8mKCxfXDtCPaZy0vu_lCv81sC0AOAIgXAmy3hWS1IqM2dZG9j8be8kD3H41jhxVpVNua4xT62Q",
+      "userHandle" : "AQIDBA"
+    },
+    "type" : "public-key"
+  },
+  "assertionChallenge" : "Y2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn-AgYI",
+  "origin" : "https:\/\/swiftkey.mock",
+  "registration" : {
+    "clientExtensionResults" : {
+
+    },
+    "id" : "w8ECLMJKHwbpV_LQYE1H6jTVQNWqd61qbYImpKHBLZI",
+    "rawId" : "w8ECLMJKHwbpV_LQYE1H6jTVQNWqd61qbYImpKHBLZI",
+    "response" : {
+      "attestationObject" : "o2NmbXRkbm9uZWdhdHRTdG10oGhhdXRoRGF0YVikWbp20o805yQDDWwCMpOeDivrM4l8GsP1lclD-I5DqRxFAAAAAAAAAAAAAAAAAAAAAAAAAAAAIMPBAizCSh8G6Vfy0GBNR-o01UDVqnetam2CJqShwS2SpQECAyYgASFYIFdAG2z6SvylO7XS_Lpc9uZKYPa85_YOpGpzoUBFTIt4IlggStpiRjWBOj8ZVJioBM6z_VKLL5GOeLofksrppJ2evkw",
+      "authenticatorData" : "Wbp20o805yQDDWwCMpOeDivrM4l8GsP1lclD-I5DqRxFAAAAAAAAAAAAAAAAAAAAAAAAAAAAIMPBAizCSh8G6Vfy0GBNR-o01UDVqnetam2CJqShwS2SpQECAyYgASFYIFdAG2z6SvylO7XS_Lpc9uZKYPa85_YOpGpzoUBFTIt4IlggStpiRjWBOj8ZVJioBM6z_VKLL5GOeLofksrppJ2evkw",
+      "clientDataJSON" : "eyJjaGFsbGVuZ2UiOiJBUUlEQkFVR0J3Z0pDZ3NNRFE0UEVCRVNFeFFWRmhjWUdSb2JIQjBlSHlBIiwiY3Jvc3NPcmlnaW4iOmZhbHNlLCJvcmlnaW4iOiJodHRwczpcL1wvc3dpZnRrZXkubW9jayIsInR5cGUiOiJ3ZWJhdXRobi5jcmVhdGUifQ",
+      "publicKey" : "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEV0AbbPpK_KU7tdL8ulz25kpg9rzn9g6kanOhQEVMi3hK2mJGNYE6PxlUmKgEzrP9UosvkY54uh-SyumknZ6-TA",
+      "publicKeyAlgorithm" : -7,
+      "transports" : [
+        "internal"
+      ]
+    },
+    "type" : "public-key"
+  },
+  "registrationChallenge" : "AQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyA",
+  "rpId" : "swiftkey.mock",
+  "source" : "SwiftKey iOS mock software authenticator; simulated user verification only",
+  "userHandle" : "AQIDBA"
+}

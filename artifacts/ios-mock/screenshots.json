@@ -1,0 +1,23 @@
+[
+  {
+    "file": "signature-verified.png",
+    "sha256": "c54f5773732d56d4c7af4dbc9b994a22646eafe9c2e0e4f0029464f7a908d6e8",
+    "test": "SwiftKeyMockUITests/testCreateSignInAndDeleteUsesRealLocalMockResponse()",
+    "timestamp": 1790056014.262,
+    "failure": false
+  },
+  {
+    "file": "credential-details.png",
+    "sha256": "12d2fd3f695e62835da641f7752423e620c63389c8891b8b233b898e73a83f4b",
+    "test": "SwiftKeyMockUITests/testCreateSignInAndDeleteUsesRealLocalMockResponse()",
+    "timestamp": 1790056008.878,
+    "failure": false
+  },
+  {
+    "file": "registration-review.png",
+    "sha256": "1966a49b27193c311ba0604d85ad1beb730b05061f5fd92de91b30530073a340",
+    "test": "SwiftKeyMockUITests/testCreateSignInAndDeleteUsesRealLocalMockResponse()",
+    "timestamp": 1790056002.344,
+    "failure": false
+  }
+]
