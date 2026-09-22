@@ -9,16 +9,18 @@ Android workflow; the Swift installation is the additional step this project nee
 | Component | Pin |
 | --- | --- |
 | Host Swift and Swift Android SDK | 6.3.2, matching `AndroidSwiftUI/.swift-version` |
-| Host runner | `macos-15` (ARM64), not `macos-15-intel` |
+| Host runner | `macos-26` (ARM64) |
+| Apple SDK | Xcode 26.4.1 at `/Applications/Xcode_26.4.1.app` |
 | Java | Temurin 21, provided by the workflow |
 | Android compile SDK / build tools | API 35 / 35.0.0 |
 | Android NDK | 27.3.13750724 (r27d) |
 | APK Swift target | `aarch64-unknown-linux-android28` |
 
-GitHub documents `macos-15` as an ARM64 standard runner. Its image supplies Xcode
-and macOS command-line tools; Java/Android versions are selected explicitly by
-the workflow. See [runner labels](https://docs.github.com/en/actions/reference/runners/github-hosted-runners)
-and the [macOS 15 ARM64 image](https://github.com/actions/runner-images/blob/main/images/macos/macos-15-arm64-Readme.md).
+The workflow selects Xcode 26.4.1 explicitly because Vapor's pinned
+`swift-configuration` dependency uses Foundation APIs absent from the old
+Xcode 16.4 SDK. Host Swift remains pinned separately at 6.3.2. Java/Android
+versions are also selected explicitly. See [runner labels](https://docs.github.com/en/actions/reference/runners/github-hosted-runners)
+and the [macOS 26 image](https://github.com/actions/runner-images/blob/main/images/macos/macos-26-Readme.md).
 
 ## Download verification
 

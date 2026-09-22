@@ -7,7 +7,7 @@ ci_mode="${1:---install}"
 [[ $# -le 1 && ( "$ci_mode" == --install || "$ci_mode" == --check ) ]] ||
     die 'Usage: bash scripts/ci/setup-android-toolchain.sh [--install|--check]'
 [[ "$(uname -s)" == Darwin && "$(uname -m)" == arm64 ]] ||
-    die 'Use an ARM64 macOS runner (macos-15), not macos-15-intel.'
+    die 'Use an ARM64 macOS runner (macos-26), not an Intel runner.'
 
 ci_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 ci_swift_version=6.3.2

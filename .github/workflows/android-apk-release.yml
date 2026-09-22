@@ -13,11 +13,13 @@ permissions:
 jobs:
   build:
     name: Build and verify the ARM64 APK
-    runs-on: macos-15
+    runs-on: macos-26
     timeout-minutes: 120
     outputs:
       artifact-id: ${{ steps.release-payload.outputs.artifact-id }}
     env:
+      # Vapor's pinned swift-configuration dependency requires the newer Foundation SDK.
+      DEVELOPER_DIR: /Applications/Xcode_26.4.1.app/Contents/Developer
       GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2
     steps:
       - uses: actions/checkout@v4
@@ -46,8 +48,6 @@ jobs:
       - name: Install and verify the pinned Swift and Android toolchains
         run: bash scripts/ci/setup-android-toolchain.sh
       - uses: gradle/actions/setup-gradle@v4
-        with:
-          build-root-directory: AndroidSwiftUI
 
       - name: Set APK version and restore the existing signing identity
         env:
